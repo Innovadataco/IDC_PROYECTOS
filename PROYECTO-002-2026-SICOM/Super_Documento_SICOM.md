@@ -840,6 +840,7 @@ El SICOM opera sobre una infraestructura de red segmentada y redundante:
 | **Bizagi** | Plataforma de Business Process Management (BPM) usada en SICOM |
 | **BPM** | Business Process Management — Gestión por Procesos de Negocio |
 | **Código SICOM** | Código único de 6 dígitos asignado a cada agente autorizado |
+| **Contingencia** | Plan temporal de abastecimiento ante eventualidades |
 | **Cumplido** | Documento que certifica la entrega de combustible en una orden de pedido |
 | **DRP** | Disaster Recovery Plan — Plan de Recuperación ante Desastres |
 | **EDS** | Estación de Servicio |
@@ -1023,6 +1024,178 @@ El SICOM opera bajo ANS contractuales medidos mensualmente:
 
 **Documento generado por análisis automatizado de la carpeta documental SICOM.**
 **Fuentes principales:** M-126 (Procesos de Apoyo V6), M-127 (Procesos Core V5), M-128 (Procesos de Control V5), Manuales SIGDI, Guías SICOM, Informes de Seguridad, Documentación de Infraestructura, DRP, Actas de Comités de Control de Cambios, Roadmap de Migración a Gas, y ~40 documentos adicionales.
+
+
+
+---
+
+## ANEXO C: ACTIVOS DE INFRAESTRUCTURA SICOM
+
+### IPs Internas (Red SICOM)
+
+| No. | IP | Responsable |
+|-----|-----|-------------|
+| 1 | 192.168.76.131 | SICOM |
+| 2 | 192.168.76.132 | SICOM |
+| 3 | 192.168.76.247 | SICOM |
+| 4 | 192.168.76.147 | SICOM |
+| 5 | 192.168.76.200 | SICOM |
+| 6 | 192.168.77.136 | SICOM |
+| 7 | 192.168.76.157 | SICOM |
+| 8 | 192.168.76.145 | SICOM |
+| 9 | 192.168.76.146 | SICOM |
+| 10 | 192.168.76.232 | SICOM |
+| 11 | 192.168.77.100 | SICOM |
+| 12 | 192.168.77.101 | SICOM |
+| 13 | 192.168.76.254 | SICOM |
+| 14 | 192.168.76.83 | SICOM |
+| 15 | 192.168.76.172 | SICOM |
+| 16 | 192.168.77.160 | SICOM |
+| 17 | 192.168.76.155 | SICOM |
+| 18 | 192.168.76.161 | SICOM |
+| 19 | 192.168.77.153 | SICOM |
+| 20 | 192.168.77.150 | SICOM |
+| 21 | 192.168.77.151 | SICOM |
+| 22 | 10.158.2.131 | SICOM |
+| 23 | 192.168.76.156 | SICOM |
+| 24 | 192.168.76.129 | SICOM |
+| 25 | 192.168.76.190 | SICOM |
+| 26 | 192.168.77.191 | SICOM |
+| 27 | 10.158.3.110 | SICOM |
+
+**Total dispositivos analizados:** 54
+
+### URLs Externas SICOM
+
+| No. | URL | Servicio |
+|-----|-----|----------|
+| 1 | https://www.sicom.gov.co/ | Portal Web |
+| 2 | https://wss.sicom.gov.co/sicomdata/ | Web Service |
+| 3 | https://eds.sicom.gov.co/eds/api/v1 | API EDS |
+| 4 | https://bi.sicom.gov.co/OLAP/msmdpump.dll | BI OLAP |
+| 5 | https://bi.sicom.gov.co/OLAP_PRUEBASDLLO/msmdpump.dll | BI Pruebas |
+| 6 | https://bi.sicom.gov.co/OLAP_GCV/msmdpump.dll | BI GCV |
+| 7 | https://bi.sicom.gov.co/OLAP_ENTIDADEXT/msmdpump.dll | BI Entidades |
+| 8 | https://bi.sicom.gov.co/OLAP_EXTERNO/msmdpump.dll | BI Externo |
+| 9 | https://bi.sicom.gov.co/OLAP_PRUEBAS/msmdpump.dll | BI Pruebas |
+| 10 | https://pruebabi.sicom.gov.co/ | Pruebas BI |
+| 11 | https://portal.sicom.gov.co/SICOM | Portal |
+| 12 | https://mesadeservicio.sicom.gov.co//USDKv8//#!/login/ | Mesa de Servicio |
+| 13 | https://liquidos.sicom.gov.co/sicom/identificacionAction.do | Líquidos |
+| 14 | https://gncv.sicom.gov.co/login | GNCV |
+| 15 | https://bwss.sicom.gov.co/sicomdata/ | Web Service Backup |
+| 16 | https://aprendesicom.sicom.gov.co/login/index.php | Capacitaciones |
+| 17 | https://git.sicom.gov.co/users/sign_in | GitLab |
+| 18 | https://sigdi.sicom.gov.co/guias/ | SIGDI |
+| 19 | https://pru.api.sicom.gov.co | API Pruebas |
+| 20 | https://api.sicom.gov.co | API Producción |
+| 21 | https://cubos.sicom.gov.co | Cubos BI |
+| 22 | https://moduloconsultas.sicom.gov.co/Login | Consultas |
+| 23 | https://sigdipruebas.sicom.gov.co/ | SIGDI Pruebas |
+| 24 | https://uatsicomconsultas.sicom.gov.co/ | UAT Consultas |
+| 25 | https://wsp.sicom.gov.co/ | Web Service Public |
+| 26 | https://uatbpm.sicom.gov.co/UAT_TEST/ | UAT BPM |
+| 27 | https://uatbpm.sicom.gov.co/ws/sicomdata | UAT BPM WS |
+
+---
+
+## ANEXO D: PROCEDIMIENTO DE GESTIÓN DE VULNERABILIDADES
+
+**Responsable:** INTERNEXA S.A.
+
+| Paso | Actividad | Descripción |
+|------|-----------|-------------|
+| 1 | Escaneo | Realizar escaneo a todos los dispositivos en la línea base mediante herramienta de análisis de vulnerabilidades según política establecida |
+| 2 | Evaluación | Evaluar y analizar resultados obtenidos y clasificar según criticidad |
+| 3 | Plan de Remediación | Generar plan de mitigación. En caso necesario escalar al proveedor/fabricante para encontrar solución de cierre |
+| 4 | Retest | Realizar segundo escaneo para verificar cierre |
+| 5 | Verificación | Verificar resultados del Retest. Si no se cerraron, analizar si se requiere nuevo plan de mitigación |
+| 6 | Informe Técnico | Generar informe técnico con detalles del análisis |
+| 7 | Análisis de Riesgo | Efectuar análisis de riesgo para estimar probabilidad de materialización de evento no deseado |
+| 8 | Informe Ejecutivo | Generar y presentar informe ejecutivo en formato Word |
+
+---
+
+## ANEXO E: MÓDULO DE CONTINGENCIAS DE ABASTECIMIENTO
+
+**Historia de Usuario:** HU-1531 — Configuración de Plantas Para Contingencias
+
+**Objetivo:** Crear un módulo que permita realizar cambios temporales en los planes de abastecimiento habituales de una región o regiones específicas del país, garantizando que no se interrumpa el abastecimiento de combustible ante eventualidades.
+
+**Reglas de Negocio:**
+- Se instancia un caso para cada mayorista que opere en la zona de contingencia
+- El módulo cuenta con filtros: Departamento, Municipio, Mayorista, Plantas asociadas
+- Los mayoristas mostrados son aquellos con contrato de suministro con EDS activas (Automotrices y Fluviales) del Departamento/Municipio seleccionado
+- Se presenta una colección de plantas asociadas al mayorista para desactivar la actual y activar la de contingencia
+- **Excepciones por ubicación:** En municipios donde EDS del casco urbano tienen plan diferente a las de zona rural, se maneja un check de excepción que abre colección de EDS del municipio y plantas asociadas
+- A las EDS solo se les configura **una planta de contingencia**, única visible al momento de realizar OPS
+- **Temporizador de contingencia:** Fecha de inicio + cantidad de días = fecha fin automática (hasta las 23:59 horas). La fecha fin no es editable
+- En caso de prórroga: la cantidad total de días debe ser superior a la contingencia inicial (ej: si fueron 10 días, la actualización debe ser 11 o más)
+- Al terminar la contingencia, se restablece automáticamente la configuración de plantas del plan de abastecimiento definido
+- Si ingresa una EDS nueva durante el periodo de contingencia, el operador SICOM debe instanciar un caso para activarle la planta de contingencia
+- La actualización de casos instanciados permite ampliar días de contingencia mostrando el total
+- Se puede deshabilitar la contingencia antes del tiempo configurado mediante botón de deshabilitar
+
+**Criterios de Aceptación:**
+- El usuario operador de SICOM puede configurar, activar y/o desactivar plantas de manera temporal para activar planes de contingencia de abastecimiento
+
+---
+
+## ANEXO F: DATASET DE CASOS ARANDA — ENERO 2026
+
+**Total de casos analizados:** ~1,900 registros
+
+**Categorías principales de incidentes:**
+- FALLA INGRESO A SIGDI
+- FALLA INGRESO A SICOM LÍQUIDOS
+- FALLA TRANSMISIÓN DATOS WEB SERVICE SICOM LÍQUIDOS
+- FALLA INGRESO A SICOM GNCV
+- FALLA TRANSMISIÓN DATOS WEB SERVICE SICOM GNCV
+
+**Estados de casos:**
+- CANCELADO (Mayoría — casos mal registrados que se derivan a portal de Autogestión)
+- CERRADO (Casos resueltos por Grupo de Análisis SICOM)
+
+**SLA aplicado:** MEDIO 24H (Tiempo máximo de atención: 24 horas)
+
+**Canales de registro:** Portal Cliente (principal), Call Center
+
+**Grupos de resolución:**
+- CALL CENTER (N1)
+- INTERNEXA FUNCIONAL (N2)
+
+**Ejemplo de caso típico:**
+- Caso 3562: FALLA INGRESO A SIGDI — No llegaban códigos de verificación a correos
+- Fecha registro: 2026-01-22
+- Fecha cierre: 2026-01-28 (6 días)
+- Grupo resolutor: INTERNEXA FUNCIONAL
+- Solución: Ajuste en el sistema para estabilizar operación y acceso en la plataforma
+
+---
+
+## ANEXO G: SOLUCIÓN WORKAROUND MÓDULO ENCUESTAS
+
+**Documento:** Arq. Marcelo Tunarosa | ITX | Noviembre 2024
+
+**Contexto:** Necesidad de publicar una encuesta para agentes minoristas (61, 62, 63) en el Nuevo SICOM BPM. Obligatoria para diligenciar antes de acceder al sistema.
+
+**Arquitectura:**
+- Ambiente Productivo: Encuesta integrada en flujo BPM
+- Ambiente UAT: Pruebas de integración
+
+**Solución General (Especialista BPM – Bizagi):**
+- Colección de Postman para consumo de la API nativa de Bizagi
+
+**Solución Detallada (Especialista JAVA):**
+- Tabla: `MAE_TBL_CODIGOVERIFICACION` — Almacena: ID, fecha generación, código SICOM, usuario, código verificación
+- Tabla: `MAE_TBL_ENCUESTA` — Almacena: ID, fecha registro, código SICOM, usuario, respuesta, valor, IP origen
+- Front-end: Formulario de encuesta con validación
+- Correo: Plantilla de notificación con código de verificación
+
+---
+
+**Documento generado por análisis automatizado de la carpeta documental SICOM.**
+**Fuentes principales:** M-126 (Procesos de Apoyo V6), M-127 (Procesos Core V5), M-128 (Procesos de Control V5), Manuales SIGDI, Guías SICOM, Informes de Seguridad, Documentación de Infraestructura, DRP, Actas de Comités de Control de Cambios, Roadmap de Migración a Gas, Matriz de Vulnerabilidades, Dataset Aranda, y ~40 documentos adicionales.
 
 ---
 
