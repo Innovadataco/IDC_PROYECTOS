@@ -157,6 +157,8 @@ PROYECTO-002-2026-SICOM/
 
 - [📘 PORTFOLIO.md](../PORTFOLIO.md) — Portafolio completo Innovadataco
 - [📁 Documento Maestro del Empalme](./03-EJECUCION/01-REGISTROS-AVANCE.md)
+- [📋 Análisis Contractual INTERNEXA-SICOM](./Analisis_Contractual_INTERNEZA-SICOM.md) — Hallazgos de obligaciones contractuales y transición
+- [🔴 Análisis de Riesgo de Migración](./Analisis_Riesgo_Migracion_SICOM.md) — Evaluación honesta de probabilidad de éxito
 
 ---
 
