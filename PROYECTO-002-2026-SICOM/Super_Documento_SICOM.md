@@ -1197,6 +1197,49 @@ El SICOM opera bajo ANS contractuales medidos mensualmente:
 **Documento generado por análisis automatizado de la carpeta documental SICOM.**
 **Fuentes principales:** M-126 (Procesos de Apoyo V6), M-127 (Procesos Core V5), M-128 (Procesos de Control V5), Manuales SIGDI, Guías SICOM, Informes de Seguridad, Documentación de Infraestructura, DRP, Actas de Comités de Control de Cambios, Roadmap de Migración a Gas, Matriz de Vulnerabilidades, Dataset Aranda, y ~40 documentos adicionales.
 
+
+
+## ANEXO H: LISTADO GENERAL DE REQUERIMIENTOS SICOM LÍQUIDOS
+
+**Documento:** Listado General de Requerimientos SICOM Líquidos — MME (Octubre 2025)
+
+**Resumen de Historias de Usuario:**
+
+| NÚMERO | NOMBRE | SISTEMA | ESTADO | ORIGEN | FUNCIONAL MME |
+|--------|--------|---------|--------|--------|---------------|
+| 344 | Validación Vehículos Comercializadores Industriales y EDS de Zona de Frontera | NUEVO SICOM LIQUIDOS | EN PRODUCCIÓN | Migración Java a Bizagi | DIANA RUIZ |
+| 360 | Actualización de Cupos OPAI proceso ACOP | NUEVO SICOM LIQUIDOS | SIN FIRMA | Evolutivos / Rediseños | ANGIE KATHERINE MEJIA GONZALEZ |
+| 1206 | Creación Jobs y Campos Comercializador Industrial | NUEVO SICOM LIQUIDOS | EN BACKLOG | Migración Java a Bizagi | PABLO TORRES |
+| 1212 | Ajustes Comercializador Industrial – Excepciones y Direcciones Cliente Final | NUEVO SICOM LIQUIDOS | EN DESARROLLO | Migración Java a Bizagi | PABLO TORRES |
+| 1993 | Cierre, Anulación y Rechazo Guía de OPP | SIGDI | EN DESARROLLO | Evolutivos / Rediseños | NICOLAS LEIVA |
+| 1531 | Proceso de Configuración Contingencias (Plantas) | NUEVO SICOM LIQUIDOS | CERTIFICACION FUNCIONAL | Evolutivos / Rediseños | MAIDA EUNISE HERRERA |
+
+**Estados de HU:**
+- **EN PRODUCCIÓN:** Desplegadas y operativas
+- **EN DESARROLLO:** En construcción
+- **EN BACKLOG:** Pendientes de iniciar
+- **SIN FIRMA:** Requieren aprobación formal del MME
+- **PENDIENTE PASO A PRODUCCIÓN:** En pruebas finales
+
+**Funcionales MME asignados:**
+- DIANA RUIZ
+- ANGIE KATHERINE MEJIA GONZALEZ
+- PABLO TORRES
+- NICOLAS LEIVA
+- MAIDA EUNISE HERRERA
+- EMMA JIMENEZ
+- JHON JAIRO
+- NELLY RIOS
+- NICOLAS CALDERÓN ACHURY
+- DEYSI RODRIGUEZ BERRIO (Grupo Precios)
+- HECTOR EMILIO MORENO
+- JOSE DANIEL TULCAN
+
+---
+
+**Documento generado por análisis automatizado de la carpeta documental SICOM.**
+**Fuentes principales:** M-126 (Procesos de Apoyo V6), M-127 (Procesos Core V5), M-128 (Procesos de Control V5), Manuales SIGDI, Guías SICOM, Informes de Seguridad, Documentación de Infraestructura, DRP, Actas de Comités de Control de Cambios, Roadmap de Migración a Gas, Matriz de Vulnerabilidades, Dataset Aranda, Listado General de Requerimientos, y ~40 documentos adicionales.
+
 ---
 
 > **ZEUS** — Sistema de Inteligencia Empresarial INNOVADATACO  
