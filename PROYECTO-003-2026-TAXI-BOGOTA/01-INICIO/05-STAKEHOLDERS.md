@@ -1,0 +1,1 @@
+# Stakeholders\n\n| Nombre | Rol | Contacto |\n|--------|-----|----------|\n| Luis Alejandro Zambrano | Contacto clave cliente | Por confirmar |\n| Jelkin Zair Carrillo Franco | Director Proyecto | gerencia@innovadataco.com |\n

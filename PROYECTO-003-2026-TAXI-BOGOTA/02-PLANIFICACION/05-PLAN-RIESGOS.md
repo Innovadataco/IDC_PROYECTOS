@@ -1,0 +1,1 @@
+# Plan de Riesgos\n\n| Riesgo | Probabilidad | Impacto | Mitigación |\n|--------|-------------|---------|------------|\n| Cliente no proporciona acceso a plataforma | Media | Alto | Acuerdo previo firmado |\n| Normativa cambia durante ejecución | Baja | Alto | Monitoreo diario |\n

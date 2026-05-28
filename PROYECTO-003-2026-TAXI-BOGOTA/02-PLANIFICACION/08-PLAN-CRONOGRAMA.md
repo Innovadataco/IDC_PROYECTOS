@@ -1,0 +1,1 @@
+# Plan de Cronograma\n\n| Día | Actividad |\n|-----|-----------|\n| 1 | Kickoff + Documental |\n| 2 | Evaluación técnica |\n| 3 | Entrevistas + Brechas |\n| 4 | Consolidación |\n| 5 | Presentación + Cierre |\n

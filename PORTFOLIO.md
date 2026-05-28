@@ -22,6 +22,21 @@ Innovadataco opera como una empresa **AI-Native** donde la inteligencia artifici
 
 ---
 
+### PROYECTO 003: Diagnóstico Plataforma Taxi Bogotá
+| Aspecto | Detalle |
+|---------|---------|
+| **Cliente** | Empresa de Taxi en Bogotá (por confirmar) |
+| **Contacto clave** | Luis Alejandro Zambrano |
+| **Sector** | Transporte Público / Movilidad Urbana |
+| **Alcance** | Diagnóstico plataforma tecnológica para cumplimiento normativo Alcaldía de Bogotá |
+| **Inversión Fase 1** | $5.000.000 COP (5 días) |
+| **Fase 2** | Asesoría y acompañamiento hasta autorización (por cotizar) |
+| **Metodología** | PM2 |
+| **Fase PM2** | INICIO (pre-venta) |
+| **Estado** | Negociación avanzada — estructura creada, pendiente confirmación cliente |
+
+---
+
 ## 2. LÍNEAS DE NEGOCIO
 
 ### 2.1 Sistemas Inteligentes de Transporte (ITS)
@@ -116,10 +131,11 @@ Posicionamiento corporativo, contenido estratégico, detección de oportunidades
 
 | # | Iniciativa | Tipo | Prioridad | Fecha Estimada |
 |---|-----------|------|-----------|----------------|
-| 1 | APP Chía-Girardot — Fase 2 PLANIFICACIÓN | Proyecto | 🔴 Alta | Junio 2026 |
-| 2 | SICOM — Corte y Migración | Hitos | 🔴 Alta | 30 junio 2026 |
-| 3 | Repositorio PM2 ZEUS-CONFIG | Mejora | 🟡 Media | Julio 2026 |
-| 4 | Propuesta ITS para nueva concesión | Negocio | 🟢 Baja | Q3 2026 |
+| 1 | SICOM — Corte y Migración | Hitos | 🔴 Alta | 30 junio 2026 |
+| 2 | Taxi Bogotá — Kickoff Fase 1 | Proyecto | 🔴 Alta | Junio 2026 |
+| 3 | APP Chía-Girardot — Fase 2 PLANIFICACIÓN | Proyecto | 🟡 Media | Junio 2026 |
+| 4 | Repositorio PM2 ZEUS-CONFIG | Mejora | 🟡 Media | Julio 2026 |
+| 5 | Propuesta ITS para nueva concesión | Negocio | 🟢 Baja | Q3 2026 |
 
 ---
 

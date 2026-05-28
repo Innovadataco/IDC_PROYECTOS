@@ -1,0 +1,1 @@
+# Mapa de Fases\n\nINICIO → PLANIFICACIÓN → EJECUCIÓN → CIERRE\n
