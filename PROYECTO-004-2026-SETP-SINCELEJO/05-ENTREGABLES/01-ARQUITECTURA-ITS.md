@@ -1,0 +1,358 @@
+# ARQUITECTURA ITS DE REFERENCIA
+## PROYECTO 004-2026-SETP-SINCELEJO
+
+---
+
+## 1. VISIÓN GENERAL
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           CAPA DE PRESENTACIÓN                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  App Móvil   │  │  Micrositio  │  │  Pantallas   │  │  Call Center │    │
+│  │  iOS/Android │  │     Web      │  │  Paraderos   │  │              │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                           CAPA DE APLICACIÓN                                │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐  ┌────────────┐  │
+│  │      SRC       │  │     SGCF       │  │      SIU       │  │    SST     │  │
+│  │   (Recaudo)    │  │ (Control Flota)│  │  (Info Usuario)│  │ (Seguridad)│  │
+│  └────────────────┘  └────────────────┘  └────────────────┘  └────────────┘  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                           CAPA DE PROCESAMIENTO                             │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐  ┌────────────┐  │
+│  │  CCO (Centro   │  │   APIs REST/   │  │   Business     │  │  Analytics │  │
+│  │   Control)     │  │  GraphQL/MQTT  │  │ Intelligence   │  │  (Big Data)│  │
+│  └────────────────┘  └────────────────┘  └────────────────┘  └────────────┘  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                           CAPA DE COMUNICACIONES                            │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐  ┌────────────┐  │
+│  │   4G/5G QoS    │  │  Radio Trunking│  │  WiFi Buses    │  │  VPN/Firewall│  │
+│  │   (Celular)    │  │  (Corredores)  │  │  (Pasajeros)   │  │  (Seguridad) │  │
+│  └────────────────┘  └────────────────┘  └────────────────┘  └────────────┘  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                           CAPA DE CAMPO (A BORDO)                           │
+│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────┐  │
+│  │Validador│ │Torniquete│ │Cámaras │ │Conteo │ │Consola │ │Router │ │Botón│  │
+│  │Mifare/QR│ │Electromec│ │1080p  │ │Pasajeros│ │Conductor│ │WiFi  │ │Pánico│  │
+│  │EMV/GPS  │ │         │ │Audio  │ │≥97%   │ │Rugerizada│ │4G/5G │ │     │  │
+│  └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────┘  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                           CAPA DE INFRAESTRUCTURA                           │
+│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────┐  │
+│  │  Buses │ │Paraderos│ │Patios  │ │Estaciones│ │Centro  │ │Talleres│ │Carretera│  │
+│  │46 (F1) │ │Tipo I-III│ │Temp/Def│ │Transferencia│ │Control │ │        │ │        │  │
+│  └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 2. SISTEMAS PRINCIPALES
+
+### 2.1 Sistema de Recaudo Centralizado (SRC)
+
+| Componente | Descripción | Especificación |
+|:-----------|:------------|:---------------|
+| **Validadores** | Lectura medios pago | Mifare Desfire, QR, EMV sin contacto Nivel 1-2, GPS, 4G, pantalla 7", IP54 |
+| **Motor tarifas** | Cálculo tarifas | Zonal, temporal, fare capping, transferencias |
+| **Clearing** | Distribución ingresos | Automático entre operador, ente gestor, recaudo |
+| **Compensación** | Reglas negocio | Definición actores, porcentajes, retenciones |
+| **Medios pago** | Formas de pago | Tarjeta física, app QR, NFC, efectivo (registro electrónico) |
+| **Listas blancas/negras** | Control acceso | En tiempo real, centralizado |
+| **Operación offline** | Contingencia | Validación local, sincronización posterior |
+
+### 2.2 Sistema de Gestión y Control de Flota (SGCF)
+
+| Componente | Descripción | Especificación |
+|:-----------|:------------|:---------------|
+| **GPS/GNSS** | Posicionamiento | ±10m, tiempo real, historial 12 meses |
+| **Control itinerarios** | Rutas, frecuencias | Asignación, despacho, cumplimiento |
+| **Alertas operativas** | Eventos críticos | Exceso velocidad, fuera de ruta, botón pánico, detención prolongada |
+| **Videovigilancia** | Seguridad | 2 cámaras 1080p por bus, audio, grabación 30 días |
+| **Conteo pasajeros** | Demanda | Cámaras por puerta, fiabilidad ≥ 97%, bidireccional |
+| **Consola conductor** | Información operativa | Pantalla 7" táctil, rugerizada, IP54, 50°C, entradas, ocupación, recorrido, tiempos |
+| **Botón pánico** | Emergencia | Conductor + pasajeros, alerta CCO, policía, audio/video |
+| **Reportes** | Análisis | PDF/Excel exportable, pasajeros por ruta, ingresos, km recorridos |
+
+### 2.3 Sistema de Información al Usuario (SIU)
+
+| Componente | Descripción | Especificación |
+|:-----------|:------------|:---------------|
+| **App móvil** | iOS/Android | Planificador viajes, tiempos reales, recarga PSE/bancos, QR, NFC |
+| **Micrositio web** | Página web | Recarga, consulta saldo, planeación, PQRS |
+| **Pantallas paraderos** | Tiempo real | Tiempos llegada, ocupación, incidencias |
+| **Predictor** | Estimación | ML/AI para tiempos llegada basado en tráfico |
+| **WiFi gratuito** | Conectividad | Buses (opcional, bajo acuerdo comercial) |
+| **Call center** | Atención | Línea directa, WhatsApp, PQRS |
+
+### 2.4 Sistema de Seguridad de Transacciones (SST)
+
+| Componente | Descripción | Especificación |
+|:-----------|:------------|:---------------|
+| **SAM/HSM** | Módulos seguridad | SAM AV2 (70 unidades) o HSM servidor |
+| **Cifrado** | Protección datos | End-to-end, TLS/SSL, AES-256 |
+| **Autenticación** | Identidad | OAuth2, tokens, certificados digitales |
+| **Gestión claves** | Cryptography | Generación, distribución, rotación, revocación |
+| **Certificaciones EMV** | Cumplimiento | Nivel 1 y 2 en validadores |
+| **Transferencia llaves** | Propiedad | Mapping completo a Metro Sabanas |
+| **Auditoría** | Seguridad | Logs inmutables, pentesting anual, cumplimiento Ley 1581/2012 |
+
+---
+
+## 3. ARQUITECTURA CLOUD
+
+```
+┌─────────────────────────────────────────────┐
+│              PROVEEDOR CLOUD                 │
+│  (AWS / Azure / GCP / Nacional)            │
+├─────────────────────────────────────────────┤
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐     │
+│  │  SRC    │  │  SGCF   │  │  SIU    │     │
+│  │Microserv│  │Microserv│  │Microserv│     │
+│  └─────────┘  └─────────┘  └─────────┘     │
+├─────────────────────────────────────────────┤
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐     │
+│  │  API    │  │  BI/    │  │  SST    │     │
+│  │ Gateway │  │Analytics│  │Security │     │
+│  └─────────┘  └─────────┘  └─────────┘     │
+├─────────────────────────────────────────────┤
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐     │
+│  │  DB     │  │  Cache  │  │  Storage│     │
+│  │Primary  │  │  Redis  │  │  S3/    │     │
+│  │PostgreSQL│  │        │  │Object  │     │
+│  └─────────┘  └─────────┘  └─────────┘     │
+├─────────────────────────────────────────────┤
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐     │
+│  │  Backup │  │   DR    │  │  CDN    │     │
+│  │Diario   │  │Multi-AZ │  │Global   │     │
+│  └─────────┘  └─────────┘  └─────────┘     │
+└─────────────────────────────────────────────┘
+```
+
+### 3.1 Requisitos Cloud
+
+| Requisito | Especificación |
+|:----------|:---------------|
+| **Disponibilidad** | ≥ 99.9% uptime |
+| **Recuperación** | RPO ≤ 1 hora, RTO ≤ 4 horas |
+| **Escalabilidad** | Auto-scaling, 100 buses futuro |
+| **Seguridad** | ISO 27001, SOC 2, cumplimiento local |
+| **Datos** | Propiedad Metro Sabanas, acceso root |
+| **Latencia** | < 200ms para transacciones |
+
+---
+
+## 4. COMUNICACIONES Y CONECTIVIDAD
+
+### 4.1 Arquitectura de Red
+
+```
+                    INTERNET
+                       │
+              ┌────────┴────────┐
+              │   Firewall/VPN  │
+              └────────┬────────┘
+                       │
+              ┌────────┴────────┐
+              │   Cloud Provider  │
+              │   (VPC/Network)   │
+              └────────┬────────┘
+                       │
+         ┌─────────────┼─────────────┐
+         │             │             │
+    ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+    │   4G/5G │  │ Radio   │  │  WiFi   │
+    │  QoS    │  │Trunking │  │ Buses   │
+    │(Celular)│  │(Corredor)│  │(Pasajeros)│
+    └────┬────┘  └────┬────┘  └────┬────┘
+         │             │             │
+    ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+    │  Buses  │  │  Buses  │  │  Buses  │
+    │  (46)   │  │  (46)   │  │  (46)   │
+    └─────────┘  └─────────┘  └─────────┘
+```
+
+### 4.2 Especificaciones de Comunicación
+
+| Medio | Cobertura | Uso | Redundancia |
+|:------|:----------|:----|:-----------:|
+| 4G/5G QoS | 100% rutas | Datos operativos, transacciones, video | Radio trunking |
+| Radio trunking | Corredores principales | Comunicación voz, backup datos | 4G/5G |
+| WiFi buses | Interior buses | Información pasajeros, app | 4G/5G |
+| VPN | Centro control + cloud | Comunicación segura | TLS/SSL |
+| Fiber (si aplica) | Centro control | Conexión principal | 4G/5G backup |
+
+---
+
+## 5. CENTRO DE CONTROL (CCO)
+
+### 5.1 Layout
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    SALA CENTRO DE CONTROL                     │
+│                                                              │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │           4 TVs UHD 55" (Matriz Video)              │    │
+│  │  ┌────────┐  ┌────────┐  ┌────────┐  ┌────────┐  │    │
+│  │  │ Ruta 1 │  │ Ruta 2 │  │ Ruta 3 │  │ KPIs   │  │    │
+│  │  │GPS/Video│  │GPS/Video│  │GPS/Video│  │Dashboard│  │    │
+│  │  └────────┘  └────────┘  └────────┘  └────────┘  │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                                                              │
+│  ┌──────────────┐          ┌──────────────┐              │
+│  │  PC 1        │          │  PC 2        │              │
+│  │  Planeación  │          │  Conciliación │              │
+│  │  + Inicializ.│          │  + Clearing   │              │
+│  │  2 pantallas │          │  2 pantallas  │              │
+│  └──────────────┘          └──────────────┘              │
+│                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │  UPS 5KVA    │  │  Switch      │  │  Rack/Servid.│      │
+│  │  Online      │  │  Gigabit     │  │  (si on-prem)│      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+│                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │  Antenas     │  │  Inicializ.  │  │  Mobiliario  │      │
+│  │  GPS/4G      │  │  Tarjetas    │  │  Ergonómico  │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 5.2 Estaciones de Trabajo
+
+| Estación | Función | Software | Pantallas |
+|:---------|:--------|:---------|:---------:|
+| 1 | Planeación + Inicialización | Programación rutas, config tarjetas, productos | 2 |
+| 2 | Conciliación + Clearing | Cuadre recaudo, distribución ingresos, reportes | 2 |
+
+---
+
+## 6. EQUIPOS A BORDO (POR BUS)
+
+### 6.1 Diagrama de Instalación
+
+```
+                    ┌─────────────┐
+                    │   CONSOLA   │
+                    │  CONDUCTOR  │
+                    │  (7" IP54)  │
+                    └──────┬──────┘
+                           │
+    ┌──────────────────────┼──────────────────────┐
+    │                      │                      │
+┌───┴───┐            ┌─────┴─────┐          ┌───┴───┐
+│VALIDADOR│            │  ROUTER   │          │ BOTÓN │
+│(Mifare/ │◄──────────►│  WiFi/4G  │◄────────►│ PÁNICO│
+│ QR/EMV) │            │  (VPN)    │          │       │
+└───┬───┘            └─────┬─────┘          └───────┘
+    │                      │
+    │    ┌──────────┐      │
+    └───►│ TORNQTE  │◄─────┘
+         │(Electromec)│
+         └────┬─────┘
+              │
+    ┌─────────┴─────────┐
+    │                   │
+┌───┴───┐         ┌─────┴─────┐
+│CÁMARA │         │  CÁMARA   │
+│CONTEO │         │VIDEOVIGIL.│
+│(Puerta│         │  (1080p)  │
+│Front) │         │           │
+└───────┘         └───────────┘
+
+┌─────────────┐
+│  GRABADOR   │
+│  (DVR SSD   │
+│  ≥500GB)    │
+└─────────────┘
+```
+
+### 6.2 Especificaciones por Componente
+
+| Componente | Especificación | Cantidad/bus |
+|:-----------|:---------------|:------------:|
+| Validador | Mifare/QR/EMV, GPS, 4G, pantalla 7", IP54 | 1 |
+| Torniquete | Electromecánico, unidireccional, IP54, 90° | 1 |
+| Cámaras conteo | Por puerta, fiabilidad ≥ 97%, bidireccional | Variable |
+| Cámaras video | 1080p, 30fps, audio, IP54 | 2 |
+| Grabador | DVR SSD ≥ 500GB, GPS, 4G, apagado retardado | 1 |
+| Consola | 7" táctil, rugerizada, IP54, 50°C, 4G | 1 |
+| Botón pánico | Conductor + pasajeros | 1 |
+| Router | Industrial, WiFi pasajeros, firewall, VPN | 1 |
+
+---
+
+## 7. INTEROPERABILIDAD
+
+### 7.1 APIs y Estándares
+
+| Tipo | Protocolo | Uso |
+|:-----|:----------|:----|
+| API REST | HTTPS/JSON | Consultas, recargas, reportes |
+| API GraphQL | HTTPS | Consultas flexibles datos operativos |
+| MQTT | TLS | IoT buses, telemetría tiempo real |
+| WebSocket | WSS | Tiempos reales app, pantallas |
+| EMV Contactless | ISO 14443 | Pagos tarjeta |
+| Mifare Desfire | ISO 14443-A | Tarjetas propias |
+| QR Code | ISO/IEC 18004 | Pagos app |
+| OAuth2 | HTTPS | Autenticación servicios |
+
+### 7.2 Integraciones con Terceros
+
+| Sistema | Tipo | Prioridad |
+|:--------|:-----|:---------:|
+| Bancos (PSE) | Pasarela pagos | ALTA |
+| Fintech | Recarga app | ALTA |
+| Waze/Google Maps | Tiempos llegada | MEDIA |
+| SAP/ERP Metro Sabanas | Financiero | MEDIA |
+| SIMIT | Comparendos | BAJA |
+| Sistema salud | PQRS | BAJA |
+
+---
+
+## 8. SEGURIDAD CIBERNÉTICA
+
+### 8.1 Arquitectura de Seguridad
+
+```
+┌─────────────────────────────────────────┐
+│           SEGURIDAD MULTI-CAPA            │
+├─────────────────────────────────────────┤
+│ 1. Perímetro: Firewall, WAF, DDoS       │
+├─────────────────────────────────────────┤
+│ 2. Red: VPN, segmentación, TLS/SSL        │
+├─────────────────────────────────────────┤
+│ 3. Aplicación: OAuth2, RBAC, input val.  │
+├─────────────────────────────────────────┤
+│ 4. Datos: Cifrado AES-256, tokenization  │
+├─────────────────────────────────────────┤
+│ 5. Transacciones: SAM/HSM, EMV cert.     │
+├─────────────────────────────────────────┤
+│ 6. Física: CCTV, acceso biométrico       │
+├─────────────────────────────────────────┤
+│ 7. Auditoría: Logs inmutables, SIEM      │
+└─────────────────────────────────────────┘
+```
+
+### 8.2 Certificaciones Requeridas
+
+| Certificación | Área | Requisito |
+|:--------------|:-----|:----------|
+| EMV Nivel 1 | Validadores | Contactless, proximidad |
+| EMV Nivel 2 | Validadores | Aplicación, criptografía |
+| PCI DSS | Pagos | Si procesa tarjetas crédito |
+| ISO 27001 | Seguridad | Gestión seguridad info |
+| SOC 2 | Cloud | Disponibilidad, confidencialidad |
+| Ley 1581/2012 | Datos personales | Colombia |
+
+---
+
+**Documento generado por ZEUS — Agente IA Estratégico INNOVADATACO**
+**Fecha:** 2026-05-29
+**Versión:** 1.0
+
+---
+
+> **"ZEUS online. La empresa está operando."** ⚡
