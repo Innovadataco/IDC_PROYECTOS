@@ -1,4 +1,255 @@
+# 5. PLAN INDICATIVO ITS
 
+## 5.1 Definición Conceptual y Alcance Estratégico
+
+### 5.1.1 Definición Conceptual y Alcance Estratégico
+
+En estricto cumplimiento de los numerales de los Términos de Referencia (TOR) del Contrato TC-PS-05-917-2026, el Plan Indicativo ITS escala la arquitectura tecnológica definida en el Entregable 1 de la presente estructuración hacia un estado de **BIM Operativo (Gestión de Activos)**. Esta evolución permite que la información digitalizada exigida por la ANI no sea solo una representación estática de la infraestructura, sino una **plataforma de gestión en tiempo real** que garantiza la propiedad y administración de los datos por parte del Beneficiario Final durante la totalidad de la duración de la concesión.
+
+El **Plan Indicativo de Sistemas Inteligentes de Transporte (ITS)** constituye el marco de referencia formal y estructurado que rige la materialización física de la arquitectura ITS en el terreno. Conforme al estándar internacional **ISO 14813**, este plan se define no como un diseño de ingeniería de detalle, sino como el **modelo ejecutivo** que articula las funciones, las entidades y las relaciones necesarias para satisfacer las demandas de transporte de un corredor vial de alta complejidad. En el contexto específico del corredor regional **Chía – Mondoñedo – Girardot**, el Plan Indicativo se posiciona como el **"Plano Maestro de Despliegue"**, habilitador de la transición desde una representación arquitectónica conceptual hacia una **Infraestructura Vial Inteligente operativa**.
+
+Este enfoque resulta imperativo para mitigar la **fragmentación tecnológica** o la creación de **"islas de información"**, asegurando que el despliegue de sistemas sea **interoperable**, **escalable** y **coherente** con las exigencias operativas de un entorno **Brownfield** que soporta un tráfico promedio diario (TPDA) de aproximadamente **40,000 vehículos** en la arteria principal y volúmenes diferenciados en las colectoras y ramales.
+
+### 5.1.2 Propósito y Enfoque del Plan Indicativo
+
+El propósito central de este Plan Indicativo es proporcionar una **hoja de ruta ejecutiva** que garantice la **soberanía del dato** y la **eficiencia en la prestación de servicios** durante el horizonte de la concesión. El enfoque adoptado es el de un **"Plan de Despliegue Referencial"**, lo que implica que el diseño aquí presentado establece los requisitos funcionales, las ubicaciones físicas, las cantidades y las interfaces lógicas que el futuro concesionario debe respetar, permitiéndole la flexibilidad necesaria para proponer innovaciones tecnológicas específicas en la fase de ingeniería de detalle, siempre bajo los lineamientos de este marco maestro.
+
+Bajo esta premisa, se integra el concepto de **representación de activos digitales** como una capa transversal de inteligencia. No se concibe como una aplicación aislada, sino como la **réplica virtual dinámica** del corredor que permite orquestar los datos de infraestructura, tráfico y clima para la toma de decisiones predictivas en operación y mantenimiento. El Plan Indicativo, por tanto, define **dónde** se materializa cada componente de esa réplica, **cuántos** activos físicos se requieren, **cómo** se comunican entre sí y **cuándo** se implementan en el cronograma de la concesión.
+
+### 5.1.3 Articulación de Servicios Estratégicos y Despliegue ITS
+
+El Plan Indicativo no constituye un fin en sí mismo, sino el **facilitador ejecutivo** diseñado para materializar el catálogo de servicios estratégicos ITS definido en el Entregable 1. Esta articulación asegura que cada uno de los **nueve (9) servicios estratégicos ITS** y las **ciento catorce (114) funciones técnicas** encuentren un **soporte físico** y una **ruta de flujo de información** dentro del ecosistema digital.
+
+El plan garantiza que la inversión tecnológica sea coherente con la realidad operativa, permitiendo que las funciones de detección, procesamiento y difusión de información actúen de manera sincronizada. Así, se establece un ecosistema donde la tecnología es el vehículo para alcanzar los niveles de servicio exigidos por la normativa nacional y los estándares internacionales de la IFC, traduciendo cada función del servicio en un conjunto específico de componentes de campo con ubicación precisa.
+
+### 5.1.4 Alcance Geográfico y Jerarquía Vial
+
+El Plan Indicativo cubre la totalidad del **Corredor Vial Chía – Mondoñedo – Girardot y Vías Colectoras**, estructurado en **15 Unidades Funcionales (UF)** que suman **306 kilómetros** de infraestructura, bajo una clara jerarquía de clasificación vial que determina la densidad y sofisticación del despliegue ITS:
+
+| Zona | Categoría | UF | Longitud (km) | Característica Operativa |
+|------|-----------|-----|---------------|--------------------------|
+| **Norte** | Arterial Principal | 1-11 | 158 | Alta demanda, tráfico mixto pesado, zonas urbanas |
+| **Norte** | Ramal Estratégico | 6 | 7,9 | Conexión con Soacha, complejidad intermodal |
+| **Sur** | Colectoras | 12-15 | 148 | Tráfico local, accesos rurales, menor densidad |
+
+La heterogeneidad de esta extensión es considerable. El corredor atraviesa zonas urbanas densas (Chía, Cota, Funza, Soacha), pasos de montaña con túneles y curvas pronunciadas (Mondoñedo), tramos rurales de bajo tráfico (La Mesa – Girardot) y vías colectoras de carácter local. Esta variabilidad condiciona directamente el tipo y la densidad de componentes ITS que se despliegan en cada sector, aplicando el principio de **"diferenciación proporcional"**: cuanto mayor es la complejidad operativa y la densidad de tráfico, mayor es la densidad de sensores, actuadores y puntos de comunicación.
+
+### 5.1.5 Modalidad Brownfield y Restricciones de Partida
+
+El proyecto se desarrolla bajo una **modalidad Brownfield**, entendida como la intervención técnica y actualización operativa de una infraestructura existente que se encuentra en plena explotación. La mayoría de los tramos ya operan como vías en servicio, y la intervención consiste en la construcción de segunda calzada, adecuación de intersecciones, puesta a punto y operación y mantenimiento. Esta condición impone restricciones que el Plan Indicativo debe respetar en estricta observancia de la continuidad operativa:
+
+- **No se interrumpe el tráfico existente** durante la instalación de componentes. Esto obliga a programar obras de ITS en ventanas nocturnas o en paralelo con los cierres programados de la obra civil, garantizando la movilidad durante las 24 horas del día.
+- **La energía eléctrica no está disponible en todo el corredor**. Los gabinetes roadside requieren conexión a la red local o, en su defecto, paneles solares con baterías de respaldo, conforme a los lineamientos de sostenibilidad energética del proyecto.
+- **La fibra óptica no existe en la mayoría de los tramos**. La red de comunicaciones debe construirse desde cero, aprovechando las zanjas de la obra civil cuando estén abiertas, en aplicación de la Estrategia de Infraestructura Compartida definida por la ANI.
+- **Los peajes ya operan**. La estación de peaje La Tebaida (UF 3) cuenta con sistemas de cobro que el nuevo ITS debe integrar, no reemplazar sin una transición técnica planificada que evite afectación al recaudo.
+- **Las entidades de control difieren**. La UF 1 está a cargo de FONDECUN, mientras que el resto del corredor depende de ICCU. Esto implica que el centro de control regional debe contar con capacidad de federar datos de dos operadores distintos, garantizando la interoperabilidad institucional.
+
+### 5.1.6 Marco Normativo y Técnico de Soporte
+
+El Plan Indicativo se fundamenta en tres pilares normativos que operan de manera coordinada y complementaria:
+
+**a) Resolución 28675 de 2022 (Ministerio de Transporte)**
+
+Esta normativa constituye el pilar fundacional al declarar la implementación de los ITS como una prioridad de interés nacional, elevando la tecnología de campo al rango de servicio público esencial. Define el **catálogo oficial de 42 Componentes de Campo (CC-01 a CC-42)**, que constituyen el menú técnico del presente Plan Indicativo. La resolución instaura la **Metodología en V** como el ciclo de vida obligatorio para la ingeniería de sistemas, garantizando que la trazabilidad entre requerimiento, diseño, implementación y prueba se mantenga íntegra durante todo el proceso de despliegue.
+
+**b) Términos de Referencia IFC (Contrato # 7216694)**
+
+El contrato entre Transconsult e IFC exige **once (11) elementos mínimos de ITS** para el corredor, que trascienden el mero despliegue de equipos y se orientan hacia una gestión integral de la infraestructura: centro de control, sistema de peajes, gestión de tráfico, información al usuario, CCTV, detección de incidentes, control de túneles, telecomunicaciones, energía, gobernanza de datos y plan de implementación. El Plan Indicativo demuestra, mediante la configuración de los 42 componentes del catálogo, que estos once elementos están íntegramente cubiertos.
+
+**c) Catálogo de Componentes Transconsult (CC-01 a CC-42)**
+
+Este catálogo, definido contractualmente como base de diseño, establece la nomenclatura y especificación técnica de cada activo de campo. El Plan Indicativo asigna estos códigos a ubicaciones específicas del corredor, generando una **trazabilidad completa** entre el diseño y la implementación. La relación entre el catálogo y los 11 elementos IFC es de **muchos a muchos**: un componente puede contribuir a varios elementos, y un elemento puede requerir la sinergia de varios componentes.
+
+### 5.1.7 Delimitación del Alcance: Qué Cubre y Qué No
+
+**El Plan Indicativo SÍ cubre:**
+- La ubicación física de cada componente de campo (CC-01 a CC-42) en cada una de las 15 Unidades Funcionales, con justificación técnica basada en la tipología vial, densidad de tráfico esperada y análisis de puntos críticos.
+- La cantidad de cada componente por UF y el consolidado para el corredor completo, respondiendo al principio de suficiencia operativa sin caer en la sobre-dimensión.
+- La red de comunicaciones (fibra óptica, nodos, topología, redundancia) que interconecta los componentes y garantiza la continuidad del servicio ante fallos parciales.
+- La ubicación estratégica y las funciones de los centros de control y mantenimiento, incluyendo sus equipamientos principales y personal estimado.
+- El cronograma de implementación en fases, con dependencias críticas identificadas.
+- Las recomendaciones de interacción con la obra civil y los riesgos identificados que pueden afectar el despliegue.
+
+**El Plan Indicativo NO cubre:**
+- Los precios unitarios ni los costos totales de la inversión —ejercicio que se desarrolla en el **Capítulo 6 (Modelo de Costos)** del presente documento.
+- El benchmarking de proveedores ni las fichas técnicas detalladas de cada equipo —contenido que se consigna en el **Capítulo 4 (Estudio de Mercado)** o en el **Anexo 9.1 (Benchmarking ITS)**.
+- El análisis de tecnologías alternativas ni el software de gestión de centro de control —materia tratada en el **Capítulo 4 (Revisión y Análisis de Tecnologías ITS)**.
+- Los procedimientos detallados de operación y mantenimiento —componente que forma parte del Concepto de Operación (ConOps), ya entregado en los Entregables 1 a 5 del presente contrato.
+
+Esta separación es intencional y responde a una lógica de **especialización documental**. El Plan Indicativo define la **configuración**; el Modelo de Costos valora esa configuración. Si el ejercicio financiero indica que el presupuesto disponible es insuficiente, se regresa a este capítulo para ajustar cantidades o tipos de componentes, pero la lógica de despliegue técnico no se mezcla con la lógica de precios, garantizando la trazabilidad entre ingeniería y economía del proyecto.
+
+### 5.1.8 Nota Metodológica
+
+Las cantidades y ubicaciones presentadas en este capítulo son propuestas técnicas derivadas del análisis de tipología vial, densidad de tráfico esperada, puntos críticos identificados en los diseños de obra civil y los antecedentes de siniestralidad del corredor. La validación final de estas cantidades requiere el estudio de tráfico detallado y la aprobación de la interventoría designada por la ANI, pero esta propuesta constituye la base técnica para iniciar esa validación, conforme a la Metodología en V y los estándares de la Resolución 28675 de 2022.
+
+Las cantidades están expresadas en unidades de campo, kilómetros de fibra óptica o metros de cobertura, según corresponda a cada tipo de componente. Las ubicaciones se identifican por Unidad Funcional y, cuando la información de diseño lo permite, por subtramo o kilómetro aproximado, facilitando la correlación con los planos de obra civil y los estudios topográficos del corredor.
+
+---
+
+## 5.2 Criterios y Metodología de Despliegue
+
+### 5.2.1 Fundamentos de la Metodología de Despliegue
+
+El despliegue de los 42 Componentes de Campo (CC) del catálogo oficial en el corredor de 306 km no puede realizarse mediante una distribución homogénea. La variabilidad de tipología vial, densidad de tráfico, perfil de riesgo, disponibilidad de energía y estado de la obra civil exige una **metodología diferenciada** que asigne componentes de forma proporcional a la necesidad operativa de cada tramo. El principio rector es el de **"suficiencia operativa sin sobre-dimensión"**: cada componente debe estar donde se requiere, en la cantidad que justifica su función, sin redundancia innecesaria ni déficit que comprometa la seguridad.
+
+La metodología se basa en cuatro factores de ponderación que se aplican a cada Unidad Funcional:
+
+**Factor T — Tráfico (TPDA):** El volumen de vehículos determina la intensidad de monitoreo y la frecuencia de incidentes. Tramos con TPDA > 35,000 requieren mayor densidad de CCTV, VDS y DMS. Tramos con TPDA < 10,000 (colectoras rurales) pueden operar con cobertura básica.
+
+**Factor R — Riesgo:** El historial de siniestralidad, la presencia de túneles, curvas pronunciadas, zonas de niebla, puentes y zonas escolares elevan el factor de riesgo. Cada elemento de riesgo identificado en el diseño de obra civil o en los registros de incidentes del corredor incrementa la densidad de componentes de seguridad (CCTV térmica, SOS, iluminación emergencia, RWIS).
+
+**Factor C — Complejidad:** La intervención Brownfield, la presencia de múltiples intersecciones, la integración con peajes existentes y la ausencia de infraestructura de soporte (energía, fibra) aumentan la complejidad. Tramos con alta complejidad requieren gabinetes de control más sofisticados, soluciones solares, radioenlaces y mayor redundancia.
+
+**Factor K — Tipología Vial:** La clasificación del tramo (arterial principal, urbano, túnel, montaña, colectora rural) define el paquete de despliegue base. Cada tipología tiene un paquete predefinido que establece los componentes mínimos obligatorios y los opcionales según densidad.
+
+### 5.2.2 Paquetes de Despliegue por Tipología Vial
+
+Con base en los factores anteriores, se definen paquetes de despliegue que agrupan componentes según la tipología dominante del tramo. Cada paquete tiene una versión básica y una avanzada, permitiendo ajustar la inversión sin perder la cobertura mínima de seguridad.
+
+| Tipología | Paquete | Componentes Básicos | Componentes Avanzados | Condición para Avanzado |
+|-----------|---------|---------------------|----------------------|------------------------|
+| **Arterial Principal** | Paquete 2 | CCTV fija cada 2 km, VDS video, DMS puntos, SOS cada 5 km, Gabinete | CCTV PTZ en intersecciones, DMS completo, RWIS en zonas climáticas | TPDA > 30,000 o presencia de intersecciones complejas |
+| **Urbano** | Paquete 4 | CCTV fija, VDS bucle en intersecciones, DMS puntos, SOS, Gabinete | CCTV PTZ en glorietas, SEM, PED, DMS completo, ILU | TPDA > 35,000 o zona escolar identificada |
+| **Túnel** | Paquete 5 | CCTV térmica, CCTV fija, VMS-T, SOS-T, RWIS-T, ECS-T, Gabinete | Iluminación emergencia, sistema de ventilación SCADA, radios de emergencia | Túnel > 500 m o TPDA > 25,000 |
+| **Montaña** | Paquete 7 | CCTV fija, VDS radar, DMS puntos, SOS, Gabinete solar | CCTV térmica, RWIS con visibilímetro, DMS velocidad dinámica, radioenlace | Curvas de radio < 150 m o pendiente > 6% o historial de niebla |
+| **Colectora Rural** | Paquete 1 | CCTV fija cada 5 km, SOS cada 10 km, Gabinete solar | VDS radar, DMS puntos | TPDA > 5,000 o acceso a zona escolar |
+| **Peaje** | Paquete 6 | AVI/ETC, CCTV-P, DMS-P, Gabinete integrado | ALPR, WIM, sistema de respaldo manual | Integración con sistema existente obligatoria |
+
+### 5.2.3 Densidad de Despliegue y Fórmula de Cálculo
+
+La densidad de componentes se calcula mediante una fórmula que integra los cuatro factores de ponderación:
+
+**D = (T × R × C) / K**
+
+Donde:
+- **D** = Densidad de despliegue (componentes por km)
+- **T** = Factor de tráfico = TPDA / 10,000
+- **R** = Factor de riesgo = 1 + (número de elementos de riesgo identificados × 0.2)
+- **C** = Factor de complejidad = 1 + (número de restricciones Brownfield × 0.15)
+- **K** = Constante de tipología = 1.0 (arterial), 1.2 (urbano), 0.8 (túnel), 0.9 (montaña), 1.5 (colectora rural)
+
+**Ejemplo de aplicación — UF 5 (Montaña Mondoñedo):**
+- TPDA = 28,000 → T = 2.8
+- Elementos de riesgo: 2 túneles + 4 curvas pronunciadas + 1 zona de niebla = 7 → R = 1 + (7 × 0.2) = 2.4
+- Restricciones Brownfield: sin energía + sin fibra + sin interrupción de tráfico = 3 → C = 1 + (3 × 0.15) = 1.45
+- K = 0.9 (montaña)
+- D = (2.8 × 2.4 × 1.45) / 0.9 = **10.83 componentes por km**
+- Longitud UF 5 = 7.0 km → Componentes estimados = 7.0 × 10.83 = **76 componentes**
+
+El valor calculado se ajusta al paquete de despliegue correspondiente, garantizando que la densidad no exceda la capacidad operativa ni caiga por debajo de los mínimos de seguridad establecidos en la Resolución 28675 de 2022.
+
+---
+
+## 5.3 Inventario de Infraestructura Vial Base
+
+### 5.3.1 Caracterización de la Infraestructura Vial por UF
+
+El Plan Indicativo se sustenta en un inventario detallado de la infraestructura vial existente y proyectada, que permite correlacionar cada componente ITS con un elemento físico del corredor. Este inventario se deriva de los diseños de obra civil proporcionados por el ICCU y la ANI, y se valida con la inspección visual de los tramos en operación.
+
+| UF | Tramo | Entidad | Longitud (km) | Tipo de Vía | TPDA | Intersecciones | Túneles | Puentes | Observaciones Críticas |
+|----|-------|---------|---------------|-------------|------|---------------|---------|---------|----------------------|
+| 1 | Variante Chía | FONDECUN | 3.1 | Urbano | 45,000 | 6 (3 glorietas) | 0 | 0 | Zona escolar, sin energía en extremos |
+| 2 | Variante Cota | ICCU | 3.5 | Urbano | 42,000 | 5 | 0 | 0 | Acceso a zona industrial |
+| 3 | Cota – La Tebaida | ICCU | 6.0 | Arterial + Peaje | 38,000 | 5 | 0 | 1 | Peaje La Tebaida km 4.2 |
+| 4A | Funza-Mosquera Oriental | ICCU | 1.7 | Urbano | 36,000 | 4 | 0 | 0 | Intersecciones semaforizadas |
+| 4B | Funza-Mosquera Occidental | ICCU | 0.7 | Urbano | 34,000 | 3 | 0 | 0 | Tramo corto de alta densidad |
+| 4C | Funza Soterrado | ICCU | 3.7 | Túnel + Urbano | 35,000 | 6 | 1 (1.2 km) | 0 | Túnel soterrado centro del tramo |
+| 5 | Montaña Mondoñedo | ICCU | 7.0 | Montaña + Túnel | 28,000 | 2 | 2 (0.8 + 1.2 km) | 0 | Curvas < 150 m, niebla, sin energía |
+| 6 | Conexión Soacha | ICCU | 7.9 | Arterial + Urbano | 32,000 | 8 | 0 | 1 | Ramal a Soacha, intermodalidad |
+| 7 | Mondoñedo – La Gran Vía | ICCU | 4.5 | Arterial | 25,000 | 3 | 0 | 0 | Tramo de transición |
+| 8 | La Gran Vía – La Mesa | ICCU | 1.0 | Arterial | 22,000 | 1 | 0 | 0 | Sector rural, sin energía |
+| 9 | La Mesa – Anapoima | ICCU | 0.6 | Arterial | 20,000 | 1 | 0 | 0 | Sector rural, sin energía |
+| 10 | Anapoima – Tocaima | ICCU | 0.3 | Arterial | 18,000 | 1 | 0 | 0 | Sector rural, sin energía |
+| 11 | Tocaima – Girardot | ICCU | 0.7 | Arterial | 15,000 | 2 | 0 | 0 | Sector rural, sin energía |
+| **Subtotal Norte** | | | **40.7** | | | | | | |
+| 12-15 | Colectoras | ICCU | 148.0 | Colectora/Rural | 5,000-15,000 | Variable | 0 | Variable | Vías locales, accesos rurales |
+| **TOTAL** | | | **306.0** | | | | | | |
+
+### 5.3.2 Estado de Infraestructura de Soporte
+
+| UF | Energía Eléctrica Disponible | Fibra Óptica Existente | Ductos de Reserva | Estado Obra Civil | Condición Brownfield |
+|----|------------------------------|------------------------|-------------------|-------------------|----------------------|
+| 1 | Parcial (centro del tramo) | No | Sí (en zanjas) | En construcción (2ª calzada) | Intervención parcial |
+| 2 | Sí | No | Sí | En construcción | Intervención parcial |
+| 3 | Sí (peaje) | No | Sí | En construcción | Intervención parcial + peaje operativo |
+| 4A | Sí | No | Sí | En construcción | Intervención parcial |
+| 4B | Sí | No | Sí | En construcción | Intervención parcial |
+| 4C | No (túnel requiere alimentación dedicada) | No | Sí (túnel) | En construcción | Túnel nuevo + accesos existentes |
+| 5 | No | No | Parcial | En construcción | Montaña, sin infraestructura |
+| 6 | Sí | No | Sí | En construcción | Intervención parcial |
+| 7-11 | No | No | Parcial | En operación | Mantenimiento y rehabilitación |
+| 12-15 | Parcial | No | No | En operación | Colectoras existentes |
+
+**Nota:** La ausencia de fibra óptica en la totalidad del corredor y la ausencia de energía en UF 5, 8, 9, 10, 11 y sectores de colectoras constituyen las dos restricciones más críticas que condicionan el diseño de la red de comunicaciones y la alimentación de gabinetes. La solución adoptada es la instalación de fibra óptica en ductos de reserva de la obra civil (donde existen) o tendido aéreo / enterrado directo (donde no hay ductos), y la energía solar + batería en gabinetes de zonas sin red eléctrica.
+
+---
+
+## 5.4 Matriz de Asignación de Componentes por Tipología Vial
+
+### 5.4.1 Matriz de Correlación CC-Tipología
+
+La siguiente matriz establece la correlación entre cada uno de los 42 Componentes de Campo (CC) del catálogo oficial y las 6 tipologías viales del corredor. La asignación se indica como **O** (Obligatorio), **R** (Recomendado según densidad), **N** (No aplica) o **P** (Piloto/fase avanzada).
+
+| Código CC | Descripción | Arterial | Urbano | Túnel | Montaña | Colectora Rural | Peaje |
+|-----------|-------------|----------|--------|-------|---------|-----------------|-------|
+| CC-01 | CCTV PTZ | R | O | O | R | N | O |
+| CC-02 | CCTV fija | O | O | O | O | O | O |
+| CC-03 | CCTV térmica | N | N | O | O | N | N |
+| CC-04 | ECS / SOS | O | O | N | O | O | N |
+| CC-05 | DMS matriz completa | O | R | O | R | N | O |
+| CC-06 | DMS matriz puntos | R | O | N | O | O | N |
+| CC-07 | DMS especial / RWIS | R | N | O | O | N | N |
+| CC-08 | VDS bucle inductivo | R | O | N | N | N | N |
+| CC-09 | VDS video | O | R | O | N | R | O |
+| CC-10 | VDS radar | R | N | O | O | R | N |
+| CC-11 | AVI / ETC | N | N | N | N | N | O |
+| CC-12 | WIM piezoeléctrico | N | N | N | N | N | R |
+| CC-13 | WIM célula de carga | N | N | N | N | N | O |
+| CC-14 | ALPR | N | N | N | N | N | O |
+| CC-15 | Sensor ambiental | N | N | O | N | N | N |
+| CC-16 | Gabinete de control | O | O | O | O | O | O |
+| CC-17 | Poste / Pórtico | O | O | O | O | O | O |
+| CC-18 | Fibra óptica | O | O | O | O | O | O |
+| CC-19 | Switch industrial | O | O | O | O | O | O |
+| CC-20 | Radio enlace | R | N | R | O | O | N |
+| CC-21 | V2I / RSU | P | P | N | N | N | P |
+| CC-22 | UPS | O | O | O | O | O | O |
+| CC-23 | Panel solar | R | N | N | O | O | N |
+| CC-24 | Batería Li-Ion | R | N | N | O | O | N |
+| CC-25 | Generador diésel | N | N | N | N | N | N |
+| CC-26 | Videowall LED | N | N | N | N | N | N |
+| CC-27 | Workstation | N | N | N | N | N | N |
+| CC-28 | Servidor | N | N | N | N | N | N |
+| CC-29 | Almacenamiento NAS | N | N | N | N | N | N |
+| CC-30 | ATMS Software | N | N | N | N | N | N |
+| CC-31 | VMS Software | N | N | N | N | N | N |
+| CC-32 | GIS Software | N | N | N | N | N | N |
+| CC-33 | BI / Analytics | N | N | N | N | N | N |
+| CC-34 | Ciberseguridad | N | N | N | N | N | N |
+| CC-35 | NMS / SNMP | N | N | N | N | N | N |
+| CC-36 | Backup / DR | N | N | N | N | N | N |
+| CC-37 | Mantenimiento 24/7 | N | N | N | N | N | N |
+| CC-38 | Capacitación | N | N | N | N | N | N |
+| CC-39 | Ingeniería de detalle | N | N | N | N | N | N |
+| CC-40 | Instalación y puesta en marcha | N | N | N | N | N | N |
+| CC-41 | E-LOG (Logística) | N | N | N | N | N | N |
+| CC-42 | NTCIP Gateway | O | O | O | O | O | O |
+
+**Nota:** Los componentes CC-26 a CC-41 (Centro de Control, Software, Servicios) se despliegan en el CCO y no se asignan a tipologías viales, dado que son activos centralizados que sirven a la totalidad del corredor. Su presencia se indica como **N** en la matriz porque no son componentes de campo distribuidos, pero su obligatoriedad es total para el sistema.
+
+### 5.4.2 Justificación de Asignaciones Clave
+
+**CC-03 (CCTV térmica):** Obligatoria en túneles y montaña porque la visibilidad es crítica (humo, niebla, polvo). No aplica en urbano ni arterial a cielo abierto donde la visibilidad es normal.
+
+**CC-10 (VDS radar):** Obligatorio en montaña porque es inmune a niebla, lluvia y polvo. No aplica en urbano donde el bucle inductivo (CC-08) es más preciso para intersecciones semaforizadas.
+
+**CC-20 (Radio enlace):** Obligatorio en montaña donde no hay fibra ni energía. Opcional en arterial como respaldo. No aplica en urbano donde la fibra es prioritaria.
+
+**CC-23/CC-24 (Solar + Batería):** Obligatorio en montaña y colectoras rurales sin red eléctrica. Opcional en arterial como respaldo. No aplica en urbano donde la red está disponible.
+
+**CC-21 (V2I/RSU):** Piloto en todas las tipologías excepto túneles y colectoras (donde la tecnología no está madura). Se despliega en fase 4 como preparación para vehículos conectados.
+
+---
 
 ## 5.5 Despliegue Detallado por Unidad Funcional
 
@@ -149,9 +400,11 @@ Este despliegue no es una ingeniería de detalle con planos de construcción, si
 
 **Nota:** El despliegue detallado de las UFs 12-15 (Colectoras) se consigna en el Anexo 9.4 del presente documento, siguiendo la misma metodología y estructura de justificación técnica por subtramo.
 
+---
+
 ## 5.6 Consolidado de Componentes de Campo
 
-### 5.6.1 Consolidado General por Categoría de Componente
+### 5.6.1 Consolidado General por Categoría Funcional
 
 El despliegue detallado de las 15 Unidades Funcionales se consolida en un inventario general de componentes de campo que dimensiona la totalidad de la inversión en activos físicos del sistema ITS. Este consolidado se organiza por categorías funcionales que agrupan los 42 códigos CC del catálogo oficial en familias lógicas de equipos.
 
@@ -225,6 +478,8 @@ El siguiente cuadro presenta el desglose exacto por código CC del catálogo de 
 - **CC-23 y CC-24 (Solar + Batería):** Cantidad 18 sets. Cubre las zonas sin red eléctrica identificadas en el inventario (UF 5, 8, 9, 10, 11, y sectores rurales de colectoras). La solución solar es mandatoria donde no hay red, conforme a los principios de sostenibilidad del proyecto 5G.
 - **CC-40 (Instalación y puesta en marcha):** Se consolida como un proyecto integral que abarca la totalidad del corredor, no como unidades individuales, dado que la instalación es un servicio global que se contrata una vez para todo el despliegue.
 
+---
+
 ## 5.7 Arquitectura de Comunicaciones
 
 ### 5.7.1 Topología de Red
@@ -270,6 +525,8 @@ La red de comunicaciones del corredor ITS es una infraestructura crítica que re
 **Firewall y Detección de Intrusiones:** En cada nodo de agregación y en los nodos centrales se instalan firewalls de próxima generación (NGFW) con capacidad de inspección profunda de paquetes (DPI). El sistema IDS/IPS (Intrusion Detection/Prevention System) monitorea el tráfico en tiempo real y bloquea patrones de ataque conocidos.
 
 **Gestión de Identidades y Accesos:** El acceso a la red de gestión (VLAN 50) requiere autenticación multifactor (MFA) y certificados digitales. Los técnicos de campo tienen acceso limitado (solo a los switches de su zona), mientras que los administradores del CCO tienen acceso global. Todos los accesos se registran en un log de auditoría inmutable.
+
+---
 
 ## 5.8 Centros de Control y Mantenimiento
 
@@ -359,6 +616,8 @@ El centro de mantenimiento es la infraestructura física donde se almacenan repu
 - Vehículo de respuesta rápida: 3 unidades (equipados con herramientas, repuestos críticos, comunicación con CCO)
 - Vehículo de transporte de equipos: 1 unidad (carga pesada, palés de equipos)
 
+---
+
 ## 5.9 Plan de Implementación y Cronograma
 
 ### 5.9.1 Fases de Implementación
@@ -434,4 +693,3 @@ El despliegue del sistema ITS se programa en cinco fases que permiten una puesta
 | Cambio normativo durante despliegue | Bajo | Medio | Monitoreo normativo, diseño flexible, participación en mesas técnicas de MinTransporte |
 
 **Nota final del Capítulo 5:** El Plan Indicativo ITS presentado en este capítulo constituye la propuesta técnica de despliegue que traduce la arquitectura conceptual del Entregable 1 en una configuración física, cuantificada y cronogramada. Las cantidades, ubicaciones y especificaciones son propuestas preliminares que requieren validación mediante estudio de tráfico detallado, aprobación de la interventoría de la ANI, y ajustes en la fase de ingeniería de detalle. Sin embargo, este Plan Indicativo proporciona al futuro Concesionario, a la IFC y al ICCU la certeza técnica sobre el alcance, la magnitud y la secuencia del despliegue, permitiendo la estimación de costos, la planificación de recursos y la estructuración del contrato de concesión con base en datos técnicos sólidos y coherentes con la normativa nacional e internacional.
-
