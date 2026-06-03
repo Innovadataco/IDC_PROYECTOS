@@ -2111,3 +2111,184 @@ El componente CC-28 abarca el sistema de monitoreo ambiental general (EMS) del c
 
 4. **Neutralidad**: La elección debe ponderar: (a) certificación EPA/europea, (b) precisión documentada en climas tropicales, (c) integración ANLA, (d) soporte local y repuestos en Colombia.
 
+
+---
+
+#### 4.29.1 Descripción y Variables Críticas de Diseño
+
+**CC-29 LS/Lighting — Sistema de Iluminación**
+
+El componente CC-29 abarca el sistema de iluminación del corredor Chía-Girardot, incluyendo iluminación de túneles, iluminación de emergencia, iluminación de zonas de trabajo y iluminación ornamental. Según el Capítulo 7 del Entregable #1, la iluminación es crítica para la seguridad vial en túneles y para la operación nocturna de mantenimiento.
+
+**2.3.29 Variables Críticas de Diseño**
+
+1. **Túneles**: Iluminación de entrada/zona de transición (adaptación visual), interior (iluminación continua), y salida. Niveles: zona de transición ≥ 400 cd/m² (día), ≥ 100 cd/m² (noche); interior ≥ 15 cd/m²; zona de salida ≥ 100 cd/m².
+2. **Emergencia**: Iluminación de emergencia en túneles (≥ 1 lux) y en áreas de evacuación; autonomía ≥ 90 minutos; activación automática por falla de red o por ESS/SOS.
+3. **Zonas de trabajo**: Iluminación portátil para mantenimiento nocturno; torres de luz móviles; conexión a generador o batería.
+4. **Tecnología**: LED obligatorio; eficiencia ≥ 120 lm/W; vida útil ≥ 50,000 horas; CRI ≥ 80; temperatura color 4000-5000 K (neutral blanca).
+5. **Control**: Control automático por horario (día/noche); control por sensor de luz ambiente; control manual desde CCO; atenuación gradual para evitar deslumbramiento.
+6. **Protección**: IP65 para túneles (humedad, salitre); IP54 para exteriores; IK08 (anti-impacto); resistente a vibración de tráfico.
+7. **Energía**: 110-240 VAC; controladores LED con eficiencia ≥ 95%; protección contra sobretensión; factor de potencia ≥ 0.95.
+8. **Monitoreo**: Estado de cada luminaria (encendida, apagada, fallo) reportado al CCO; alerta por fallo de luminaria; medición de consumo energético por zona.
+9. **Mantenimiento**: Acceso sin cierre de túnel; diseño modular para reemplazo de módulos LED individuales; limpieza programada cada 6 meses.
+10. **Normativa**: Cumplimiento normativa de iluminación de túneles Colombia; guías CIE (International Commission on Illumination); AASHTO para iluminación vial.
+
+**2.4.29 Ficha Técnica de Referencia LS/Lighting**
+
+| Parámetro | Especificación |
+|---|---|
+| Túneles | Entrada ≥ 400 cd/m² (día), ≥ 100 (noche); Interior ≥ 15 cd/m²; Salida ≥ 100 cd/m² |
+| Emergencia | ≥ 1 lux; autonomía ≥ 90 min; activación automática |
+| Trabajo | Portátil, torres móviles, generador/batería |
+| Tecnología | LED ≥ 120 lm/W; vida ≥ 50,000 h; CRI ≥ 80; 4000-5000 K |
+| Control | Horario, sensor luz, manual CCO, atenuación gradual |
+| Protección | IP65 (túneles), IP54 (exterior), IK08, anti-vibración |
+| Energía | 110-240 VAC; controlador ≥ 95% eficiencia; FP ≥ 0.95 |
+| Monitoreo | Estado cada 60 s al CCO; alerta fallo; medición consumo |
+| Mantenimiento | Acceso sin cierre túnel; modular; limpieza 6 meses |
+| Normativa | Colombia túneles, CIE, AASHTO |
+
+**2.5.29 Matriz Comparativa de Oferentes LS/Lighting**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| LS-INT-01 | **Philips Signify** | Países Bajos | Iluminación LED, túneles, carreteras | Philips LED tunnel lighting, DynaPower | Túneles Europa, Asia, América | 2023 | Global | [signify.com](https://www.signify.com) | Sí (10/10) | Líder mundial iluminación LED. Referencias extensas en túneles. |
+| LS-INT-02 | **Schréder (SRE)** | Bélgica | Iluminación exterior, túneles, carreteras | ONYX, Silla, Tunnel lighting | Túneles Europa, América | 2023 | Global | [schreder.com](https://www.schreder.com) | Sí (9/10) | Especialista iluminación exterior. Referencias en túneles y carreteras. |
+| LS-INT-03 | **Thorn Lighting (Zumtobel)** | Austria | Iluminación industrial, túneles | Thorn LED tunnel, CU Phosco | Túneles UK, Europa, Australia | 2023 | Global | [thornlighting.com](https://www.thornlighting.com) | Sí (9/10) | Referencias en túneles UK. Calidad europea. |
+| LS-LAT-01 | **Acuity Brands** | USA | Iluminación LED, inteligente, carreteras | Amerlux, Gotham, Lithonia | Carreteras, túneles USA | 2022 | USA | [acuitybrands.com](https://www.acuitybrands.com) | Sí (8/10) | Líder USA iluminación. Carreteras y túneles. |
+| LS-LAT-02 | **Seguritech** | México | ITS integral, iluminación | Iluminación túneles VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye iluminación potencial. Conocimiento local. |
+| LS-LAT-03 | **Grupo Masa** | México | Infraestructura ITS, iluminación | Iluminación carreteras, túneles | Carreteras México (varias) | 2019-2022 | México | [grupomasa.com.mx](https://www.grupomasa.com.mx) | Sí (6/10) | Integrador. Menor especialización iluminación específica. |
+| LS-NAL-01 | **CI2** | Colombia | ITS, ingeniería | Diseño iluminación, especificación | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación iluminación túneles. |
+| LS-NAL-02 | **Deviteck** | Colombia | ITS, software | Control iluminación inteligente, CCO | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (6/10) | Integrador. Capacidad de control inteligente desde CCO. |
+| LS-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones, energía | Infraestructura energía iluminación, red | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista infraestructura energía. Ventaja en iluminación + energía. |
+
+**2.6.29 Conclusiones**
+
+1. **Seguridad en túneles**: La iluminación de túneles es el componente más crítico para la seguridad vial. Philips Signify (líder mundial) y Schréder (especialista exterior) tienen referencias verificadas en túneles de carretera con niveles de iluminación conforme a CIE y AASHTO.
+
+2. **Adaptación visual**: La zona de transición de túneles requiere iluminación variable que se adapte a las condiciones exteriores (día vs noche). Philips y Schréder ofrecen sistemas de control inteligente con sensores de luz exterior y atenuación gradual.
+
+3. **Eficiencia energética**: LED ≥ 120 lm/W reduce significativamente el consumo vs tecnologías tradicionales. Con vida útil ≥ 50,000 horas, el mantenimiento se reduce drásticamente.
+
+4. **Neutralidad**: La elección debe ponderar: (a) referencias verificadas en túneles de carretera, (b) control inteligente de adaptación visual, (c) eficiencia energética y vida útil, (d) soporte local y repuestos en Colombia.
+
+---
+
+#### 4.30.1 Descripción y Variables Críticas de Diseño
+
+**CC-30 SG/Signal — Sistema de Señalización**
+
+El componente CC-30 abarca el sistema de señalización de tráfico del corredor Chía-Girardot, incluyendo semáforos, señales de tráfico, señales de mensaje variable (complemento a VMS CC-03), y señales de advertencia. Según el Capítulo 7 del Entregable #1, SG es crítico para el control de tráfico en intersecciones, zonas de convergencia, y gestión de flujos en incidentes.
+
+**2.3.30 Variables Críticas de Diseño**
+
+1. **Semáforos**: LED obligatorio; visibilidad ≥ 300 m; tamaño según norma NTC (300 mm estándar, 400 mm para velocidades > 60 km/h); countdown timers opcionales; detección de vehículos/emergencias (preemption).
+2. **Señales de tráfico**: Retroreflectividad según norma NTC (Categoría VIII para autopistas); durabilidad ≥ 10 años; resistencia a vandalismo (IK08); soporte antiviento (zona altiplano).
+3. **Señales LED**: Señales de mensaje LED complementarias a VMS; visibilidad ≥ 200 m; alimentación solar + batería; control remoto desde CCO.
+4. **Control**: Control centralizado desde CCO (NTCIP 1202); planes semafóricos adaptativos (por tráfico, horario, eventos); coordinación con VMS (CC-03) y VSL (CC-14); detección de conflicto (intergreen).
+5. **Comunicación**: NTCIP 1202 (semáforos); NTCIP 1203 (señales LED); Ethernet/fibra al CCO; radio respaldo (4G/5G).
+6. **Energía**: 110-240 VAC; UPS 4 h; paneles solares + batería en ubicaciones remotas; consumo ≤ 50 W por semáforo.
+7. **Monitoreo**: Estado de cada semáforo/señal (funcionamiento, fallo, modo intermitente) reportado al CCO cada 60 segundos; alerta por fallo; medición de consumo.
+8. **Protección**: IP54 (semáforos); IP65 (señales LED); IK08; temperatura -10 °C a +55 °C; protección contra rayos (clase II); puesta a tierra ≤ 10 Ω.
+9. **Normativa**: Cumplimiento normativa de señalización Colombia (NTC); Manual de Señalización de INVIAS; MUTCD (USA) como referencia.
+10. **Mantenimiento**: Acceso sin cierre de vía; diseño modular para reemplazo de módulos LED; limpieza programada cada 3 meses; calibración de sensores cada 6 meses.
+
+**2.4.30 Ficha Técnica de Referencia SG/Signal**
+
+| Parámetro | Especificación |
+|---|---|
+| Semáforos | LED; visibilidad ≥ 300 m; 300-400 mm NTC; countdown timers; preemption |
+| Señales tráfico | Retroreflectividad NTC VIII; durabilidad ≥ 10 años; IK08; anti-viento |
+| Señales LED | Visibilidad ≥ 200 m; solar + batería; control CCO |
+| Control | NTCIP 1202; planes adaptativos; coordinación VMS/VSL; intergreen |
+| Comunicación | NTCIP 1202/1203; Ethernet/fibra; radio 4G/5G |
+| Energía | 110-240 VAC; UPS 4 h; solar + batería; ≤ 50 W/semáforo |
+| Monitoreo | Estado cada 60 s al CCO; alerta fallo; medición consumo |
+| Protección | IP54/65; IK08; -10 °C a +55 °C; rayos clase II; puesta a tierra ≤ 10 Ω |
+| Normativa | NTC Colombia, INVIAS, MUTCD referencia |
+| Mantenimiento | Acceso sin cierre; modular; limpieza 3 meses; calibración 6 meses |
+
+**2.5.30 Matriz Comparativa de Oferentes SG/Signal**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| SG-INT-01 | **SWARCO** | Austria | Señalización, ITS, semáforos | Futura, CUBILED, traffic signals | Señalización Europa, América, Asia | 2023 | Global | [swarco.com](https://www.swarco.com) | Sí (10/10) | Líder mundial señalización. Futura es referencia en semáforos. |
+| SG-INT-02 | **Siemens Mobility** | Alemania | ITS, semáforos, control | M60, Micon traffic controllers | Autobahn, ciudades Europa | 2023 | Europa | [siemens-mobility.com](https://www.mobility.siemens.com) | Sí (9/10) | Micon es referencia en control semafórico. Integración ITS. |
+| SG-INT-03 | **McCain** | USA | Semáforos, controladores, ITS | M50, M60, ATC controllers | Semáforos USA, LATAM, global | 2023 | Global | [mccain-inc.com](https://www.mccain-inc.com) | Sí (9/10) | Líder USA semáforos. ATC NTCIP conforme. Referencias LATAM. |
+| SG-LAT-01 | **Daktronics** | USA | VMS, señales LED, ITS | VMS, LED signs, message boards | Señales LED USA, transporte | 2022 | USA | [daktronics.com](https://www.daktronics.com) | Sí (8/10) | Líder VMS/señales LED. Integración con semáforos potencial. |
+| SG-LAT-02 | **Seguritech** | México | ITS integral, señalización | Semáforos, señales VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye señalización potencial. Conocimiento local. |
+| SG-LAT-03 | **Grupo Masa** | México | Infraestructura ITS, señalización | Señalización carreteras México | Carreteras México (varias) | 2019-2022 | México | [grupomasa.com.mx](https://www.grupomasa.com.mx) | Sí (6/10) | Integrador. Menor especialización señalización específica. |
+| SG-NAL-01 | **CI2** | Colombia | ITS, ingeniería | Diseño señalización, especificación | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación señalización NTC. |
+| SG-NAL-02 | **Deviteck** | Colombia | ITS, software | Control semafórico, integración CCO | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (6/10) | Integrador. Capacidad de control adaptativo desde CCO. |
+| SG-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones | Infraestructura señalización, red, energía | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista infraestructura. Ventaja en instalación + energía. |
+
+**2.6.30 Conclusiones**
+
+1. **Semáforos adaptativos**: El control semafórico adaptativo (por tráfico real, no solo horario) reduce congestión en intersecciones. SWARCO (Futura) y Siemens (Micon) tienen algoritmos adaptativos verificados. McCain (ATC) es líder en controladores NTCIP conformes.
+
+2. **Preemption**: La detección de vehículos de emergencia (ambulancias, bomberos) para dar paso priorizado requiere sensores de preemption (GPS, optico, acústico). McCain y SWARCO tienen sistemas de preemption verificados.
+
+3. **Coordinación VMS-VSL**: La señalización debe integrarse con VMS (mensajes de congestión) y VSL (reducción de velocidad) para gestión coherente de incidentes. Los integradores nacionales deben garantizar esta integración.
+
+4. **Neutralidad**: La elección debe ponderar: (a) conformidad NTCIP 1202, (b) control adaptativo y preemption, (c) coordinación con VMS/VSL, (d) soporte local y repuestos en Colombia.
+
+---
+
+#### 4.31.1 Descripción y Variables Críticas de Diseño
+
+**CC-31 MET/Meteorological — Estación Meteorológica**
+
+El componente CC-31 abarca la estación meteorológica del corredor Chía-Girardot, incluyendo sensores de temperatura, humedad, presión, viento, precipitación, visibilidad, radiación solar, y estado del pavimento. Según el Capítulo 7 del Entregable #1, MET es crítico para la seguridad vial en condiciones climáticas adversas y para la gestión de incidentes.
+
+**2.3.31 Variables Críticas de Diseño**
+
+1. **Sensores**: Temperatura ambiente (-20 °C a +60 °C); humedad relativa (0-100%); presión atmosférica; velocidad y dirección del viento (anemómetro ultrasónico); precipitación (pluviómetro de balancín o capacitivo); visibilidad (sensor nefelométrico); radiación solar (piranómetro); estado del pavimento (temperatura, humedad, hielo, salinidad, fricción).
+2. **Precisión**: Temperatura ± 0.2 °C; humedad ± 2%; presión ± 0.5 hPa; viento ± 0.1 m/s; precipitación ± 0.1 mm; visibilidad ± 10% (0-2 km); radiación ± 5%.
+3. **Frecuencia**: Datos meteorológicos: 1 minuto; promedio 10 minutos para reporte; alertas por umbrales: inmediato.
+4. **Ubicación**: Estaciones fijas en puntos críticos (túneles, puentes, zonas de alta elevación, zonas de niebla frecuente); densidad mínima 1 estación cada 30 km.
+5. **Comunicación**: Ethernet/fibra al CCO; radio (4G/5G) respaldo; protocolo API REST; NTCIP 1204 para ESS; integración con modelo meteorológico del IDEAM.
+6. **Energía**: Solar + batería LiFePO4 72 h en ubicaciones remotas; 110-240 VAC en zonas urbanas; consumo ≤ 50 W por estación.
+7. **Alertas**: Umbrales configurables por tipo de alerta: viento > 60 km/h (alerta), > 80 km/h (cierre); visibilidad < 100 m (alerta), < 50 m (cierre); pavimento con hielo (alerta inmediata); temperatura > 40 °C (alerta por deformación pavimento).
+8. **Protección**: IP65; temperatura -20 °C a +60 °C; anti-corrosión (zona salina); anti-viento (anemómetro calentado para prevenir hielo); protección contra rayos (clase I + II).
+9. **Calibración**: Calibración anual de todos los sensores; comparación con estación de referencia IDEAM; certificación de calibración con trazabilidad internacional.
+10. **Reportes**: Reporte automático mensual a IDEAM; reportes especiales por eventos climáticos extremos; integración con ESS (CC-06) y CCO para toma de decisiones operativas.
+
+**2.4.31 Ficha Técnica de Referencia MET**
+
+| Parámetro | Especificación |
+|---|---|
+| Sensores | Temp, humedad, presión, viento, precipitación, visibilidad, radiación, estado pavimento |
+| Precisión | Temp ± 0.2 °C; humedad ± 2%; presión ± 0.5 hPa; viento ± 0.1 m/s; precipitación ± 0.1 mm; visibilidad ± 10% |
+| Frecuencia | Datos: 1 min; promedio: 10 min; alertas: inmediato |
+| Ubicación | Fijas críticas; densidad 1/30 km |
+| Comunicación | Ethernet/fibra; 4G/5G; API REST; NTCIP 1204; IDEAM |
+| Energía | Solar + LiFePO4 72 h; 110-240 VAC; ≤ 50 W |
+| Alertas | Viento > 60/80 km/h; visibilidad < 100/50 m; hielo; temp > 40 °C |
+| Protección | IP65; -20 °C a +60 °C; anti-corrosión; anti-viento; rayos clase I+II |
+| Calibración | Anual; vs IDEAM; trazabilidad internacional |
+| Reportes | Mensual IDEAM; eventos extremos; integración ESS/CCO |
+
+**2.5.31 Matriz Comparativa de Oferentes MET**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| MET-INT-01 | **Vaisala** | Finlandia | Meteorología, sensores ambientales | WXT536, HMP155, FD70, DSC111 | Redes meteorológicas global, carreteras | 2023 | Global | [vaisala.com](https://www.vaisala.com) | Sí (10/10) | Líder mundial sensores meteorológicos. Referencias en carreteras y aviación. |
+| MET-INT-02 | **OTT HydroMet (Lufft)** | Alemania | Meteorología, sensores ambientales | WS600, CHM 15k, SHM30 | Redes meteorológicas, carreteras, energía | 2023 | Global | [otthydromet.com](https://www.otthydromet.com) | Sí (9/10) | WS600 es referencia en carreteras. Integración con ESS. |
+| MET-INT-03 | **Campbell Scientific** | USA | Dataloggers, sensores meteorológicos | CR1000X + sensores meteorológicos | Redes meteorológicas global, investigación | 2023 | Global | [campbellsci.com](https://www.campbellsci.com) | Sí (9/10) | CR1000X es referencia mundial dataloggers. Flexibilidad sensorial. |
+| MET-LAT-01 | **Boschung** | Suiza | Sensores meteorológicos, carreteras, túneles | BOSO, MET, RWIS | Carreteras, túneles Europa, Asia | 2023 | Global | [boschung.com](https://www.boschung.com) | Sí (9/10) | Especialista carreteras y túneles. RWIS integrado. |
+| MET-LAT-02 | **Newcom Argentina** | Argentina | ITS, meteorología, carreteras | Estaciones meteorológicas carreteras | ITS Argentina, carreteras LATAM | 2022 | Argentina | [newcom.com.ar](https://www.newcom.com.ar) | Sí (7/10) | Especialista LATAM. Menor escala global pero conocimiento regional. |
+| MET-LAT-03 | **Seguritech** | México | ITS integral, meteorología | Estaciones meteorológicas VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye meteorología. Conocimiento local normativo. |
+| MET-NAL-01 | **CI2** | Colombia | ITS, ingeniería | Diseño MET, integración CCO-IDEAM | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación estaciones meteorológicas. |
+| MET-NAL-02 | **Deviteck** | Colombia | ITS, software | Integración MET-CCO-ESS, alertas | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (7/10) | Integrador. Capacidad de integración datos meteorológicos. |
+| MET-NAL-03 | **IDEAM** | Colombia | Meteorología, calidad aire, agua | Red meteorológica nacional Colombia | Red nacional meteorológica | Contínua | Colombia | [ideam.gov.co](https://www.ideam.gov.co) | Sí (6/10) | Institución estatal. Conocimiento normativo profundo. No proveedor comercial. |
+
+**2.6.31 Conclusiones**
+
+1. **Sensores de carretera**: Vaisala (WXT536, FD70) y OTT HydroMet (WS600) son los líderes globales en sensores meteorológicos para carreteras. Boschung (BOSO) es especialista en carreteras y túneles con RWIS integrado. Campbell Scientific (CR1000X) ofrece máxima flexibilidad de configuración.
+
+2. **Integración IDEAM**: El corredor debe integrarse con la red meteorológica del IDEAM para validación de datos y alertas regionales. Los integradores nacionales deben garantizar esta integración mediante API REST.
+
+3. **Estado del pavimento**: El sensor de estado del pavimento (temperatura, humedad, hielo, fricción) es crítico para zonas de altiplano donde el hielo es posible. Vaisala (DSC111) y Boschung tienen sensores de estado de pavimento verificados.
+
+4. **Neutralidad**: La elección debe ponderar: (a) precisión documentada en climas tropicales y de altura, (b) integración con IDEAM y ESS, (c) estado del pavimento, (d) soporte local y calibración en Colombia.
+
