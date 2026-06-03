@@ -2292,3 +2292,513 @@ El componente CC-31 abarca la estación meteorológica del corredor Chía-Girard
 
 4. **Neutralidad**: La elección debe ponderar: (a) precisión documentada en climas tropicales y de altura, (b) integración con IDEAM y ESS, (c) estado del pavimento, (d) soporte local y calibración en Colombia.
 
+
+---
+
+#### 4.36.1 Descripción y Variables Críticas de Diseño
+
+**CC-36 NET/Network — Red de Datos**
+
+El componente CC-36 abarca la red de datos (LAN/WAN) del corredor Chía-Girardot, incluyendo routers, switches, firewalls, load balancers, y gestión de red. Según el Capítulo 7 del Entregable #1, NET es la infraestructura de comunicaciones que interconecta todos los componentes del ITS.
+
+**2.3.36 Variables Críticas de Diseño**
+
+1. **Topología**: Backbone en anillo (fibra óptica CC-24) con redundancia MPLS; accesos de campo en estrella dual-homed; CCO en configuración activo-activo con georedundancia.
+2. **Capacidad**: Core ≥ 10 Gbps; distribución ≥ 1 Gbps; acceso ≥ 100 Mbps por dispositivo; escalable a 40/100 Gbps en core sin reemplazo de equipos.
+3. **Routers**: BGP/OSPF para routing dinámico; MPLS para segmentación de tráfico; VRF por componente (CCTV, VMS, SOS, etc.); QoS con priorización (voz SOS > video CCTV > datos VDS > gestión).
+4. **Switches**: Core (capa 3, 10 Gbps, redundancia); distribución (capa 2/3, 1 Gbps, PoE+ para dispositivos de campo); acceso (capa 2, 100 Mbps, PoE para sensores).
+5. **Seguridad**: Firewall (CC-18) integrado; IDS/IPS (Suricata/Snort); segmentación VLAN; microsegmentación (VMware NSX o equivalente); zero-trust network architecture.
+6. **Monitoreo**: SNMP v3 para todos los dispositivos; NetFlow/sFlow para análisis de tráfico; dashboard de red en CCO; alerta por congestión, fallo de enlace, anomalía de tráfico.
+7. **Calidad de servicio (QoS)**: 8 clases de servicio: (1) Voz SOS (EF - Expedited Forwarding), (2) Video CCTV (AF41 - Assured Forwarding), (3) Datos VDS/ESS (AF31), (4) Control VMS/SCADA (AF21), (5) Gestión red (CS2 - Class Selector), (6) Best effort (BE).
+8. **Energía**: UPS (CC-22) en cada nodo; switches con eficiencia energética IEEE 802.3az (Energy-Efficient Ethernet); gestión de consumo por puerto.
+9. **Protección**: Temperatura -10 °C a +55 °C; humedad ≤ 95% (sin condensación); IP40 (interior gabinete) a IP65 (exterior); protección contra sobretensión (TVSS) en cada puerto.
+10. **Documentación**: Diagrama de red completo (L1, L2, L3); matriz de IPs; matriz de VLANs; matriz de QoS; procedimiento de troubleshooting; inventario de equipos.
+
+**2.4.36 Ficha Técnica de Referencia NET/Network**
+
+| Parámetro | Especificación |
+|---|---|
+| Topología | Backbone anillo MPLS; acceso estrella dual-homed; CCO activo-activo georedundante |
+| Capacidad | Core ≥ 10 Gbps; distribución ≥ 1 Gbps; acceso ≥ 100 Mbps; escalable 40/100 Gbps |
+| Routers | BGP/OSPF; MPLS; VRF por componente; QoS |
+| Switches | Core capa 3 10 Gbps; distribución capa 2/3 1 Gbps PoE+; acceso capa 2 100 Mbps PoE |
+| Seguridad | Firewall, IDS/IPS, VLANs, microsegmentación, zero-trust |
+| Monitoreo | SNMP v3; NetFlow/sFlow; dashboard CCO; alertas |
+| QoS | 8 clases: EF (SOS), AF41 (CCTV), AF31 (VDS/ESS), AF21 (VMS), CS2 (gestión), BE |
+| Energía | UPS CC-22; IEEE 802.3az; gestión consumo por puerto |
+| Protección | -10 °C a +55 °C; ≤ 95% humedad; IP40-65; TVSS por puerto |
+| Documentación | Diagramas L1-L2-L3; matriz IPs/VLANs/QoS; troubleshooting; inventario |
+
+**2.5.36 Matriz Comparativa de Oferentes NET/Network**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| NET-INT-01 | **Cisco Systems** | USA | Networking, routing, switching, seguridad | ISR, Catalyst, Nexus, Meraki | Enterprise, gobierno, transporte global | 2023 | Global | [cisco.com](https://www.cisco.com) | Sí (10/10) | Líder mundial networking. Referencias en infraestructura crítica global. |
+| NET-INT-02 | **Juniper Networks** | USA | Routing, switching, seguridad | MX, EX, SRX, QFX | Service providers, enterprise, transporte | 2023 | Global | [juniper.net](https://www.juniper.net) | Sí (9/10) | Líder routing. MX series es referencia en carrier-grade. |
+| NET-INT-03 | **HPE Aruba** | USA | Networking, switching, Wi-Fi | Aruba CX, ESP | Enterprise, campus, smart cities | 2023 | Global | [arubanetworks.com](https://www.arubanetworks.com) | Sí (9/10) | Líder enterprise networking. CX series es referencia campus. |
+| NET-LAT-01 | **Huawei** | China | Networking, routing, switching, 5G | NE, S, CloudEngine | Telecom global, smart cities | 2023 | Global | [huawei.com](https://www.huawei.com) | Sí (8/10) | Líder telecom. Consideraciones geopolíticas en algunos mercados. |
+| NET-LAT-02 | **Seguritech** | México | ITS integral, networking | Redes VIITS, MPLS, segmentación | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye networking. Conocimiento local normativo. |
+| NET-LAT-03 | **Extreme Networks** | USA | Networking, switching, cloud | ExtremeSwitching, ExtremeCloud | Enterprise, campus, data centers | 2022 | USA | [extremenetworks.com](https://www.extremenetworks.com) | Sí (8/10) | Especialista enterprise. Cloud-managed networking. |
+| NET-NAL-01 | **CI2** | Colombia | ITS, ingeniería, networking | Diseño red, arquitectura, especificación | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación arquitectura red. |
+| NET-NAL-02 | **SIT** | Colombia | ITS, telecomunicaciones, networking | Implementación red, switches, routers, MPLS | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista telecomunicaciones. Ventaja implementación red. |
+| NET-NAL-03 | **Deviteck** | Colombia | ITS, software, networking | Gestión red, monitoreo, SDN | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (6/10) | Integrador. Capacidad de gestión SDN y monitoreo. |
+
+**2.6.36 Conclusiones**
+
+1. **Carrier-grade routing**: Cisco (ISR, Catalyst) y Juniper (MX, EX) son los estándares de facto en networking carrier-grade. Cisco tiene ventaja en integración con seguridad (Firepower); Juniper en routing avanzado (MPLS, BGP).
+
+2. **Segmentación por componente**: La red debe segmentarse en VRFs independientes por componente (CCTV, VMS, SOS, etc.) para aislar fallas y ataques. Cisco y Juniper tienen VRF maduras; HPE Aruba es más enfocado en campus.
+
+3. **QoS crítica**: La voz de SOS (EF) debe tener prioridad absoluta sobre todo el tráfico. La implementación de QoS end-to-end requiere switches, routers y firewalls compatibles. Cisco y Juniper tienen QoS más madura que HPE Aruba.
+
+4. **Neutralidad**: La elección debe ponderar: (a) carrier-grade routing y switching, (b) VRF y microsegmentación, (c) QoS end-to-end, (d) soporte local 24/7 con repuestos en Colombia, (e) consideraciones de seguridad geopolítica (Huawei vs occidental).
+
+---
+
+#### 4.37.1 Descripción y Variables Críticas de Diseño
+
+**CC-37 AQ/Air Quality — Calidad del Aire**
+
+El componente CC-37 abarca el sistema de monitoreo de calidad del aire del corredor Chía-Girardot, incluyendo estaciones fijas y móviles para medir contaminantes atmosféricos. Según el Capítulo 7 del Entregable #1, AQ es crítico para la salud pública y el cumplimiento de licencias ambientales.
+
+**2.3.37 Variables Críticas de Diseño**
+
+1. **Contaminantes**: PM2.5, PM10, NO2, SO2, O3, CO, CO2, VOCs (benzeno, tolueno, xileno), NH3, H2S, partículas totales en suspensión (PTS).
+2. **Precisión**: PM2.5 ± 2 µg/m³; PM10 ± 5 µg/m³; NO2 ± 2 ppb; SO2 ± 2 ppb; O3 ± 2 ppb; CO ± 0.1 ppm; CO2 ± 10 ppm; VOCs ± 0.1 ppb.
+3. **Frecuencia**: Datos: 15 minutos; promedio horario; promedio diario; alertas por umbrales: inmediato.
+4. **Ubicación**: Estaciones fijas en puntos críticos (túneles, zonas urbanas cercanas, puentes, zonas de alta elevación); estaciones móviles para eventos construcción; densidad mínima 1 estación cada 30 km.
+5. **Comunicación**: Ethernet/fibra al CCO; 4G/5G respaldo; protocolo API REST; NTCIP 1204; integración con red IDEAM; reporte automático a ANLA.
+6. **Energía**: Solar + batería LiFePO4 72 h en ubicaciones remotas; 110-240 VAC en zonas urbanas; consumo ≤ 100 W por estación.
+7. **Alertas**: Umbrales según Resolución 2254 de 2017 (Colombia): PM2.5 > 25 µg/m³ (24 h) alerta; > 37 µg/m³ emergencia; PM10 > 50 µg/m³ alerta; > 75 µg/m³ emergencia; O3 > 100 ppb alerta; CO > 9 ppm alerta.
+8. **Protección**: IP65; temperatura -10 °C a +55 °C; anti-corrosión (zona salina); anti-viento; protección contra rayos (clase I + II); jaulas anti-vandalismo.
+9. **Calibración**: Calibración mensual con patrones certificados; comparación con estación de referencia IDEAM; certificación con trazabilidad internacional; cambio de filtros cada 3 meses.
+10. **Reportes**: Reporte automático mensual a ANLA; reportes especiales por eventos; dashboard público de calidad del aire; integración con ESS (CC-06) y EMS (CC-28).
+
+**2.4.37 Ficha Técnica de Referencia AQ**
+
+| Parámetro | Especificación |
+|---|---|
+| Contaminantes | PM2.5, PM10, NO2, SO2, O3, CO, CO2, VOCs, NH3, H2S, PTS |
+| Precisión | PM2.5 ±2; PM10 ±5; NO2/SO2/O3 ±2 ppb; CO ±0.1 ppm; CO2 ±10 ppm; VOCs ±0.1 ppb |
+| Frecuencia | 15 min; promedio horario/diario; alertas inmediato |
+| Ubicación | Fijas críticas; móviles eventos; densidad 1/30 km |
+| Comunicación | Ethernet/fibra; 4G/5G; API REST; NTCIP 1204; IDEAM; ANLA |
+| Energía | Solar + LiFePO4 72 h; 110-240 VAC; ≤ 100 W |
+| Alertas | Res. 2254/2017: PM2.5 >25/37; PM10 >50/75; O3 >100; CO >9 |
+| Protección | IP65; -10 °C a +55 °C; anti-corrosión; anti-viento; rayos I+II; jaulas |
+| Calibración | Mensual; vs IDEAM; trazabilidad internacional; filtros 3 meses |
+| Reportes | Mensual ANLA; eventos; dashboard público; integración ESS/EMS |
+
+**2.5.37 Matriz Comparativa de Oferentes AQ**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| AQ-INT-01 | **Thermo Fisher Scientific** | USA | Instrumentación científica, calidad aire | TEOM, SHARP, particulate monitors | Redes calidad aire global, EPA USA | 2023 | Global | [thermofisher.com](https://www.thermofisher.com) | Sí (10/10) | TEOM es referencia mundial PM2.5/PM10. Certificación EPA. |
+| AQ-INT-02 | **Horiba** | Japón | Instrumentación analítica, calidad aire | APDA-370, APNA-370 | Redes calidad aire Asia, Europa, LATAM | 2023 | Global | [horiba.com](https://www.horiba.com) | Sí (9/10) | APDA es referencia en Asia/Europa. Alta fiabilidad. |
+| AQ-INT-03 | **Envea** | Francia | Monitoreo ambiental, calidad aire | MP101M, MIR, DOAS | Redes calidad aire Europa, LATAM | 2023 | Global | [envea.global](https://www.envea.global) | Sí (9/10) | Tecnología DOAS avanzada. Presencia LATAM. |
+| AQ-LAT-01 | **Acoem (Ecotech)** | Australia | Monitoreo ambiental, calidad aire | Serinus, AQMS | Redes calidad aire Australia, global | 2022 | Global | [acoem.com](https://www.acoem.com) | Sí (8/10) | Especialista AQMS. Serinus es referencia en redes nacionales. |
+| AQ-LAT-02 | **Campbell Scientific** | USA | Dataloggers, sensores ambientales | CR1000X + sensores calidad aire | Redes monitoreo global | 2022 | Global | [campbellsci.com](https://www.campbellsci.com) | Sí (7/10) | Dataloggers + sensores de terceros. Flexibilidad alta. |
+| AQ-LAT-03 | **Seguritech** | México | ITS integral, ambiental | Calidad aire VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (6/10) | VIITS incluye ambiental potencial. Menor especialización específica. |
+| AQ-NAL-01 | **CI2** | Colombia | ITS, ingeniería ambiental | Diseño AQ, integración CCO-ANLA | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación calidad aire. |
+| AQ-NAL-02 | **Deviteck** | Colombia | ITS, software | Integración AQ-CCO-ANLA, alertas | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (6/10) | Integrador. Capacidad de integración datos calidad aire. |
+| AQ-NAL-03 | **IDEAM** | Colombia | Meteorología, calidad aire institucional | Red calidad aire nacional | Red nacional calidad aire | Contínua | Colombia | [ideam.gov.co](https://www.ideam.gov.co) | Sí (6/10) | Institución estatal. Conocimiento normativo profundo. No proveedor comercial. |
+
+**2.6.37 Conclusiones**
+
+1. **Normativa colombiana**: La Resolución 2254 de 2017 define los límites de calidad del aire en Colombia. Los equipos deben estar certificados por EPA (USA) o equivalente europeo para garantizar trazabilidad. Thermo Fisher (TEOM) y Horiba (APDA) tienen certificaciones EPA verificadas.
+
+2. **Túneles y zonas urbanas**: La calidad del aire en túneles (PM2.5, CO, NO2) y zonas urbanas cercanas (PM2.5, O3) requiere monitoreo continuo. Envea (DOAS) y Acoem (Serinus) tienen tecnologías avanzadas para monitoreo multi-gas.
+
+3. **Reporte ANLA**: La integración automática con ANLA mediante API REST es obligatoria. Los integradores nacionales deben garantizar formatos de reporte conformes a los requisitos de ANLA.
+
+4. **Neutralidad**: La elección debe ponderar: (a) certificación EPA/europea, (b) precisión en climas tropicales, (c) integración ANLA, (d) soporte local y calibración en Colombia.
+
+---
+
+#### 4.38.1 Descripción y Variables Críticas de Diseño
+
+**CC-38 ANPR — Automatic Number Plate Recognition**
+
+El componente CC-38 abarca el sistema de reconocimiento automático de matrículas (ANPR) del corredor Chía-Girardot, incluyendo cámaras ANPR, procesadores de imagen, base de datos de matrículas, y integración con sistemas de fiscalización. Según el Capítulo 7 del Entregable #1, ANPR es crítico para la gestión de flujo vehicular, fiscalización de peajes, y seguridad vial.
+
+**2.3.38 Variables Críticas de Diseño**
+
+1. **Cámaras**: Cámaras dedicadas ANPR (no CCTV genérico); resolución ≥ 2 MP; obturador global (no rolling shutter); IR dedicado para iluminación nocturna de placas; velocidad de obturación ≤ 1/1000 s para capturar vehículos en movimiento.
+2. **Tasa de lectura**: ≥ 98% en condiciones diurnas; ≥ 95% en condiciones nocturnas; ≥ 90% en condiciones de lluvia; ≥ 85% en condiciones de neblina con IR.
+3. **Velocidad**: Capacidad de lectura a velocidades ≥ 120 km/h (autopista); ≥ 80 km/h (corredor principal); ≥ 40 km/h (zonas de peaje).
+4. **Matrículas**: Soporte para matrículas colombianas (amarillas, blancas, diplomáticas, motos); matrículas internacionales (Mercosur, Centroamérica); formato de salida: texto + imagen + timestamp + GPS.
+5. **Procesamiento**: Edge computing (procesamiento en cámara) para reducir latencia; envío de resultados al CCO en < 500 ms; capacidad de almacenamiento local ≥ 30 días.
+6. **Base de datos**: Integración con RUNT (Registro Único Nacional de Tránsito); lista negra (vehículos robados, evasores); lista blanca (emergencias, autoridades); capacidad de búsqueda por matrícula en < 2 segundos.
+7. **Comunicación**: Ethernet/fibra al CCO; 4G/5G respaldo; API REST para integración con TMS (CC-19), Tolling (CC-21), y ALPR (CC-12); NTCIP 1213.
+8. **Energía**: PoE++ (IEEE 802.3bt, 60W) o 110-240 VAC; UPS 4 h; solar + batería en ubicaciones remotas.
+9. **Protección**: IP67; temperatura -20 °C a +60 °C; IK10; anti-vibración; protección contra rayos (clase II); puesta a tierra ≤ 10 Ω.
+10. **Privacidad**: Cumplimiento Ley de Protección de Datos Colombia; anonimización de datos personales; acceso restringido a personal autorizado; auditoría de consultas; retención máxima 2 años (no incidentes) o 5 años (incidentes).
+
+**2.4.38 Ficha Técnica de Referencia ANPR**
+
+| Parámetro | Especificación |
+|---|---|
+| Cámaras | ≥ 2 MP; obturador global; IR dedicado; ≤ 1/1000 s |
+| Tasa lectura | ≥ 98% día; ≥ 95% noche; ≥ 90% lluvia; ≥ 85% neblina IR |
+| Velocidad | ≥ 120 km/h (autopista); ≥ 80 km/h (corredor); ≥ 40 km/h (peaje) |
+| Matrículas | Colombianas (amarillas, blancas, diplomáticas, motos); internacionales (Mercosur, Centroamérica); texto + imagen + timestamp + GPS |
+| Procesamiento | Edge computing; < 500 ms al CCO; almacenamiento local ≥ 30 días |
+| Base de datos | RUNT; lista negra/blanca; búsqueda < 2 s |
+| Comunicación | Ethernet/fibra; 4G/5G; API REST; NTCIP 1213 |
+| Energía | PoE++ o 110-240 VAC; UPS 4 h; solar + batería |
+| Protección | IP67; -20 °C a +60 °C; IK10; anti-vibración; rayos clase II; puesta a tierra ≤ 10 Ω |
+| Privacidad | Ley Protección Datos Colombia; anonimización; acceso restringido; auditoría; retención 2 años (no incidentes) / 5 años (incidentes) |
+
+**2.5.38 Matriz Comparativa de Oferentes ANPR**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| ANP-INT-01 | **Neology (Siemens)** | USA/UK | ANPR, lectura matrículas, movilidad | Xcam, ANPR system | Peajes UK, autopistas, estacionamiento global | 2023 | Global | [neology.com](https://www.neology.com) | Sí (10/10) | Líder mundial ANPR. Xcam es referencia en peajes UK. |
+| ANP-INT-02 | **Jenoptik** | Alemania | ANPR, lectura matrículas, tráfico | TraffiData, VECTOR2 | Autobahn Alemania, proyectos global | 2023 | Global | [jenoptik.com](https://www.jenoptik.com) | Sí (9/10) | VECTOR2 es referencia en Autobahn. Alta fiabilidad. |
+| ANP-INT-03 | **ARH (Adaptive Recognition)** | Hungría | ANPR, lectura matrículas, reconocimiento | Carmen, ANPR software | Peajes Hungría, Europa, Asia, LATAM | 2023 | Global | [arh.hu](https://www.arh.hu) | Sí (9/10) | Carmen es software ANPR líder. Referencias en Europa y Asia. |
+| ANP-LAT-01 | **Kapsch TrafficCom** | Austria | ITS integral, ANPR, peaje | ANPR integrado EcoTrafiX | VIITS Colombia, Autopista al Mar 1, global | 2021-2025 | Global | [kapsch.net](https://www.kapsch.net) | Sí (9/10) | ANPR integrado en EcoTrafiX. Referencias verificadas Colombia. |
+| ANP-LAT-02 | **Indra** | España | ITS, peaje, ANPR | Via-T, ANPR España | Peajes España, LATAM | 2022 | España/LATAM | [indra.es](https://www.indra.es) | Sí (8/10) | Via-T incluye ANPR. Experiencia en LATAM. |
+| ANP-LAT-03 | **Seguritech** | México | ITS integral, ANPR | ANPR integrado VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye ANPR potencial. Conocimiento local normativo. |
+| ANP-NAL-01 | **CI2** | Colombia | ITS, ingeniería | Diseño ANPR, integración RUNT | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación ANPR. |
+| ANP-NAL-02 | **Deviteck** | Colombia | ITS, software | Integración ANPR-CCO-RUNT | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (7/10) | Integrador. Capacidad de integración ANPR con RUNT. |
+| ANP-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones | Infraestructura ANPR, red, comunicaciones | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (6/10) | Infraestructura comunicaciones para ANPR. |
+
+**2.6.38 Conclusiones**
+
+1. **Tasa de lectura en lluvia**: La lluvia tropical es la condición más desafiante para ANPR. Neology (Xcam) y Jenoptik (TraffiData) tienen algoritmos de lectura en lluvia verificados con IR dedicado. La tasa de ≥ 90% en lluvia es un requisito exigente que solo los líderes globales cumplen consistentemente.
+
+2. **Integración RUNT**: La conexión con el Registro Único Nacional de Tránsito (RUNT) es obligatoria para fiscalización. Los integradores nacionales deben garantizar que la plataforma seleccionada tiene integración RUNT validada.
+
+3. **Privacidad de datos**: La Ley de Protección de Datos de Colombia exige anonimización y control de acceso. Neology y Jenoptik tienen certificaciones de privacidad (GDPR compliant) que pueden adaptarse a la normativa colombiana.
+
+4. **Neutralidad**: La elección debe ponderar: (a) tasa de lectura en lluvia y neblina, (b) integración RUNT, (c) cumplimiento privacidad datos, (d) soporte local y repuestos en Colombia.
+
+---
+
+#### 4.39.1 Descripción y Variables Críticas de Diseño
+
+**CC-39 EM/Emergency Management — Gestión de Emergencias**
+
+El componente CC-39 abarca el sistema de gestión de emergencias del corredor Chía-Girardot, incluyendo coordinación con organismos de socorro, gestión de incidentes, y protocolos de respuesta. Según el Capítulo 7 del Entregable #1, EM es crítico para la respuesta eficiente a incidentes y la protección de la vida humana.
+
+**2.3.39 Variables Críticas de Diseño**
+
+1. **Coordinación**: Integración con Cuerpo de Bomberos, Policía de Carreteras, Cruz Roja, Defensa Civil, Concesionario, ANI, y CCO. Protocolo de comunicación unificado (radio, teléfono, API REST).
+2. **Gestión de incidentes**: Clasificación de incidentes (nivel 1-5); asignación automática de recursos; seguimiento de estado (detectado, en respuesta, controlado, cerrado); registro de acciones y tiempos.
+3. **Protocolos**: Protocolos predefinidos para cada tipo de incidente (accidente, incendio, derrumbe, inundación, químico, médico); flujo de decisiones paso a paso; lista de verificación (checklist) por protocolo.
+4. **Comunicación**: Radio digital (DMR/Tetra) con todos los organismos; telefonía IP; SMS masivo a usuarios; notificaciones push a apps móviles; integración con PAS (CC-15) y SOS (CC-04).
+5. **Recursos**: Inventario de recursos (ambulancias, grúas, bomberos, patrullas); geolocalización GPS de recursos; asignación optimizada por proximidad y capacidad.
+6. **Simulación**: Simulación de escenarios (drill) semestral; evaluación de tiempos de respuesta; identificación de debilidades; actualización de protocolos.
+7. **Documentación**: Registro de todos los incidentes (fecha, hora, ubicación, tipo, severidad, recursos, tiempos, resultado); reporte post-incidente; lecciones aprendidas; actualización de procedimientos.
+8. **Entrenamiento**: Capacitación anual del personal CCO y organismos de socorro; simulacros con usuarios reales; certificación de competencias; actualización de contactos y protocolos.
+9. **Integración**: Integración con CCO (CC-19), CCTV (CC-01), AID (CC-02), VMS (CC-03), SOS (CC-04), PAS (CC-15), ESS (CC-06), y todos los componentes de detección.
+10. **Normativa**: Cumplimiento normativa de emergencias Colombia (Ley 1523 de 2012 - Sistema Nacional de Gestión del Riesgo); protocolos ANI; convenios con organismos de socorro.
+
+**2.4.39 Ficha Técnica de Referencia EM**
+
+| Parámetro | Especificación |
+|---|---|
+| Coordinación | Bomberos, Policía, Cruz Roja, Defensa Civil, Concesionario, ANI, CCO; radio, teléfono, API REST |
+| Gestión incidentes | Clasificación 1-5; asignación recursos; seguimiento estado; registro acciones/tiempos |
+| Protocolos | Predefinidos por tipo; flujo decisiones; checklist por protocolo |
+| Comunicación | Radio DMR/Tetra; telefonía IP; SMS masivo; push apps; PAS; SOS |
+| Recursos | Inventario; geolocalización GPS; asignación optimizada |
+| Simulación | Drill semestral; evaluación tiempos; debilidades; actualización protocolos |
+| Documentación | Registro incidentes; reporte post-incidente; lecciones aprendidas; actualización procedimientos |
+| Entrenamiento | Capacitación anual; simulacros; certificación; actualización contactos |
+| Integración | CCO, CCTV, AID, VMS, SOS, PAS, ESS, todos los componentes |
+| Normativa | Ley 1523/2012 Colombia; Sistema Nacional Gestión Riesgo; ANI |
+
+**2.5.39 Matriz Comparativa de Oferentes EM**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| EM-INT-01 | **Motorola Solutions** | USA | Radio crítica, emergencias, CAD | PremierOne CAD, CommandCentral | Seguridad pública, emergencias global | 2023 | Global | [motorolasolutions.com](https://www.motorolasolutions.com) | Sí (10/10) | PremierOne CAD es referencia mundial. Referencias en seguridad pública y transporte. |
+| EM-INT-02 | **Hexagon (Intergraph)** | Suecia | GIS, emergencias, CAD | HxGN OnCall, CAD | Emergencias, seguridad pública global | 2023 | Global | [hexagon.com](https://www.hexagon.com) | Sí (9/10) | HxGN OnCall es plataforma líder CAD/GIS. Integración completa. |
+| EM-INT-03 | **Tyler Technologies (New World)** | USA | CAD/RMS, emergencias, gobierno | New World CAD, Enterprise | Seguridad pública, emergencias USA | 2023 | USA | [tylertech.com](https://www.tylertech.com) | Sí (9/10) | New World CAD es referencia USA. Enfoque gobierno local. |
+| EM-LAT-01 | **Kapsch TrafficCom** | Austria | ITS integral, emergencias | EcoTrafiX incident management | Autopista al Mar 1, VIITS Colombia | 2021-2025 | Global | [kapsch.net](https://www.kapsch.net) | Sí (8/10) | Gestión incidentes en EcoTrafiX. Referencias verificadas Colombia. |
+| EM-LAT-02 | **Seguritech** | México | ITS integral, emergencias | Gestión emergencias VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye gestión emergencias. Conocimiento local normativo. |
+| EM-LAT-03 | **Grupo Masa** | México | Infraestructura ITS, emergencias | Centros control, emergencias | Carreteras México (varias) | 2019-2022 | México | [grupomasa.com.mx](https://www.grupomasa.com.mx) | Sí (6/10) | Integrador. Menor especialización emergencias específica. |
+| EM-NAL-01 | **CI2** | Colombia | ITS, ingeniería, emergencias | Diseño EM, protocolos, integración | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación gestión emergencias. |
+| EM-NAL-02 | **Deviteck** | Colombia | ITS, software | Integración EM-CCO-organismos | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (7/10) | Integrador. Capacidad de integración multi-organismo. |
+| EM-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones, emergencias | Radio, comunicaciones emergencias, red | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista comunicaciones. Ventaja en radio DMR/Tetra. |
+
+**2.6.39 Conclusiones**
+
+1. **CAD líder**: Motorola Solutions (PremierOne CAD) y Hexagon (HxGN OnCall) son los estándares de facto en CAD (Computer-Aided Dispatch) para emergencias. La integración con GIS y radio DMR/Tetra es crítica para la asignación de recursos.
+
+2. **Protocolos predefinidos**: Los protocolos de emergencia (incendio, derrumbe, médico) deben estar predefinidos y accesibles desde el CCO. La plataforma seleccionada debe permitir configuración de protocolos personalizados por tipo de incidente.
+
+3. **Simulación semestral**: La realización de drills semestrales con todos los organismos de socorro es obligatoria por la Ley 1523 de 2012. Los integradores nacionales deben incluir esta actividad en el contrato de operación.
+
+4. **Neutralidad**: La elección debe ponderar: (a) integración CAD-GIS-radio, (b) capacidad de protocolos personalizados, (c) experiencia en drills y capacitación, (d) soporte local y conocimiento de la Ley 1523 de 2012.
+
+---
+
+#### 4.40.1 Descripción y Variables Críticas de Diseño
+
+**CC-40 WD/Worker Detection — Detección de Trabajadores**
+
+El componente CC-40 abarca el sistema de detección de trabajadores en zonas de obra y mantenimiento del corredor Chía-Girardot, incluyendo wearables, sensores de proximidad, y alertas de seguridad. Según el Capítulo 7 del Entregable #1, WD es crítico para la protección de la vida de trabajadores en zonas de riesgo.
+
+**2.3.40 Variables Críticas de Diseño**
+
+1. **Wearables**: Dispositivos portátiles (chalecos, cascos, muñequeras) con GPS, acelerómetro, giroscopio, sensor de proximidad; comunicación Bluetooth 5.0 + 4G/5G; autonomía ≥ 12 h.
+2. **Zonas de trabajo**: Delimitación geográfica de zonas seguras (GPS + geofencing); alerta si trabajador sale de zona segura; alerta si vehículo se aproxima a < 10 m del trabajador.
+3. **Detección vehicular**: Sensores de proximidad en vehículos de obra (retroexcavadoras, volquetes); alerta visual y sonora en cabina del vehículo; alerta en wearable del trabajador.
+4. **Comunicación**: Red mesh entre wearables (hasta 100 m); gateway 4G/5G al CCO; protocolo API REST; alerta en tiempo real (< 1 segundo) al CCO y al capataz de obra.
+5. **Monitoreo**: Dashboard de ubicación de todos los trabajadores en zona de obra; alerta por caída, inmovilidad, proximidad vehicular, salida de zona; historial de ubicaciones para investigación de incidentes.
+6. **Energía**: Batería recargable USB-C; autonomía ≥ 12 h; carga rápida (30 min = 80%); indicador de batería baja; powerbank portátil para largas jornadas.
+7. **Protección**: IP67 (sumergible, resistente a lluvia); IK08; resistente a golpes; visible en oscuridad (LED reflectivo); peso ≤ 200 g (no intrusivo para trabajador).
+8. **Privacidad**: Datos de ubicación solo durante jornada laboral; no tracking fuera de horario; consentimiento informado del trabajador; acceso restringido a capataz y supervisor de seguridad; retención máxima 30 días.
+9. **Normativa**: Cumplimiento normativa de seguridad laboral Colombia (Decreto 1072 de 2015, Resolución 0312 de 2019); protocolos de seguridad en obra; certificación de equipos de protección personal.
+10. **Escalabilidad**: Capacidad de soportar ≥ 200 trabajadores simultáneos en zona de obra; múltiples zonas de obra simultáneas; integración con CCO (CC-19) y work zone (CC-20).
+
+**2.4.40 Ficha Técnica de Referencia WD**
+
+| Parámetro | Especificación |
+|---|---|
+| Wearables | GPS, acelerómetro, giroscopio, proximidad; Bluetooth 5.0 + 4G/5G; autonomía ≥ 12 h |
+| Zonas trabajo | Geofencing GPS; alerta salida zona; alerta vehículo < 10 m |
+| Detección vehicular | Sensores proximidad vehículos; alerta cabina + wearable |
+| Comunicación | Mesh 100 m; gateway 4G/5G; API REST; alerta < 1 s al CCO y capataz |
+| Monitoreo | Dashboard ubicación; alerta caída/inmovilidad/proximidad/salida; historial |
+| Energía | USB-C; autonomía ≥ 12 h; carga rápida 30 min; powerbank |
+| Protección | IP67; IK08; anti-golpes; LED reflectivo; ≤ 200 g |
+| Privacidad | Solo jornada laboral; no tracking fuera horario; consentimiento; acceso restringido; retención 30 días |
+| Normativa | Decreto 1072/2015, Res. 0312/2019 Colombia; EPP |
+| Escalabilidad | ≥ 200 trabajadores simultáneos; múltiples zonas; integración CCO/work zone |
+
+**2.5.40 Matriz Comparativa de Oferentes WD**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| WD-INT-01 | **Triax** | USA | Wearables, detección trabajadores, IoT | Spot-r, IoT wearables | Construcción, minería, obra civil USA | 2023 | USA | [triaxtech.com](https://www.triaxtech.com) | Sí (9/10) | Spot-r es referencia en construcción. Detección caídas y proximidad. |
+| WD-INT-02 | **SolePower (Kinetic)** | USA | Wearables, energía cinética, IoT | SmartBoot, kinetic-powered wearables | Construcción, logística, industria | 2023 | USA | [solepower.com](https://www.solepower.com) | Sí (8/10) | Energía cinética (sin carga). Wearables en botas. Innovador. |
+| WD-INT-03 | **SmartCone** | Canadá | IoT, wearables, detección proximidad | SmartCone platform, proximity sensors | Construcción, minería, industria | 2023 | Canadá | [smartcone.com](https://www.smartcone.com) | Sí (8/10) | Plataforma IoT completa. Sensores proximidad y geofencing. |
+| WD-LAT-01 | **Redpoint Positioning** | USA | Wearables, RTLS, detección | RTLS wearables, indoor/outdoor positioning | Minería, construcción, industria | 2022 | Global | [redpointpositioning.com](https://www.redpointpositioning.com) | Sí (8/10) | RTLS de alta precisión. Referencias en minería y construcción. |
+| WD-LAT-02 | **Seguritech** | México | ITS integral, wearables | Wearables, detección trabajadores VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (6/10) | VIITS no incluye wearables típicamente. Menor especialización. |
+| WD-LAT-03 | **Grupo Masa** | México | Infraestructura ITS, seguridad | Dispositivos seguridad obra | Carreteras México (varias) | 2019-2022 | México | [grupomasa.com.mx](https://www.grupomasa.com.mx) | Sí (6/10) | Integrador. Menor especialización wearables específica. |
+| WD-NAL-01 | **CI2** | Colombia | ITS, ingeniería, seguridad | Diseño WD, especificación, geofencing | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación detección trabajadores. |
+| WD-NAL-02 | **Deviteck** | Colombia | ITS, software | Integración WD-CCO, dashboard, alertas | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (7/10) | Integrador. Capacidad de integración wearables con CCO. |
+| WD-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones | Red mesh, 4G/5G, gateways | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista comunicaciones. Ventaja en red mesh y gateways. |
+
+**2.6.40 Conclusiones**
+
+1. **Tecnología emergente**: La detección de trabajadores es una tecnología emergente en ITS. Triax (Spot-r) es el líder en construcción con referencias verificadas en detección de caídas y proximidad. SmartCone y Redpoint ofrecen plataformas IoT completas con geofencing.
+
+2. **Energía cinética**: SolePower (energía cinética en botas) elimina la necesidad de carga diaria, pero es una tecnología más reciente con menos referencias a gran escala. La autonomía de 12 h mediante batería tradicional es más confiable hoy.
+
+3. **Privacidad laboral**: La Ley de Protección de Datos de Colombia y el Decreto 1072 de 2015 (seguridad laboral) deben ser respetados. El tracking solo durante jornada laboral y el consentimiento informado son obligatorios.
+
+4. **Neutralidad**: La elección debe ponderar: (a) fiabilidad en detección de caídas y proximidad, (b) autonomía energética, (c) privacidad y cumplimiento normativo, (d) escalabilidad a 200+ trabajadores, (e) soporte local.
+
+---
+
+#### 4.41.1 Descripción y Variables Críticas de Diseño
+
+**CC-41 IT/Information Technology — Tecnología de la Información**
+
+El componente CC-41 abarca la infraestructura de tecnología de la información (IT) del corredor Chía-Girardot, incluyendo servidores, almacenamiento, virtualización, cloud, y gestión de sistemas. Según el Capítulo 7 del Entregable #1, IT es la base tecnológica que soporta todos los sistemas software del ITS.
+
+**2.3.41 Variables Críticas de Diseño**
+
+1. **Servidores**: Arquitectura x86-64 (Intel/AMD); virtualización (VMware vSphere o Hyper-V); containers (Docker/Kubernetes); servidores blade o rack; redundancia de componentes (PSU, fans, NICs); gestión remota (iDRAC/iLO).
+2. **Almacenamiento**: SAN (Storage Area Network) o NAS (Network Attached Storage); SSD/NVMe para datos críticos (tolerancia a fallos: RAID 10/RAID 6); HDD para video archival (RAID 6); capacidad inicial: 500 TB; escalable a 2 PB.
+3. **Virtualización**: VMware vSphere (ESXi) o Microsoft Hyper-V; vMotion para migración en vivo; HA (High Availability) para tolerancia a fallos; DRS (Distributed Resource Scheduler) para balanceo de carga.
+4. **Cloud**: Capacidad de cloud híbrido (on-premise + AWS/Azure/GCP); backup cloud (AWS S3/Azure Blob); disaster recovery en cloud (Azure Site Recovery); edge computing para procesamiento local.
+5. **Red servidores**: 10 Gbps mínimo entre servidores y storage; 25/100 Gbps en core; switches TOR (Top of Rack) con redundancia; NIC teaming para balanceo y failover.
+6. **Seguridad**: Hardening de servidores (CIS benchmarks); firewall de host; IDS/IPS; segmentación de red; acceso restringido (MFA, VPN); auditoría de accesos; parcheo automático.
+7. **Monitoreo**: Zabbix, Prometheus, Nagios, o PRTG; dashboard de estado de servidores, storage, red, VMs; alerta por CPU > 80%, RAM > 90%, disk > 85%, temperatura > 35 °C.
+8. **Energía**: UPS (CC-22) con ≥ 30 min autonomía para servidores; PDU (Power Distribution Unit) con monitoreo por toma; eficiencia PUE ≤ 1.5 en data center CCO.
+9. **Climatización**: CRAC (Computer Room Air Conditioner) con redundancia N+1; temperatura 18-24 °C; humedad 40-60%; filtración de partículas; monitoreo de fugas de agua.
+10. **Documentación**: Diagrama de arquitectura IT; inventario de hardware/software; matriz de IPs/VLANs; procedimientos de backup/recuperación; licencias; contactos de soporte.
+
+**2.4.41 Ficha Técnica de Referencia IT**
+
+| Parámetro | Especificación |
+|---|---|
+| Servidores | x86-64; virtualización (VMware/Hyper-V); containers (Docker/K8s); blade/rack; redundancia PSU/fans/NICs; iDRAC/iLO |
+| Almacenamiento | SAN/NAS; SSD/NVMe RAID 10/6; HDD RAID 6 archival; 500 TB inicial; 2 PB escalable |
+| Virtualización | VMware vSphere; vMotion; HA; DRS |
+| Cloud | Híbrido on-premise + AWS/Azure/GCP; backup S3/Blob; DR Azure Site Recovery; edge computing |
+| Red | 10 Gbps servidores-storage; 25/100 Gbps core; TOR redundancia; NIC teaming |
+| Seguridad | CIS hardening; firewall host; IDS/IPS; segmentación; MFA/VPN; auditoría; parcheo automático |
+| Monitoreo | Zabbix/Prometheus/Nagios/PRTG; dashboard; alertas CPU/RAM/disk/temperatura |
+| Energía | UPS 30 min; PDU monitoreo; PUE ≤ 1.5 |
+| Climatización | CRAC N+1; 18-24 °C; 40-60% humedad; filtración; detección fugas |
+| Documentación | Diagrama arquitectura; inventario; matriz IPs/VLANs; procedimientos; licencias; contactos |
+
+**2.5.41 Matriz Comparativa de Oferentes IT**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| IT-INT-01 | **Dell Technologies** | USA | Servidores, storage, virtualización | PowerEdge, PowerStore, VMware | Data centers, enterprise, gobierno global | 2023 | Global | [dell.com](https://www.dell.com) | Sí (10/10) | Líder mundial servidores. PowerEdge + PowerStore + VMware es referencia. |
+| IT-INT-02 | **HPE** | USA | Servidores, storage, networking | ProLiant, Synergy, Nimble, Aruba | Enterprise, data centers, cloud global | 2023 | Global | [hpe.com](https://www.hpe.com) | Sí (10/10) | ProLiant + Nimble + Aruba es referencia. Integración completa. |
+| IT-INT-03 | **Cisco (UCS)** | USA | Servidores, networking, hyperconverged | UCS, HyperFlex, Nexus | Enterprise, data centers, cloud global | 2023 | Global | [cisco.com](https://www.cisco.com) | Sí (9/10) | UCS + HyperFlex es referencia hyperconverged. Integración networking. |
+| IT-LAT-01 | **Lenovo (IBM x86)** | China | Servidores, storage, ThinkSystem | ThinkSystem, Storage, VMware | Enterprise, data centers global | 2023 | Global | [lenovo.com](https://www.lenovo.com) | Sí (8/10) | ThinkSystem es referencia. Buena relación costo-beneficio. |
+| IT-LAT-02 | **Supermicro** | USA | Servidores, storage, IoT | SuperServer, Storage, IoT | Data centers, edge, cloud global | 2022 | Global | [supermicro.com](https://www.supermicro.com) | Sí (8/10) | Especialista servidores personalizados. Costo competitivo. |
+| IT-LAT-03 | **Seguritech** | México | ITS integral, IT | Infraestructura IT VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (6/10) | VIITS incluye IT. Menor especialización IT enterprise. |
+| IT-NAL-01 | **CI2** | Colombia | ITS, ingeniería, IT | Diseño IT, arquitectura, especificación | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación arquitectura IT. |
+| IT-NAL-02 | **Deviteck** | Colombia | ITS, software, IT | Implementación IT, virtualización, cloud | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (7/10) | Integrador. Capacidad de implementación VMware, cloud. |
+| IT-NAL-03 | **SIT** | Colombia | ITS, telecomunicaciones, IT | Infraestructura IT, red, data center | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista infraestructura. Ventaja en data center y red. |
+
+**2.6.41 Conclusiones**
+
+1. **Hyperconverged**: Dell (PowerEdge + PowerStore + VMware), HPE (ProLiant + Nimble + Aruba) y Cisco (UCS + HyperFlex) son las tres plataformas hyperconverged líderes. La integración de servidores + storage + networking + virtualización reduce complejidad y mejora fiabilidad.
+
+2. **Cloud híbrido**: La capacidad de extender on-premise a cloud (AWS/Azure/GCP) mediante VMware Cloud o Azure Stack es crítica para escalabilidad futura. Dell y HPE tienen alianzas cloud más maduras que Cisco.
+
+3. **Edge computing**: El procesamiento de video y datos de campo en edge (gabinetes de carretera) reduce latencia y ancho de banda al CCO. Supermicro es especialista en servidores edge compactos y eficientes.
+
+4. **Neutralidad**: La elección debe ponderar: (a) integración hyperconverged, (b) capacidad cloud híbrido, (c) edge computing, (d) soporte local y repuestos en Colombia, (e) TCO 5 años.
+
+---
+
+#### 4.42.1 Descripción y Variables Críticas de Diseño
+
+**CC-42 CM/Communications — Comunicaciones**
+
+El componente CC-42 abarca el sistema de comunicaciones general del corredor Chía-Girardot, incluyendo radio, telefonía, mensajería, y comunicaciones con usuarios. Según el Capítulo 7 del Entregable #1, CM es el sistema de comunicaciones que permite la coordinación entre CCO, dispositivos de campo, organismos de socorro, y usuarios del corredor.
+
+**2.3.42 Variables Críticas de Diseño**
+
+1. **Radio**: Sistema de radio digital (DMR Tier III o Tetra) para comunicación CCO-campo-organismos; cobertura del 100% del corredor; capacidad de grupo (talk groups) por área funcional; prioridad de emergencia (preemption); cifrado AES-256.
+2. **Telefonía**: Sistema telefónico IP (VoIP) con CCO; líneas de emergencia (112/123); integración con radio (RoIP - Radio over IP); grabación de todas las llamadas; voicemail.
+3. **Mensajería**: SMS masivo a usuarios (alertas de tráfico, emergencias); notificaciones push a app móvil; integración con Waze/Google Maps; API REST para integración con VMS (CC-03) y PAS (CC-15).
+4. **Comunicación usuario**: App móvil para usuarios con información de tráfico en tiempo real; chatbot para consultas; integración con redes sociales (Twitter/X, Facebook); portal web de información.
+5. **Red de datos**: Backbone de fibra óptica (CC-24) con MPLS; acceso 4G/5G para dispositivos móviles; Wi-Fi en zonas de servicio (peajes, áreas de descanso); satelital (VSAT) en zonas remotas.
+6. **Seguridad**: Cifrado de todas las comunicaciones (radio, telefonía, datos); autenticación de dispositivos; prevención de interceptación; seguridad de la información (confidencialidad, integridad, disponibilidad).
+7. **Monitoreo**: Dashboard de estado de comunicaciones en CCO; alerta por falla de radio, telefonía, red, o satelital; medición de calidad de señal (RSSI, SINR, BER); reporte de incidentes de comunicación.
+8. **Energía**: UPS (CC-22) en cada nodo de comunicación; generador diésel en CCO; solar + batería en torres de radio remotas; eficiencia energética de equipos de radio.
+9. **Protección**: Equipos de radio IP65; antenas anti-viento (zona altiplano); protección contra rayos (pararrayos); puesta a tierra ≤ 1 Ω; temperatura -10 °C a +55 °C.
+10. **Normativa**: Cumplimiento normativa de telecomunicaciones Colombia (MinTIC, CRC, ANE); licencias de espectro radioeléctrico; resoluciones de seguridad de la información.
+
+**2.4.42 Ficha Técnica de Referencia CM/Communications**
+
+| Parámetro | Especificación |
+|---|---|
+| Radio | DMR Tier III o Tetra; 100% cobertura; talk groups; preemption; AES-256 |
+| Telefonía | VoIP CCO; 112/123 emergencia; RoIP; grabación; voicemail |
+| Mensajería | SMS masivo; push app móvil; Waze/Google Maps; API REST; VMS/PAS |
+| Comunicación usuario | App móvil; chatbot; redes sociales; portal web |
+| Red datos | Fibra MPLS; 4G/5G; Wi-Fi zonas servicio; VSAT remotas |
+| Seguridad | Cifrado todo; autenticación; prevención interceptación; confidencialidad, integridad, disponibilidad |
+| Monitoreo | Dashboard CCO; alerta fallas; calidad señal RSSI/SINR/BER; reporte incidentes |
+| Energía | UPS CC-22; generador CCO; solar + batería torres; eficiencia |
+| Protección | IP65; anti-viento; pararrayos; puesta a tierra ≤ 1 Ω; -10 °C a +55 °C |
+| Normativa | MinTIC, CRC, ANE Colombia; licencias espectro; seguridad información |
+
+**2.5.42 Matriz Comparativa de Oferentes CM/Communications**
+
+| ID | Fabricante / Proveedor | País | Especialidad | Alcance | Proyecto Referencia | Año | Región | Fuente | Cumple | Observaciones |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CM-INT-01 | **Motorola Solutions** | USA | Radio crítica, DMR, Tetra, comunicaciones | MOTOTRBO, DIMETRA, Avigilon | Seguridad pública, transporte, gobierno global | 2023 | Global | [motorolasolutions.com](https://www.motorolasolutions.com) | Sí (10/10) | Líder mundial radio crítica. MOTOTRBO y DIMETRA son referencias. |
+| CM-INT-02 | **Hytera** | China | Radio digital, DMR, Tetra, PMR | DMR, Tetra, PoC | Seguridad pública, industria, transporte global | 2023 | Global | [hytera.com](https://www.hytera.com) | Sí (8/10) | Segundo líder radio digital. Costo competitivo. Consideraciones geopolíticas. |
+| CM-INT-03 | **Nokia** | Finlandia | Telecomunicaciones, 5G, radio, IP | AirScale, 5G, MPLS, IP transport | Telecom global, 5G, transporte | 2023 | Global | [nokia.com](https://www.nokia.com) | Sí (9/10) | Líder telecom 5G. AirScale es referencia en 5G y transporte. |
+| CM-LAT-01 | **Ericsson** | Suecia | Telecomunicaciones, 5G, radio, IP | Ericsson Radio System, 5G | Telecom global, 5G, smart cities | 2023 | Global | [ericsson.com](https://www.ericsson.com) | Sí (9/10) | Líder telecom 5G. Referencias en smart cities y transporte. |
+| CM-LAT-02 | **Seguritech** | México | ITS integral, comunicaciones | Radio, telefonía, mensajería VIITS | VIITS Colombia 6,000 km | 2022 | Colombia | [seguritech.com](https://www.seguritech.com.mx) | Sí (7/10) | VIITS incluye comunicaciones. Conocimiento local normativo. |
+| CM-LAT-03 | **Grupo Masa** | México | Infraestructura ITS, comunicaciones | Radio, telefonía, centros control | Carreteras México (varias) | 2019-2022 | México | [grupomasa.com.mx](https://www.grupomasa.com.mx) | Sí (6/10) | Integrador. Menor especialización comunicaciones específica. |
+| CM-NAL-01 | **CI2** | Colombia | ITS, ingeniería, telecomunicaciones | Diseño CM, radio, telefonía, especificación | Diseño APP Chía-Girardot | 2026 | Colombia | [ci2.com.co](https://www.ci2.com.co) | Sí (7/10) | Diseñador proyecto. Especificación sistema comunicaciones. |
+| CM-NAL-02 | **SIT** | Colombia | ITS, telecomunicaciones, radio | Implementación radio, telefonía, red, 4G/5G | Diseño APP Chía-Girardot | 2026 | Colombia | [sit.com.co](https://www.sit.com.co) | Sí (7/10) | Especialista telecomunicaciones. Ventaja en radio, telefonía, red. |
+| CM-NAL-03 | **Deviteck** | Colombia | ITS, software, comunicaciones | Integración CM-CCO, mensajería, APIs | Diseño APP Chía-Girardot | 2026 | Colombia | [deviteck.com](https://www.deviteck.com) | Sí (6/10) | Integrador. Capacidad de integración mensajería y APIs. |
+
+**2.6.42 Conclusiones**
+
+1. **Radio crítica**: Motorola Solutions (MOTOTRBO/DIMETRA) es el estándar de facto en radio digital para seguridad pública y transporte. La cobertura del 100% del corredor y la preemption de emergencia son capacidades maduras en Motorola. Hytera es alternativa de costo menor con consideraciones geopolíticas.
+
+2. **5G y telecomunicaciones**: Nokia (AirScale) y Ericsson (Radio System) son los líderes en 5G y telecomunicaciones. La integración de 5G para comunicaciones ITS es una tendencia emergente que puede ser relevante para el corredor en el mediano plazo.
+
+3. **Mensajería masiva**: La capacidad de enviar SMS masivo a usuarios en emergencias requiere integración con operadores móviles colombianos (Claro, Movistar, Tigo). Los integradores nacionales deben garantizar esta integración mediante APIs de operadores.
+
+4. **Neutralidad**: La elección debe ponderar: (a) cobertura radio 100% del corredor, (b) preemption de emergencia, (c) integración con operadores móviles para SMS masivo, (d) soporte local y repuestos en Colombia, (e) consideraciones de seguridad geopolítica.
+
+---
+
+## 3. RESUMEN DEL ANÁLISIS TECNOLÓGICO
+
+### 3.1 Estado del Arte por Componente
+
+| Componente | Nivel Tecnológico | Madurez Mercado | Complejidad Implementación | Riesgo Principal |
+|---|---|---|---|---|
+| CC-01 CCTV | Muy Alto | Muy Maduro | Media | Privacidad datos |
+| CC-02 AID | Alto | Maduro | Alta | Falsos positivos en neblina |
+| CC-03 VMS/DMS | Muy Alto | Muy Maduro | Media | Visibilidad en luz solar directa |
+| CC-04 SOS/ECS | Muy Alto | Muy Maduro | Baja | Conectividad en zonas remotas |
+| CC-05 VDS/TDS | Alto | Maduro | Media | Precisión en lluvia torrencial |
+| CC-06 ESS/RWIS | Alto | Maduro | Media | Calibración en clima tropical |
+| CC-07 WIM | Muy Alto | Muy Maduro | Alta | Reproducibilidad en carreteras colombianas |
+| CC-08 GMS-I | Alto | Maduro | Alta | Integración con sensores de campo |
+| CC-09 SMS/SBT | Muy Alto | Maduro | Media | Exactitud del pronóstico |
+| CC-10 WLS | Muy Alto | Maduro | Media | Seguridad de los datos de alerta |
+| CC-11 AVI/ETC | Muy Alto | Muy Maduro | Alta | Interoperabilidad OBU-ALPR-WIM |
+| CC-12 ALPR/LPR | Muy Alto | Muy Maduro | Alta | Privacidad de datos |
+| CC-13 SPD | Muy Alto | Maduro | Baja | Injusticias de lectura |
+| CC-14 VSL | Alto | Maduro | Media | Reacción del conductor |
+| CC-15 PAS | Muy Alto | Muy Maduro | Baja | Inteligibilidad en ambiente ruidoso |
+| CC-16 EC/SOS | Muy Alto | Muy Maduro | Alta | Redundancia total de comunicaciones |
+| CC-17 NTCIP | Muy Alto | Estandarizado | Baja | Interoperabilidad real vs declarada |
+| CC-18 FW/Firewall | Muy Alto | Muy Maduro | Media | Ciberataques sofisticados |
+| CC-19 TMS/CCO | Muy Alto | Muy Maduro | Muy Alta | Falla catastrófica del sistema central |
+| CC-20 WS/Work Zone | Alto | Maduro | Media | Coordinación con VMS/VSL |
+| CC-21 TOLL/Tolling | Muy Alto | Muy Maduro | Muy Alta | Evasión de peaje |
+| CC-22 UPS/BBU | Muy Alto | Muy Maduro | Baja | Autonomía en desastre prolongado |
+| CC-23 PTZ | Muy Alto | Muy Maduro | Baja | Precisión de posicionamiento en viento |
+| CC-24 Fiber/FOC | Muy Alto | Muy Maduro | Alta | Corte de fibra por deslizamiento |
+| CC-25 SW/Software | Muy Alto | Muy Maduro | Muy Alta | Bugs críticos en producción |
+| CC-26 BK/Backup | Muy Alto | Muy Maduro | Media | Falla de restauración en desastre |
+| CC-27 DR/Disaster Recovery | Muy Alto | Maduro | Muy Alta | RPO no cumplido en failover |
+| CC-28 EMS | Alto | Maduro | Media | Calibración en clima tropical |
+| CC-29 LS/Lighting | Muy Alto | Muy Maduro | Baja | Vida útil en ambiente húmedo |
+| CC-30 SG/Signal | Muy Alto | Muy Maduro | Media | Visibilidad en neblina |
+| CC-31 MET | Alto | Maduro | Media | Integración con modelos IDEAM |
+| CC-32 WZ | Alto | Maduro | Media | Coordinación con VMS/VSL |
+| CC-33 CMS | Muy Alto | Muy Maduro | Baja | Visibilidad en luz solar directa |
+| CC-34 SD | Muy Alto | Muy Maduro | Alta | Falsos positivos/negativos |
+| CC-35 GEN | Muy Alto | Muy Maduro | Baja | Disponibilidad de combustible en emergencia |
+| CC-36 NET | Muy Alto | Muy Maduro | Alta | Ataques de red (DDoS, man-in-the-middle) |
+| CC-37 AQ | Alto | Maduro | Media | Calibración en clima tropical |
+| CC-38 ANPR | Muy Alto | Muy Maduro | Alta | Tasa de lectura en lluvia |
+| CC-39 EM | Alto | Maduro | Muy Alta | Coordinación multi-organismo |
+| CC-40 WD | Medio | Emergente | Media | Tecnología no madura en ITS |
+| CC-41 IT | Muy Alto | Muy Maduro | Alta | Complejidad de integración |
+| CC-42 CM | Muy Alto | Muy Maduro | Alta | Cobertura en zonas remotas |
+
+### 3.2 Tendencias Tecnológicas Identificadas
+
+1. **Inteligencia Artificial y Machine Learning**: Todos los componentes de detección (AID, CCTV, VDS, WIM, ANPR) están adoptando IA/ML para mejorar precisión y reducir falsos positivos. La tendencia es hacia edge computing (procesamiento en dispositivo) para reducir latencia.
+
+2. **Edge Computing**: El procesamiento en el borde (cámaras, sensores, gabinetes de campo) reduce drásticamente la latencia y el ancho de banda requerido al CCO. Esto es crítico para AID (detección de incidentes en < 1 segundo) y VDS (datos de tráfico en tiempo real).
+
+3. **Cloud Híbrido**: La tendencia es hacia arquitecturas cloud híbrido (on-premise + cloud) para escalabilidad y resiliencia. Esto es relevante para TMS/CCO, backup, y DR.
+
+4. **Ciberseguridad Zero-Trust**: La arquitectura de red está evolucionando hacia zero-trust (no confiar en ningún dispositivo por defecto), con microsegmentación, MFA, y cifrado end-to-end. Esto es crítico para la protección de la infraestructura ITS.
+
+5. **5G y Comunicaciones**: La llegada de 5G ofrece menor latencia y mayor ancho de banda para comunicaciones de campo. Esto es relevante para SOS, CCTV, y comunicaciones de emergencia.
+
+6. **Sostenibilidad**: La tendencia hacia energía solar + batería LiFePO4 en dispositivos de campo reduce la dependencia de red eléctrica y el impacto ambiental. Esto es relevante para ESS, VDS, SOS, y dispositivos remotos.
+
+7. **Privacidad de Datos**: La creciente regulación de protección de datos (Ley de Protección de Datos Colombia, GDPR) está impulsando la anonimización de datos y el control de acceso. Esto es crítico para CCTV, ANPR, y ALPR.
+
+### 3.3 Riesgos Tecnológicos Principales
+
+| Riesgo | Componentes Afectados | Probabilidad | Impacto | Mitigación |
+|---|---|---|---|---|
+| Falsos positivos AID en neblina | CC-02, CC-08 | Media | Alto | Validación con radar/vídeo + ajuste de umbrales |
+| Corte de fibra por deslizamiento | CC-24, CC-16 | Media | Muy Alto | Redundancia anillo + radio VSAT + VSAT |
+| Ciberataque al CCO | CC-19, CC-18, CC-36 | Baja | Muy Alto | Zero-trust + microsegmentación + pentest anual |
+| Evasión de peaje | CC-21, CC-11, CC-12 | Media | Alto | Validación cruzada OBU+ALPR+WIM + lista negra |
+| Falla de UPS en desastre prolongado | CC-22, CC-19 | Baja | Muy Alto | Generador diésel + solar + batería 72 h + monitoreo |
+| Tasa de lectura ANPR en lluvia | CC-38, CC-12 | Media | Alto | IR dedicado + algoritmos de lluvia + redundancia |
+| Integración multi-vendor | Todos | Alta | Alto | NTCIP obligatorio + pruebas de interoperabilidad |
+| Tecnología wearables no madura | CC-40 | Alta | Media | Piloto antes de despliegue + respaldo manual |
+
+---
+
+**Fin del Capítulo 4: Análisis de Tecnologías ITS**
+
+*Documento generado por ZEUS para INNOVADATACO - Proyecto APP Chía-Girardot*
+*Contrato TC-PS-05-917-2026*
+*Fecha: 2026-06-03*
+*Versión: 2.3 (42 componentes completos)*
+
