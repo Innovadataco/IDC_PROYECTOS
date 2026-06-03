@@ -32,7 +32,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante / Integrador de sistemas ITS y peaje electrónico |
 | Página web | https://www.kapsch.net |
 | Nombre del producto | Kapsch Video Surveillance System |
-| Descripción del producto | Sistema de videovigilancia integrado en la plataforma EcoTrafiX de Kapsch, que permite monitoreo en tiempo real de corredores viales, integración con detección automática de incidentes (AID) y gestión centralizada desde el Centro de Control de Operaciones (CCO). Utilizado en proyectos de ITS en autopistas de Colombia, incluyendo la Autopista al Mar 1 (2021), donde se desplegaron 59 cámaras con análisis de video. |
+| Descripción del producto | Sistema de videovigilancia integrado en la plataforma EcoTrafiX de Kapsch, que permite monitoreo en tiempo real de corredores viales, integración con detección automática de incidentes (AID) y gestión centralizada desde el Centro de Control de Operaciones (CCO). |
 
 **2. Axis Communications AB**
 
@@ -45,7 +45,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante de cámaras IP y soluciones de videovigilancia de red |
 | Página web | https://www.axis.com |
 | Nombre del producto | Axis Network Cameras |
-| Descripción del producto | Cámaras de red IP con tecnología de análisis de video integrado (AXIS Video Analytics), diseñadas para aplicaciones de seguridad vial y videovigilancia en exteriores. Soportan protocolos ONVIF y NTCIP para interoperabilidad. En Colombia, han sido utilizadas en alianza con SIMS Technologies en proyectos de seguridad vial para el sector público desde 2013. |
+| Descripción del producto | Cámaras de red IP con tecnología de análisis de video integrado (AXIS Video Analytics), diseñadas para aplicaciones de seguridad vial y videovigilancia en exteriores. Soportan protocolos ONVIF y NTCIP para interoperabilidad. |
 
 **3. Siemens Mobility GmbH**
 
@@ -58,7 +58,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante de sistemas de movilidad inteligente, ITS y ferrocarriles |
 | Página web | https://www.mobility.siemens.com |
 | Nombre del producto | Siemens ITS Video Management |
-| Descripción del producto | Plataforma de gestión de video Sicore de Siemens Mobility, diseñada para integrarse con sistemas de tráfico inteligente en autopistas y corredores viales. Permite gestión centralizada de video, integración con sensores de tráfico y compatibilidad con estándares NTCIP. Aplicada en proyectos de gestión de autopistas en Europa central (Alemania, Austria, Suiza). |
+| Descripción del producto | Plataforma de gestión de video Sicore de Siemens Mobility, diseñada para integrarse con sistemas de tráfico inteligente en autopistas y corredores viales. Permite gestión centralizada de video, integración con sensores de tráfico y compatibilidad con estándares NTCIP. |
 
 ### Proveedores latinoamericanos (3)
 
@@ -73,7 +73,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas de seguridad y ITS para infraestructura crítica |
 | Página web | https://www.seguritech.com.mx |
 | Nombre del producto | Seguritech VSS-ITS |
-| Descripción del producto | Sistema de videovigilancia integrado en la plataforma VIITS (Videovigilancia Inteligente para el Transporte y Seguridad) desarrollada por Seguritech para corredores viales en Latinoamérica. Incluye gestión de cámaras, análisis de video básico y centralización en CCO. Implementado en Colombia dentro del proyecto VIITS que cubre 6.000 km de corredores viales (2021-2025). |
+| Descripción del producto | Sistema de videovigilancia integrado en la plataforma VIITS (Videovigilancia Inteligente para el Transporte y Seguridad) desarrollada por Seguritech para corredores viales en Latinoamérica. Incluye gestión de cámaras, análisis de video básico y centralización en CCO. |
 
 **5. Grupo Masa Dematic S.A. de C.V.**
 
@@ -86,7 +86,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, peaje y seguridad vial |
 | Página web | https://www.grupomasa.com.mx |
 | Nombre del producto | Masa Video Surveillance ITS |
-| Descripción del producto | Sistema de videovigilancia para integración en proyectos ITS de infraestructura vial en México. Desarrollado para monitoreo de corredores y concesiones viales, con centralización de video en centros de control. Aplicado en proyectos de carreteras y autopistas en México durante el periodo 2019-2022. |
+| Descripción del producto | Integración de videovigilancia en sistemas ITS para carreteras de México. Desarrollado para monitoreo de corredores y concesiones viales, con centralización de video en centros de control. |
 
 **6. SIMS Technologies S.A.S.**
 
@@ -99,7 +99,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de tecnología de seguridad y videovigilancia para sector público |
 | Página web | https://www.simstech.com.co |
 | Nombre del producto | SIMS Video Security Platform |
-| Descripción del producto | Plataforma de seguridad basada en videovigilancia IP para aplicaciones de seguridad vial en Colombia. Integra cámaras de red con sistemas de gestión centralizada. Implementada en proyectos de seguridad vial para INVIAS y MinTransporte desde 2013, en alianza con fabricantes internacionales como Axis Communications. |
+| Descripción del producto | Plataforma de seguridad basada en videovigilancia IP para aplicaciones de seguridad vial en Colombia. Integra cámaras de red con sistemas de gestión centralizada. |
 
 ### Proveedores nacionales (3)
 
@@ -114,7 +114,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, comunicaciones y tecnología para infraestructura vial |
 | Página web | https://www.deviteck.com |
 | Nombre del producto | Deviteck VSS Platform |
-| Descripción del producto | Plataforma propia de videovigilancia para corredores viales desarrollada por Deviteck, integradora colombiana especializada en ITS. Diseñada para gestión de cámaras en proyectos de infraestructura vial, con integración a sistemas de comunicaciones y CCO. Aplicada en el diseño del proyecto APP Chía-Girardot y en el proyecto VIITS Colombia. |
+| Descripción del producto | Plataforma de videovigilancia para corredores viales desarrollada por Deviteck, integradora colombiana especializada en ITS. Diseñada para gestión de cámaras en proyectos de infraestructura vial, con integración a sistemas de comunicaciones y CCO. |
 
 **8. CI2 — Consorcio de Ingeniería e Integración**
 
@@ -127,7 +127,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS y tecnología para infraestructura crítica |
 | Página web | https://www.ci2.com.co |
 | Nombre del producto | CI2 Video Surveillance ITS |
-| Descripción del producto | Sistema de especificación y diseño de videovigilancia para corredores viales desarrollado por CI2. Incluye arquitectura de cámaras, red de comunicaciones y gestión centralizada. Diseñado específicamente para el proyecto APP Chía-Girardot (contrato TC-PS-05-917-2026). |
+| Descripción del producto | Sistema de especificación y diseño de videovigilancia para corredores viales desarrollado por CI2. Incluye arquitectura de cámaras, red de comunicaciones y gestión centralizada. |
 
 **9. SIT — Sistemas Inteligentes de Transporte**
 
@@ -140,7 +140,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Consultoría e integración de sistemas ITS para sector vial colombiano |
 | Página web | https://www.sit-its.com.co |
 | Nombre del producto | SIT VMS Platform |
-| Descripción del producto | Plataforma de gestión de video (VMS) para corredores viales colombianos. Enfocada en infraestructura de comunicaciones y red para soporte de sistemas de videovigilancia en proyectos ITS. Diseñada para el proyecto APP Chía-Girardot. |
+| Descripción del producto | Plataforma de gestión de video (VMS) para corredores viales colombianos. Enfocada en infraestructura de comunicaciones y red para soporte de sistemas de videovigilancia en proyectos ITS. |
 
 ### Conclusiones
 
@@ -169,7 +169,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante / Integrador de sistemas ITS y peaje electrónico |
 | Página web | https://www.kapsch.net |
 | Nombre del producto | Kapsch EcoTrafiX AID Module |
-| Descripción del producto | Módulo de detección automática de incidentes (AID) integrado en la plataforma EcoTrafiX de Kapsch. Utiliza análisis de video sobre cámaras de videovigilancia para detectar eventos de tráfico (vehículos detenidos, peatones, objetos, contrasentido, humo) en tiempo real. Aplicado en la Autopista al Mar 1 en Colombia (2021) con 59 cámaras habilitadas para AID. |
+| Descripción del producto | Módulo de detección automática de incidentes (AID) integrado en la plataforma EcoTrafiX de Kapsch. Utiliza análisis de video sobre cámaras de videovigilancia para detectar eventos de tráfico (vehículos detenidos, peatones, objetos, contrasentido, humo) en tiempo real. |
 
 **2. Navtech Radar**
 
@@ -182,7 +182,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante de radares de detección de incidentes para ITS y seguridad vial |
 | Página web | https://www.navtechradar.com |
 | Nombre del producto | Navtech ClearWay |
-| Descripción del producto | Sistema de detección de incidentes basado en radar de onda milimétrica (FMCW) diseñado para túneles y autopistas. Detecta vehículos detenidos, peatones, objetos y condiciones de tráfico en condiciones de visibilidad cero (neblina, humo, oscuridad total). Referencias en túneles de Austria (A2 Südautobahn), Australia (NorthConnex) y Reino Unido. |
+| Descripción del producto | Sistema de detección de incidentes basado en radar de onda milimétrica (FMCW) diseñado para túneles y autopistas. Detecta vehículos detenidos, peatones, objetos y condiciones de tráfico en condiciones de visibilidad cero (neblina, humo, oscuridad total). |
 
 **3. Iteris Inc.**
 
@@ -195,7 +195,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante de sistemas de detección de tráfico y análisis de video para ITS |
 | Página web | https://www.iteris.com |
 | Nombre del producto | Iteris Vantage CV |
-| Descripción del producto | Sistema de detección de incidentes basado en visión por computador e inteligencia artificial. Procesa video de cámaras existentes para detectar eventos de tráfico en tiempo real. Desplegado en Ciudad de Corona, California (2023) para monitoreo de intersecciones y detección de incidentes en red vial urbana. |
+| Descripción del producto | Sistema de detección de incidentes basado en visión por computador e inteligencia artificial. Procesa video de cámaras existentes para detectar eventos de tráfico en tiempo real. |
 
 ### Proveedores latinoamericanos (3)
 
@@ -210,7 +210,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas de seguridad y ITS para infraestructura crítica |
 | Página web | https://www.seguritech.com.mx |
 | Nombre del producto | Seguritech AID Module |
-| Descripción del producto | Módulo de detección automática de incidentes integrado en la plataforma VIITS de Seguritech para corredores viales en Latinoamérica. Procesa video de cámaras de videovigilancia para identificar eventos de tráfico. Implementado en Colombia dentro del proyecto VIITS que cubre 6.000 km de corredores viales (2021-2025). |
+| Descripción del producto | Módulo de detección automática de incidentes integrado en la plataforma VIITS de Seguritech para corredores viales en Latinoamérica. Procesa video de cámaras de videovigilancia para identificar eventos de tráfico. |
 
 **5. Grupo Masa Dematic S.A. de C.V.**
 
@@ -223,7 +223,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, peaje y seguridad vial |
 | Página web | https://www.grupomasa.com.mx |
 | Nombre del producto | Masa AID Surveillance |
-| Descripción del producto | Sistema de detección de incidentes integrado en proyectos ITS de infraestructura vial en México. Desarrollado para monitoreo de carreteras y concesiones viales con centralización en centros de control. Aplicado en proyectos de carreteras en México durante el periodo 2019-2022. |
+| Descripción del producto | Detección de incidentes integrada en sistemas ITS para carreteras de México. Desarrollado para monitoreo de carreteras y concesiones viales con centralización en centros de control. |
 
 **6. Deviteck S.A.S.**
 
@@ -236,7 +236,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, comunicaciones y tecnología para infraestructura vial |
 | Página web | https://www.deviteck.com |
 | Nombre del producto | Deviteck AID Platform |
-| Descripción del producto | Plataforma de detección automática de incidentes para corredores viales colombianos, desarrollada por Deviteck. Diseñada para integración con sistemas de videovigilancia y CCO. Aplicada en el diseño del proyecto APP Chía-Girardot y en el proyecto VIITS Colombia. |
+| Descripción del producto | Plataforma de detección automática de incidentes para corredores viales colombianos, desarrollada por Deviteck. Diseñada para integración con sistemas de videovigilancia y CCO. |
 
 ### Proveedores nacionales (3)
 
@@ -251,7 +251,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS y tecnología para infraestructura crítica |
 | Página web | https://www.ci2.com.co |
 | Nombre del producto | CI2 AID Specification |
-| Descripción del producto | Especificación técnica del sistema de detección automática de incidentes para corredores viales, desarrollada por CI2 para el proyecto APP Chía-Girardot. Incluye definición de arquitectura, algoritmos de detección, integración con CCTV y CCO (contrato TC-PS-05-917-2026). |
+| Descripción del producto | Especificación técnica del sistema de detección automática de incidentes para corredores viales, desarrollada por CI2. Incluye definición de arquitectura, algoritmos de detección, integración con CCTV y CCO. |
 
 **8. SIT — Sistemas Inteligentes de Transporte**
 
@@ -264,7 +264,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Consultoría e integración de sistemas ITS para sector vial colombiano |
 | Página web | https://www.sit-its.com.co |
 | Nombre del producto | SIT AID Infrastructure |
-| Descripción del producto | Infraestructura de red y comunicaciones para soporte de sistemas de detección automática de incidentes en corredores viales colombianos. Diseñada para el proyecto APP Chía-Girardot. |
+| Descripción del producto | Infraestructura de red y comunicaciones para soporte de sistemas de detección automática de incidentes en corredores viales colombianos. |
 
 **9. Ingetec S.A.**
 
@@ -332,7 +332,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Fabricante / Integrador de sistemas ITS y peaje electrónico |
 | Página web | https://www.kapsch.net |
 | Nombre del producto | Kapsch EcoTrafiX VMS |
-| Descripción del producto | Módulo de señales variables de mensajería dinámica integrado en la plataforma EcoTrafiX de Kapsch. Permite gestión centralizada de mensajes desde el CCO, programación de mensajes por evento y compatibilidad NTCIP 1203. Aplicado en la Autopista al Mar 1 en Colombia (2021) y en el proyecto VIITS Colombia (6.000 km). |
+| Descripción del producto | Módulo de señales variables de mensajería dinámica integrado en la plataforma EcoTrafiX de Kapsch. Permite gestión centralizada de mensajes desde el CCO, programación de mensajes por evento y compatibilidad NTCIP 1203. |
 
 ### Proveedores latinoamericanos (3)
 
@@ -347,7 +347,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas de seguridad y ITS para infraestructura crítica |
 | Página web | https://www.seguritech.com.mx |
 | Nombre del producto | Seguritech VMS Module |
-| Descripción del producto | Módulo de señales variables de mensajería dinámica integrado en la plataforma VIITS de Seguritech para corredores viales en Latinoamérica. Incluye gestión centralizada de mensajes desde CCO y compatibilidad con protocolos NTCIP. Implementado en Colombia dentro del proyecto VIITS (6.000 km, 2021-2025). |
+| Descripción del producto | Módulo de señales variables de mensajería dinámica integrado en la plataforma VIITS de Seguritech para corredores viales en Latinoamérica. Incluye gestión centralizada de mensajes desde CCO y compatibilidad con protocolos NTCIP. |
 
 **5. Newcom Argentina**
 
@@ -360,7 +360,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS y control de tráfico para Latinoamérica |
 | Página web | https://www.newcom.com.ar |
 | Nombre del producto | Newcom VMS ITS |
-| Descripción del producto | Sistema de señales variables de mensajería dinámica para proyectos de ITS en Argentina y Latinoamérica. Desarrollado para integración con centros de control de tráfico y gestión de mensajes en corredores viales. Aplicado en proyectos de señalización inteligente en Argentina. |
+| Descripción del producto | Sistema de señales variables de mensajería dinámica para proyectos de ITS en Argentina y Latinoamérica. Desarrollado para integración con centros de control de tráfico y gestión de mensajes en corredores viales. |
 
 **6. Grupo Masa Dematic S.A. de C.V.**
 
@@ -373,7 +373,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, peaje y seguridad vial |
 | Página web | https://www.grupomasa.com.mx |
 | Nombre del producto | Masa DMS ITS |
-| Descripción del producto | Sistema de señales variables de mensajería dinámica para integración en proyectos ITS de infraestructura vial en México. Desarrollado para monitoreo de carreteras y concesiones viales con gestión de mensajes desde centros de control. Aplicado en proyectos de carreteras en México (2019-2022). |
+| Descripción del producto | Sistema de señales variables de mensajería dinámica para integración en proyectos ITS de infraestructura vial en México. Desarrollado para monitoreo de carreteras y concesiones viales con gestión de mensajes desde centros de control. |
 
 ### Proveedores nacionales (3)
 
@@ -388,7 +388,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS, comunicaciones y tecnología para infraestructura vial |
 | Página web | https://www.deviteck.com |
 | Nombre del producto | Deviteck VMS Platform |
-| Descripción del producto | Plataforma de señales variables de mensajería dinámica para corredores viales colombianos, desarrollada por Deviteck. Incluye gestión de mensajes, integración con CCO y compatibilidad NTCIP 1203. Aplicada en el diseño del proyecto APP Chía-Girardot y en el proyecto VIITS Colombia. |
+| Descripción del producto | Plataforma de señales variables de mensajería dinámica para corredores viales colombianos, desarrollada por Deviteck. Incluye gestión de mensajes, integración con CCO y compatibilidad NTCIP 1203. |
 
 **8. CI2 — Consorcio de Ingeniería e Integración**
 
@@ -401,7 +401,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Integrador de sistemas ITS y tecnología para infraestructura crítica |
 | Página web | https://www.ci2.com.co |
 | Nombre del producto | CI2 VMS Specification |
-| Descripción del producto | Especificación técnica del sistema de señales variables de mensajería dinámica para corredores viales, desarrollada por CI2 para el proyecto APP Chía-Girardot. Incluye definición de tipos de señales, protocolos de comunicación NTCIP 1203 y esquemas de mensajes (contrato TC-PS-05-917-2026). |
+| Descripción del producto | Especificación técnica del sistema de señales variables de mensajería dinámica para corredores viales, desarrollada por CI2. Incluye definición de tipos de señales, protocolos de comunicación NTCIP 1203 y esquemas de mensajes. |
 
 **9. SIT — Sistemas Inteligentes de Transporte**
 
@@ -414,7 +414,7 @@ Este capítulo **no** es un estudio de mercado comercial ni una recomendación d
 | Especialidad | Consultoría e integración de sistemas ITS para sector vial colombiano |
 | Página web | https://www.sit-its.com.co |
 | Nombre del producto | SIT VMS Infrastructure |
-| Descripción del producto | Infraestructura de red y comunicaciones para soporte de sistemas de señales variables de mensajería dinámica en corredores viales colombianos. Diseñada para integración con CCO y protocolos NTCIP 1203 en el proyecto APP Chía-Girardot. |
+| Descripción del producto | Infraestructura de red y comunicaciones para soporte de sistemas de señales variables de mensajería dinámica en corredores viales colombianos. Diseñada para integración con CCO y protocolos NTCIP 1203. |
 
 ### Conclusiones
 
