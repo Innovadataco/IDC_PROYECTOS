@@ -24,21 +24,21 @@ El mercado global de peaje electrónico está en transición acelerada desde sis
 
 | Proyecto | País | Tecnología | Estado | Referencia verificable |
 |----------|------|------------|--------|------------------------|
-| **Ruta Nogales–Puchuncaví** | Chile | Kapsch SmartToll (MLFF + tradicional combinado) | Operativo desde 2022 | Comunicado Kapsch, enero 2022 |
-| **Autopista Palmillas–Apaseo** | México | Sistema de integridad vehicular con LPR cada 7 km + pórticos de cobro | Operativo desde 2025 | Comunicado Kapsch, agosto 2025 |
+| **Ruta Nogales–Puchuncaví** | Chile | Sistema MLFF combinado (peaje tradicional + flujo libre) | Operativo desde 2022 | Comunicado de prensa proyecto, enero 2022 |
+| **Autopista Palmillas–Apaseo** | México | Sistema de integridad vehicular con LPR cada 7 km + pórticos de cobro | Operativo desde 2025 | Comunicado de prensa proyecto, agosto 2025 |
 | **A-1 España (Audasa)** | España | Free flow en peajes (tag DSRC + videocámaras LPR) | Operativo | Concesionaria Audasa, Ministerio de Transporte español |
 | **M6 Hungría** | Hungría | Peaje free flow con pórticos electrónicos | Operativo | Concesionaria M6 Duna |
 | **Telepase Brasil** | Brasil | TAG activo y pasivo en autopistas operadas por CCR, EcoRodovias | Operativo | Concesionarias CCR, EcoRodovias |
 
 ### 2.3 Tecnologías de identificación vehicular disponibles
 
-| Tecnología | Maturidad | Aplicación | Proveedores con referencias |
-|------------|-----------|------------|---------------------------|
-| **DSRC (Dedicated Short-Range Communication)** | TRL 9 | Tag de peaje, comunicación OBU-RSU | Kapsch, Q-Free, Siemens |
-| **LPR/ANPR (Reconocimiento de placas)** | TRL 9 | Identificación vehicular, matriz origen-destino | Kapsch (Palmillas-Apaseo), múltiples proveedores |
+| Tecnología | Maturidad | Aplicación | Estado en mercado |
+|------------|-----------|------------|-------------------|
+| **DSRC (Dedicated Short-Range Communication)** | TRL 9 | Tag de peaje, comunicación OBU-RSU | Implementado en múltiples concesiones LATAM y Europa |
+| **LPR/ANPR (Reconocimiento de placas)** | TRL 9 | Identificación vehicular, matriz origen-destino | Operativo en proyectos México, Chile, España |
 | **RFID pasivo** | TRL 9 | Peaje de bajo costo | Usado en Telepase Brasil, Tag Chile |
 | **GPS/GNSS para peaje** | TRL 6-7 | Peaje por ubicación (sin infraestructura física) | Piloto en Europa, sin despliegue masivo en LATAM |
-| **Cámaras LPR de alta velocidad** | TRL 9 | Detección a 120+ km/h sin detenerse | Kapsch, Sensys, múltiples |
+| **Cámaras LPR de alta velocidad** | TRL 9 | Detección a 120+ km/h sin detenerse | Tecnología madura disponible globalmente |
 
 ### 2.4 Oportunidad de servicio explotable para Chía-Girardot
 
@@ -61,10 +61,10 @@ La movilidad conectada —donde vehículos se comunican con infraestructura (V2I
 
 | Proyecto | País | Alcance | Estado | Referencia |
 |----------|------|---------|--------|------------|
-| **Bizkaia Connected Corridor** | España | 25 RSU en 60 km de autopista A-8 | Piloto operativo desde 2023 | Kapsch, junio 2023 |
+| **Bizkaia Connected Corridor** | España | 25 RSU en 60 km de autopista A-8 | Piloto operativo desde 2023 | Comunicado de prensa proyecto, junio 2023 |
 | **Smart Columbus (Rickenbacker Causeway)** | Ohio, USA | Corredor conectado con sensores y RSU | Piloto completado 2018-2020 | U.S. DOT, Smart Columbus |
 | **Mcity (Universidad de Michigan)** | Michigan, USA | Campus de pruebas V2X con semáforos conectados | Operativo (fase de pruebas) | Universidad de Michigan |
-| **Avenida de la Ilustración (Madrid)** | España | Semáforos conectados, RSU, gestión de tráfico | Piloto | Madrid City Council, Kapsch |
+| **Avenida de la Ilustración (Madrid)** | España | Semáforos conectados, RSU, gestión de tráfico | Piloto | Madrid City Council |
 | **C-V2X en autopistas chinas** | China | Varios corredores con RSU y OBU en vehículos | Despliegue parcial en autopistas estatales | Ministerio de Transporte chino |
 
 ### 3.3 Realidad del mercado en 2026
@@ -145,12 +145,12 @@ El peaje dinámico —donde la tarifa varía según hora del día, nivel de cong
 
 ### 5.3 Tecnología detrás del pricing dinámico
 
-| Componente | Función | Proveedores |
-|------------|---------|-------------|
-| **Detección de congestión** | Sensores, cámaras, loops que miden flujo y densidad | Kapsch, Indra, Siemens, Sensys |
+| Componente | Función | Disponibilidad en mercado |
+|------------|---------|---------------------------|
+| **Detección de congestión** | Sensores, cámaras, loops que miden flujo y densidad | Tecnología madura disponible |
 | **Algoritmos de pricing** | Software que ajusta tarifas en tiempo real según demanda | Plataformas ATMS, software propietario |
-| **Cobro sin fricción** | MLFF, LPR, tag DSRC | Kapsch, Q-Free |
-| **Información al usuario** | VMS, apps, web con precios en tiempo real | VMS LED, EcoTrafiX, apps |
+| **Cobro sin fricción** | MLFF, LPR, tag DSRC | Tecnología madura disponible |
+| **Información al usuario** | VMS, apps, web con precios en tiempo real | VMS LED, apps |
 
 ### 5.4 Oportunidad de servicio explotable para Chía-Girardot
 
@@ -182,7 +182,7 @@ Las concesiones viales generan enormes volúmenes de datos: velocidades, flujos,
 | **Wejo** | Reino Unido | Datos de vehículos conectados (OEM data) | Colabora con OEMs. Cotizaba en NASDAQ (WEJO) hasta su reorganización en 2023 |
 | **TomTom** | Países Bajos | Mapas, tráfico, telemática | Provee a Apple, Uber, Renault |
 | **Waze (Google)** | Israel / USA | Datos crowdsourced de tráfico | Usada por 140+ millones de usuarios. Programa "Waze for Cities" con gobiernos |
-| **Aimsun (Siemens)** | España | Modelación de tráfico, digital twins | Usada en planificación de transporte en ciudades globales |
+| **Aimsun** | España | Modelación de tráfico, digital twins | Usada en planificación de transporte en ciudades globales |
 
 ### 6.3 Tipos de datos con valor comercial
 
@@ -224,10 +224,10 @@ La inteligencia artificial en seguridad vial no es un concepto futurista. Ya est
 
 | Proyecto | País | Aplicación de IA | Estado | Referencia |
 |----------|------|-------------------|--------|------------|
-| **ASFINAG (Austria)** | Austria | Detección automática de incidentes (DAI) con IA en 2.200 km de autopistas | Operativo | ASFINAG, sistema Kapsch |
+| **ASFINAG (Austria)** | Austria | Detección automática de incidentes (DAI) con IA en 2.200 km de autopistas | Operativo | ASFINAG |
 | **Victoria State (Australia)** | Australia | Cámaras con IA para detección de conductas de riesgo (uso de celular, cinturón) | Operativo | VicRoads, Ministerio de Transporte de Victoria |
 | **M1 Inglaterra (Highways England)** | Reino Unido | IA para detección de incidentes y gestión de tráfico | Operativo | Highways England, now National Highways |
-| **Kapsch Dynac (proyectos globales)** | Global | Integración de analítica de video en plataforma ATMS | Operativo en Autopista al Mar, Vías del Nus | Kapsch Colombia |
+| **Autopista al Mar / Vías del Nus (Colombia)** | Colombia | Integración de analítica de video en plataforma ATMS | Operativo | Proyectos de concesión en Colombia |
 | **Proyectos de smart corridors en USA** | USA | IA para detección de peatones, animales, objetos en carretera | Piloto / Operativo | U.S. DOT, FHWA |
 
 ### 7.3 Aplicaciones de IA con valor comercial
@@ -274,9 +274,9 @@ Las concesiones viales están adoptando tecnologías de eficiencia energética y
 
 | Tecnología | Aplicación | Ahorro estimado | Referencia |
 |------------|------------|-----------------|------------|
-| **Alumbrado LED en túneles** | Iluminación de túneles | 40-60% vs. iluminación tradicional | Proyectos Kapsch en Colombia |
-| **Paneles solares en peajes y áreas** | Generación propia de energía | Reduce dependencia de red | Abertis, Brisa |
-| **Ventilación inteligente en túneles** | Jet fans con control por demanda (CO/visibilidad) | 20-30% de ahorro energético | Kapsch Dynac, proyectos europeos |
+| **Alumbrado LED en túneles** | Iluminación de túneles | 40-60% vs. iluminación tradicional | Proyectos de concesión en Colombia |
+| **Paneles solares en peajes y áreas** | Generación propia de energía | Reduce dependencia de red | Concesiones en España, Portugal, Chile |
+| **Ventilación inteligente en túneles** | Jet fans con control por demanda (CO/visibilidad) | 20-30% de ahorro energético | Proyectos europeos |
 | **Sistemas de respaldo energético** | Baterías + paneles para operación off-grid | Resiliencia operativa | Proyectos en zonas remotas |
 
 ### 8.4 Oportunidad de servicio explotable para Chía-Girardot
@@ -353,7 +353,7 @@ Las autopistas no solo transportan personas; transportan carga. La gestión inte
 
 | Proyecto | País | Aplicación | Estado | Referencia |
 |----------|------|------------|--------|------------|
-| **WIM (Weigh-in-Motion) en Palmillas-Apaseo** | México | Pesaje en movimiento + clasificación de ejes | Operativo | Kapsch, agosto 2025 |
+| **WIM (Weigh-in-Motion) en Palmillas-Apaseo** | México | Pesaje en movimiento + clasificación de ejes | Operativo | Comunicado de prensa proyecto, agosto 2025 |
 | **Control de peso en Chile** | Chile | Estaciones WIM en concesiones para fiscalización de carga | Operativo | Ministerio de Obras Públicas Chile |
 | **Plataformas logísticas en áreas de servicio (Europa)** | Europa | Hubs de carga última milla en áreas de servicio | Piloto / En expansión | Proyectos de logística urbana en autopistas |
 | **C-V2X para logística de flotas** | Piloto global | Comunicación entre camiones y centros de control | Piloto | Varios proyectos de fabricantes de camiones |
@@ -362,9 +362,9 @@ Las autopistas no solo transportan personas; transportan carga. La gestión inte
 
 | Tecnología | Función | Referencia |
 |------------|---------|------------|
-| **WIM (Pesaje en movimiento)** | Pesar vehículos sin detenerlos, clasificar ejes | Kapsch en Palmillas-Apaseo, Kistler, Intercomp |
+| **WIM (Pesaje en movimiento)** | Pesar vehículos sin detenerlos, clasificar ejes | Proyectos México, Chile |
 | **SACV (Sistema de Autocontrol de Vehículos)** | Colombia — sistema de fiscalización de carga | Implementado por MinTransporte en corredores nacionales |
-| **LPR para logística** | Identificación de vehículos de carga, control de acceso | Proyectos Kapsch global |
+| **LPR para logística** | Identificación de vehículos de carga, control de acceso | Proyectos globales de concesión |
 | **Cámaras de inspección de carga** | Verificación visual de carga sin detener vehículo | Proyectos en Europa y USA |
 
 ### 10.4 Oportunidad de servicio explotable para Chía-Girardot
@@ -497,11 +497,11 @@ Este documento presenta tendencias y oportunidades basadas en proyectos verifica
 
 | # | Referencia | Fuente | Fecha | Notas |
 |---|-----------|--------|-------|-------|
-| 1 | Kapsch - Nogales-Puchuncaví (Chile) SmartToll | Business Wire / Kapsch | Enero 2022 | Peaje MLFF + tradicional |
-| 2 | Kapsch - Palmillas-Apaseo (México) | Kapsch | Agosto 2025 | WIM, LPR, CCTV, EcoTrafiX |
-| 3 | Kapsch - Bizkaia Connected Corridor V2X | Kapsch | Junio 2023 | 25 RSU en 60 km |
-| 4 | Kapsch - Autopista al Mar 1 (Colombia) | Business Wire | Junio 2021 | Dynac, SCADA, túneles |
-| 5 | Kapsch - Vías del Nus / La Quiebra (Colombia) | Business Wire / RNS | Abril 2022 | Dynac, túneles, ATMS |
+| 1 | Nogales-Puchuncaví (Chile) | Comunicado de prensa proyecto | Enero 2022 | Peaje MLFF + tradicional |
+| 2 | Palmillas-Apaseo (México) | Comunicado de prensa proyecto | Agosto 2025 | WIM, LPR, CCTV |
+| 3 | Bizkaia Connected Corridor V2X | Comunicado de prensa proyecto | Junio 2023 | 25 RSU en 60 km |
+| 4 | Autopista al Mar 1 (Colombia) | Comunicado de prensa proyecto | Junio 2021 | ATMS, SCADA, túneles |
+| 5 | Vías del Nus / La Quiebra (Colombia) | Comunicado de prensa proyecto | Abril 2022 | ATMS, túneles |
 | 6 | Singapore Land Transport Authority - ERP | LTA Singapore | Vigente | Sistema de peaje dinámico desde 1998 |
 | 7 | Transport for London - Congestion Charge | TfL | Vigente | Peaje zona central desde 2003 |
 | 8 | Swedish Transport Agency - Congestion Tax | Transportstyrelsen | Vigente | Estocolmo desde 2007, Gothenburg desde 2013 |
