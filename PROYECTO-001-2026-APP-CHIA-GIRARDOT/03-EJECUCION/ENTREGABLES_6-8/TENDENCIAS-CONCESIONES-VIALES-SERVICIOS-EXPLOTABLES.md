@@ -234,8 +234,7 @@ Finalmente, la soberanía del dato es el eje transversal de todas las tecnologí
 
 ---
 
-**Documento elaborado por ZEUS para INNOVADATACO**
-**Proyecto:** APP Chía-Girardot — Estructuración ITS
+**Documento de Orientación para la Estructuración de la Concesión APP Chía-Girardot**
 **Fecha:** Junio 2026
-**Estado:** Borrador para revisión del CEO
+**Estado:** Borrador para revisión
 **Nota metodológica:** Toda la información proviene de fuentes públicas verificables. No se incluyen datos inventados ni proyecciones no confirmadas. Las tecnologías presentadas son opciones que el futuro concesionario podrá evaluar; no son obligatorias ni excluyentes.
