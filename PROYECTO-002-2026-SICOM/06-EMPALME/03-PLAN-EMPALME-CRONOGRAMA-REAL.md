@@ -60,44 +60,44 @@ Objetivo: Instalar gobierno, obtener acceso y documentar todo lo que existe.
 Días laborables: 7 (Miércoles 11-13, Jueves 17-20; Lunes 16 feriado)
 
 Día 1 — Miércoles 11 de junio:
-- 08:00-09:00 | Acta de constitución del equipo de empalme | Jelkin | Acta firmada
-- 09:00-12:00 | Reunión de kickoff con CI2 (6 especialistas + coordinador) | Jelkin | Acta de kickoff, roles asignados
-- 14:00-16:00 | Solicitud formal a INTERNEXA para acceso de sólo consulta | Jelkin + CI2 | Correo formal enviado
-- 16:00-17:00 | Creación de grupo de comunicación (WhatsApp + Drive + GitHub) | Jelkin | Canales activos
+- Acta de constitución del equipo de empalme | Jelkin | Acta firmada
+- Reunión de kickoff con CI2 (6 especialistas + coordinador) | Jelkin | Acta de kickoff, roles asignados
+- Solicitud formal a INTERNEXA para acceso de sólo consulta | Jelkin + CI2 | Correo formal enviado
+- Creación de grupo de comunicación (WhatsApp + Drive + GitHub) | Jelkin | Canales activos
 
 Día 2 — Jueves 12 de junio:
-- 08:00-10:00 | Reunión con MME (Elizabeth) — presentación de plan y solicitud de insumos | Jelkin | Acta con MME, insumos solicitados
-- 10:00-12:00 | INTERNEXA entrega acceso de lectura a arquitectura (si autoriza) | INTERNEXA | Credenciales o lista de bloqueos
-- 14:00-16:00 | Especialistas CI2 reciben orientación de seguridad y NDA | S5 + Jelkin | NDA firmado, políticas de seguridad claras
-- 16:00-17:00 | Reunión diaria de sincronización (15 min) | Jelkin | Acta diaria #1
+- Reunión con MME (Elizabeth) — presentación de plan y solicitud de insumos | Jelkin | Acta con MME, insumos solicitados
+- INTERNEXA entrega acceso de lectura a arquitectura (si autoriza) | INTERNEXA | Credenciales o lista de bloqueos
+- Especialistas CI2 reciben orientación de seguridad y NDA | S5 + Jelkin | NDA firmado, políticas de seguridad claras
+- Reunión diaria de sincronización (15 min) | Jelkin | Acta diaria #1
 
 Día 3 — Viernes 13 de junio:
-- 08:00-12:00 | Inventario Técnico — Día 1: Especialistas exploran su área con acceso de lectura | S1-S6 | Notas preliminares, primeros hallazgos
-- 14:00-16:00 | Validación de accesos — ¿qué sistemas no se pueden ver? | S1-S6 | Lista de bloqueos y restricciones
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #2
+- Inventario Técnico — Día 1: Especialistas exploran su área con acceso de lectura | S1-S6 | Notas preliminares, primeros hallazgos
+- Validación de accesos — ¿qué sistemas no se pueden ver? | S1-S6 | Lista de bloqueos y restricciones
+- Reunión diaria de sincronización | Jelkin | Acta diaria #2
 
 Día 4 — Lunes 16 de junio: 🏖️ DÍA FERIADO (Sagrado Corazón de Jesús) — NO LABORABLE
 
 Día 5 — Martes 17 de junio:
-- 08:00-12:00 | Inventario Técnico — Día 2: Documentación preliminar de cada especialista | S1-S6 | Borradores de inventario por área
-- 14:00-16:00 | Consolidación de información — Jelkin revisa avance con cada especialista | Jelkin + Coordinador | Documento borrador de inventario
-- 16:00-17:00 | Reunión con INTERNEXA — solicitud de información faltante | Jelkin | Lista de gaps técnicos
+- Inventario Técnico — Día 2: Documentación preliminar de cada especialista | S1-S6 | Borradores de inventario por área
+- Consolidación de información — Jelkin revisa avance con cada especialista | Jelkin + Coordinador | Documento borrador de inventario
+- Reunión con INTERNEXA — solicitud de información faltante | Jelkin | Lista de gaps técnicos
 
 Día 6 — Miércoles 18 de junio:
-- 08:00-12:00 | Trabajo independiente — cada especialista profundiza en su área | S1-S6 | Notas detalladas, fotos, diagramas
-- 14:00-16:00 | Jelkin prepara reporte semanal #1 para Luis Felipe (CI2) | Jelkin | Reporte semanal #1
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #3
+- Trabajo independiente — cada especialista profundiza en su área | S1-S6 | Notas detalladas, fotos, diagramas
+- Jelkin prepara reporte semanal #1 para Luis Felipe (CI2) | Jelkin | Reporte semanal #1
+- Reunión diaria de sincronización | Jelkin | Acta diaria #3
 
 Día 7 — Jueves 19 de junio:
-- 08:00-12:00 | Revisión de documentación existente del SICOM (48 docs analizados) | Jelkin + S6 | Validación de documentación vs. realidad
-- 14:00-16:00 | Identificación de riesgos iniciales — matriz preliminar | Jelkin + S5 | Matriz de riesgos v0.1
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #4
+- Revisión de documentación existente del SICOM (48 docs analizados) | Jelkin + S6 | Validación de documentación vs. realidad
+- Identificación de riesgos iniciales — matriz preliminar | Jelkin + S5 | Matriz de riesgos v0.1
+- Reunión diaria de sincronización | Jelkin | Acta diaria #4
 
 Día 8 — Viernes 20 de junio:
-- 08:00-10:00 | Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal, ajustes al plan
-- 10:00-12:00 | Cierre de semana 1 — cada especialista presenta avance | S1-S6 | Presentación de 5 min por área
-- 14:00-16:00 | Jelkin prepara reporte quincenal #1 para Elizabeth (MME) | Jelkin | Informe quincenal #1 (borrador)
-- 16:00-17:00 | Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #5
+- Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal, ajustes al plan
+- Cierre de semana 1 — cada especialista presenta avance | S1-S6 | Presentación de 5 min por área
+- Jelkin prepara reporte quincenal #1 para Elizabeth (MME) | Jelkin | Informe quincenal #1 (borrador)
+- Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #5
 
 HITOS SEMANA 1:
 ✅ Equipo de empalme instalado y operando (11 junio)
@@ -114,32 +114,32 @@ Objetivo: Obtener la documentación completa y comenzar shadowing con INTERNEXA.
 Días laborables: 5 (Lunes 23- viernes 27)
 
 Día 9 — Lunes 23 de junio:
-- 08:00-10:00 | Reunión con INTERNEXA — entrega de documentación técnica completa | Jelkin + Coordinador | Acta + lista documentos recibidos
-- 10:00-12:00 | Especialistas validan documentación recibida vs. lo que vieron en campo | S1-S6 | Validación de docs, discrepancias
-- 14:00-16:00 | Shadowing Día 1 — S1 (Software) con desarrollador INTERNEXA | S1 + INTERNEXA | Notas de shadowing, grabación
-- 14:00-16:00 | Shadowing Día 1 — S2 (BD) con DBA INTERNEXA | S2 + INTERNEXA | Notas de shadowing, grabación
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #6
+- Reunión con INTERNEXA — entrega de documentación técnica completa | Jelkin + Coordinador | Acta + lista documentos recibidos
+- Especialistas validan documentación recibida vs. lo que vieron en campo | S1-S6 | Validación de docs, discrepancias
+- Shadowing Día 1 — S1 (Software) con desarrollador INTERNEXA | S1 + INTERNEXA | Notas de shadowing, grabación
+- Shadowing Día 1 — S2 (BD) con DBA INTERNEXA | S2 + INTERNEXA | Notas de shadowing, grabación
+- Reunión diaria de sincronización | Jelkin | Acta diaria #6
 
 Día 10 — Martes 24 de junio:
-- 08:00-12:00 | Shadowing Día 2 — S3 (Infra) con admin infraestructura INTERNEXA | S3 + INTERNEXA | Notas de shadowing, grabación
-- 14:00-16:00 | Shadowing Día 2 — S4 (Redes) con ingeniero redes INTERNEXA | S4 + INTERNEXA | Notas de shadowing, grabación
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #7
+- Shadowing Día 2 — S3 (Infra) con admin infraestructura INTERNEXA | S3 + INTERNEXA | Notas de shadowing, grabación
+- Shadowing Día 2 — S4 (Redes) con ingeniero redes INTERNEXA | S4 + INTERNEXA | Notas de shadowing, grabación
+- Reunión diaria de sincronización | Jelkin | Acta diaria #7
 
 Día 11 — Miércoles 25 de junio:
-- 08:00-12:00 | Shadowing Día 3 — S5 (Seguridad) con especialista seguridad INTERNEXA | S5 + INTERNEXA | Notas de shadowing, grabación
-- 14:00-16:00 | Shadowing Día 3 — S6 (Arquitectura) con arquitecto INTERNEXA | S6 + INTERNEXA | Notas de shadowing, grabación
-- 16:00-17:00 | Jelkin revisa avance de shadowing con cada especialista | Jelkin | Feedback individual, ajustes
+- Shadowing Día 3 — S5 (Seguridad) con especialista seguridad INTERNEXA | S5 + INTERNEXA | Notas de shadowing, grabación
+- Shadowing Día 3 — S6 (Arquitectura) con arquitecto INTERNEXA | S6 + INTERNEXA | Notas de shadowing, grabación
+- Jelkin revisa avance de shadowing con cada especialista | Jelkin | Feedback individual, ajustes
 
 Día 12 — Jueves 26 de junio:
-- 08:00-12:00 | Shadowing Día 4 — Procedimientos de respaldo, monitoreo, troubleshooting | S1-S6 + INTERNEXA | Notas de shadowing, runbooks preliminares
-- 14:00-16:00 | Validación de backups — S2 prueba restore en ambiente de pruebas | S2 | Resultado de restore, éxito o falla
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #8
+- Shadowing Día 4 — Procedimientos de respaldo, monitoreo, troubleshooting | S1-S6 + INTERNEXA | Notas de shadowing, runbooks preliminares
+- Validación de backups — S2 prueba restore en ambiente de pruebas | S2 | Resultado de restore, éxito o falla
+- Reunión diaria de sincronización | Jelkin | Acta diaria #8
 
 Día 13 — Viernes 27 de junio:
-- 08:00-10:00 | Documentación de Runbooks v1 — cada especialista escribe procedimientos | S1-S6 | Runbooks v1 por área
-- 10:00-12:00 | Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal #2, ajustes
-- 14:00-16:00 | Jelkin prepara reporte semanal #2 | Jelkin | Reporte semanal #2
-- 16:00-17:00 | Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #9
+- Documentación de Runbooks v1 — cada especialista escribe procedimientos | S1-S6 | Runbooks v1 por área
+- Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal #2, ajustes
+- Jelkin prepara reporte semanal #2 | Jelkin | Reporte semanal #2
+- Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #9
 
 Día 14 — Lunes 30 de junio: 🏖️ DÍA FERIADO (San Pedro y San Pablo) — NO LABORABLE
 
@@ -158,54 +158,54 @@ Días laborables: 9 (Martes 1- viernes 4, Lunes 7- viernes 11)
 Nota: Martes 1 de julio = INICIO OFICIAL OPERACIÓN CI2
 
 Día 15 — Martes 1 de julio (INICIO OPERACIÓN CI2):
-- 08:00-09:00 | Ceremonia de corte — Acta de inicio de operación CI2 | Jelkin + Luis Felipe + Elizabeth | Acta de corte firmada
-- 09:00-12:00 | Prueba de Fuego #1 — S1 intenta deploy básico en ambiente de pruebas sin ayuda | S1 | Resultado + log, éxito o falla
-- 14:00-16:00 | Prueba de Fuego #2 — S2 ejecuta backup y verifica integridad sin ayuda | S2 | Resultado + log
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #10
+- Ceremonia de corte — Acta de inicio de operación CI2 | Jelkin + Luis Felipe + Elizabeth | Acta de corte firmada
+- Prueba de Fuego #1 — S1 intenta deploy básico en ambiente de pruebas sin ayuda | S1 | Resultado + log, éxito o falla
+- Prueba de Fuego #2 — S2 ejecuta backup y verifica integridad sin ayuda | S2 | Resultado + log
+- Reunión diaria de sincronización | Jelkin | Acta diaria #10
 
 Día 16 — Miércoles 2 de julio:
-- 08:00-12:00 | Prueba de Fuego #3 — S3 reinicia servicio en VM de prueba sin ayuda | S3 | Resultado + log
-- 14:00-16:00 | Prueba de Fuego #4 — S4 identifica y resuelve problema de red simulado | S4 | Resultado + log
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #11
+- Prueba de Fuego #3 — S3 reinicia servicio en VM de prueba sin ayuda | S3 | Resultado + log
+- Prueba de Fuego #4 — S4 identifica y resuelve problema de red simulado | S4 | Resultado + log
+- Reunión diaria de sincronización | Jelkin | Acta diaria #11
 
 Día 17 — Jueves 3 de julio:
-- 08:00-12:00 | Prueba de Fuego #5 — S5 ejecuta procedimiento de revisión de vulnerabilidades | S5 | Resultado + log
-- 14:00-16:00 | Prueba de Fuego #6 — S6 traza flujo de datos completo de una transacción | S6 | Diagrama + log
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #12
+- Prueba de Fuego #5 — S5 ejecuta procedimiento de revisión de vulnerabilidades | S5 | Resultado + log
+- Prueba de Fuego #6 — S6 traza flujo de datos completo de una transacción | S6 | Diagrama + log
+- Reunión diaria de sincronización | Jelkin | Acta diaria #12
 
 Día 18 — Viernes 4 de julio:
-- 08:00-10:00 | Reunión de revisión — Jelkin evalúa gaps con cada especialista | Jelkin + S1-S6 | Lista de gaps post-pruebas
-- 10:00-12:00 | Reunión con MME (Elizabeth) — reporte de avance y solicitud de decisiones | Jelkin | Acta con MME
-- 14:00-16:00 | Jelkin prepara reporte semanal #3 | Jelkin | Reporte semanal #3
-- 16:00-17:00 | Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #13
+- Reunión de revisión — Jelkin evalúa gaps con cada especialista | Jelkin + S1-S6 | Lista de gaps post-pruebas
+- Reunión con MME (Elizabeth) — reporte de avance y solicitud de decisiones | Jelkin | Acta con MME
+- Jelkin prepara reporte semanal #3 | Jelkin | Reporte semanal #3
+- Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #13
 
 Día 19 — Sábado 5 y Domingo 6 de julio: 🏖️ FIN DE SEMANA — NO LABORABLE
 
 Día 20 — Lunes 7 de julio:
-- 08:00-12:00 | Simulacro de DRP (Disaster Recovery Plan) — CI2 intenta recuperar sistema con documentación solo | Todos | Resultado de simulacro, éxito o falla
-- 14:00-16:00 | Reunión de análisis post-simulacro — lecciones aprendidas | Jelkin + S1-S6 | Acta de simulacro, acciones correctivas
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #14
+- Simulacro de DRP (Disaster Recovery Plan) — CI2 intenta recuperar sistema con documentación solo | Todos | Resultado de simulacro, éxito o falla
+- Reunión de análisis post-simulacro — lecciones aprendidas | Jelkin + S1-S6 | Acta de simulacro, acciones correctivas
+- Reunión diaria de sincronización | Jelkin | Acta diaria #14
 
 Día 21 — Martes 8 de julio:
-- 08:00-12:00 | Corrección de gaps — cada especialista refuerza áreas donde falló | S1-S6 | Runbooks v2, documentación actualizada
-- 14:00-16:00 | Jelkin prepara reporte quincenal #2 (final) para MME | Jelkin | Informe quincenal #2
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #15
+- Corrección de gaps — cada especialista refuerza áreas donde falló | S1-S6 | Runbooks v2, documentación actualizada
+- Jelkin prepara reporte quincenal #2 (final) para MME | Jelkin | Informe quincenal #2
+- Reunión diaria de sincronización | Jelkin | Acta diaria #15
 
 Día 22 — Miércoles 9 de julio:
-- 08:00-12:00 | Pruebas de integración — validar que todas las conexiones externas funcionan | S1-S6 | Resultado de pruebas de integración
-- 14:00-16:00 | Pruebas de estrés — validar rendimiento del sistema bajo carga | S3 + S6 | Resultado de pruebas de estrés
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #16
+- Pruebas de integración — validar que todas las conexiones externas funcionan | S1-S6 | Resultado de pruebas de integración
+- Pruebas de estrés — validar rendimiento del sistema bajo carga | S3 + S6 | Resultado de pruebas de estrés
+- Reunión diaria de sincronización | Jelkin | Acta diaria #16
 
 Día 23 — Jueves 10 de julio:
-- 08:00-12:00 | Validación de seguridad — auditoría de vulnerabilidades con CI2 | S5 | Resultado de auditoría, plan de remediación
-- 14:00-16:00 | Reunión de cierre con INTERNEXA — validación final de entregables | Jelkin + Coordinador + INTERNEXA | Acta de cierre con INTERNEXA
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #17
+- Validación de seguridad — auditoría de vulnerabilidades con CI2 | S5 | Resultado de auditoría, plan de remediación
+- Reunión de cierre con INTERNEXA — validación final de entregables | Jelkin + Coordinador + INTERNEXA | Acta de cierre con INTERNEXA
+- Reunión diaria de sincronización | Jelkin | Acta diaria #17
 
 Día 24 — Viernes 11 de julio:
-- 08:00-10:00 | Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal #3, ajustes finales
-- 10:00-12:00 | Presentación de estado de empalme a Luis Felipe (CI2) | Jelkin | Presentación ejecutiva
-- 14:00-16:00 | Preparación de entregables finales — consolidación de documentación | Jelkin | Carpeta de entregables completa
-- 16:00-17:00 | Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #18
+- Reunión semanal de revisión — CI2 + Innovadataco | Jelkin + Luis Felipe | Acta semanal #3, ajustes finales
+- Presentación de estado de empalme a Luis Felipe (CI2) | Jelkin | Presentación ejecutiva
+- Preparación de entregables finales — consolidación de documentación | Jelkin | Carpeta de entregables completa
+- Reunión diaria de sincronización + fin de semana | Jelkin | Acta diaria #18
 
 HITOS SEMANA 3:
 ✅ 6 pruebas de fuego ejecutadas (una por especialista) (1-3 julio)
@@ -221,31 +221,31 @@ Objetivo: Cerrar documentación, validar últimos detalles y entregar operación
 Días laborables: 5 (Lunes 14- viernes 18)
 
 Día 25 — Lunes 14 de julio:
-- 08:00-10:00 | Reunión de cierre con INTERNEXA — validación final de entregables | Jelkin + Coordinador + INTERNEXA | Acta de cierre
-- 10:00-12:00 | INTERNEXA entrega credenciales operativas finales (si aplica) | INTERNEXA | Lista de credenciales
-- 14:00-16:00 | Validación Final — cada especialista prueba acceso operativo completo | S1-S6 | Checklist de validación firmado
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #19
+- Reunión de cierre con INTERNEXA — validación final de entregables | Jelkin + Coordinador + INTERNEXA | Acta de cierre
+- INTERNEXA entrega credenciales operativas finales (si aplica) | INTERNEXA | Lista de credenciales
+- Validación Final — cada especialista prueba acceso operativo completo | S1-S6 | Checklist de validación firmado
+- Reunión diaria de sincronización | Jelkin | Acta diaria #19
 
 Día 26 — Martes 15 de julio:
-- 08:00-12:00 | Preparación de corte — Jelkin define plan de contingencia post-empalme | Jelkin | Plan de contingencia v1.0
-- 14:00-16:00 | Reunión con CI2 — presentación de estado de empalme a Luis Felipe | Jelkin | Presentación final, aprobación
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #20
+- Preparación de corte — Jelkin define plan de contingencia post-empalme | Jelkin | Plan de contingencia v1.0
+- Reunión con CI2 — presentación de estado de empalme a Luis Felipe | Jelkin | Presentación final, aprobación
+- Reunión diaria de sincronización | Jelkin | Acta diaria #20
 
 Día 27 — Miércoles 16 de julio:
-- 08:00-12:00 | Reunión con MME — informe final de empalme a Elizabeth | Jelkin + Elizabeth | Informe final, aprobación
-- 14:00-16:00 | MME asigna permisos de consulta de arquitectura a CI2 (si no lo hizo) | Elizabeth (MME) | Confirmación de accesos
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #21
+- Reunión con MME — informe final de empalme a Elizabeth | Jelkin + Elizabeth | Informe final, aprobación
+- MME asigna permisos de consulta de arquitectura a CI2 (si no lo hizo) | Elizabeth (MME) | Confirmación de accesos
+- Reunión diaria de sincronización | Jelkin | Acta diaria #21
 
 Día 28 — Jueves 17 de julio:
-- 08:00-12:00 | Corrección de últimos detalles — Jelkin coordina cierre de gaps menores | Jelkin + S1-S6 | Lista de cierre, todos los gaps cerrados
-- 14:00-16:00 | Preparación de entregables finales — consolidación de documentación | Jelkin | Carpeta de entregables final
-- 16:00-17:00 | Reunión diaria de sincronización | Jelkin | Acta diaria #22
+- Corrección de últimos detalles — Jelkin coordina cierre de gaps menores | Jelkin + S1-S6 | Lista de cierre, todos los gaps cerrados
+- Preparación de entregables finales — consolidación de documentación | Jelkin | Carpeta de entregables final
+- Reunión diaria de sincronización | Jelkin | Acta diaria #22
 
 Día 29 — Viernes 18 de julio:
-- 08:00-10:00 | Reunión de cierre oficial — CI2 + Innovadataco + MME (opcional) | Todos | Acta de cierre oficial
-- 10:00-12:00 | Entrega formal de documentación, credenciales y runbooks a CI2 | Jelkin + Luis Felipe | Recibo de entregables firmado
-- 14:00-16:00 | Jelkin prepara informe final de empalme (documento histórico) | Jelkin | Informe final de empalme
-- 16:00-17:00 | CIERRE OFICIAL DEL EMPALME | Todos | Fin de empalme, equipo liberado
+- Reunión de cierre oficial — CI2 + Innovadataco + MME (opcional) | Todos | Acta de cierre oficial
+- Entrega formal de documentación, credenciales y runbooks a CI2 | Jelkin + Luis Felipe | Recibo de entregables firmado
+- Jelkin prepara informe final de empalme (documento histórico) | Jelkin | Informe final de empalme
+- CIERRE OFICIAL DEL EMPALME | Todos | Fin de empalme, equipo liberado
 
 HITOS SEMANA 4:
 ✅ Acta de cierre con INTERNEXA firmada (14 julio)
