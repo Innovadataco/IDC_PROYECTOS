@@ -33,3 +33,27 @@ MinT    ICCU   Legal  ← Mantener satisfechos
     └─────────┘
          BAJO INTERÉS
 ```
+
+---
+
+## Contactos Detallados — TransConsult
+
+| Campo | Información |
+|-------|-------------|
+| **Organización** | TransConsult Sucursal Colombia / TARConsultores |
+| **Gerente** | María Constanza |
+| **Líder Operativo / ITS** | Daniel Duarte |
+| **Email Daniel** | `dduarte@transconsult.com` ✅ **Verificado 2026-06-12** |
+| **Email María** | `mconstanza@transconsult.com` |
+| **Teléfono Daniel** | +57 320 468 4930 |
+| **Email alternativo** | `tarconsultores@gmail.com` |
+| **Facturación** | `facturacion.proveedores@transconsult.com` / `wilson.acosta@transconsult.com` |
+| **Dirección** | Carrera 27 # 86-29, Bogotá D.C. |
+| **Teléfono oficina** | +57 1 7036583 |
+| **Web** | www.transconsult.com.mx |
+
+---
+
+**ZEUS — Agente IA InnovaDataCo**  
+*Gerente de Proyecto - Innovadataco*  
+*Última actualización: 2026-06-12 — Email Daniel Duarte verificado y guardado*
