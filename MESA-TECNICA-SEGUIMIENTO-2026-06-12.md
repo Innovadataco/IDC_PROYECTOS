@@ -12,7 +12,7 @@
 |----------|--------|-------|-----------|----------------|
 | APP Chía-Girardot | 🟢 Activo | 🟡 Regular | 🔴 Alta | Modelo costos + Reunión IFC |
 | SICOM | 🟡 En Espera | ⚪ Stand-by | 🟡 Media | **Decisión CI2 pendiente** |
-| SETP Sincelejo | 🟡 Inicio | 🟡 Regular | 🟡 Media | Revisión documental |
+| SETP Sincelejo | 🟡 En Inicio | ⚪ Stand-by | 🟡 Media | **Pendiente firma de contrato** |
 
 ---
 
@@ -135,27 +135,45 @@
 
 ## 🟡 PROYECTO 3: SETP SINCELEJO
 
-### Información General
+### ⚠️ ESTADO ACTUAL: EN INICIO — PENDIENTE FIRMA DE CONTRATO
+
+**Bloqueo:** Sin contrato firmado no se puede iniciar formalmente el proyecto.
 
 | Campo | Valor |
 |-------|-------|
 | **Nombre** | Sistema Estratégico de Transporte Público — Sincelejo |
 | **Referencia** | Proyecto 4004 de 2026 |
 | **Cliente** | Alcaldía de Sincelejo / SETP |
-| **Estado** | 🟡 Inicio — Fase exploratoria |
+| **Estado** | 🟡 **EN INICIO** — Pendiente firma de contrato |
+| **Bloqueo** | Sin contrato firmado no se puede iniciar |
+
+### Nota de Estado (12 jun 2026)
+
+> **No se reportan avances a la fecha.** El proyecto SETP Sincelejo está en fase exploratoria. 
+>
+> **Bloqueo principal:** Pendiente firma de contrato para iniciar formalmente. Sin contrato no se puede avanzar con actividades operativas ni generar artefactos de inicio formales.
+>
+> **Acción de ZEUS:** Estructura PM2 preparada. Esperar firma de contrato para activar fase de INICIO.
 
 ### Actividades Realizadas
 
-- Revisión de carpeta Google Drive
+- Revisión de carpeta Google Drive (preliminar)
 - Análisis de viabilidad preliminar
 - Potencial contratación identificada
+- Estructura PM2 inicializada en repo (README.md v1.0)
 
-### Próximos Pasos
+### Próximos Pasos (Post-firma de contrato)
 
-1. Revisión documental completa
+1. Generar artefactos de INICIO (Acta de Constitución, Ficha Técnica, Caso de Negocios)
 2. Análisis de requerimientos
 3. Propuesta técnica preliminar
-4. Contacto con Alcaldía de Sincelejo
+4. Contacto formal con Alcaldía de Sincelejo
+
+### Acción de ZEUS
+
+- **Preparar:** Templates de Acta de Constitución y Ficha Técnica listos para cuando se firme
+- **Esperar:** Confirmación de firma de contrato
+- **Documentar:** Estado "En Inicio — Pendiente firma" en PM2
 
 ---
 
@@ -189,7 +207,7 @@
 | 4 | Avanzar modelo de costos | APP | 🟡 EN PROGRESO |
 | 5 | Programar reunión IFC | APP | 🟡 PENDIENTE |
 | 6 | Presionar pago TransConsult | APP | 🔴 PENDIENTE |
-| 7 | Completar empalme SICOM semana 4 | SICOM | 🔴 **CERRADO** — 12 jun 2026 |
+| 8 | Inicializar estructura PM2 SETP | SETP | ✅ COMPLETADA |
 
 ---
 

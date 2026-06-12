@@ -6,7 +6,8 @@
 **Referencia:** Proyecto 4004 de 2026  
 **Fecha de Inicio:** [Por definir]  
 **Última Actualización:** 12 de junio de 2026  
-**Estado:** 🟡 En Inicio — Fase Exploratoria
+**Estado:** 🟡 En Inicio — **Pendiente firma de contrato para iniciar**
+**Bloqueo:** Sin contrato firmado no se puede iniciar formalmente el proyecto
 
 ---
 
@@ -123,9 +124,16 @@ PROYECTO-003-2026-SETP-SINCELEJO/
 
 ## 📝 Nota de Estado (12 jun 2026)
 
-> **No se reportan avances a la fecha.** El proyecto SETP Sincelejo está en fase exploratoria inicial. Se requiere revisar documentación existente y establecer contacto con el cliente para definir alcance, cronograma y viabilidad.
+> **No se reportan avances a la fecha.** El proyecto SETP Sincelejo está en fase exploratoria inicial. 
 >
-> **Acción de ZEUS:** Preparar estructura PM2, esperar instrucciones del CEO para revisión documental.
+> **Bloqueo principal:** Pendiente firma de contrato para iniciar formalmente el proyecto. Sin contrato firmado no se puede avanzar con actividades operativas ni generar artefactos de inicio formales.
+>
+> **Acción de ZEUS:** 
+> - Estructura PM2 preparada y lista para activación
+> - Esperar firma de contrato para generar artefactos de INICIO
+> - Preparar templates de Acta de Constitución y Ficha Técnica para cuando se autorice
+>
+> **Próxima acción:** Confirmar firma de contrato con Alcaldía de Sincelejo
 
 ---
 
