@@ -11,7 +11,7 @@
 | Proyecto | Estado | Salud | Prioridad | Acción Crítica |
 |----------|--------|-------|-----------|----------------|
 | APP Chía-Girardot | 🟢 Activo | 🟡 Regular | 🔴 Alta | Modelo costos + Reunión IFC |
-| SICOM | 🟢 Activo | 🟢 Buena | 🟡 Media | Empalme semana 4 |
+| SICOM | 🟡 En Espera | ⚪ Stand-by | 🟡 Media | **Decisión CI2 pendiente** |
 | SETP Sincelejo | 🟡 Inicio | 🟡 Regular | 🟡 Media | Revisión documental |
 
 ---
@@ -87,52 +87,50 @@
 
 ## 🟡 PROYECTO 2: SICOM (EMPALME MME)
 
-### Información General
+### ⚠️ ESTADO ACTUAL: EN ESPERA
+
+**Bloqueo:** A la espera de decisión de CI2 sobre continuidad del proyecto.
 
 | Campo | Valor |
 |-------|-------|
 | **Nombre** | SICOM — Sistema de Información del Comercio Exterior Minero-Energético |
 | **Cliente** | Ministerio de Minas y Energía (MME) |
 | **Aliado** | CI2 / IND TECH |
-| **Fase** | Empalme Técnico (Semana 4) |
-| **Estado** | 🟢 Activo |
+| **Gerente CI2** | Luis Felipe Herrera |
+| **Estado** | 🟡 **EN ESPERA** — Sin avances a hoy |
+| **Bloqueo** | Decisión de CI2 pendiente sobre continuidad |
 
-### Estado de Empalme
+### Nota de Estado (12 jun 2026)
+
+> **No se reportan avances a la fecha.** El proyecto está en estado de espera a la decisión de CI2 (Luis Felipe Herrera) sobre si continúan con el empalme técnico. Hasta nueva decisión, no hay actividades operativas planificadas.
+
+### Historial de Empalme (Hasta la espera)
 
 | Semana | Estado | Actividades |
 |--------|--------|-------------|
 | Semana 1 | ✅ Completada | Recepción documentación, kick-off |
 | Semana 2 | ✅ Completada | Análisis arquitectura, procesos core |
 | Semana 3 | ✅ Completada | Documentación operativa, seguridad |
-| Semana 4 | 🟡 En curso | Análisis profundo, gaps identificados |
-| Semana 5 | ⏳ Pendiente | Plan de empalme, roadmap |
+| Semana 4 | 🟡 **En espera** | Sin avances — decisión CI2 pendiente |
 
-### Entregables Generados
+### Entregables Generados (Pre-espera)
 
 - **Super Documento SICOM v1.2** — 53KB MD / 37KB DOCX
   - 16 secciones principales
   - 8 anexos técnicos (A-H)
   - 48 documentos procesados
 
-### Documentos Procesados (48 total)
+### Próximos Pasos (Condicionados a decisión CI2)
 
-- Manuales de procesos (M-126, M-127, M-128)
-- Manuales SIGDI (M-25, M-87, M-122, M-128, M-133)
-- Informes de seguridad (IDE-0020 Ethical Hacking, Matriz Vulnerabilidades)
-- Infraestructura (FortiSIEM, Kaspersky, P-11 SSL, P-12)
-- DRP (Procedimiento Activación DR, Pruebas DRP Marzo 2025)
-- Call Center (G-01 Guía Aranda, DATA CASOS Aranda)
-- BI/Calidad (Matriz Vulnerabilidades, Reportes ANS)
-- Desarrollo (Cronograma Vigencia 3, Roadmap Migración Gas, HU)
-- Gobernanza (Actas Comité Control Cambios)
+1. ⏳ **Recibir decisión de CI2** sobre continuidad
+2. ⏳ Si continúa: Retomar empalme semana 4
+3. ⏳ Si no continúa: Documentar cierre y lecciones aprendidas
 
-### Próximos Pasos
+### Acción de ZEUS
 
-1. Completar análisis semana 4
-2. Identificar gaps críticos
-3. Preplan plan de empalme semana 5
-4. Documentar roadmap migración
-
+- **Monitorizar:** Esperar decisión de CI2
+- **Documentar:** Registrar estado de espera en PM2
+- **Alertar:** Notificar al CEO cuando haya decisión
 ---
 
 ## 🟡 PROYECTO 3: SETP SINCELEJO

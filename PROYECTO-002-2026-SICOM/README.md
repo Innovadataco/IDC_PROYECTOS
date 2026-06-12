@@ -8,7 +8,9 @@
 **Director de Empalme / PM Ejecutivo:** Jelkin Zair Carrillo Franco (Innovadataco)  
 **Fecha de Inicio del Empalme:** 19 de mayo de 2026  
 **Última Actualización:** 12 de junio de 2026  
-**Estado:** Activo — En Ejecución (Fase de Empalme — Semana 4)
+**Estado:** 🟡 En Espera — Decisión de CI2 pendiente sobre continuidad del proyecto
+**Bloqueo:** A la espera de decisión de CI2 (Luis Felipe Herrera) si continúan con el empalme
+**Acción:** Sin avances operativos hasta nueva decisión
 
 ---
 
