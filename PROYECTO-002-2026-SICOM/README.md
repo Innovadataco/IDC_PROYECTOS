@@ -8,9 +8,11 @@
 **Director de Empalme / PM Ejecutivo:** Jelkin Zair Carrillo Franco (Innovadataco)  
 **Fecha de Inicio del Empalme:** 19 de mayo de 2026  
 **Última Actualización:** 12 de junio de 2026  
-**Estado:** 🟡 En Espera — Decisión de CI2 pendiente sobre continuidad del proyecto
-**Bloqueo:** A la espera de decisión de CI2 (Luis Felipe Herrera) si continúan con el empalme
-**Acción:** Sin avances operativos hasta nueva decisión
+**Estado:** 🔴 **CERRADO** — Empalme finalizado por decisión del Director de Empalme  
+**Motivo de cierre:** CI2 (Luis Felipe Herrera) no confirmó continuidad del proyecto. Sin avances operativos. Inviable continuar.  
+**Fecha de cierre:** 12 de junio de 2026  
+**Duración efectiva:** 25 días (de 42 planificados)  
+**Acción post-cierre:** Notificar CI2 y MME; archivar repo; documentar lecciones aprendidas
 
 ---
 

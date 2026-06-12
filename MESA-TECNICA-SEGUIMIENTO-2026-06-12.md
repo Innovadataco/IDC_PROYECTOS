@@ -11,7 +11,7 @@
 | Proyecto | Estado | Salud | Prioridad | Acción Crítica |
 |----------|--------|-------|-----------|----------------|
 | APP Chía-Girardot | 🟢 Activo | 🟡 Regular | 🔴 Alta | Modelo costos + Reunión IFC |
-| SICOM | 🟡 En Espera | ⚪ Stand-by | 🟡 Media | **Decisión CI2 pendiente** |
+| SICOM | 🔴 **CERRADO** | ⚪ Stand-by | 🟢 Baja | **Documentar lecciones, archivar repo** |
 | SETP Sincelejo | 🟡 Inicio | 🟡 Regular | 🟡 Media | Revisión documental |
 
 ---
@@ -85,11 +85,11 @@
 
 ---
 
-## 🟡 PROYECTO 2: SICOM (EMPALME MME)
+## 🔴 PROYECTO 2: SICOM (EMPALME MME) — **CERRADO**
 
-### ⚠️ ESTADO ACTUAL: EN ESPERA
+### ⚠️ ESTADO ACTUAL: CERRADO — 12 JUNIO 2026
 
-**Bloqueo:** A la espera de decisión de CI2 sobre continuidad del proyecto.
+**Decisión:** Director de Empalme (Jelkin Carrillo) cerró empalme por abandono de CI2.
 
 | Campo | Valor |
 |-------|-------|
@@ -97,40 +97,49 @@
 | **Cliente** | Ministerio de Minas y Energía (MME) |
 | **Aliado** | CI2 / IND TECH |
 | **Gerente CI2** | Luis Felipe Herrera |
-| **Estado** | 🟡 **EN ESPERA** — Sin avances a hoy |
-| **Bloqueo** | Decisión de CI2 pendiente sobre continuidad |
+| **Estado** | 🔴 **CERRADO** — Empalme finalizado |
+| **Motivo de cierre** | CI2 no confirmó continuidad; sin avances operativos; inviable continuar |
+| **Fecha de cierre** | 12 junio 2026 |
+| **Duración efectiva** | 25 días (de 42 planificados) |
 
-### Nota de Estado (12 jun 2026)
+### Nota de Cierre (12 jun 2026)
 
-> **No se reportan avances a la fecha.** El proyecto está en estado de espera a la decisión de CI2 (Luis Felipe Herrera) sobre si continúan con el empalme técnico. Hasta nueva decisión, no hay actividades operativas planificadas.
+> **Empalme cerrado por decisión del Director de Empalme.** CI2 (Luis Felipe Herrera) no confirmó continuidad del proyecto durante semana 4. Sin avances operativos, sin asignación de recursos, sin carta formal del MME. Inviable continuar inversión de recursos sin respaldo de CI2. Todos los activos documentados (Super Documento v1.2, 48 documentos procesados, análisis contractual, análisis de riesgo) quedan archivados en repo para reutilización futura.
 
-### Historial de Empalme (Hasta la espera)
+### Historial de Empalme (Completo)
 
 | Semana | Estado | Actividades |
 |--------|--------|-------------|
-| Semana 1 | ✅ Completada | Recepción documentación, kick-off |
-| Semana 2 | ✅ Completada | Análisis arquitectura, procesos core |
-| Semana 3 | ✅ Completada | Documentación operativa, seguridad |
-| Semana 4 | 🟡 **En espera** | Sin avances — decisión CI2 pendiente |
+| Semana 1 | ✅ Completada | Recepción documentación, kick-off, gobierno PM2 instalado |
+| Semana 2 | ✅ Completada | Análisis arquitectura, procesos core, Super Documento generado |
+| Semana 3 | ✅ Completada | Documentación operativa, seguridad, análisis de riesgo |
+| Semana 4 | 🔴 **Cerrado** | Sin avances — decisión unilateral de cierre |
 
-### Entregables Generados (Pre-espera)
+### Entregables Generados (Reutilizables)
 
 - **Super Documento SICOM v1.2** — 53KB MD / 37KB DOCX
-  - 16 secciones principales
-  - 8 anexos técnicos (A-H)
-  - 48 documentos procesados
+  - 16 secciones principales, 8 anexos técnicos (A-H), 48 documentos procesados
+- **Análisis Contractual** — 14KB MD
+- **Análisis de Riesgo de Migración** — 17KB MD
+- **Gobierno PM2 completo** — 25+ archivos, estructura PM2
+- **Acta de Cierre** — 04-CIERRE/01-INFORME-FINAL.md
+- **Lecciones Aprendidas** — 04-CIERRE/02-LECCIONES-APRENDIDAS.md
 
-### Próximos Pasos (Condicionados a decisión CI2)
+### Próximos Pasos (Post-Cierre)
 
-1. ⏳ **Recibir decisión de CI2** sobre continuidad
-2. ⏳ Si continúa: Retomar empalme semana 4
-3. ⏳ Si no continúa: Documentar cierre y lecciones aprendidas
+1. ⏳ **Notificar a CI2** (Luis Herrera) sobre cierre formal — 13 jun
+2. ⏳ **Notificar a MME** (Elizabeth) sobre situación — 16 jun
+3. ✅ **Archivar repo** — 12 jun (ZEUS)
+4. ✅ **Documentar lecciones** — 12 jun (ZEUS)
+5. ⏳ **Evaluar reutilización** de activos en otros proyectos — 20 jun
 
 ### Acción de ZEUS
 
-- **Monitorizar:** Esperar decisión de CI2
-- **Documentar:** Registrar estado de espera en PM2
-- **Alertar:** Notificar al CEO cuando haya decisión
+- **Archivar:** Repo SICOM marcado como CERRADO — 2026
+- **Documentar:** Lecciones aprendidas (10 leyes PM2) registradas
+- **Notificar:** Alertar al CEO cuando sea momento de reutilizar activos
+- **Proteger:** Super Documento SICOM v1.2 como activo corporativo
+
 ---
 
 ## 🟡 PROYECTO 3: SETP SINCELEJO
@@ -189,7 +198,7 @@
 | 4 | Avanzar modelo de costos | APP | 🟡 EN PROGRESO |
 | 5 | Programar reunión IFC | APP | 🟡 PENDIENTE |
 | 6 | Presionar pago TransConsult | APP | 🔴 PENDIENTE |
-| 7 | Completar empalme SICOM semana 4 | SICOM | 🟡 EN PROGRESO |
+| 7 | Completar empalme SICOM semana 4 | SICOM | 🔴 **CERRADO** — 12 jun 2026 |
 
 ---
 
