@@ -22,6 +22,24 @@ Innovadataco opera como una empresa **AI-Native** donde la inteligencia artifici
 
 ---
 
+### PROYECTO 005: Protección Infantil Comunitaria
+| Aspecto | Detalle |
+|---------|---------|
+| **Nombre** | Protección Infantil Comunitaria |
+| **Código** | IDC_2026_05 |
+| **Cliente** | Innovadataco (Producto Propietario) |
+| **Sector** | Protección Social / Tecnología Cívica |
+| **Alcance** | Plataforma web+móvil (PWA) para reporte anónimo de protección infantil |
+| **Stack** | React 19 + FastAPI + AES-256-GCM + PostgreSQL |
+| **Módulos** | 4 (001 Registro Anónimo ✅, 002 Admin, 003 Notificaciones, 004 IA) |
+| **Metodología Dev** | SDD (Spec-Driven Development) — ODIN |
+| **Metodología Gestión** | PM2 — ZEUS |
+| **Inversión estimada** | $15,000 — $25,000 USD |
+| **Fase PM2** | INICIO (artefactos completados) |
+| **Estado** | En ejecución — Módulo 001 completado (12 jun 2026) |
+
+---
+
 ### PROYECTO 003: Diagnóstico Plataforma Taxi Bogotá
 | Aspecto | Detalle |
 |---------|---------|
@@ -134,8 +152,9 @@ Posicionamiento corporativo, contenido estratégico, detección de oportunidades
 | 1 | SICOM — Corte y Migración | Hitos | 🔴 Alta | 30 junio 2026 |
 | 2 | Taxi Bogotá — Kickoff Fase 1 | Proyecto | 🔴 Alta | Junio 2026 |
 | 3 | APP Chía-Girardot — Fase 2 PLANIFICACIÓN | Proyecto | 🟡 Media | Junio 2026 |
-| 4 | Repositorio PM2 ZEUS-CONFIG | Mejora | 🟡 Media | Julio 2026 |
-| 5 | Propuesta ITS para nueva concesión | Negocio | 🟢 Baja | Q3 2026 |
+| 4 | PROYECTO-005 — Módulos 002-004 | Proyecto | 🔴 Alta | Julio 2026 |
+| 5 | Repositorio PM2 ZEUS-CONFIG | Mejora | 🟡 Media | Julio 2026 |
+| 6 | Propuesta ITS para nueva concesión | Negocio | 🟢 Baja | Q3 2026 |
 
 ---
 
