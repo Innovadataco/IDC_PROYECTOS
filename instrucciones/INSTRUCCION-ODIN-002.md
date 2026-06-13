@@ -142,7 +142,28 @@ git pull origin setup/estructura-2026
 
 ## 5. REGLAS DE IMPLEMENTACIÓN
 
-### 5.1 Commits (obligatorio)
+> **⚠️ REGLA CRÍTICA: ODIN debe implementar TODAS las tasks del módulo antes de declarar "listo para validación".**
+>
+> **NO se valida por task individual. Se valida por módulo completo.**
+>
+> **Ejemplo: Este módulo tiene 22 tasks. ODIN debe completar los 22 antes de declarar "listo para validación".**
+
+### 5.1 Alcance completo (obligatorio)
+
+**ODIN debe implementar TODAS las tasks listadas en esta instrucción:**
+- Frontend: TODOS los TF-002.X
+- Backend: TODOS los TB-002.X
+- Infraestructura: TODOS los TI-002.X
+
+**NO declarar "listo para validación" hasta que:**
+- [ ] Todos los tasks del módulo estén implementados
+- [ ] Todos los tests pasen
+- [ ] El DoD (Definition of Done) esté completo
+- [ ] El timestamp de FIN esté registrado
+
+**Si ODIN declara "listo" incompleto → ZEUS RECHAZA automáticamente.**
+
+### 5.2 Commits (obligatorio)
 
 Cada task = commit individual. Formato:
 ```
