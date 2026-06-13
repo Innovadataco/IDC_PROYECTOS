@@ -30,7 +30,8 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 
 | Módulo | Estado | ODIN | ZEUS | Jelkin | Última Acción | Fecha/Hora |
 |--------|--------|------|------|--------|---------------|------------|
-| 001 — Registro Anónimo | 🔴 **EN CORRECCIÓN** | ODIN corrigiendo bugs | ZEUS espera PR | Pendiente revisión | ACTA-CORRECCION-ODIN-001 emitida | 2026-06-14 |
+| 001 — Registro Anónimo | 🔴 **RECHAZADO v2** | Espera corrección real (7 items) | ZEUS emitió ACTA-CORRECCION-001-v2.md | Pendiente firma instrucción v2 | 2026-06-14 04:20 |
+| 002 — Consulta Semaforo | 🟡 **NO INICIADO** | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | — |
 | 002 — Consulta Semaforo | 🟡 **NO INICIADO** | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | Instrucción en borrador | — |
 | 003 — IA Triage | 🟡 **NO INICIADO** | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | Instrucción en borrador | — |
 | 004 — Clustering Perfil | 🟡 **NO INICIADO** | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | Instrucción en borrador | — |
@@ -105,7 +106,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | 2026-06-14 02:34 | Revisó 14 documentos de metodología | ✅ | AUDITORIA-METODOLOGIA.md generada |
 | 2026-06-14 03:12 | **EN EJECUCIÓN:** Corregir documentos de gobierno | ⏳ | AGENTS.md, ODIN-TRAD.md, tasks-template.md |
 | 2026-06-14 03:15 | **EN EJECUCIÓN:** Sincronizar repos | ⏳ | Desarrollos ↔ IDC_PROYECTOS |
-| 2026-06-14 03:?? | **PENDIENTE:** Auditar corrección ODIN del Módulo 001 | ⏳ | Cuando ODIN declare "listo para validación" |
+| 2026-06-14 04:20 | **AUDITORÍA v2:** ZEUS audita código real — 7 correcciones NO implementadas | ❌ RECHAZADO | ACTA-CORRECCION-ODIN-001-v2.md emitida |
 | 2026-06-14 03:?? | **PENDIENTE:** Generar ACTA-VALIDACION o ACTA-CORRECCION | ⏳ | Después de auditoría |
 | 2026-06-14 03:?? | **PENDIENTE:** Actualizar esta maestra con resultado auditoría | ⏳ | Inmediatamente después de auditar |
 
