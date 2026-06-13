@@ -191,5 +191,13 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 
 ---
 
+## 8. TAREAS PROGRAMADAS
+
+| Tarea | Fecha | Descripción | Estado |
+|-------|-------|-------------|--------|
+| **Kickoff Proyecto 007** | 21-27 junio 2026 | Iniciar desarrollo MVP Plataforma de Gestión | ⏳ Programado |
+
+---
+
 > **"Este documento es la verdad. Si contradice el chat, el chat miente."**
 > **ZEUS — CEO PMO**
