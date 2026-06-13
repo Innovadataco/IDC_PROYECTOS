@@ -61,6 +61,23 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 |--------|------|--------|------|
 | 🟡 **EN EJECUCIÓN** | Propuesta en preparación | Pendiente documentos | Pendiente estructuración propuesta técnica |
 
+### PROYECTO-007: Plataforma de Gestión de Proyectos (NUEVO — Programado)
+
+| Estado | ZEUS | Jelkin | Nota |
+|--------|------|--------|------|
+| 🟡 **PENDIENTE** | Acta inicial registrada | Programado para próxima semana (21-27 junio) | No iniciar hasta kickoff formal. MVP enfocado. |
+
+**Módulos propuestos (sujetos a validación):**
+1. Dashboard ejecutivo
+2. Gestión de instrucciones
+3. Registro de actividades con timestamps
+4. Módulo de auditoría
+5. Integración GitHub
+6. Notificaciones
+7. Reportes
+
+**Decisión Jelkin (14 junio 2026):** No implementar PM2 completo aún. Solo registro documental. Iniciar próxima semana.
+
 ---
 
 ## 3. ACTIVIDAD POR ACTOR (Timeline)
@@ -74,6 +91,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | 2026-06-14 02:34 | Solicitó auditoría de metodología | ✅ Completado | ZEUS revisó 14 documentos, identificó 3 para corregir |
 | 2026-06-14 03:12 | Aprobó proceder con correcciones | ✅ En ejecución | ZEUS corrigiendo documentos |
 | 2026-06-14 03:?? | **PENDIENTE:** Aprobar arquitectura sincronizada | ⏳ Esperando | ZEUS envió resumen de acciones |
+| 2026-06-14 03:20 | **DECISIÓN CEO:** Programar Proyecto 007 — Plataforma de gestión de proyectos | ⏳ Programado | Jelkin quiere sistema propio digital. Iniciar próxima semana (21-27 jun). No PM2 aún. |
 | 2026-06-14 ?? | **PENDIENTE:** Firmar INSTRUCCION-ODIN-001.md (corrección Módulo 001) | ⏳ Esperando | Cuando ODIN termine, ZEUS genera acta y Jelkin firma |
 | 2026-06-14 ?? | **PENDIENTE:** Firmar INSTRUCCION-ODIN-002.md (nuevo módulo) | ⏳ Esperando | ZEUS prepara borrador |
 
@@ -169,6 +187,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | Fecha | Versión | Autor | Cambios |
 |-------|---------|-------|---------|
 | 2026-06-14 03:15 | 1.0.0 | ZEUS | Estado inicial. Proyectos 001-005. Módulo 001 en corrección. Metodología corregida. 3 candados activos. |
+| 2026-06-14 03:30 | 1.0.1 | ZEUS | Proyecto 007 registrado (Plataforma Gestión). Acta inicial creada. Programado para 21-27 junio. No PM2 aún. |
 
 ---
 
