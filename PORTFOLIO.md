@@ -4,7 +4,7 @@
 **Sistema Operativo:** ZEUS EOS  
 **Metodología:** PM2 (Project Management Methodology)  
 **Responsable Cartera:** Jelkin Zair Carrillo Franco  
-**Fecha de Portafolio:** 23 de mayo de 2026
+**Fecha de Portafolio:** 14 de junio de 2026
 
 ---
 
@@ -22,21 +22,21 @@ Innovadataco opera como una empresa **AI-Native** donde la inteligencia artifici
 
 ---
 
-### PROYECTO 005: Protección Infantil Comunitaria
+### PROYECTO 005: Protección Infantil Comunitaria (Semáforo de Confianza)
 | Aspecto | Detalle |
 |---------|---------|
-| **Nombre** | Protección Infantil Comunitaria |
+| **Nombre** | Protección Infantil Comunitaria (Semáforo de Confianza) |
 | **Código** | IDC_2026_05 |
 | **Cliente** | Innovadataco (Producto Propietario) |
 | **Sector** | Protección Social / Tecnología Cívica |
-| **Alcance** | Plataforma web+móvil (PWA) para reporte anónimo de protección infantil |
-| **Stack** | React 19 + FastAPI + AES-256-GCM + PostgreSQL |
-| **Módulos** | 4 (001 Registro Anónimo ✅, 002 Admin, 003 Notificaciones, 004 IA) |
-| **Metodología Dev** | SDD (Spec-Driven Development) — ODIN |
+| **Alcance** | Plataforma PWA para reporte anónimo + buscador de confianza comunitaria |
+| **Stack** | React 19 + FastAPI + AES-256-GCM + PostgreSQL + Redis |
+| **Módulos** | 6 (001 Registro Anónimo ⚠️ 65% — En corrección, 002 Consulta Semáforo ⬜, 003 IA Triage ⬜, 004 Clustering ⬜, 005 Panel Admin ⬜, 006 Pasarela Institucional ⬜) |
+| **Metodología Dev** | ODIN-TRAD + ODIN-IA (Módulo 003+) — SDD + TDD |
 | **Metodología Gestión** | PM2 — ZEUS |
 | **Inversión estimada** | $15,000 — $25,000 USD |
-| **Fase PM2** | INICIO (artefactos completados) |
-| **Estado** | En ejecución — Módulo 001 completado (12 jun 2026) |
+| **Fase PM2** | EJECUCIÓN (Módulo 001 en corrección post-auditoría) |
+| **Estado** | 🔴 En corrección — Auditoría ZEUS (14 jun 2026) detectó 65% real vs 100% declarado. 7 incidencias (4 críticas). Timeline +3 semanas. |
 
 ---
 
@@ -152,7 +152,7 @@ Posicionamiento corporativo, contenido estratégico, detección de oportunidades
 | 1 | SICOM — Corte y Migración | Hitos | 🔴 Alta | 30 junio 2026 |
 | 2 | Taxi Bogotá — Kickoff Fase 1 | Proyecto | 🔴 Alta | Junio 2026 |
 | 3 | APP Chía-Girardot — Fase 2 PLANIFICACIÓN | Proyecto | 🟡 Media | Junio 2026 |
-| 4 | PROYECTO-005 — Módulos 002-004 | Proyecto | 🔴 Alta | Julio 2026 |
+| 4 | PROYECTO-005 — Módulo 001 corrección + Módulos 002-006 | Producto | 🔴 Alta | Julio 2026 |
 | 5 | Repositorio PM2 ZEUS-CONFIG | Mejora | 🟡 Media | Julio 2026 |
 | 6 | Propuesta ITS para nueva concesión | Negocio | 🟢 Baja | Q3 2026 |
 
