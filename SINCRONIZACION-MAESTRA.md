@@ -20,6 +20,8 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 
 **Regla de oro:** Si no está en este documento, no está pasando.
 
+**Regla CRÍTICA (Jelkin, 14 junio 2026):** ODIN nunca puede modificar, crear, eliminar archivos en IDC_PROYECTOS. Solo ZEUS toca el repo de gestión. ODIN solo lee de IDC_PROYECTOS para referencia, no escribe.
+
 ---
 
 ## 2. ESTADO ACTUAL DE PROYECTOS (Snapshot 14 junio 2026, 03:15 AM Shanghai)
