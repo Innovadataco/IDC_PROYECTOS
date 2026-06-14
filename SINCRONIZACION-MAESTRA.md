@@ -33,7 +33,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | 001 — Registro Anónimo | ✅ VALIDADO v2 | Listo para merge / iniciar Módulo 002 | ACTA-VALIDACION-ODIN-001-v2.md emitida | Pendiente firma instrucción Módulo 002 | 2026-06-14 05:15 |
 | 002 — Consulta Semaforo | ⚠️ VALIDADO CON HALLAZGOS | 22/22 tasks implementados, 2 hallazgos menores | ACTA-VALIDACION-ODIN-002.md emitida | Pendiente aprobación Jelkin para seguir con Módulo 003 | 2026-06-14 06:25 |
 | 003 — IA Triage | 🟡 NO INICIADO | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | — |
-| 004 — Clustering Perfil | ❌ RECHAZADO (3 correcciones) | Core funcional OK, 3 tasks no implementadas | ACTA-CORRECCION-004.md emitida | Espera corrección ODIN + re-validación | 2026-06-14 13:15 |
+| 004 — Clustering Perfil | ⚠️ VALIDADO CON EXCEPCIÓN | Core funcional OK, 3 correcciones diferidas | ACTA-CORRECCION-004.md + INSTRUCCION-ODIN-004-EXCEPCION.md | CEO autorizó avanzar a 5 y 6 sin bloqueo | 2026-06-14 23:35 |
 | 005 — Panel Admin | 🟡 NO INICIADO | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | — |
 | 006 — Pasarela Institucional | 🟡 NO INICIADO | Espera instrucción | Espera aprobación Jelkin | Pendiente firma instrucción | — |
 
@@ -94,7 +94,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | 2026-06-14 06:25 | **AUDITORÍA ACT-002:** Validado con hallazgos | ✅ Completado | ZEUS generó ACTA-VALIDACION-ODIN-002.md |
 | 2026-06-14 03:20 | **DECISIÓN CEO:** Programar Proyecto 007 — Plataforma de gestión de proyectos | ⏳ Programado | Jelkin quiere sistema propio digital. Iniciar próxima semana (21-27 jun). No PM2 aún. |
 | 2026-06-14 ?? | **PENDIENTE:** Firmar INSTRUCCION-ODIN-001.md (corrección Módulo 001) | ⏳ Esperando | Cuando ODIN termine, ZEUS genera acta y Jelkin firma |
-| 2026-06-14 ?? | **PENDIENTE:** Firmar INSTRUCCION-ODIN-002.md (nuevo módulo) | ⏳ Esperando | ZEUS prepara borrador |
+| 2026-06-14 23:35 | **EXCEPCIÓN CEO:** Autoriza avanzar Módulos 5 y 6 sin validar 004 | ✅ Firmada | Deuda técnica 004 diferida a 2026-06-21 | INSTRUCCION-ODIN-004-EXCEPCION.md | ODIN procede con 5 y 6 |
 
 ### ZEUS (CEO PMO)
 
@@ -115,7 +115,7 @@ Este documento es el **estado en tiempo real** de la orquestación entre:
 | Fecha/Hora | Acción | Estado | Resultado |
 |------------|--------|--------|-----------|
 | 2026-06-14 02:?? | **EN EJECUCIÓN:** Corregir bugs Módulo 001 según ACTA-CORRECCION-ODIN-001.md | ⏳ | Trabajando en Visual Studio Code |
-| 2026-06-14 13:15 | ❌ Módulo 004 RECHAZADO con 3 correcciones | ZEUS generó ACTA-CORRECCION-004.md | Core funcional OK, 3 tasks marcadas [x] pero no implementadas | ACTA-CORRECCION-004.md emitida | Corrección ODIN + re-validación |
+| 2026-06-14 23:35 | **EXCEPCIÓN CEO:** Jelkin autoriza avanzar Módulos 5 y 6 sin validar 004 | ✅ Firmada | Deuda técnica del 004 diferida a 2026-06-21 | INSTRUCCION-ODIN-004-EXCEPCION.md | ODIN procede con 5 y 6 |
 | 2026-06-14 05:12 | **PENDIENTE:** Re-auditar después de push | ⏳ Esperando | ZEUS re-audita cuando ODIN haga push |
 | 2026-06-14 ?? | **PENDIENTE:** Crear PR para revisión ZEUS | ⏳ | Después de terminar |
 | 2026-06-14 ?? | **PENDIENTE:** Iniciar Módulo 002 (si se valida Módulo 001) | ⏳ | Espera instrucción formal |
