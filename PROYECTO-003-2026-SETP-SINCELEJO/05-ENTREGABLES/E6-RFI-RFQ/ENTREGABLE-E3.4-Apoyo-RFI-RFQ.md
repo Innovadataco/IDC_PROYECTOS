@@ -37,15 +37,17 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 | 3 | **Evaluación** | Comparar ofertas técnicas y económicas |
 | 4 | **Adjudicación** | Seleccionar proveedor y firmar contrato |
 
-### 2.2 Lotes de Adquisición Propuestos
+### 2.2 Estructura de Contratos del RFI 2025 (Integración 3 Contratos)
 
-| Lote | Descripción | Estimación de Inversión |
-|------|-------------|------------------------|
-| **Lote 1** | Unidades Onboard (GPS, validadores, pantallas) | Por definir |
-| **Lote 2** | Infraestructura Centro de Control (servidores, red, CCTV) | Por definir |
-| **Lote 3** | Software de gestión (plataforma, app, backoffice) | Por definir |
-| **Lote 4** | Sistema de pago electrónico (validadores, backoffice, pasarela) | Por definir |
-| **Lote 5** | Implementación e integración | Por definir |
+El RFI 2025 de Metro Sabanas integra **3 contratos** en lugar de una adquisición por lotes tradicional. La empresa operadora propone modelos integrados de:
+
+| Contrato | Descripción | Alcance Tecnológico |
+|----------|-------------|---------------------|
+| **Contrato 1** | Flota (vehículos) | Unidades onboard (GPS, validadores, pantallas, sensores) — 46 vehículos |
+| **Contrato 2** | Tecnología (software + infraestructura) | Plataforma de gestión, app, centro de control, backoffice de pagos, CCTV |
+| **Contrato 3** | Operación (servicios) | Implementación, capacitación, soporte, mantenimiento, integración de sistemas |
+
+> **Nota:** El RFI permite a la empresa operadora proponer modelos integrados donde un mismo proveedor puede asumir 1, 2 o los 3 contratos, o asociarse con otros proveedores para una oferta integrada. Esta estructura NO es una adquisición por lotes independientes (Lote 1, 2, 3...), sino una **contratación integrada** que busca sinergias entre flota, tecnología y operación.
 
 ---
 
@@ -120,7 +122,7 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 
 ### 4.2 Especificaciones Técnicas del RFQ
 
-#### Lote 1 — Unidades Onboard (46 vehículos)
+#### Contrato 1 — Unidades Onboard (46 vehículos)
 
 | Ítem | Cantidad | Especificación mínima |
 |------|----------|----------------------|
@@ -131,7 +133,7 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 | Sensor puertas | 68 | Reed switch / IR |
 | Instalación y configuración | 46 | Incluido |
 
-#### Lote 2 — Centro de Control
+#### Contrato 2 — Centro de Control
 
 | Ítem | Cantidad | Especificación mínima |
 |------|----------|----------------------|
@@ -146,7 +148,7 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 | NVR CCTV | 1 | 32 canales, 30 días retención |
 | Cámaras IP | 10 | 4MP, IR, IP66 |
 
-#### Lote 3 — Software y Plataforma
+#### Contrato 3 — Software y Plataforma
 
 | Ítem | Licencia | Descripción |
 |------|----------|-------------|
@@ -156,7 +158,7 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 | Dashboard BI | Incluido | Visualización, KPIs, analytics |
 | API de integración | Incluida | REST/GraphQL, documentada |
 
-#### Lote 4 — Implementación y Servicios
+#### Contrato 4 — Implementación y Servicios
 
 | Ítem | Descripción |
 |------|-------------|
