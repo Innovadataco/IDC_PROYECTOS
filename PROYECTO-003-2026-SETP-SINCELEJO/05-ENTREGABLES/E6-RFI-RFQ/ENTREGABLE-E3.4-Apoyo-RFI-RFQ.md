@@ -11,7 +11,18 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento contiene el apoyo en la elaboración de la Solicitud de Información (RFI — Request for Information) y la Solicitud de Cotización (RFQ — Request for Quotation) para la adquisición de los componentes tecnológicos del SETP Sincelejo, basado en los requerimientos y especificaciones definidos en entregables anteriores.
+Este documento contiene el apoyo en la elaboración de la Solicitud de Información (RFI) y la Solicitud de Cotización (RFQ) para la adquisición de los componentes tecnológicos del SETP Sincelejo, basado en los **4 sistemas definidos desde 2015** (SRC, SGCF, SIU, SST) y el proceso de contratación 2023 con el MinTransporte.
+
+**Antecedentes de contratación:**
+- **2015:** Estructuración tecnológica (Steer Davies Gleave + GSD+) definiendo SRC, SGCF, SIU y 3 escenarios institucionales
+- **2022:** Actualización del modelo (Contrato CM-001-2022, A4 Asociados)
+- **2023:** MinTransporte lanzó proceso de contratación ITS para 46 vehículos (9 meses, pago condicionado a validación)
+- **2025:** Metro Sabanas lanzó **RFI que integra 3 contratos** (flota + tecnología + operación), no una adquisición por lotes tradicional
+- **2026:** Esta consultoría apoya la estructuración de los requerimientos para la contratación
+
+**⚠️ Nota importante:** El RFI 2025 de Metro Sabanas NO es una adquisición por lotes tradicional (Lote 1, 2, 3...). Es un **RFI de integración de 3 contratos** que permite a la empresa operadora proponer modelos integrados de flota + tecnología + operación. Esta consultoría apoya la estructuración de los requerimientos técnicos para ese proceso.
+
+**Escala:** 46 vehículos (proceso 2023, RFI 2025)
 
 ---
 

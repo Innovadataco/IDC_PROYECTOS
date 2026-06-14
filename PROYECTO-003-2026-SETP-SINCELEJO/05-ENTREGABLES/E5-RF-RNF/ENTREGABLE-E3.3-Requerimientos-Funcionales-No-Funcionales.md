@@ -11,7 +11,22 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento define los requerimientos funcionales (RF) y no funcionales (RNF) del sistema tecnológico del SETP Sincelejo, estableciendo las capacidades que el sistema debe proveer y las restricciones de calidad bajo las cuales debe operar.
+Este documento define los requerimientos funcionales (RF) y no funcionales (RNF) del sistema tecnológico del SETP Sincelejo, basado en los **4 sistemas definidos desde 2015** (SRC, SGCF, SIU, SST) y el proceso de contratación 2023 con el MinTransporte (46 vehículos).
+
+**Antecedentes:**
+- **2015:** Steer Davies Gleave + GSD+ definieron SRC, SGCF, SIU y 3 escenarios institucionales
+- **2022:** A4 Asociados actualizaron el modelo (Contrato CM-001-2022)
+- **2023:** MinTransporte lanzó proceso de contratación ITS con 46 vehículos, agregando SST
+- **2025:** RFI de Metro Sabanas integra 3 contratos (flota + tecnología + operación)
+- **2026:** Esta consultoría estructura los requerimientos de los 4 sistemas existentes
+
+**Mapeo Requerimientos ↔ Sistemas SETP:**
+| Sistema SETP | Subsistemas en este documento | Requerimientos clave |
+|--------------|------------------------------|----------------------|
+| **SGCF** | Gestión de Flota (2.1) + Centro de Control (2.2) | RF-001 a RF-018 |
+| **SRC** | Pago Electrónico (2.3) + Gestión Tarifaria (2.5) | RF-019 a RF-026, RF-032 a RF-035 |
+| **SIU** | Información al Usuario (2.4) | RF-027 a RF-031 |
+| **SST** | Seguridad transversal (RNF-011 a RNF-016) | RNF-011 a RNF-016 |
 
 ---
 

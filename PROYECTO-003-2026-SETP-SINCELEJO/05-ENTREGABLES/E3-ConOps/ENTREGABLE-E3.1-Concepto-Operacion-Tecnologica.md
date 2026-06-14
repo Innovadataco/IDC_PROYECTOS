@@ -11,7 +11,26 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento define el Concepto de Operación Tecnológica (ConOps) del SETP Sincelejo, estableciendo roles, procesos, indicadores de desempeño (KPIs), escenarios de operación y procedimientos que regirán el funcionamiento del sistema tecnológico.
+Este documento define el Concepto de Operación Tecnológica (ConOps) del SETP Sincelejo, basado en los **4 sistemas definidos desde 2015** (Steer Davies Gleave + GSD+) y los **3 escenarios institucionales** de operación tecnológica.
+
+**Antecedentes históricos:**
+- **2015:** Estructuración tecnológica inicial definiendo SRC, SGCF, SIU y 3 escenarios de operación
+- **2022:** Actualización del modelo (Contrato CM-001-2022, A4 Asociados)
+- **2023:** Proceso de contratación ITS con MinTransporte (46 vehículos, agregado SST)
+- **2025:** RFI integración de 3 contratos (flota + tecnología + operación)
+
+**Los 4 sistemas operativos:**
+1. **SRC** — Sistema de Recaudo Centralizado
+2. **SGCF** — Sistema de Gestión y Control de Flota
+3. **SIU** — Sistema de Información al Usuario
+4. **SST** — Sistema de Seguridad de Transacciones
+
+**3 escenarios institucionales (2015):**
+| Escenario | Operador de tecnología | Implicación |
+|-----------|------------------------|-------------|
+| **"Base"** | Concesionario externo opera SRC; Metro Sabanas opera SGCF+SIU | Mayor dependencia externa |
+| **"Socio tecnológico"** | Un único concesionario opera los 4 sistemas | Integración total outsource |
+| **"Operador recaudador"** | El operador de transporte asume los 4 sistemas | Mayor control operativo |
 
 ---
 

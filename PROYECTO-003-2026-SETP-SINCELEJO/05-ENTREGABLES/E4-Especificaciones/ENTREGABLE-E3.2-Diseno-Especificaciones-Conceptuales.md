@@ -11,7 +11,17 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento presenta el diseño conceptual y las especificaciones técnicas de los componentes tecnológicos y subsistemas ITS del SETP Sincelejo, definiendo hardware, software, interfaces y parámetros de operación.
+Este documento presenta el diseño conceptual y las especificaciones técnicas de los **4 sistemas tecnológicos del SETP Sincelejo**, definidos desde 2015 (Steer Davies Gleave + GSD+) y actualizados en 2022-2023.
+
+**Sistemas a especificar:**
+1. **SRC** — Sistema de Recaudo Centralizado (validadores, tarjetas, backoffice de recaudo)
+2. **SGCF** — Sistema de Gestión y Control de Flota (GPS, centro de control, reportes)
+3. **SIU** — Sistema de Información al Usuario (app, web, pantallas, call center)
+4. **SST** — Sistema de Seguridad de Transacciones (cifrado, certificación, auditoría)
+
+**Escala:** 46 vehículos (proceso de contratación 2023 con MinTransporte)
+
+**Normativa aplicable:** Resolución 20203040034065 del MinTransporte (2020)
 
 ---
 

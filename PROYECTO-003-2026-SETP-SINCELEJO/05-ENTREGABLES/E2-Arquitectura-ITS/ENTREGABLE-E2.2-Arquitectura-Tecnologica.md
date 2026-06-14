@@ -11,7 +11,21 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo, estableciendo los principios arquitectónicos, la vista de componentes, subsistemas, interfaces y tecnologías base que soportarán la operación del sistema.
+Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo, basada en los **4 sistemas definidos desde 2015** (Steer Davies Gleave + GSD+) y actualizados en la consultoría 2022 (A4 Asociados, CM-001-2022) y el proceso de contratación 2023 (MinTransporte, Resolución 20203040034065).
+
+**Antecedentes:**
+- **2015:** Estructuración tecnológica inicial (SRC, SGCF, SIU)
+- **2022:** Actualización modelo de transporte (Contrato CM-001-2022)
+- **2023:** Proceso contratación ITS con MinTransporte (46 vehículos, agregado SST)
+- **2025:** RFI integración 3 contratos (flota + tecnología + operación)
+
+**Los 4 sistemas del SETP Sincelejo:**
+1. **SRC** — Sistema de Recaudo Centralizado (pago efectivo + tarjeta sin contacto)
+2. **SGCF** — Sistema de Gestión y Control de Flota (GPS, programación, supervisión)
+3. **SIU** — Sistema de Información al Usuario (web, app, pantallas, call center)
+4. **SST** — Sistema de Seguridad de Transacciones (cifrado, seguridad, auditoría)
+
+> **Nota:** Esta consultoría NO propone integraciones con SISPROV, RUNT, SIMAT o SICOV. Esos sistemas nacionales NO fueron definidos en el proyecto de Sincelejo (2015-2023) y NO aparecen en ningún documento contractual del SETP.
 
 ---
 

@@ -11,7 +11,14 @@
 
 ## 1. RESUMEN EJECUTIVO
 
-Este documento presenta la revisión y clasificación de los Servicios de Sistemas Inteligentes de Transporte (ITS) y subsistemas tecnológicos aplicables al Sistema Estratégico de Transporte Público de Sincelejo (SETP), basado en la normativa colombiana vigente y las mejores prácticas internacionales.
+Este documento presenta la revisión y clasificación de los Servicios de Sistemas Inteligentes de Transporte (ITS) y subsistemas tecnológicos aplicables al Sistema Estratégico de Transporte Público de Sincelejo (SETP), basado en la **normativa colombiana vigente** (Decreto 393/2010, modificado por 482/2023; Resolución 20203040034065) y los **4 sistemas tecnológicos definidos desde 2015** (Steer Davies Gleave + GSD+).
+
+**Antecedentes:**
+- **2015:** Estructuración tecnológica definiendo SRC, SGCF, SIU y 3 escenarios institucionales
+- **2022:** Actualización modelo de transporte (Contrato CM-001-2022, A4 Asociados)
+- **2023:** Proceso de contratación ITS con MinTransporte (46 vehículos, agregado SST)
+- **2025:** RFI integración de 3 contratos (flota + tecnología + operación)
+- **2026:** Esta consultoría Innovadataco — estructuración de los 4 sistemas existentes
 
 ---
 
@@ -129,6 +136,27 @@ SERVICIOS ITS
 | Pago Electrónico | Alto | Alta | Alto | **1 - Crítico** |
 | Información al Usuario | Medio | Media | Medio | **2 - Importante** |
 | Gestión Tarifaria | Medio | Media | Medio | **2 - Importante** |
+
+---
+
+## 5.5 Mapeo Sistemas SETP ↔ Subsistemas ITS
+
+| Sistema SETP | Sigla | Subsistemas ITS que lo componen | Estado 2015-2023 |
+|--------------|-------|-----------------------------------|------------------|
+| **Sistema de Recaudo Centralizado** | SRC | Pago Electrónico (4.4) + Gestión Tarifaria (4.5) | Diseñado, no implementado |
+| **Sistema de Gestión y Control de Flota** | SGCF | Gestión de Flota (4.1) + Centro de Control (4.2) | Diseñado, no implementado |
+| **Sistema de Información al Usuario** | SIU | Información al Usuario (4.3) + componentes de Centro de Control | Diseñado, no implementado |
+| **Sistema de Seguridad de Transacciones** | SST | Componentes de seguridad en todos los subsistemas | Agregado en 2023 |
+
+### 5.6 Escenarios Institucionales (Definidos 2015)
+
+| Escenario | Quién opera la tecnología | Implicación para contratación 2023/2025 |
+|-----------|---------------------------|-------------------------------------------|
+| **"Base"** | Concesionario externo opera SRC; Metro Sabanas opera SGCF+SIU | Mayor dependencia de terceros |
+| **"Socio tecnológico"** | Un único concesionario opera los 4 sistemas (SRC+SGCF+SIU+SST) | Integración total, menor fricción |
+| **"Operador recaudador"** | El operador de transporte asume los 4 sistemas | Mayor control operativo para Metro Sabanas |
+
+> **Nota:** Esta consultoría NO propone sistemas nuevos. Los 4 sistemas (SRC, SGCF, SIU, SST) ya están definidos desde 2015. Innovadataco estructura, valida y actualiza sus especificaciones técnicas.
 
 ---
 

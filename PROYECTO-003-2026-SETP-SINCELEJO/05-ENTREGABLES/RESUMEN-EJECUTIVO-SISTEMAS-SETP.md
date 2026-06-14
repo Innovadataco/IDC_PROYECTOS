@@ -10,7 +10,41 @@
 
 ## 1. VISIÓN GENERAL
 
-El Sistema Estratégico de Transporte Público de Sincelejo (SETP) requiere una arquitectura tecnológica de **Sistemas Inteligentes de Transporte (ITS)** compuesta por **5 subsistemas principales** que operan de forma integrada para garantizar la gestión eficiente de la flota, el pago electrónico, la información al usuario y la operación centralizada.
+El Sistema Estratégico de Transporte Público de Sincelejo (SETP) tiene una **historia tecnológica definida desde 2015** cuando la Unión Temporal Steer Davies Gleave + GSD+ estructuró el componente tecnológico del sistema. Esta consultoría de Innovadataco (2026) se enmarca en la **continuidad de ese proceso**, con antecedentes de una consultoría anterior (A4 Asociados, 2022) y un proceso de contratación tecnológica con el MinTransporte (2023).
+
+| Año | Evento | Documento |
+|-----|--------|-----------|
+| **2015** | Estructuración tecnológica, legal y financiera | Informe ETL GSD+ / Steer Davies Gleave |
+| **2022** | Actualización del modelo de transporte | Contrato CM-001-2022 (A4 Asociados) |
+| **2023** | Proceso de contratación ITS con MinTransporte | Estudios previos, Anexo Técnico ITS |
+| **2025** | RFI integración de 3 contratos | RFI SETP Sincelejo (Metro Sabanas) |
+| **2026** | **Consultoría Innovadataco** | Estructuración componentes tecnológicos |
+
+### 1.1 Sistemas Tecnológicos Definidos (2015-2023)
+
+El proyecto define **4 sistemas tecnológicos** operados bajo **3 escenarios institucionales**:
+
+| Sistema | Sigla | Función | Estado 2022 |
+|---------|-------|---------|-------------|
+| **Sistema de Recaudo Centralizado** | **SRC** | Pago efectivo + tarjeta sin contacto + viaje a crédito | Diseñado, no implementado |
+| **Sistema de Gestión y Control de Flota** | **SGCF** | Programación, supervisión, reportes de operación | Diseñado, no implementado |
+| **Sistema de Información al Usuario** | **SIU** | Portal web, app móvil, call center, paneles en buses | Diseñado, no implementado |
+| **Sistema de Seguridad de Transacciones** | **SST** | Cifrado, seguridad de datos, auditoría | Agregado en 2023 |
+
+### 1.2 Escenarios Institucionales (2015)
+
+| Escenario | Quién opera la tecnología |
+|-----------|---------------------------|
+| **"Base"** | Metro Sabanas opera SGCF+SIU, operador de transporte opera flota, concesionario externo opera SRC |
+| **"Socio tecnológico"** | Un único concesionario opera los 4 sistemas (SRC+SGCF+SIU+SST) |
+| **"Operador recaudador"** | El operador de transporte asume los 4 sistemas |
+
+### 1.3 Alcance de esta Consultoría (2026)
+
+Esta consultoría NO inventa nuevos sistemas. **Valida, actualiza y estructura** los 4 sistemas ya definidos desde 2015, alineados con:
+- **Resolución 20203040034065** del MinTransporte (2020)
+- **RFI 2025** de integración de 3 contratos (flota + tecnología + operación)
+- **Proceso de contratación 2023** (46 vehículos, 9 meses, pago condicionado a validación)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

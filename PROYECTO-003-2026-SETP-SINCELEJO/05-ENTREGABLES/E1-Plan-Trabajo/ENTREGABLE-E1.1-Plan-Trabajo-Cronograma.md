@@ -21,6 +21,18 @@ Este documento establece el Plan de Trabajo detallado para la ejecución del pro
 | **Forma de pago** | 3 hitos: 40% + 30% + 30% |
 | **Metodología** | PM2 adaptada a consultoría ITS |
 
+### Antecedentes del Proyecto
+
+| Año | Evento | Documento |
+|-----|--------|-----------|
+| **2015** | Estructuración tecnológica inicial (Steer Davies Gleave + GSD+) | Informe ETL defining SRC, SGCF, SIU |
+| **2022** | Actualización modelo de transporte | Contrato CM-001-2022 (A4 Asociados) |
+| **2023** | Proceso de contratación ITS con MinTransporte | Estudios previos, Anexo Técnico ITS (46 vehículos) |
+| **2025** | RFI integración de 3 contratos | RFI SETP Sincelejo (Metro Sabanas) |
+| **2026** | **Consultoría Innovadataco** | Estructuración componentes tecnológicos (actual) |
+
+**Sistemas tecnológicos a estructurar:** SRC, SGCF, SIU, SST (4 sistemas definidos desde 2015, actualizados en 2023).
+
 ---
 
 ## 2. METODOLOGÍA DE TRABAJO
