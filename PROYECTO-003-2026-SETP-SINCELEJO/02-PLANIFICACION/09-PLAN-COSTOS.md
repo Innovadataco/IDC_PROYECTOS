@@ -1,48 +1,104 @@
-# PLAN DE COSTOS — PROYECTO 003-2026: SETP SINCELEJO
+# 09 — PLAN DE COSTOS Y PRESUPUESTO
 
-**Estado:** 🔴 Pendiente  
-**Fecha:** 15 junio 2026  
-**Autor:** ZEUS PMO
-
----
-
-## 1. PRESUPUESTO PRELIMINAR
-
-| Concepto | Valor Estimado | Nota |
-|----------|---------------|------|
-| **Consultoría estructuración ITS** | [Por definir] | 4-6 meses, 2-3 consultores |
-| **Inversión tecnología ITS** | [Por definir] | Basado en estudios 2023: $3.793M COP |
-| **CCO e infraestructura** | [Por definir] | 4 TVs, 5 puestos, redes, CCTV |
-| **Equipos a bordo (34 buses)** | [Por definir] | Validadores, GPS, CCTV, botón pánico |
-| **Software / SaaS** | [Por definir] | SRC, SGCF, SIU, SST |
-| **Telecomunicaciones** | [Por definir] | 4G/5G, WiFi, VPN |
-| **Ciberseguridad** | [Por definir] | HSM, certificados, auditoría |
-| **Imprevistos (10%)** | [Por definir] | |
-| **TOTAL** | [Por definir] | |
+**Código:** PROYECTO-003-2026-SETP-SINCELEJO  
+**Versión:** 1.0  
+**Fecha:** 15 de junio de 2026
 
 ---
 
-## 2. REFERENCIA: Estudios Previos 2023
+## 1. PRESUPUESTO TOTAL
 
-- **Valor:** $3.793.756.953 COP
-- **Plazo:** 9 meses
-- **Hitos de pago:** 5
-- **Alcance:** Presupuesto ITS completo
-
----
-
-## 3. MODELO DE PAGO (Consultoría)
-
-| Hito | Entregable | % Pago |
-|------|-----------|--------|
-| 1 | Kick-off + Planes | 20% |
-| 2 | E1-E3 aprobados | 30% |
-| 3 | E4-E5 aprobados | 30% |
-| 4 | E6-E7 + Cierre | 20% |
+| Concepto | Valor (COP) |
+|----------|-------------|
+| **Valor Total del Contrato** | **$39.000.000** |
+| IVA incluido | Sí |
+| Moneda | Pesos colombianos |
 
 ---
 
-> **NOTA:** Requiere validación con cliente y ajuste a realidad presupuestal de la Alcaldía.
+## 2. ESTRUCTURA DE PAGO POR HITOS
 
-> **Actualizado:** 15 junio 2026
-> **Autor:** ZEUS PMO
+### Hito 1 — Inicio y Planeación (40%)
+
+| Entregable | ID | Valor (COP) |
+|------------|-----|-------------|
+| Plan de Trabajo y Cronograma | E1.1 | $15.600.000 |
+| **Subtotal Hito 1** | | **$15.600.000** |
+
+**Condición de pago:** Contra entrega y aprobación del entregable 1.1
+
+---
+
+### Hito 2 — Diseño Conceptual (30%)
+
+| Entregable | ID | Valor (COP) |
+|------------|-----|-------------|
+| Revisión y Clasificación de Servicios ITS | E2.1 | $2.925.000 |
+| Arquitectura Tecnológica Conceptual | E2.2 | $2.925.000 |
+| Concepto de Operación Tecnológica | E3.1 | $2.925.000 |
+| Diseño y Especificaciones Conceptuales | E3.2 | $2.925.000 |
+| **Subtotal Hito 2** | | **$11.700.000** |
+
+**Condición de pago:** Contra entrega y aprobación de los entregables 2.1, 2.2, 3.1 y 3.2
+
+---
+
+### Hito 3 — Especificaciones y Cierre (30%)
+
+| Entregable | ID | Valor (COP) |
+|------------|-----|-------------|
+| Requerimientos Funcionales y No Funcionales | E3.3 | $5.850.000 |
+| Apoyo en RFI y RFQ | E3.4 | $5.850.000 |
+| **Subtotal Hito 3** | | **$11.700.000** |
+
+**Condición de pago:** Contra entrega y aprobación de los entregables 3.3 y 3.4
+
+---
+
+## 3. DISTRIBUCIÓN PORCENTUAL
+
+```
+Hito 1 (40%)  ████████████████████░░░░░░░░░░  $15.600.000
+Hito 2 (30%)  ██████████████░░░░░░░░░░░░░░░░  $11.700.000
+Hito 3 (30%)  ██████████████░░░░░░░░░░░░░░░░  $11.700.000
+              ———————————————————————————————
+TOTAL         ██████████████████████████████  $39.000.000
+```
+
+---
+
+## 4. CONDICIONES DE PAGO
+
+| Aspecto | Condición |
+|---------|-----------|
+| **Forma de pago** | Contra factura |
+| **Plazo revisión entregables** | 5 días hábiles |
+| **Ajustes** | Sin costo adicional dentro del alcance |
+| **Validez oferta** | 30 días calendario |
+| **Moneda** | Pesos colombianos (COP) |
+
+---
+
+## 5. CURVA S DE DESEMBOLSO ESTIMADA
+
+| Semana | Hito | Desembolso Acumulado |
+|--------|------|---------------------|
+| Semana 1 | E1.1 | $15.600.000 (40%) |
+| Semana 3 | E2.1, E2.2, E3.1, E3.2 | $27.300.000 (70%) |
+| Semana 4 | E3.3, E3.4 | $39.000.000 (100%) |
+
+---
+
+## 6. BASE DE CÁLCULO
+
+El valor total del proyecto se calculó en base a:
+- 4 semanas de trabajo especializado ITS
+- 29 actividades técnicas definidas en el plan de trabajo
+- Perfil profesional: Ingeniero especialista en ITS con experiencia sectorial
+- Incluye: revisión documental, diseño conceptual, especificaciones técnicas, acompañamiento mesas técnicas
+
+---
+
+**Preparado por:** Jelkin Zair Carrillo Franco  
+**Fecha:** 15 de junio de 2026  
+**Aprobado por:** [Pendiente firma Metro Sabanas]

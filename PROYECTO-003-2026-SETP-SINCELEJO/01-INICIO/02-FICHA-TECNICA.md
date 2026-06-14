@@ -1,111 +1,107 @@
-# FICHA TÉCNICA — PROYECTO 003-2026: SETP SINCELEJO
+# 02 — FICHA TÉCNICA DEL PROYECTO
 
-**Estado:** 🔴 Pendiente — Esperando firma de contrato  
-**Fecha:** 15 junio 2026  
-**Autor:** ZEUS PMO (Borrador)
+**Código:** PROYECTO-003-2026-SETP-SINCELEJO  
+**Versión:** 1.0  
+**Fecha:** 15 de junio de 2026
 
 ---
 
-## 1. IDENTIFICACIÓN DEL PROYECTO
+## 1. IDENTIFICACIÓN
 
 | Campo | Valor |
 |-------|-------|
-| **Nombre** | SETP Sincelejo — Componente Tecnológico ITS |
-| **Código** | PROYECTO-003-2026 |
-| **Referencia** | Proyecto 4004 de 2026 |
-| **Cliente** | Alcaldía de Sincelejo / SETP |
-| **Ente Gestor** | [Por definir] |
-| **Consultor** | INNOVADATACO |
-| **Fecha Inicio** | Por definir |
-| **Duración Estimada** | 4-6 meses |
+| **Nombre del proyecto** | Estructuración de los Componentes Tecnológicos del SETP Sincelejo |
+| **Código interno** | PROYECTO-003-2026-SETP-SINCELEJO |
+| **Cliente / Contratante** | Metro Sabanas S.A.S. |
+| **Contratista** | Innovadataco |
+| **Tipo de proyecto** | Consultoría ITS — No desarrollo de software |
+| **Duración** | 4 semanas (20 días hábiles) |
+| **Presupuesto total** | $39.000.000 COP (IVA incluido) |
+| **Forma de pago** | Contra entrega por hitos |
+| **Fecha de inicio** | [Por definir — pendiente firma contrato] |
+| **Fecha de cierre estimada** | [Inicio + 4 semanas] |
+| **Ubicación ejecución** | Bogotá D.C. (remoto + reuniones virtuales/presenciales) |
+| **Representante cliente** | [Por identificar] |
+| **Director de proyecto** | Jelkin Zair Carrillo Franco |
 
 ---
 
-## 2. CONTEXTO
+## 2. OBJETIVO
 
-Sincelejo, capital del departamento de Sucre, opera un SETP con:
-- **Flota actual:** 34 buses
-- **Rutas:** 5 estructuradas
-- **Demanda:** 7.670 pasajeros/día (Medida MS-130 de 2025)
-- **Modalidad:** Tarifa técnica + FEST (20 años concesión)
+Prestar servicios profesionales especializados para apoyar la estructuración de los Servicios ITS y Componentes Tecnológicos necesarios para la estructuración, diseño conceptual, implementación y operación del Sistema Estratégico de Transporte Público de Sincelejo (SETP).
 
 ---
 
-## 3. OBJETIVO DEL PROYECTO
+## 3. ALCANCE
 
-Estructurar el componente tecnológico ITS para modernizar el sistema de transporte público de Sincelejo, garantizando interoperabilidad, escalabilidad y cumplimiento normativo.
+### 3.1 Incluye
+- Revisión de documentos servicios ITS y componentes tecnológicos actuales
+- Definición de Servicios ITS y Componentes Tecnológicos necesarios
+- Acompañamiento en mesas técnicas y levantamiento de información de mercado
+- Realización del estudio, diseño conceptual y especificación de componentes tecnológicos
+- Análisis de equipamiento hardware, software y servicios tecnológicos necesarios
 
----
-
-## 4. ALCANCE TECNOLÓGICO
-
-### Sistemas a Implementar
-| Sistema | Sigla | Prioridad |
-|:--------|:------|:----------|
-| Sistema de Recaudo Centralizado | SRC | ALTA |
-| Sistema de Gestión y Control de Flota | SGCF | ALTA |
-| Sistema de Información al Usuario | SIU | MEDIA |
-| Sistema de Seguridad de Transacciones | SST | ALTA |
-
-### Infraestructura
-- Centro de Control de Operaciones (CCO)
-- Equipos a bordo (validadores, GPS, CCTV, botón pánico)
-- Red de comunicaciones (4G/5G, WiFi, VPN)
-- Cloud/SaaS para hosting y bases de datos
+### 3.2 No incluye
+- Desarrollo de software
+- Implementación física de sistemas
+- Adquisición de equipos
+- Capacitación a operadores
 
 ---
 
-## 5. MARCO NORMATIVO
+## 4. HITOS DE PAGO
 
-| Norma | Tipo |
-|-------|------|
-| Decreto 393 de 2010 | Adopción SETP |
-| Decreto 482 de 2023 | Modificación modelo |
-| Decreto 909 de 2023 | Reglamentación SETP |
-| Decreto 2060 de 2023 | Política ITS Nacional |
-| Resolución 20203040034065 | Estándares ITS |
-| Resolución 20223040028675 (PMITS) | Plan Maestro ITS |
+| Hito | Entregables | % | Valor (COP) |
+|------|-------------|---|-------------|
+| **Hito 1** | E1.1 — Plan de Trabajo y Cronograma | 40% | $15.600.000 |
+| **Hito 2** | E2.1, E2.2, E3.1, E3.2 | 30% | $11.700.000 |
+| **Hito 3** | E3.3, E3.4 + cierre | 30% | $11.700.000 |
+| **TOTAL** | | 100% | **$39.000.000** |
 
 ---
 
-## 6. ENTREGABLES
+## 5. CRONOGRAMA RESUMIDO
 
-| # | Entregable | Descripción |
-|---|-----------|-------------|
-| E1 | Clasificación ITS | Servicios prioritarios, matriz de aplicabilidad |
-| E2 | Arquitectura ITS | Arquitectura multinivel, gobernanza, datos |
-| E3 | ConOps + EOVs | Concepto de operación, 15 escenarios operativos |
-| E4 | Diseño de Componentes | Fichas técnicas de componentes de campo |
-| E5 | RF/RNF + Plan | Requisitos, cronograma de implementación |
-| E6 | Modelo de Costos | Estimación de inversión, 5 hitos de pago |
-| E7 | Propuesta Técnica | Documento de contratación / licitación |
+| Fase | Actividades | Semana |
+|------|-------------|--------|
+| **Fase 1: Inicio y Diagnóstico** | Revisión documental, mesas técnicas, identificación actores | Semana 1 |
+| **Fase 2: Diseño Conceptual** | Definición arquitectura, subsistemas, especificaciones | Semanas 2-3 |
+| **Fase 3: Análisis Tecnológico** | Apoyo elaboración RFI y RFQ | Semanas 3-4 |
 
 ---
 
-## 7. GOBERNANZA
+## 6. GOBERNANZA
 
-| Rol | Responsable | Entidad |
-|-----|------------|---------|
-| Director de Proyecto | Jelkin Zair Carrillo Franco | INNOVADATACO |
-| PMO / Documentación | ZEUS | INNOVADATACO |
-| Cliente / SETP | [Por identificar] | Alcaldía de Sincelejo |
-| Interventoría | [Por definir] | [Por definir] |
-
----
-
-## 8. PRESUPUESTO ESTIMADO
-
-| Concepto | Valor Estimado |
-|----------|---------------|
-| Consultoría estructuración ITS | [Por definir] |
-| Inversión tecnología ITS | [Por definir] |
-| **TOTAL** | [Por definir] |
-
-**Nota:** Revisar estudios previos 2023 ($3.793.756.953 COP) como referencia.
+| Rol | Responsable | Empresa |
+|-----|-------------|---------|
+| Director de Proyecto | Jelkin Zair Carrillo Franco | Innovadataco |
+| PMO / Documentación | ZEUS | Innovadataco |
+| Interlocutor técnico cliente | [Por identificar] | Metro Sabanas S.A.S. |
+| Aprobador entregables | [Por identificar] | Metro Sabanas S.A.S. |
 
 ---
 
-> **NOTA:** Documento en borrador. Requiere validación post-firma de contrato.
+## 7. CONDICIONES ESPECIALES
 
-> **Actualizado:** 15 junio 2026  
-> **Autor:** ZEUS PMO
+- **Revisión de entregables:** 5 días hábiles para observaciones
+- **Ajustes:** Sin costo adicional dentro del alcance definido
+- **Desplazamientos:** Costos asumidos por Metro Sabanas S.A.S.
+- **Propiedad intelectual:** Documentos entregados a Metro Sabanas. Innovadataco conserva metodologías y herramientas.
+- **Validez oferta:** 30 días calendario (hasta ~4 julio 2026)
+
+---
+
+## 8. DOCUMENTOS BASE
+
+| Documento | Versión | Ubicación |
+|-----------|---------|-----------|
+| Propuesta Técnica y Económica | V02 | Drive SETP-Sincelejo/Oferta/ |
+| Plan de Trabajo Detallado | V01 | Drive SETP-Sincelejo/Oferta/ |
+| Decreto 393 de 2010 | — | Drive Normatividad/ |
+| Decreto 482 de 2023 | — | Drive Normatividad/ |
+| Resolución 28675 de 2022 (PMITS) | — | Drive Normatividad/ |
+
+---
+
+**Aprobado por:** _________________________  
+**Fecha aprobación:** _______________________
