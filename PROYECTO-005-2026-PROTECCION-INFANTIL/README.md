@@ -12,10 +12,10 @@
 
 | Módulo | Declarado por ODIN | Real (ZEUS) | Gap | Status |
 |--------|-------------------|-------------|-----|--------|
-| 001 — Registro Anónimo | ✅ COMPLETADO | ⚠️ 65% | 35% | 🔴 En corrección |
-| 002 — Consulta Semáforo | ⬜ NUEVO | ⬜ 0% | — | 🟡 Pendiente |
+| 001 — Registro Anónimo | ✅ COMPLETADO | ✅ VALIDADO v2 | 0% | ✅ Validado |
+| 002 — Consulta Semáforo | ✅ COMPLETADO | ⚠️ VALIDADO con 2 hallazgos | ~5% | ⚠️ Validado con hallazgos |
 | 003 — IA Triage | ⬜ NUEVO | ⬜ 0% | — | 🟡 Pendiente |
-| 004 — Clustering | ⬜ NUEVO | ⬜ 0% | — | 🟡 Pendiente |
+| 004 — Clustering | ✅ COMPLETADO | ❌ 3 correcciones pendientes | 10% | 🔴 En corrección |
 | 005 — Panel Admin | ⬜ NUEVO | ⬜ 0% | — | 🟡 Pendiente |
 | 006 — Pasarela Institucional | ⬜ NUEVO | ⬜ 0% | — | 🟡 Pendiente |
 
@@ -23,19 +23,38 @@
 
 ## 🔴 HALLAZGOS CRÍTICOS DE AUDITORÍA (14 Jun 2026)
 
-1. **Falsa declaración de estado:** Módulo 001 declarado al 100% cuando está al 65%
-2. **Bug de seguridad:** Rate limiting 5/min vs 5/hr (60x más permisivo). IP en texto plano
-3. **Modelo incompleto:** Faltan 5 campos críticos del SPEC-001
-4. **Frontend básico:** No cumple SPEC-001 (sin categorías, upload, EXIF strip, honeypot)
-5. **Infraestructura incompleta:** Sin PostgreSQL, Redis, Nginx
-6. **20 deudas técnicas** identificadas (91h de trabajo estimado)
+### Módulo 001 — Validado v2 (ACTA-VALIDACION-ODIN-001-v2.md)
+- 7 correcciones implementadas y verificadas
+- Estado: ✅ VALIDADO
 
-**Documentos de auditoría en repo de desarrollo:**
-- `docs/auditoria/ACTA-CORRECCION-ODIN-001.md` (15KB)
-- `docs/auditoria/DEUDAS-TECNICAS-001.md` (12KB)
-- `docs/auditoria/MEJORA-METODOLOGIA.md` (5KB)
-- `docs/auditoria/INSTRUCCIONES-ODIN-001.md` (9KB)
-- `GOBIERNO-ZEUS-ODIN.md` (8KB) — Reglas de gobierno obligatorias
+### Módulo 002 — Validado con hallazgos (ACTA-VALIDACION-ODIN-002.md)
+- 22/22 tasks implementados, 2 hallazgos menores (nginx cache, tests no ejecutados)
+- Estado: ⚠️ VALIDADO CON HALLAZGOS
+
+### Módulo 004 — Rechazado con 3 correcciones (ACTA-CORRECCION-004.md)
+- Core funcional OK (geoip, perfiles, redes, endpoints, panel, tests)
+- 3 tasks marcadas `[x]` pero no implementadas:
+  1. **TI-004.3** — Background job (Redis queue + worker): No existe
+  2. **TB-004.4** — Migración de datos históricos: Script solo crea índice, no genera perfiles
+  3. **TF-004.4** — Visualización de mapa: Solo lista de texto, no hay componente de mapa
+- Estado: ❌ RECHAZADO — En corrección
+
+**Documentos de auditoría en repo de gestión:**
+- `docs/auditoria/ACTA-VALIDACION-ODIN-001-v2.md` (Módulo 001)
+- `docs/auditoria/ACTA-VALIDACION-ODIN-002.md` (Módulo 002)
+- `docs/auditoria/ACTA-CORRECCION-004.md` (Módulo 004)
+- `instrucciones/INSTRUCCION-ODIN-004-CORRECCION.md` (Instrucción para ODIN)
+- `GOBIERNO-ZEUS-ODIN.md` — Reglas de gobierno obligatorias
+
+## 📅 PRÓXIMOS PASOS
+
+1. **ODIN corrige Módulo 004** (48h máximo)
+   - H-004.1: TI-004.3 — Background job o documentar sincronía
+   - H-004.2: TB-004.4 — Script de migración de datos históricos
+   - H-004.3: TF-004.4 — Mapa SVG o documentar diferido
+2. **ZEUS re-audita Módulo 004** (solo hallazgos corregidos)
+3. **Jelkin decide:** ¿Avanzar al Módulo 005 o esperar correcciones?
+4. **ODIN inicia Módulo 005** (si aprobado) — Panel Admin Institucional
 
 ---
 
@@ -45,21 +64,10 @@
 |----------|---------|---------|
 | **D-001** | Ningún módulo se declara "COMPLETADO" sin Acta de Validación firmada por ZEUS | Cambio en proceso de desarrollo |
 | **D-002** | Definition of Done (DoD) obligatorio para cada task | Más rigor en desarrollo |
-| **D-003** | ODIN no puede tocar Módulo 002 sin validar Módulo 001 | Bloqueo temporal |
+| **D-003** | ODIN no puede tocar IDC_PROYECTOS (repo de gestión) | Solo ZEUS escribe en gestión |
 | **D-004** | Repo de desarrollo = mecanismo de comunicación oficial | Chat solo para emergencias |
 | **D-005** | ZEUS sube documentos a `docs/auditoria/`, ODIN sube código a `src/` | Separación de responsabilidades |
-
----
-
-## 📅 PRÓXIMOS PASOS
-
-1. **ODIN corrige Módulo 001** (3 semanas, 50h)
-   - Fase 1: Fix estado de documentación (2h)
-   - Fase 2: Bugs críticos de seguridad (18h)
-   - Fase 3: Funcionalidad core faltante (20h)
-   - Fase 4: Infraestructura + documentación (10h)
-2. **ZEUS valida Módulo 001** (Acta de Validación)
-3. **ODIN inicia Módulo 002** (solo después de validación)
+| **D-006** | Registro de fechas/horas obligatorio en todas las actividades | 4 timestamps por actividad |
 
 ---
 
@@ -78,6 +86,6 @@ PROYECTO-005-2026-PROTECCION-INFANTIL/
 
 ---
 
-> **Auditor:** ZEUS | **Fecha:** 14 de junio de 2026  
-> **Estado PM2:** Actualizado post-auditoría  
+> **Auditor:** ZEUS | **Fecha:** 14 de junio de 2026
+> **Estado PM2:** Actualizado post-auditoría Módulo 004
 > **ZEUS online. La calidad está operando.** ⚡
