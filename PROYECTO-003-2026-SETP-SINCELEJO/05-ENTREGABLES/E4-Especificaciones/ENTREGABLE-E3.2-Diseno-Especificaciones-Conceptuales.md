@@ -23,6 +23,8 @@ Este documento presenta el diseño conceptual y las especificaciones técnicas d
 
 **Normativa aplicable:** Resolución 20203040034065 del MinTransporte (2020)
 
+> **Alcance:** Esta consultoría cubre exclusivamente la **estructuración** (diseño conceptual y especificación). **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+
 ---
 
 ## 2. ESPECIFICACIONES DE SUBSISTEMAS

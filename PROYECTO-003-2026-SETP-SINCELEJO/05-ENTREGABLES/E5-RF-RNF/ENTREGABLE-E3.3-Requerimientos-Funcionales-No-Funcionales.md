@@ -28,6 +28,8 @@ Este documento define los requerimientos funcionales (RF) y no funcionales (RNF)
 | **SIU** | Información al Usuario (2.4) | RF-027 a RF-031 |
 | **SST** | Seguridad transversal (RNF-011 a RNF-016) | RNF-011 a RNF-016 |
 
+> **Alcance:** Esta consultoría define los **requerimientos funcionales y no funcionales** como parte de la estructuración. **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+
 ---
 
 ## 2. REQUERIMIENTOS FUNCIONALES (RF)

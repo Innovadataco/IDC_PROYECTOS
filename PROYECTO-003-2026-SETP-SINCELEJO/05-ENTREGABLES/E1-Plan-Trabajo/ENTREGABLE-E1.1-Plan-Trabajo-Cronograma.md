@@ -37,7 +37,16 @@ Este documento establece el Plan de Trabajo detallado para la ejecución del pro
 
 ## 2. METODOLOGÍA DE TRABAJO
 
-### 2.1 Enfoque
+### Alcance de esta Consultoría
+
+Esta consultoría cubre exclusivamente la **estructuración** (revisión, diseño conceptual y especificación) de los componentes tecnológicos del SETP Sincelejo. **NO incluye implementación, instalación, operación ni puesta en marcha** de los sistemas.
+
+El objetivo final de esta consultoría es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación del componente tecnológico del SETP Sincelejo.
+
+| Fase | Qué hace Innovadataco | Qué NO hace |
+|------|----------------------|-------------|
+| **Estructuración** | Revisión documental, diseño conceptual, especificaciones, requerimientos, apoyo a RFI/RFQ | Implementación, instalación, operación |
+| **Licitación** | Estudios Previos ITS para el proceso de contratación | Ejecución de la obra, compra de equipos, contratación de operador |
 
 El proyecto sigue una metodología de consultoría especializada en Sistemas Inteligentes de Transporte (ITS), con las siguientes fases:
 

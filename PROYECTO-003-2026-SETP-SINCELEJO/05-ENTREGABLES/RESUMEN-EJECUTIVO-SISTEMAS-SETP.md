@@ -41,10 +41,14 @@ El proyecto define **4 sistemas tecnológicos** operados bajo **3 escenarios ins
 
 ### 1.3 Alcance de esta Consultoría (2026)
 
-Esta consultoría NO inventa nuevos sistemas. **Valida, actualiza y estructura** los 4 sistemas ya definidos desde 2015, alineados con:
+Esta consultoría cubre exclusivamente la **estructuración** (revisión, diseño conceptual y especificación) de los 4 sistemas ya definidos desde 2015. **NO incluye implementación, instalación, operación ni puesta en marcha** de los sistemas.
+
+Alineada con:
 - **Resolución 20203040034065** del MinTransporte (2020)
 - **RFI 2025** de integración de 3 contratos (flota + tecnología + operación)
 - **Proceso de contratación 2023** (46 vehículos, 9 meses, pago condicionado a validación)
+
+**El objetivo final es producir los Estudios Previos ITS** que alimentarán el proceso de licitación/contratación del componente tecnológico del SETP Sincelejo.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

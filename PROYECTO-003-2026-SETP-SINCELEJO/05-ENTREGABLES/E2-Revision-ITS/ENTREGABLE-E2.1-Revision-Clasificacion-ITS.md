@@ -20,6 +20,8 @@ Este documento presenta la revisión y clasificación de los Servicios de Sistem
 - **2025:** RFI integración de 3 contratos (flota + tecnología + operación)
 - **2026:** Esta consultoría Innovadataco — estructuración de los 4 sistemas existentes
 
+> **Alcance:** Esta consultoría cubre exclusivamente la **estructuración** (revisión, diseño conceptual y especificación). **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+
 ---
 
 ## 2. MARCO NORMATIVO

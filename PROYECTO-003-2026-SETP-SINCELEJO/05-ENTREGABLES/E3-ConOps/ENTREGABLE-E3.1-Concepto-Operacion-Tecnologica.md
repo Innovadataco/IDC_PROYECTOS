@@ -32,6 +32,8 @@ Este documento define el Concepto de Operación Tecnológica (ConOps) del SETP S
 | **"Socio tecnológico"** | Un único concesionario opera los 4 sistemas | Integración total outsource |
 | **"Operador recaudador"** | El operador de transporte asume los 4 sistemas | Mayor control operativo |
 
+> **Alcance:** Esta consultoría define el **Concepto de Operación Tecnológica** (cómo se operaría el sistema) como parte de la estructuración. **NO incluye implementación, instalación, operación real ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+
 ---
 
 ## 2. ROLES Y RESPONSABILIDADES

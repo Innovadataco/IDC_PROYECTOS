@@ -24,6 +24,8 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 
 **Escala:** 46 vehículos (proceso 2023, RFI 2025)
 
+> **Alcance:** Esta consultoría apoya la **estructuración de los requerimientos técnicos** para el RFI/RFQ. **NO incluye implementación, instalación, operación ni puesta en marcha** de los sistemas. El objetivo final es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación.
+
 ---
 
 ## 2. MARCO DE ADQUISICIÓN

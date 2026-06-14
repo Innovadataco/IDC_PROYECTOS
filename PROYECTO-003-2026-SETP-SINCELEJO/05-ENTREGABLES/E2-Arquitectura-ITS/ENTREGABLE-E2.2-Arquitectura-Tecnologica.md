@@ -27,6 +27,8 @@ Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo
 
 > **Nota:** Esta consultoría NO propone integraciones con SISPROV, RUNT, SIMAT o SICOV. Esos sistemas nacionales NO fueron definidos en el proyecto de Sincelejo (2015-2023) y NO aparecen en ningún documento contractual del SETP.
 
+> **Alcance:** Esta consultoría cubre exclusivamente la **estructuración** (revisión, diseño conceptual y especificación) de los componentes tecnológicos. **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+
 ---
 
 ## 2. PRINCIPIOS ARQUITECTÓNICOS
