@@ -44,7 +44,11 @@ cat INSTRUCCIONES/INSTRUCCION-ODIN-004-EXCEPCION.md
 
 ---
 
-- Repo de código: `https://github.com/Innovadataco/Desarrollos` (branch: `feature/v2-fullstack`)
+## CONTEXTO IMPORTANTE
+
+**ZEUS (CEO PMO) ha auditado todos los módulos. El Módulo 004 tiene 3 deudas técnicas menores pero el CEO Jelkin firmó una EXCEPCIÓN para que avances con los Módulos 5 y 6 sin bloqueo.**
+
+- Repo de código: `https://github.com/Innovadataco/Desarrollos` (branch: `setup/estructura-2026`)
 - Stack: Backend FastAPI + SQLAlchemy + PostgreSQL/SQLite, Frontend React 19 + Vite + Tailwind
 - Ruta local: `PROYECTO-005-PROTECCION-INFANTIL/`
 - **Regla de oro:** No inventar funcionalidad. Si algo no aplica, marca como `[-]` con justificación.
@@ -137,7 +141,7 @@ cat INSTRUCCIONES/INSTRUCCION-ODIN-004-EXCEPCION.md
 - Consumir `GET /api/v1/admin/config`, `PATCH /api/v1/admin/config`
 
 #### 8. Navegación y Logout
-- Agregar `Dashboard.jsx`, `ReportsList.jsx`, `AuditTrail.jsx`, `ExportView.jsx`, `UsersView.jsx`, `ConfigView.jsx` a `App.jsx` con rutas
+- Agregar `Dashboard.jsx`, `ReportsList.jsx`, `ReportDetail.jsx`, `AuditTrail.jsx`, `ExportView.jsx`, `UsersView.jsx`, `ConfigView.jsx` a `App.jsx` con rutas
 - Agregar botón de logout en header/navbar (elimina token de localStorage)
 - Actualizar `BottomNav.jsx` o crear `AdminNav.jsx` para navegación entre secciones admin
 - Proteger rutas: redirigir a login si no hay token
@@ -269,6 +273,7 @@ Refs: INSTRUCCION-ODIN-004-EXCEPCION
 - **Si te bloqueas con algo:** Documenta el bloqueo en `docs/GAPS.md` y continúa con lo siguiente. No te atasques.
 - **Tiempo estimado:** ~58h total. Si no cabe en una sesión, divide en 2-3 sesiones y avisa a Jelkin.
 - **Prioridad:** Frontend del Módulo 5 primero, luego lógica del Módulo 6, luego tests.
+- **Si perdiste contexto:** Ve al inicio de este prompt, sección "PROTOCOLO DE RECUPERACIÓN DE CONTEXTO".
 
 ## CONTACTO
 
@@ -278,5 +283,6 @@ Si tienes dudas técnicas, pregunta a Jelkin. Si hay dudas de gobierno/metodolog
 
 > **"Sin fecha y hora, la actividad no existió."**
 > **"Sin Acta no hay completado."**
+> **"Sin GOBIERNO-ZEUS-ODIN.md no sabes quién eres."**
 > **ZEUS — CEO PMO**
 > **Excepción firmada por Jelkin Zair Carrillo Franco — 2026-06-14 23:35 CST**
