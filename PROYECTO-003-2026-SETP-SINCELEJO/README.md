@@ -5,8 +5,8 @@
 **Entidad:** Alcaldía de Sincelejo / SETP  
 **Referencia:** Proyecto 4004 de 2026  
 **Fecha de Inicio:** [Por definir]  
-**Última Actualización:** 12 de junio de 2026  
-**Estado:** 🟡 En Inicio — **Pendiente firma de contrato para iniciar**
+**Última Actualización:** 15 de junio de 2026  
+**Estado:** 🟡 En Inicio — Pendiente firma de contrato para iniciar formalmente  
 **Bloqueo:** Sin contrato firmado no se puede iniciar formalmente el proyecto
 
 ---
@@ -19,7 +19,7 @@ El **Sistema Estratégico de Transporte Público (SETP) de Sincelejo** es un pro
 |-----------|-------|
 | **Cliente** | Alcaldía de Sincelejo / SETP |
 | **Referencia** | Proyecto 4004 de 2026 |
-| **Estado** | 🟡 Exploración — Sin avances a hoy |
+| **Estado** | 🟡 Exploración - Sin avances a hoy |
 | **Fecha Inicio** | Por definir |
 | **Duración Estimada** | Por definir |
 | **Monto Estimado** | Por definir |
@@ -124,11 +124,11 @@ PROYECTO-003-2026-SETP-SINCELEJO/
 
 ## 📝 Nota de Estado (12 jun 2026)
 
-> **No se reportan avances a la fecha.** El proyecto SETP Sincelejo está en fase exploratoria inicial. 
+> **No se reportan avances a la fecha.** El proyecto SETP Sincelejo está en fase exploratoria inicial.
 >
 > **Bloqueo principal:** Pendiente firma de contrato para iniciar formalmente el proyecto. Sin contrato firmado no se puede avanzar con actividades operativas ni generar artefactos de inicio formales.
 >
-> **Acción de ZEUS:** 
+> **Acción de ZEUS:**
 > - Estructura PM2 preparada y lista para activación
 > - Esperar firma de contrato para generar artefactos de INICIO
 > - Preparar templates de Acta de Constitución y Ficha Técnica para cuando se autorice
@@ -137,7 +137,7 @@ PROYECTO-003-2026-SETP-SINCELEJO/
 
 ---
 
-> **ZEUS PMO — INNOVADATACO**  
-> *PROYECTO 003-2026: SETP SINCELEJO*  
-> *Estado: En Inicio — Fase Exploratoria*  
+> **ZEUS PMO - INNOVADATACO**
+> *PROYECTO 003-2026: SETP SINCELEJO*
+> *Estado: En Inicio - Fase Exploratoria*
 > *Actualizado: 12 junio 2026*
