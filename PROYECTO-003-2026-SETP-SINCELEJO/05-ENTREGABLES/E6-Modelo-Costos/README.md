@@ -13,7 +13,7 @@ Estimación de inversión ITS para SETP Sincelejo, con 5 hitos de pago.
 ## Contenido Esperado
 
 1. Desglose de costos por subsistema
-2. Costos de equipos a bordo (34 buses)
+2. Costos de equipos a bordo (46 vehículos)
 3. Costos de CCO e infraestructura
 4. Costos de software / SaaS
 5. Costos de telecomunicaciones

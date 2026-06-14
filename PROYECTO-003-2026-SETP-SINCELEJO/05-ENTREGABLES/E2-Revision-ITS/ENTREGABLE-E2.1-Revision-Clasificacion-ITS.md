@@ -138,10 +138,10 @@ SERVICIOS ITS
 
 | Sistema | Interfaz | Datos |
 |---------|----------|-------|
-| SISPROV | API REST | Flota, operadores |
-| RUNT | Web service | Vehículos, conductores |
-| SIMAT | API | Matrículas, SOAT |
-| SICOV | Integración | Control operativo |
+| SRC | Sistema de Recaudo Centralizado | Recaudo, tarjetas |
+| SGCF | Sistema de Gestión y Control de Flota | GPS, operación |
+| SIU | Sistema de Información al Usuario | Web, app, pantallas |
+| SST | Sistema de Seguridad de Transacciones | Seguridad, cifrado |
 
 ### 6.2 Estándares de Comunicación
 

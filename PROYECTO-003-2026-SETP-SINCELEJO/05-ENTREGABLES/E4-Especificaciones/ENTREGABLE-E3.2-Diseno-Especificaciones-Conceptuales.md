@@ -300,7 +300,7 @@ components:
 |------|----------|---------|
 | **Fase 1** | Mes 1-2 | Infraestructura cloud + centro de control |
 | **Fase 2** | Mes 3-4 | Instalación onboard 10 buses piloto |
-| **Fase 3** | Mes 5-6 | Rollout flota completa (34 buses) |
+| **Fase 3** | Mes 5-6 | Rollout flota completa (46 vehículos) |
 | **Fase 4** | Mes 7-8 | Pago electrónico + app usuarios |
 | **Fase 5** | Mes 9-12 | Optimización, integraciones, analytics |
 

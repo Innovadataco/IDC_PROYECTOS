@@ -68,7 +68,7 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 | **Onboard** | ¿Ofrecen unidades GPS con comunicación 4G, conteo de pasajeros, validación NFC? |
 | **Plataforma** | ¿Su plataforma es cloud-native, on-premise o híbrida? |
 | **Pagos** | ¿Integran con pasarelas de pago colombianas (Redeban, ACH)? |
-| **Interoperabilidad** | ¿Han integrado con SISPROV, RUNT, SICOV? |
+| **Interoperabilidad** | ¿Cumplen con la Resolución 20203040034065 del MinTransporte? |
 | **Seguridad** | ¿Cumplen con PCI DSS para pagos? ¿Ofrecen cifrado end-to-end? |
 | **Escalabilidad** | ¿Cuántos vehículos soportan su plataforma? ¿Es escalable? |
 
@@ -109,16 +109,16 @@ Este documento contiene el apoyo en la elaboración de la Solicitud de Informaci
 
 ### 4.2 Especificaciones Técnicas del RFQ
 
-#### Lote 1 — Unidades Onboard (34 buses)
+#### Lote 1 — Unidades Onboard (46 vehículos)
 
 | Ítem | Cantidad | Especificación mínima |
 |------|----------|----------------------|
-| Rastreador GPS 4G | 34 | ARM 4 núcleos, 4GB RAM, 64GB, GPS multi-GNSS, 4G Cat-4 |
-| Validador NFC | 34 | Pantalla 5", NFC ISO 14443, 4G, Android |
-| Pantalla conductor | 34 | LCD 7", resistente a vibraciones |
-| Sensor conteo pasajeros | 34 | IR/ToF, precisión > 95% |
+| Rastreador GPS 4G | 46 | ARM 4 núcleos, 4GB RAM, 64GB, GPS multi-GNSS, 4G Cat-4 |
+| Validador NFC | 46 | Pantalla 5", NFC ISO 14443, 4G, Android |
+| Pantalla conductor | 46 | LCD 7", resistente a vibraciones |
+| Sensor conteo pasajeros | 46 | IR/ToF, precisión > 95% |
 | Sensor puertas | 68 | Reed switch / IR |
-| Instalación y configuración | 34 | Incluido |
+| Instalación y configuración | 46 | Incluido |
 
 #### Lote 2 — Centro de Control
 

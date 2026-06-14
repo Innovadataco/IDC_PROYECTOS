@@ -145,8 +145,8 @@ Este documento define los requerimientos funcionales (RF) y no funcionales (RNF)
 
 | ID | Requerimiento | Métrica | Prioridad |
 |----|--------------|---------|-----------|
-| RNF-031 | Integración SISPROV | API REST estándar | Alta |
-| RNF-032 | Integración RUNT | Web service SOAP/REST | Alta |
+| RNF-031 | Integración SRC-SGCF-SIU-SST | Protocolo interno del SETP | Alta |
+| RNF-032 | Interoperabilidad Resolución 20203040034065 | Estándares MinTransporte | Alta |
 | RNF-033 | Formato de datos GPS | NMEA 0183 compatible | Media |
 | RNF-034 | Exportación de reportes | PDF, Excel, CSV | Media |
 | RNF-035 | API pública documentada | OpenAPI 3.0 | Media |

@@ -21,7 +21,7 @@ Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo
 |-----------|-------------|
 | **Modularidad** | Componentes independientes e intercambiables |
 | **Escalabilidad** | Capacidad de crecer sin rediseño |
-| **Interoperabilidad** | Integración con sistemas externos (SISPROV, RUNT, SICOV) |
+| **Interoperabilidad** | Integración con sistemas del SETP (SRC, SGCF, SIU, SST) y estándares de la Resolución 20203040034065 |
 | **Seguridad** | Protección de datos y comunicaciones |
 | **Disponibilidad** | 99.5% uptime en operación crítica |
 | **Mantenibilidad** | Facilidad de actualización y soporte |
@@ -61,7 +61,7 @@ Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo
 │  ┌────┴────────────────────────────────────────┐             │
 │  │  ESB / Bus de Integración / Message Queue   │             │
 │  │  ┌────────┐ ┌────────┐ ┌────────┐ ┌──────┐  │             │
-│  │  │SISPROV │ │  RUNT  │ │ SIMAT  │ │SICOV │  │             │
+│  │  │SRC │ │  SGCF  │ │ SIU  │ │SST │  │             │
 │  │  │Adapter │ │Adapter │ │Adapter │ │Adapt │  │             │
 │  │  └────────┘ └────────┘ └────────┘ └──────┘  │             │
 │  └────┬────────────────────────────────────────┘             │
@@ -221,9 +221,9 @@ Bus ──> Rastreador ──> 4G/LTE ──> VPN ──> API Gateway ──> BD
 
 | Métrica | Inicial | Año 1 | Año 3 |
 |---------|---------|-------|-------|
-| Buses monitoreados | 34 | 50 | 100 |
-| Usuarios activos/día | 7.670 | 15.000 | 30.000 |
-| Transacciones/día | 10.000 | 25.000 | 60.000 |
+| Vehículos monitoreados | 46 | 50 | 100 |
+| Usuarios activos/día | 10.000 | 15.000 | 30.000 |
+| Transacciones/día | 15.000 | 25.000 | 60.000 |
 | Eventos GPS/seg | 10 | 25 | 60 |
 | Almacenamiento/mes | 50 GB | 120 GB | 300 GB |
 
