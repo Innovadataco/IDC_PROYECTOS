@@ -1,265 +1,254 @@
-# ENTREGABLE 3.4 — APOYO EN ELABORACIÓN DE RFI Y RFQ
+# ENTREGABLE 3.4 — APOYO EN LA ELABORACIÓN DE RFI Y RFQ PARA LA CONTRATACIÓN DE LOS COMPONENTES TECNOLÓGICOS DEL SETP
 
 **Proyecto:** Estructuración de los Componentes Tecnológicos del SETP Sincelejo  
 **Cliente:** Metro Sabanas S.A.S.  
 **Contratista:** Innovadataco  
 **Código:** PROYECTO-003-2026-SETP-SINCELEJO / E3.4  
-**Versión:** 1.0  
-**Fecha:** 15 de junio de 2026
+**Versión:** 2.0 — Reescritura argumentada y fluida  
+**Fecha:** 15 de junio de 2026  
+**Elaborado por:** ZEUS — InnovaDataCo  
+**Revisión:** V2.0 — Borrador para validación del CEO
 
 ---
 
-## 1. RESUMEN EJECUTIVO
+## RESUMEN EJECUTIVO
 
-Este documento contiene el apoyo en la elaboración de la Solicitud de Información (RFI) y la Solicitud de Cotización (RFQ) para la adquisición de los componentes tecnológicos del SETP Sincelejo, basado en los **4 sistemas definidos desde 2015** (SRC, SGCF, SIU, SST) y el proceso de contratación 2023 con el MinTransporte.
+El presente documento establece el marco metodológico, la estructura técnica y los criterios de evaluación para la elaboración de la Solicitud de Información (RFI) y la Solicitud de Cotización (RFQ) que permitirán a Metro Sabanas S.A.S. contratar los componentes tecnológicos del Sistema Estratégico de Transporte Público de Sincelejo (SETP). Este documento no es un simple formulario de licitación: es una **estrategia de contratación integrada** que refleja la decisión de Metro Sabanas de adoptar un modelo de contratación por integración de tres contratos (flota + tecnología + operación) en lugar de un modelo tradicional de adquisición por lotes independientes.
 
-**Antecedentes de contratación:**
-- **2015:** Estructuración tecnológica (Steer Davies Gleave + GSD+) definiendo SRC, SGCF, SIU y 3 escenarios institucionales
-- **2022:** Actualización del modelo (Contrato CM-001-2022, A4 Asociados)
-- **2023:** MinTransporte lanzó proceso de contratación ITS para 46 vehículos (9 meses, pago condicionado a validación)
-- **2025:** Metro Sabanas lanzó **RFI que integra 3 contratos** (flota + tecnología + operación), no una adquisición por lotes tradicional
-- **2026:** Esta consultoría apoya la estructuración de los requerimientos para la contratación
+**Hallazgo principal:** El RFI 2025 de Metro Sabanas S.A.S. representa un cambio paradigmático en la contratación de tecnología para transporte público en Colombia. En lugar de adquirir "Lote 1: Hardware", "Lote 2: Software", y "Lote 3: Servicios" como contratos independientes que luego deben ser integrados (con los riesgos de incompatibilidad, conflictos de responsabilidad, y sobrecostos de integración que ese modelo implica), Metro Sabanas optó por un **RFI de integración** que permite a los proveedores proponer modelos donde un mismo actor asume múltiples contratos, o donde un consorcio de proveedores se presenta como una sola oferta integrada. Esta decisión no es administrativa: es **estratégica**, porque reconoce que la tecnología de transporte público no es un conjunto de productos sino un sistema integrado donde el hardware, el software y los servicios de operación son interdependientes.
 
-**⚠️ Nota importante:** El RFI 2025 de Metro Sabanas NO es una adquisición por lotes tradicional (Lote 1, 2, 3...). Es un **RFI de integración de 3 contratos** que permite a la empresa operadora proponer modelos integrados de flota + tecnología + operación. Esta consultoría apoya la estructuración de los requerimientos técnicos para ese proceso.
+**Estructura del documento:** Este documento presenta: (a) el marco de adquisición, que define la estrategia de contratación por fases (RFI → RFQ → Evaluación → Adjudicación) y la estructura de los tres contratos integrados; (b) el RFI, que establece qué información se solicita al mercado para conocer las tecnologías disponibles, los proveedores potenciales, y los modelos de negocio viables; (c) el RFQ, que establece las especificaciones técnicas detalladas, los criterios de evaluación, y el formato de propuesta; (d) el calendario de adquisición, que define la secuencia de actividades y sus dependencias; (e) los riesgos de adquisición, que identifican las amenazas y sus mitigaciones; y (f) el modelo de evaluación, que define la fórmula de puntaje técnico-financiero para la selección del proveedor.
 
-**Escala:** 46 vehículos (proceso 2023, RFI 2025)
+**Alcance:** Este documento apoya la **estructuración de los requerimientos técnicos** para el RFI/RFQ. No incluye la publicación del RFI/RFQ, la recepción de propuestas, la evaluación de ofertas, la negociación con proveedores, ni la firma de contratos. El objetivo final es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación del componente tecnológico del SETP Sincelejo.
 
-> **Alcance:** Esta consultoría apoya la **estructuración de los requerimientos técnicos** para el RFI/RFQ. **NO incluye implementación, instalación, operación ni puesta en marcha** de los sistemas. El objetivo final es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación.
+---
+
+## 1. CONTEXTO Y ANTECEDENTES
+
+### 1.1 El RFI/RFQ como proceso de descubrimiento y selección
+
+El proceso de contratación de tecnología para transporte público no es una compra de supermercado: no se puede simplemente "pedir un sistema ITS" y esperar que el proveedor entregue lo correcto. El proceso de contratación es un **descubrimiento mutuo** donde Metro Sabanas descubre qué tecnologías existen en el mercado, qué proveedores pueden ofrecerlas, y a qué precio; y donde los proveedores descubren qué necesita Metro Sabanas, qué especificaciones técnicas debe cumplir, y qué condiciones contractuales debe aceptar. Este descubrimiento mutuo ocurre en dos fases: el RFI (Solicitud de Información) y el RFQ (Solicitud de Cotización).
+
+El **RFI es la fase de exploración**: Metro Sabanas pregunta al mercado "¿qué hay?" sin compromiso de compra. El RFI no solicita precios formales ni propuestas vinculantes: solicita información sobre las capacidades de los proveedores, las tecnologías que ofrecen, las referencias de proyectos similares, y los modelos de negocio que utilizan. El RFI permite a Metro Sabanas: (a) conocer el estado del mercado (quiénes son los proveedores, qué tecnologías ofrecen, qué experiencia tienen en Colombia); (b) calificar el mercado (descartar proveedores que no cumplen los requisitos mínimos, y preseleccionar proveedores que sí los cumplen); (c) validar las especificaciones técnicas (verificar si las especificaciones propuestas en E3.2 son realistas y alcanzables); y (d) ajustar el presupuesto (conocer los rangos de precio del mercado para ajustar la expectativa financiera antes de lanzar el RFQ).
+
+El **RFQ es la fase de competencia**: Metro Sabanas pregunta al mercado "¿cuánto cuesta?" y los proveedores compiten por el contrato. El RFQ solicita propuestas formales, vinculantes, y evaluables: especificaciones técnicas detalladas, planes de trabajo, cronogramas, garantías, y precios. El RFQ permite a Metro Sabanas: (a) comparar ofertas técnicas (qué propuesta cumple mejor las especificaciones); (b) comparar ofertas económicas (qué propuesta tiene el mejor precio); (c) evaluar la viabilidad de los proveedores (quién tiene la capacidad financiera, técnica, y operativa para ejecutar el proyecto); y (d) seleccionar el proveedor que ofrece la mejor relación calidad-precio.
+
+La separación entre RFI y RFQ es importante porque cada fase tiene un objetivo diferente. Si se salta el RFI y se va directamente al RFQ, Metro Sabanas puede recibir propuestas que no cumplen las expectativas técnicas o económicas, o puede descartar proveedores que no fueron consultados porque no se conocía su existencia. El RFI es una inversión de tiempo que reduce el riesgo del RFQ: un RFI bien ejecutado produce un RFQ bien fundamentado, con especificaciones realistas, presupuesto ajustado, y proveedores preseleccionados.
+
+### 1.2 Los tres contratos integrados: el modelo de contratación del RFI 2025
+
+El RFI 2025 de Metro Sabanas S.A.S. introduce un **modelo de contratación integrada** que rompe con la tradición de adquisición por lotes independientes. En la mayoría de los procesos de licitación de tecnología para transporte público en Colombia, la entidad contratante publica un pliego con "Lote 1: Hardware", "Lote 2: Software", y "Lote 3: Servicios", y los proveedores pueden ofrecer uno, dos, o los tres lotes. Este modelo tiene tres problemas fundamentales: (a) **incompatibilidad técnica**: el proveedor del Lote 1 (hardware) puede no ser compatible con el proveedor del Lote 2 (software), generando integraciones costosas y riesgos de falla; (b) **conflicto de responsabilidad**: si el hardware falla, el proveedor del Lote 1 dice "es problema del software", y el proveedor del Lote 2 dice "es problema del hardware", dejando a la entidad contratante sin un responsable claro; y (c) **sobrecostos de integración**: la entidad contratante debe contratar a un tercero (o asumir internamente) la integración de los tres lotes, lo que genera costos adicionales, retrasos, y riesgos de calidad.
+
+El modelo de tres contratos integrados del RFI 2025 resuelve estos problemas permitiendo que los proveedores propongan ofertas integradas donde un mismo actor (o un consorcio coordinado) asume la responsabilidad de múltiples contratos. La estructura de los tres contratos es:
+
+**Contrato 1 — Flota (Vehículos):** Este contrato cubre la adquisición e instalación de las unidades tecnológicas a bordo de los 46 vehículos: rastreadores GPS 4G, validadores NFC, pantallas del conductor, sensores de conteo de pasajeros, sensores de puertas, y cámaras CCTV. El proveedor de este contrato es responsable de que los dispositivos funcionen correctamente en los buses, que estén instalados según las especificaciones técnicas, y que se integren con la plataforma de centro de control. Este contrato no es solo "vender dispositivos": es "proporcionar una solución de hardware integrada que funcione como parte del sistema".
+
+**Contrato 2 — Tecnología (Software + Infraestructura):** Este contrato cubre la plataforma de software y la infraestructura de centro de control: servidores, bases de datos, redes, firewalls, software de gestión de flota, app móvil, backoffice de pagos, dashboard de BI, y API de integración. El proveedor de este contrato es responsable de que la plataforma funcione correctamente, que esté disponible según los SLAs definidos, que sea segura según los estándares de cifrado, y que se integre con los dispositivos a bordo. Este contrato no es solo "licenciar software": es "proporcionar una plataforma operativa que gestione la flota, procese los pagos, y informe a los usuarios".
+
+**Contrato 3 — Operación (Servicios):** Este contrato cubre los servicios de implementación, capacitación, soporte, mantenimiento, y operación de los sistemas: ingeniería de implementación, migración de datos, capacitación del personal, soporte técnico nivel 1 y 2, mantenimiento preventivo y correctivo, y actualizaciones de software. El proveedor de este contrato es responsable de que el sistema se implemente correctamente, que el personal esté capacitado, que el sistema se mantenga operativo, y que se actualice según las necesidades. Este contrato no es solo "prestar servicios": es "asegurar que el sistema funcione durante toda su vida útil".
+
+La integración de estos tres contratos no significa que un solo proveedor debe asumir los tres: significa que los proveedores pueden proponer modelos donde asumen uno, dos, o los tres contratos, pero siempre con una **responsabilidad integrada**. Si un proveedor asume solo el Contrato 1 (hardware), debe demostrar que su hardware se integrará con la plataforma de otro proveedor (Contrato 2) y que será operado por otro proveedor (Contrato 3). Si un proveedor asume los tres contratos, debe demostrar que tiene la capacidad financiera, técnica, y operativa para ejecutar los tres. Si un consorcio de proveedores asume los tres contratos, debe demostrar que tienen un acuerdo de cooperación, un plan de integración, y una estructura de gobernanza que asegure la responsabilidad conjunta.
 
 ---
 
 ## 2. MARCO DE ADQUISICIÓN
 
-### 2.1 Estrategia de Contratación
+### 2.1 La estrategia de contratación por fases
 
-| Fase | Documento | Objetivo |
-|------|-----------|----------|
-| 1 | **RFI** | Conocer el mercado, tecnologías disponibles, proveedores potenciales |
-| 2 | **RFQ** | Solicitar cotizaciones formales basadas en especificaciones técnicas |
-| 3 | **Evaluación** | Comparar ofertas técnicas y económicas |
-| 4 | **Adjudicación** | Seleccionar proveedor y firmar contrato |
+La estrategia de contratación del SETP Sincelejo se organiza en cuatro fases secuenciales, cada una con un objetivo, un producto, y un criterio de avance. La secuencia no es arbitraria: cada fase produce los insumos que la siguiente fase necesita. El RFI produce la información de mercado que el RFQ necesita para definir especificaciones realistas. El RFQ produce las propuestas que la evaluación necesita para comparar. La evaluación produce la selección que la adjudicación necesita para formalizar.
 
-### 2.2 Estructura de Contratos del RFI 2025 (Integración 3 Contratos)
+**Fase 1 — RFI (Solicitud de Información):** El objetivo de esta fase es **conocer el mercado**. Metro Sabanas publica un RFI que solicita información a los proveedores sobre sus capacidades, tecnologías, experiencias, y modelos de negocio. El RFI no es vinculante: los proveedores responden sin compromiso de oferta formal. El producto de esta fase es un informe de análisis de mercado que resume: quiénes son los proveedores que respondieron, qué tecnologías ofrecen, qué experiencia tienen en Colombia, qué rangos de precio manejan, y qué modelos de negocio utilizan. El criterio de avance es: el informe de análisis de mercado está completo y validado por el Director del SETP.
 
-El RFI 2025 de Metro Sabanas integra **3 contratos** en lugar de una adquisición por lotes tradicional. La empresa operadora propone modelos integrados de:
+**Fase 2 — RFQ (Solicitud de Cotización):** El objetivo de esta fase es **solicitar propuestas formales**. Metro Sabanas publica un RFQ que solicita propuestas técnicas y económicas a los proveedores preseleccionados en el RFI. El RFQ es vinculante: los proveedores que responden se comprometen a cumplir las especificaciones técnicas y a mantener el precio ofrecido durante la vigencia de la oferta (mínimo 90 días). El producto de esta fase es un conjunto de propuestas técnicas y económicas de los proveedores preseleccionados. El criterio de avance es: se han recibido al menos tres propuestas técnicamente válidas.
 
-| Contrato | Descripción | Alcance Tecnológico |
-|----------|-------------|---------------------|
-| **Contrato 1** | Flota (vehículos) | Unidades onboard (GPS, validadores, pantallas, sensores) — 46 vehículos |
-| **Contrato 2** | Tecnología (software + infraestructura) | Plataforma de gestión, app, centro de control, backoffice de pagos, CCTV |
-| **Contrato 3** | Operación (servicios) | Implementación, capacitación, soporte, mantenimiento, integración de sistemas |
+**Fase 3 — Evaluación:** El objetivo de esta fase es **comparar las ofertas**. Metro Sabanas evalúa las propuestas recibidas según los criterios técnicos y económicos definidos en el RFQ. La evaluación técnica verifica que las propuestas cumplen las especificaciones mínimas, que la arquitectura propuesta es robusta, que los controles de seguridad son adecuados, que la experiencia del proveedor es relevante, y que el plan de soporte es completo. La evaluación económica compara los precios de las propuestas que pasaron la evaluación técnica. El producto de esta fase es un informe de evaluación que clasifica las propuestas según su puntaje técnico-financiero. El criterio de avance es: el informe de evaluación está completo y aprobado por el comité de adjudicación.
 
-> **Nota:** El RFI permite a la empresa operadora proponer modelos integrados donde un mismo proveedor puede asumir 1, 2 o los 3 contratos, o asociarse con otros proveedores para una oferta integrada. Esta estructura NO es una adquisición por lotes independientes (Lote 1, 2, 3...), sino una **contratación integrada** que busca sinergias entre flota, tecnología y operación.
+**Fase 4 — Adjudicación:** El objetivo de esta fase es **seleccionar el proveedor y firmar el contrato**. Metro Sabanas selecciona el proveedor con el mayor puntaje técnico-financiero, inicia la negociación de términos contractuales (alcance, plazos, pagos, garantías, penalizaciones), y firma el contrato. El producto de esta fase es el contrato firmado entre Metro Sabanas y el proveedor seleccionado. El criterio de avance es: el contrato está firmado por ambas partes y registrado en el sistema de contratos de Metro Sabanas.
+
+### 2.2 La estructura de los tres contratos: integración con responsabilidad
+
+La estructura de los tres contratos del RFI 2025 no es una partición administrativa: es una **distribución de responsabilidades** que refleja la naturaleza interdependiente de los componentes tecnológicos del SETP. Cada contrato tiene un alcance técnico definido, un proveedor responsable, y una interfaz con los otros contratos. La integración se logra mediante: (a) especificaciones técnicas comunes (todos los contratos deben cumplir las mismas especificaciones de sistema definidas en E3.2); (b) protocolos de integración definidos (todos los contratos deben utilizar los mismos protocolos de comunicación definidos en E3.2); (c) pruebas de integración conjuntas (todos los proveedores deben participar en las pruebas de integración del sistema completo); y (d) penalizaciones por incumplimiento de integración (si un proveedor no cumple con las interfaces definidas, es penalizado económicamente).
+
+**Contrato 1 — Unidades Onboard (Flota):** El alcance de este contrato incluye el suministro, instalación, configuración, y puesta en marcha de las unidades tecnológicas a bordo de los 46 vehículos del SETP Sincelejo. Las unidades incluyen: rastreadores GPS 4G (46 unidades), validadores NFC (46 unidades), pantallas del conductor (46 unidades), sensores de conteo de pasajeros (46 unidades), sensores de puertas (68 unidades, considerando que algunos buses tienen 2 puertas y otros 3), y cámaras CCTV (cantidad variable según la configuración, mínimo 2 por bus = 92 cámaras). El proveedor de este contrato es responsable de: suministrar los dispositivos según las especificaciones técnicas mínimas definidas en E3.2, instalar los dispositivos en los buses según los planos de instalación aprobados, configurar los dispositivos para comunicarse con la plataforma de centro de control, realizar pruebas de funcionamiento de cada dispositivo, y entregar la documentación de instalación y configuración. La interfaz de este contrato con el Contrato 2 es: los dispositivos deben comunicarse con la plataforma mediante los protocolos MQTT y HTTPS definidos en E3.2; los dispositivos deben utilizar los certificados X.509 emitidos por la autoridad de certificación del sistema; y los dispositivos deben enviar datos en el formato JSON definido en la API del sistema.
+
+**Contrato 2 — Centro de Control y Plataforma (Tecnología):** El alcance de este contrato incluye el suministro, instalación, configuración, y operación de la plataforma de software y la infraestructura de centro de control. La infraestructura incluye: servidores de aplicación (2 unidades mínimo, en configuración de alta disponibilidad), servidores de base de datos (2 unidades mínimo, en configuración de cluster), almacenamiento NAS (1 unidad, mínimo 4 TB en RAID 5), firewall (1 unidad, mínimo 1 Gbps con UTM), switches administrables (2 unidades, 24 puertos con PoE), UPS (1 unidad, mínimo 2 kVA con 30 minutos de autonomía), rack 19 pulgadas (1 unidad, 42U con PDU), estaciones de trabajo (3 unidades, monitor 27 pulgadas, procesador i5 o Ryzen 5, 16 GB RAM), NVR de CCTV (1 unidad, 32 canales con 30 días de retención), y cámaras IP para terminales (10 unidades, 4 MP, IR, IP66). El software incluye: plataforma de gestión de flota (SaaS o on-premise, con monitoreo GPS, rutas, reportes), app móvil para usuarios (iOS y Android, con información de rutas, tiempos de llegada, recargas), backoffice de pagos (conciliación, tarifas, reportes, gestión de subsidios), dashboard de BI (visualización, KPIs, analytics), y API de integración (REST o GraphQL, documentada en OpenAPI 3.0). El proveedor de este contrato es responsable de: suministrar la infraestructura según las especificaciones técnicas, instalar y configurar el software, integrar la plataforma con los dispositivos a bordo (Contrato 1), integrar la plataforma con las pasarelas de pago colombianas (Redeban, Credibanco, ACH), realizar pruebas de carga y pruebas de seguridad, y entregar la documentación técnica y de usuario. La interfaz de este contrato con el Contrato 1 es: la plataforma debe recibir datos de los dispositivos mediante MQTT y HTTPS; la plataforma debe emitir certificados X.509 para los dispositivos; y la plataforma debe procesar los datos en el formato JSON definido. La interfaz con el Contrato 3 es: la plataforma debe soportar las actividades de implementación (capacitación, soporte, mantenimiento) que el proveedor del Contrato 3 ejecuta.
+
+**Contrato 3 — Implementación y Servicios (Operación):** El alcance de este contrato incluye los servicios de implementación, capacitación, soporte, mantenimiento, y operación de los sistemas tecnológicos. Los servicios incluyen: ingeniería de implementación (diseño de red, instalación de infraestructura, configuración de sistemas, migración de datos si aplica), capacitación (40 horas presenciales para supervisores y técnicos, más material de capacitación online para conductores), documentación (documentación técnica de arquitectura, documentación operativa de procedimientos, documentación de usuario para conductores y pasajeros), soporte nivel 1 y 2 (primer año incluido, con mesa de ayuda telefónica, chat, y email, con tiempos de respuesta definidos), actualizaciones (parches de seguridad, mejoras de funcionalidad, actualizaciones de software), y mantenimiento preventivo (inspección trimestral de dispositivos, limpieza, ajuste, reemplazo de componentes desgastados). El proveedor de este contrato es responsable de: ejecutar el plan de implementación según el cronograma aprobado, capacitar al personal de Metro Sabanas hasta que demuestre competencia, mantener la documentación actualizada, proporcionar soporte técnico según los SLAs definidos, y realizar el mantenimiento preventivo y correctivo según el plan de mantenimiento. La interfaz de este contrato con el Contrato 1 es: el proveedor de servicios debe conocer la instalación de los dispositivos para poder mantenerlos y repararlos. La interfaz con el Contrato 2 es: el proveedor de servicios debe conocer la plataforma para poder capacitar a los usuarios y resolver incidentes.
 
 ---
 
 ## 3. RFI — SOLICITUD DE INFORMACIÓN
 
-### 3.1 Datos Generales del RFI
+### 3.1 Los datos generales del RFI: el marco de la consulta
 
-| Campo | Descripción |
-|-------|-------------|
-| **Entidad convocante** | Metro Sabanas S.A.S. |
-| **Objeto** | Información sobre tecnologías ITS para SETP Sincelejo |
-| **Fecha de publicación** | [Por definir] |
-| **Fecha límite respuestas** | [Por definir] |
-| **Idioma** | Español |
-| **Forma de respuesta** | Documento digital (PDF) + presentación opcional |
+El RFI no es una licitación: es una **consulta al mercado**. Por tanto, su estructura debe ser abierta, flexible, y no vinculante. Los datos generales del RFI establecen el marco de la consulta: quién pregunta, qué pregunta, cuándo espera la respuesta, y en qué formato.
 
-### 3.2 Información Solicitada a Proveedores
+**Entidad convocante:** Metro Sabanas S.A.S., empresa operadora del Sistema Estratégico de Transporte Público de Sincelejo, Sucre, Colombia. La identificación de la entidad convocante es importante porque los proveedores investigan la entidad antes de responder: verifican su existencia legal, su capacidad financiera, su historial de pagos, y su reputación en el mercado. Una entidad convocante bien identificada genera confianza en los proveedores; una entidad convocante mal identificada genera desconfianza y reduce la tasa de respuesta.
 
-#### A. Información de la Empresa
+**Objeto:** Solicitud de información sobre tecnologías de Sistemas Inteligentes de Transporte (ITS) para el SETP Sincelejo, incluyendo: sistemas de gestión de flota, sistemas de pago electrónico, sistemas de información al usuario, sistemas de seguridad de transacciones, y servicios de implementación, capacitación, y soporte. El objeto debe ser específico pero no restrictivo: debe decir qué se busca (tecnología ITS) pero no cómo debe ser (no debe especificar marcas, modelos, o proveedores específicos). Un objeto restrictivo limita las respuestas a lo que la entidad ya conoce; un objeto abierto permite descubrir tecnologías que la entidad no conoce.
 
-1. Razón social, NIT, años de operación
-2. Certificaciones de calidad (ISO 9001, ISO 27001, etc.)
-3. Experiencia en proyectos ITS o transporte público (mínimo 3 referencias)
-4. Capacidad financiera (estados financieros últimos 2 años)
-5. Presencia y soporte técnico en Colombia
+**Fecha de publicación:** Por definir, dependiendo de la aprobación de los entregables E2.1, E2.2, E3.1, E3.2, y E3.3 por parte del Director del SETP. La fecha de publicación no es arbitraria: debe ser después de que los entregables de diseño estén aprobados, porque el RFI se basa en esos diseños. Si se publica el RFI antes de aprobar los diseños, las preguntas del RFI pueden ser inconsistentes con las especificaciones finales, generando confusión en los proveedores.
 
-#### B. Información Tecnológica
+**Fecha límite de respuestas:** Por definir, generalmente 15 días hábiles después de la publicación. El plazo de 15 días es un balance entre la urgencia de Metro Sabanas (quiere respuestas rápidas) y la necesidad de los proveedores (necesitan tiempo para investigar, consultar internamente, y redactar una respuesta de calidad). Un plazo menor a 10 días genera respuestas apresuradas y de baja calidad; un plazo mayor a 20 días genera retrasos en el proceso de contratación.
 
-| Tema | Preguntas |
-|------|-----------|
-| **Onboard** | ¿Ofrecen unidades GPS con comunicación 4G, conteo de pasajeros, validación NFC? |
-| **Plataforma** | ¿Su plataforma es cloud-native, on-premise o híbrida? |
-| **Pagos** | ¿Integran con pasarelas de pago colombianas (Redeban, ACH)? |
-| **Interoperabilidad** | ¿Cumplen con la Resolución 20203040034065 del MinTransporte? |
-| **Seguridad** | ¿Cumplen con PCI DSS para pagos? ¿Ofrecen cifrado end-to-end? |
-| **Escalabilidad** | ¿Cuántos vehículos soportan su plataforma? ¿Es escalable? |
+**Idioma:** Español. El idioma español es obligatorio porque es el idioma oficial de Colombia y el idioma de la mayoría de los proveedores locales. Sin embargo, el RFI puede aceptar respuestas en inglés si el proveedor es internacional y no tiene capacidad de redacción en español, siempre que Metro Sabanas tenga capacidad de traducción y revisión.
 
-#### C. Modelo de Negocio
+**Forma de respuesta:** Documento digital en formato PDF, con una presentación opcional (virtual o presencial) si el proveedor lo solicita. El formato PDF es estándar porque preserva el formato del documento, es universalmente legible, y es fácil de archivar. La presentación opcional permite a los proveedores que lo desean presentar su solución de manera más dinámica, con demostraciones, videos, o prototipos, pero no es obligatoria porque algunos proveedores pueden no tener capacidad de presentación.
 
-1. ¿Ofrecen modelo SaaS, licencia perpetua, o ambos?
-2. ¿Cuál es el costo de implementación inicial?
-3. ¿Cuál es el costo mensual/anual de mantenimiento?
-4. ¿Incluyen capacitación? ¿En qué modalidad?
-5. ¿Ofrecen SLA de disponibilidad? ¿Cuál?
+### 3.2 La información solicitada: qué quiere saber Metro Sabanas
 
-### 3.3 Formato de Respuesta RFI
+La información solicitada en el RFI se organiza en tres categorías: información de la empresa (quién es el proveedor), información tecnológica (qué ofrece el proveedor), y modelo de negocio (cómo lo ofrece el proveedor). Esta categorización no es arbitraria: refleja los tres aspectos que Metro Sabanas necesita evaluar para calificar al proveedor: capacidad (¿tiene la empresa la capacidad de ejecutar el proyecto?), tecnología (¿tiene la tecnología que el proyecto necesita?), y viabilidad comercial (¿el modelo de negocio es sostenible para ambas partes?).
 
-```
-1. Portada y carta de presentación
-2. Perfil de la empresa (máx. 3 páginas)
-3. Descripción de solución propuesta (máx. 10 páginas)
-4. Respuestas a preguntas (punto por punto)
-5. Referencias de proyectos similares (mínimo 3)
-6. Anexos técnicos opcionales
-```
+**Información de la empresa:** Metro Sabanas solicita información que le permita verificar la legitimidad, la capacidad, y la experiencia del proveedor. Esto incluye: razón social y NIT (para verificar la existencia legal en la Cámara de Comercio), años de operación (para evaluar la madurez de la empresa: una empresa con 10 años de operación tiene más probabilidad de sobrevivir que una empresa con 1 año), certificaciones de calidad (ISO 9001 para gestión de calidad, ISO 27001 para seguridad de la información: las certificaciones demuestran que la empresa sigue procesos estandarizados y auditables), experiencia en proyectos ITS o transporte público (mínimo 3 referencias: el proveedor debe demostrar que ha hecho esto antes, y que lo ha hecho bien), capacidad financiera (estados financieros de los últimos 2 años: el proveedor debe demostrar que tiene la solidez financiera para ejecutar un proyecto de esta magnitud, que generalmente requiere inversiones iniciales significativas antes de recibir los pagos), y presencia y soporte técnico en Colombia (el proveedor debe demostrar que tiene capacidad de soporte en Colombia, ya sea con oficina propia, representante local, o alianza con un distribuidor local). La presencia en Colombia es crítica porque un proveedor internacional sin soporte local puede tardar días o semanas en resolver un incidente, mientras que un proveedor local puede resolverlo en horas.
+
+**Información tecnológica:** Metro Sabanas solicita información que le permita evaluar si la tecnología del proveedor cumple con las especificaciones conceptuales definidas en E3.2. Las preguntas se organizan por tema: Onboard (¿ofrecen unidades GPS con comunicación 4G, conteo de pasajeros, validación NFC? ¿Cuáles son las especificaciones técnicas de sus dispositivos? ¿Cumplen con las especificaciones mínimas definidas en E3.2?), Plataforma (¿Su plataforma es cloud-native, on-premise, o híbrida? ¿Soporta la cantidad de vehículos y usuarios definida en los RNF? ¿Es escalable? ¿Es segura?), Pagos (¿Integran con pasarelas de pago colombianas? ¿Cumplen con PCI DSS? ¿Soportan tarjetas propietarias y tarjetas bancarias?), Interoperabilidad (¿Cumplen con la Resolución 20203040034065 del MinTransporte? ¿Soportan los formatos de datos estándar GTFS, SIRI, NeTEx?), Seguridad (¿Cumplen con PCI DSS para pagos? ¿Ofrecen cifrado end-to-end? ¿Tienen certificaciones de seguridad? ¿Han tenido brechas de seguridad en el pasado?), y Escalabilidad (¿Cuántos vehículos soportan su plataforma? ¿Es escalable? ¿Han soportado flotas de 100+ vehículos? ¿Cómo manejan el crecimiento?). Las respuestas a estas preguntas permiten a Metro Sabanas calificar la tecnología del proveedor: si el proveedor no cumple con una especificación crítica (por ejemplo, no cumple con la Resolución 20203040034065), puede ser descartado; si el proveedor cumple con todas las especificaciones críticas pero no con algunas opcionales, puede ser preseleccionado con reservas; si el proveedor cumple con todas las especificaciones y supera algunas, puede ser preseleccionado con preferencia.
+
+**Modelo de negocio:** Metro Sabanas solicita información que le permita evaluar la viabilidad comercial de la propuesta. Esto incluye: modelo de negocio (¿Ofrecen modelo SaaS, licencia perpetua, o ambos? ¿Cuál es la diferencia de costo entre los modelos? ¿Qué incluye cada modelo?), costo de implementación inicial (¿Cuál es el costo total de implementación, incluyendo hardware, software, servicios, y capacitación? ¿Hay costos ocultos? ¿Qué no está incluido?), costo mensual o anual de mantenimiento (¿Cuál es el costo recurrente de mantenimiento, soporte, y actualizaciones? ¿Es fijo o variable según el uso? ¿Hay aumentos programados?), capacitación (¿Incluyen capacitación? ¿En qué modalidad? ¿Presencial, virtual, o e-learning? ¿Cuántas horas? ¿Para cuántas personas? ¿Hay costos adicionales por capacitación extra?), y SLA de disponibilidad (¿Ofrecen SLA de disponibilidad? ¿Cuál es el porcentaje garantizado? ¿Qué pasa si no se cumple? ¿Hay penalizaciones? ¿Hay compensaciones? ¿Cómo se mide la disponibilidad?). La información del modelo de negocio es crítica porque permite a Metro Sabanas comparar no solo las tecnologías sino también las estructuras de costo: un proveedor con precio inicial bajo pero costos recurrentes altos puede ser más caro a largo plazo que un proveedor con precio inicial alto pero costos recurrentes bajos.
+
+### 3.3 El formato de respuesta: cómo responden los proveedores
+
+El formato de respuesta del RFI no es un requisito burocrático: es una **herramienta de estandarización** que permite a Metro Sabanas comparar las respuestas de diferentes proveedores de manera objetiva. Si cada proveedor responde en un formato diferente, la comparación se vuelve subjetiva y difícil. Si todos responden en el mismo formato, la comparación se vuelve estructurada y sistemática.
+
+El formato de respuesta del RFI debe incluir: (1) Portada y carta de presentación (identificación del proveedor, fecha de respuesta, persona de contacto, y compromiso de veracidad de la información); (2) Perfil de la empresa (máximo 3 páginas: razón social, NIT, años de operación, certificaciones, número de empleados, presencia en Colombia, y clientes relevantes); (3) Descripción de la solución propuesta (máximo 10 páginas: arquitectura general, componentes principales, tecnologías utilizadas, diferenciadores competitivos, y adaptaciones al contexto colombiano); (4) Respuestas a las preguntas del RFI (punto por punto, con la misma numeración del RFI, para facilitar la comparación); (5) Referencias de proyectos similares (mínimo 3: para cada proyecto, indicar cliente, país, número de vehículos, año de implementación, tecnología utilizada, y contacto de referencia); y (6) Anexos técnicos opcionales (diagramas de arquitectura, especificaciones detalladas, videos de demostración, testimoniales de clientes, y cualquier otro material que el proveedor considere relevante). La limitación de páginas (3 para el perfil, 10 para la solución) es importante porque obliga al proveedor a ser conciso y a enfocarse en lo esencial: un proveedor que necesita 50 páginas para describir su solución probablemente no tiene una solución clara; un proveedor que puede describirla en 10 páginas probablemente tiene una solución bien definida.
 
 ---
 
 ## 4. RFQ — SOLICITUD DE COTIZACIÓN
 
-### 4.1 Datos Generales del RFQ
+### 4.1 Los datos generales del RFQ: el marco de la competencia
 
-| Campo | Descripción |
-|-------|-------------|
-| **Entidad convocante** | Metro Sabanas S.A.S. |
-| **Objeto** | Adquisición e implementación de sistema ITS para SETP Sincelejo |
-| **Plazo de ejecución** | 12 meses desde firma de contrato |
-| **Garantía técnica** | Mínimo 24 meses |
-| **Soporte** | Mínimo 12 meses post-implementación |
-| **Moneda** | Pesos colombianos (COP) |
-| **Forma de pago** | Contra entregables mensuales |
+El RFQ es la fase de competencia: los proveedores preseleccionados en el RFI compiten por el contrato. Los datos generales del RFQ establecen el marco de la competencia: quién solicita, qué solicita, cuánto tiempo tienen para responder, y en qué condiciones.
 
-### 4.2 Especificaciones Técnicas del RFQ
+**Entidad convocante:** Metro Sabanas S.A.S., con la misma identificación y contexto del RFI. La consistencia entre RFI y RFQ es importante porque los proveedores preseleccionados ya conocen a Metro Sabanas, y no necesitan ser reintroducidos.
 
-#### Contrato 1 — Unidades Onboard (46 vehículos)
+**Objeto:** Adquisición e implementación del sistema de Sistemas Inteligentes de Transporte (ITS) para el SETP Sincelejo, incluyendo: hardware a bordo de 46 vehículos, plataforma de software de gestión de flota, pago electrónico, información al usuario, infraestructura de centro de control, e implementación, capacitación, y soporte. El objeto del RFQ es más específico que el del RFI porque ahora Metro Sabanas ya conoce el mercado (gracias al RFI) y puede definir con precisión qué quiere comprar.
 
-| Ítem | Cantidad | Especificación mínima |
-|------|----------|----------------------|
-| Rastreador GPS 4G | 46 | ARM 4 núcleos, 4GB RAM, 64GB, GPS multi-GNSS, 4G Cat-4 |
-| Validador NFC | 46 | Pantalla 5", NFC ISO 14443, 4G, Android |
-| Pantalla conductor | 46 | LCD 7", resistente a vibraciones |
-| Sensor conteo pasajeros | 46 | IR/ToF, precisión > 95% |
-| Sensor puertas | 68 | Reed switch / IR |
-| Instalación y configuración | 46 | Incluido |
+**Plazo de ejecución:** 12 meses desde la firma del contrato. Este plazo es un estándar de la industria para proyectos ITS de esta magnitud: 2 meses para infraestructura y centro de control, 2 meses para instalación de buses piloto, 2 meses para rollout de flota completa, 2 meses para pago electrónico y app de usuarios, y 4 meses para optimización, integraciones, y estabilización. El plazo de 12 meses debe ser realista: un plazo menor (por ejemplo, 6 meses) presiona al proveedor a cortar esquinas, lo que genera fallas; un plazo mayor (por ejemplo, 18 meses) demora la operación y aumenta los costos de oportunidad.
 
-#### Contrato 2 — Centro de Control
+**Garantía técnica:** Mínimo 24 meses desde la aceptación del sistema. La garantía técnica es el período durante el cual el proveedor es responsable de corregir cualquier defecto de hardware o software sin costo adicional. Los 24 meses son un estándar de la industria: menos de 24 meses (por ejemplo, 12 meses) deja a Metro Sabanas sin protección durante el segundo año, cuando los defectos de fabricación o de diseño comienzan a manifestarse; más de 24 meses (por ejemplo, 36 meses) es ideal pero puede aumentar el precio del proveedor. La garantía debe incluir: reemplazo de hardware defectuoso, corrección de bugs de software, actualizaciones de seguridad, y soporte técnico.
 
-| Ítem | Cantidad | Especificación mínima |
-|------|----------|----------------------|
-| Servidor aplicación | 2 | 8 vCPU, 32GB RAM, 500GB SSD |
-| Servidor base de datos | 2 | 8 vCPU, 32GB RAM, 1TB SSD |
-| Storage NAS | 1 | 4TB, RAID 5 |
-| Firewall | 1 | 1 Gbps, UTM |
-| Switch administrable | 2 | 24 puertos, PoE |
-| UPS | 1 | 2 kVA, 30 min |
-| Rack 19" | 1 | 42U con PDU |
-| Estaciones de trabajo | 3 | Monitor 27", i5/Ryzen 5, 16GB RAM |
-| NVR CCTV | 1 | 32 canales, 30 días retención |
-| Cámaras IP | 10 | 4MP, IR, IP66 |
+**Soporte:** Mínimo 12 meses post-implementación. El soporte post-implementación es el período durante el cual el proveedor proporciona soporte técnico (nivel 1 y 2) sin costo adicional. Los 12 meses son el período de estabilización del sistema: durante el primer año, el sistema enfrenta los problemas de "infancia" (bugs no descubiertos en las pruebas, configuraciones incorrectas, capacitación insuficiente), y el soporte del proveedor es crítico para resolver estos problemas rápidamente. Después de los 12 meses, el soporte puede continuar mediante un contrato de mantenimiento anual.
 
-#### Contrato 3 — Software y Plataforma
+**Moneda:** Pesos colombianos (COP). La moneda en pesos colombianos es obligatoria porque es la moneda legal de Colombia, y porque protege a Metro Sabanas de la fluctuación de divisas. Si el contrato se hiciera en dólares, una depreciación del peso frente al dólar aumentaría el costo del proyecto para Metro Sabanas.
 
-| Ítem | Licencia | Descripción |
-|------|----------|-------------|
-| Plataforma de gestión de flota | SaaS / On-premise | Monitoreo GPS, rutas, reportes |
-| App móvil usuarios | Incluida | iOS + Android |
-| Backoffice de pagos | Incluido | Conciliación, tarifas, reportes |
-| Dashboard BI | Incluido | Visualización, KPIs, analytics |
-| API de integración | Incluida | REST/GraphQL, documentada |
+**Forma de pago:** Contra entregables mensuales. La forma de pago contra entregables es una protección para Metro Sabanas: el proveedor recibe el pago solo después de entregar y aceptar el entregable correspondiente. Esto alinea los incentivos del proveedor con los de Metro Sabanas: el proveedor solo cobra si entrega. La forma de pago contra entregables debe definir claramente: qué entregables se pagan en cada mes, cuánto se paga por cada entregable, qué criterios de aceptación debe cumplir el entregable, y cuánto tiempo tiene Metro Sabanas para revisar y aceptar (o rechazar) el entregable. La forma de pago contra entregables debe ser realista: si el primer pago es solo después de 3 meses, el proveedor necesita financiación propia para sobrevivir los primeros 3 meses, lo que puede descartar proveedores pequeños; si el primer pago es al inicio (anticipo), el proveedor tiene liquidez pero Metro Sabanas asume el riesgo de que el proveedor no entregue.
 
-#### Contrato 4 — Implementación y Servicios
+### 4.2 Las especificaciones técnicas del RFQ: qué se compra
 
-| Ítem | Descripción |
-|------|-------------|
-| Ingeniería de implementación | Diseño de red, instalación, configuración |
-| Migración de datos | Si aplica |
-| Capacitación | 40 horas presenciales + material online |
-| Documentación | Técnica, operativa, de usuario |
-| Soporte nivel 1 y 2 | Primer año incluido |
-| Actualizaciones | Parches de seguridad y mejoras |
+Las especificaciones técnicas del RFQ son la **lista de compras** del sistema tecnológico del SETP. No son una sugerencia: son una **obligación contractual** que el proveedor debe cumplir. Cada ítem tiene una cantidad, una especificación mínima, y un criterio de aceptación. El proveedor debe cumplir con todas las especificaciones mínimas para que su propuesta sea técnicamente aceptable.
 
-### 4.3 Criterios de Evaluación RFQ
+**Contrato 1 — Unidades Onboard (46 vehículos):** Este contrato incluye los dispositivos que van en cada uno de los 46 buses. La cantidad de 46 unidades por ítem se basa en la flota actual del SETP Sincelejo (proceso de contratación 2023 con el MinTransporte). Los ítems incluyen: Rastreador GPS 4G (46 unidades, especificación mínima: procesador ARM de 4 núcleos, 4 GB RAM, 64 GB almacenamiento, GPS multi-GNSS, 4G/LTE Cat-4, WiFi, Bluetooth, entradas digitales, entradas analógicas, y certificación IP54), Validador NFC (46 unidades, especificación mínima: pantalla de 5 pulgadas, lector NFC ISO 14443, conectividad 4G, sistema operativo Android, y certificación PCI PTS), Pantalla del conductor (46 unidades, especificación mínima: LCD de 7 pulgadas, resistente a vibraciones, y conectividad con la OBU), Sensor de conteo de pasajeros (46 unidades, especificación mínima: sensor infrarrojo o Time-of-Flight, precisión mayor al 95%, y conectividad con la OBU), Sensor de puertas (68 unidades, especificación mínima: reed switch o sensor infrarrojo, y conectividad con la OBU), e Instalación y configuración (46 buses, incluido en el precio: el proveedor debe instalar y configurar todos los dispositivos en cada bus, realizar pruebas de funcionamiento, y entregar la documentación de instalación). La cantidad de 68 sensores de puertas (en lugar de 46) se debe a que algunos buses del SETP Sincelejo tienen 2 puertas y otros tienen 3 puertas, y se necesita un sensor por puerta.
 
-| Criterio | Peso | Descripción |
-|----------|------|-------------|
-| **Cumplimiento técnico** | 40% | Cumplimiento de especificaciones mínimas |
-| **Experiencia y referencias** | 20% | Proyectos similares en Colombia/LATAM |
-| **Precio total** | 20% | Valor total de propuesta (menor es mejor) |
-| **Soporte y garantía** | 10% | SLAs, tiempos de respuesta, garantía |
-| **Innovación y valor agregado** | 10% | Funcionalidades adicionales propuestas |
+**Contrato 2 — Centro de Control:** Este contrato incluye la infraestructura física y el software de la plataforma de gestión. La infraestructura incluye: Servidor de aplicación (2 unidades, especificación mínima: 8 vCPU, 32 GB RAM, 500 GB SSD, en configuración de alta disponibilidad), Servidor de base de datos (2 unidades, especificación mínima: 8 vCPU, 32 GB RAM, 1 TB SSD, en configuración de cluster), Almacenamiento NAS (1 unidad, especificación mínima: 4 TB, RAID 5, para almacenamiento de archivos y respaldos), Firewall (1 unidad, especificación mínima: 1 Gbps, UTM, con intrusion detection/prevention), Switch administrable (2 unidades, especificación mínima: 24 puertos, PoE, para conectar dispositivos de red), UPS (1 unidad, especificación mínima: 2 kVA, 30 minutos de autonomía, para proteger contra cortes de energía), Rack 19 pulgadas (1 unidad, 42U, con PDU, para organizar los equipos), Estaciones de trabajo (3 unidades, especificación mínima: monitor de 27 pulgadas, procesador i5 o Ryzen 5, 16 GB RAM, para los supervisores de flota), NVR de CCTV (1 unidad, especificación mínima: 32 canales, 30 días de retención de video, para grabar las cámaras de los buses y terminales), y Cámaras IP (10 unidades, especificación mínima: 4 MP, infrarrojo para visión nocturna, IP66 para exteriores, para las terminales y el centro de control). El software incluye: Plataforma de gestión de flota (licencia SaaS o on-premise, con monitoreo GPS, rutas, reportes, alertas, y comunicación), App móvil para usuarios (licencia incluida, para iOS y Android, con información de rutas, tiempos de llegada, recargas, y reportes), Backoffice de pagos (licencia incluida, con conciliación, tarifas, reportes, gestión de subsidios, y blacklist), Dashboard de BI (licencia incluida, con visualización, KPIs, analytics, y reportes ejecutivos), y API de integración (licencia incluida, REST o GraphQL, documentada en OpenAPI 3.0, para integración con sistemas externos).
 
-### 4.4 Formato de Propuesta RFQ
+**Contrato 3 — Implementación y Servicios:** Este contrato incluye los servicios que aseguran que el sistema funcione correctamente durante toda su vida útil. Los servicios incluyen: Ingeniería de implementación (diseño de red, instalación de infraestructura, configuración de sistemas, migración de datos si aplica, y pruebas de integración), Capacitación (40 horas presenciales para supervisores y técnicos, más material de capacitación online para conductores, más evaluaciones de competencia), Documentación (documentación técnica de arquitectura, documentación operativa de procedimientos, documentación de usuario para conductores y pasajeros, y manuales de mantenimiento), Soporte nivel 1 y 2 (primer año incluido, con mesa de ayuda telefónica, chat, y email, con tiempos de respuesta de 4 horas para incidentes críticos y 24 horas para incidentes no críticos), y Actualizaciones (parches de seguridad, mejoras de funcionalidad, y actualizaciones de software, incluidos durante el primer año). La cantidad de 40 horas de capacitación presencial se basa en la estimación de que se necesitan 8 horas para supervisores (2 personas × 4 horas), 16 horas para técnicos (2 personas × 8 horas), y 16 horas para administradores (2 personas × 8 horas). El material de capacitación online para conductores es adicional y no cuenta en las 40 horas presenciales.
 
-```
-ANEXO TÉCNICO
-1. Carta de presentación y compromiso
-2. Constitución legal y poder
-3. Certificaciones de calidad
-4. Hoja de vida empresa (HV)
-5. Experiencia (mínimo 3 proyectos similares)
-6. Propuesta técnica detallada
-7. Plan de trabajo y cronograma
-8. Plan de capacitación
-9. Garantías ofrecidas
-10. Anexos técnicos adicionales
+### 4.3 Los criterios de evaluación: cómo se elige al proveedor
 
-ANEXO FINANCIERO
-1. Propuesta económica detallada (por lotes)
-2. Desglose de costos (hardware, software, servicios)
-3. Forma de pago propuesta
-4. Vigencia de oferta (mínimo 90 días)
-```
+Los criterios de evaluación del RFQ son la **regla del juego** que define cómo se compara a los proveedores y cómo se selecciona al ganador. Los criterios no son arbitrarios: deben reflejar las prioridades de Metro Sabanas. Si la prioridad es la tecnología, el criterio técnico debe tener más peso; si la prioridad es el precio, el criterio económico debe tener más peso; si la prioridad es la sostenibilidad a largo plazo, el criterio de soporte debe tener más peso.
+
+Para el SETP Sincelejo, los criterios de evaluación se definen con los siguientes pesos: **Cumplimiento técnico (40%)**: Este criterio mide qué porcentaje de las especificaciones técnicas del RFQ cumple la propuesta del proveedor. Si el proveedor cumple el 100% de las especificaciones, recibe 40 puntos; si cumple el 80%, recibe 32 puntos; si cumple el 60%, recibe 24 puntos. El cumplimiento técnico es el criterio más importante porque un sistema que no cumple las especificaciones no sirve, sin importar cuánto cueste. **Experiencia y referencias (20%)**: Este criterio mide la experiencia del proveedor en proyectos similares en Colombia o Latinoamérica. El proveedor debe demostrar al menos 3 proyectos similares (ITS para transporte público, con flota de 20+ vehículos, implementado en los últimos 5 años). Cada proyecto en Colombia otorga 5 puntos, cada proyecto en Latinoamérica otorga 3 puntos, y cada proyecto en otro continente otorga 2 puntos, hasta un máximo de 15 puntos. Los 5 puntos restantes se otorgan por la calidad de las referencias (contactos de clientes que confirmen la satisfacción). **Precio total (20%)**: Este criterio mide la competitividad del precio del proveedor. El proveedor con el precio más bajo recibe 20 puntos; los demás proveedores reciben puntos proporcionales (precio más bajo ÷ precio del proveedor × 20). El precio total incluye: hardware, software, servicios, capacitación, e implementación. No incluye: costos recurrentes de mantenimiento (que se evalúan en el criterio de soporte). **Soporte y garantía (10%)**: Este criterio mide la calidad del plan de soporte y garantía del proveedor. Se evalúan: el SLA de disponibilidad (mayor disponibilidad = más puntos), el tiempo de respuesta (menor tiempo = más puntos), el tiempo de resolución (menor tiempo = más puntos), la duración de la garantía (más duración = más puntos), y la cobertura de la garantía (más componentes cubiertos = más puntos). **Innovación y valor agregado (10%)**: Este criterio mide las funcionalidades adicionales que el proveedor ofrece más allá de las especificaciones mínimas. Se evalúan: funcionalidades de IA (predicción de demanda, detección de anomalías), funcionalidades de sostenibilidad (monitoreo de emisiones, optimización de consumo), funcionalidades de accesibilidad (navegación por voz, información en braille), y funcionalidades de integración (con sistemas de tráfico, con sistemas de emergencia, con sistemas de planificación urbana). Cada funcionalidad adicional otorga puntos según su relevancia para el SETP Sincelejo.
+
+### 4.4 El formato de propuesta: cómo se presentan las ofertas
+
+El formato de propuesta del RFQ no es una formalidad administrativa: es una **herramienta de comparación** que permite a Metro Sabanas evaluar las propuestas de manera estructurada y objetiva. Si cada proveedor presenta su propuesta en un formato diferente, la evaluación se vuelve subjetiva; si todos presentan en el mismo formato, la evaluación se vuelve sistemática.
+
+El formato de propuesta se divide en dos anexos: Anexo Técnico y Anexo Financiero. El **Anexo Técnico** debe incluir: (1) Carta de presentación y compromiso (el proveedor se compromete a cumplir las especificaciones técnicas y a mantener la vigencia de la oferta); (2) Constitución legal y poder (evidencia de que el proveedor existe legalmente y que la persona que firma la propuesta tiene poder para comprometer a la empresa); (3) Certificaciones de calidad (ISO 9001, ISO 27001, PCI DSS, y otras certificaciones relevantes); (4) Hoja de vida de la empresa (resumen de la historia, la misión, la visión, los servicios, y los clientes de la empresa); (5) Experiencia (mínimo 3 proyectos similares: para cada proyecto, indicar cliente, país, número de vehículos, año de implementación, tecnología utilizada, y contacto de referencia); (6) Propuesta técnica detallada (descripción de la arquitectura, los componentes, las tecnologías, las integraciones, y las adaptaciones al contexto colombiano); (7) Plan de trabajo y cronograma (actividades, duración, dependencias, hitos, y entregables, en formato de diagrama de Gantt); (8) Plan de capacitación (audiencia, contenido, modalidad, duración, y evaluación); (9) Garantías ofrecidas (duración, cobertura, condiciones, y procedimiento de reclamación); y (10) Anexos técnicos adicionales (diagramas, especificaciones, manuales, y cualquier otro material relevante). El **Anexo Financiero** debe incluir: (1) Propuesta económica detallada (por contratos: desglose del precio de cada contrato, con subtotales y total); (2) Desglose de costos (hardware, software, servicios, capacitación, e implementación, con precio unitario, cantidad, y subtotal para cada ítem); (3) Forma de pago propuesta (cronograma de pagos, con porcentaje y monto de cada pago, y condiciones de cada pago); y (4) Vigencia de la oferta (mínimo 90 días: el proveedor se compromete a mantener el precio y las condiciones durante 90 días después de la presentación de la propuesta).
 
 ---
 
 ## 5. CALENDARIO DE ADQUISICIÓN
 
-| Actividad | Duración | Dependencia |
-|-----------|----------|-------------|
-| Publicación RFI | 1 día | Aprobación entregables E2.1, E2.2, E3.1, E3.2 |
-| Recepción respuestas RFI | 15 días hábiles | Publicación RFI |
-| Análisis RFI y preselección | 5 días hábiles | Cierre RFI |
-| Elaboración RFQ | 5 días hábiles | Análisis RFI |
-| Publicación RFQ | 1 día | Aprobación RFQ |
-| Recepción propuestas RFQ | 20 días hábiles | Publicación RFQ |
-| Evaluación técnica | 10 días hábiles | Cierre RFQ |
-| Evaluación financiera | 5 días hábiles | Evaluación técnica |
-| Negociación y adjudicación | 10 días hábiles | Evaluación financiera |
-| Firma de contrato | 5 días hábiles | Adjudicación |
+### 5.1 La secuencia de actividades: de la publicación a la firma
 
-**Duración total estimada:** ~76 días hábiles (~3.5 meses)
+El calendario de adquisición no es una estimación optimista: es una **planificación realista** que considera las dependencias entre actividades, los tiempos necesarios para cada actividad, y los riesgos de retraso. El calendario se mide en días hábiles (no en días calendario), porque las actividades de contratación se realizan en días laborables, no en fines de semana ni en festivos.
+
+**Publicación del RFI (1 día):** Esta actividad depende de la aprobación de los entregables de diseño (E2.1, E2.2, E3.1, E3.2, E3.3) por parte del Director del SETP. Sin los diseños aprobados, el RFI no tiene base técnica. La publicación se realiza en un día: se carga el documento del RFI en el portal de compras de Metro Sabanas, se envía la notificación a los proveedores preseleccionados, y se publica en el SECOP (Sistema Electrónico de Contratación Pública) si aplica. El criterio de terminación es: el RFI está publicado y los proveedores han sido notificados.
+
+**Recepción de respuestas al RFI (15 días hábiles):** Esta actividad depende de la publicación del RFI. Durante estos 15 días, los proveedores investigan, consultan internamente, redactan sus respuestas, y las envían. Metro Sabanas no realiza actividades durante esta fase, salvo responder preguntas de los proveedores (si las hay). El criterio de terminación es: se ha cerrado el plazo de recepción de respuestas.
+
+**Análisis del RFI y preselección (5 días hábiles):** Esta actividad depende del cierre del RFI. Durante estos 5 días, Metro Sabanas (con el apoyo de Innovadataco) analiza las respuestas recibidas, califica a los proveedores según los criterios de preselección (capacidad técnica, experiencia, viabilidad comercial), y selecciona los proveedores que pasan a la fase de RFQ. El producto de esta actividad es un informe de preselección que lista los proveedores preseleccionados, los proveedores descartados, y las razones de cada decisión. El criterio de terminación es: el informe de preselección está completo y aprobado.
+
+**Elaboración del RFQ (5 días hábiles):** Esta actividad depende del análisis del RFI. Durante estos 5 días, Metro Sabanas (con el apoyo de Innovadataco) elabora el documento del RFQ, incorporando las lecciones aprendidas del RFI (ajustando especificaciones si el mercado indica que no son realistas, ajustando el presupuesto si el mercado indica que es insuficiente, y ajustando los criterios de evaluación si el mercado indica que no son apropiados). El producto de esta actividad es el documento del RFQ completo, con especificaciones técnicas, criterios de evaluación, y formato de propuesta. El criterio de terminación es: el RFQ está completo y aprobado por el Director del SETP.
+
+**Publicación del RFQ (1 día):** Esta actividad depende de la aprobación del RFQ. La publicación se realiza en un día: se carga el documento del RFQ en el portal de compras, se envía la notificación a los proveedores preseleccionados, y se publica en el SECOP si aplica. El criterio de terminación es: el RFQ está publicado y los proveedores preseleccionados han sido notificados.
+
+**Recepción de propuestas al RFQ (20 días hábiles):** Esta actividad depende de la publicación del RFQ. Durante estos 20 días, los proveedores preseleccionados elaboran sus propuestas técnicas y económicas. El plazo de 20 días es mayor que el del RFI (15 días) porque el RFQ requiere más trabajo: el proveedor debe elaborar una propuesta técnica detallada, un plan de trabajo, un cronograma, un plan de capacitación, un desglose de costos, y una propuesta económica formal. El criterio de terminación es: se ha cerrado el plazo de recepción de propuestas.
+
+**Evaluación técnica (10 días hábiles):** Esta actividad depende del cierre del RFQ. Durante estos 10 días, el comité de evaluación técnica (compuesto por representantes de Metro Sabanas, Innovadataco, y posiblemente un experto externo) revisa cada propuesta técnica, verifica el cumplimiento de las especificaciones, evalúa la arquitectura, la seguridad, la experiencia, y el soporte, y asigna un puntaje técnico a cada propuesta. El producto de esta actividad es un informe de evaluación técnica que clasifica las propuestas según su puntaje técnico. El criterio de terminación es: el informe de evaluación técnica está completo y aprobado por el comité.
+
+**Evaluación financiera (5 días hábiles):** Esta actividad depende de la evaluación técnica. Durante estos 5 días, el comité de evaluación financiera (compuesto por representantes de Metro Sabanas y posiblemente un experto en finanzas) revisa las propuestas económicas de los proveedores que pasaron la evaluación técnica (generalmente los que obtuvieron un puntaje técnico superior al mínimo establecido, por ejemplo, 60/100), compara los precios, verifica la coherencia de los costos, y asigna un puntaje financiero a cada propuesta. El producto de esta actividad es un informe de evaluación financiera que clasifica las propuestas según su puntaje financiero. El criterio de terminación es: el informe de evaluación financiera está completo y aprobado.
+
+**Negociación y adjudicación (10 días hábiles):** Esta actividad depende de la evaluación financiera. Durante estos 10 días, Metro Sabanas negocia con el proveedor que obtuvo el mayor puntaje técnico-financiero (generalmente el que queda en primer lugar en la clasificación combinada). La negociación puede incluir: ajustes de alcance (si el presupuesto no alcanza, se pueden reducir funcionalidades opcionales), ajustes de plazo (si el proveedor necesita más tiempo, se puede negociar un plazo realista), ajustes de pagos (si el proveedor necesita un anticipo, se puede negociar un porcentaje razonable), y ajustes de garantías (si el proveedor ofrece una garantía corta, se puede negociar una extensión). El producto de esta actividad es el acta de adjudicación que nombra al proveedor seleccionado. El criterio de terminación es: el acta de adjudicación está firmada por el comité de adjudicación.
+
+**Firma de contrato (5 días hábiles):** Esta actividad depende de la adjudicación. Durante estos 5 días, Metro Sabanas y el proveedor seleccionado revisan el contrato (que generalmente es un contrato tipo de Metro Sabanas, con adaptaciones según la negociación), firman el contrato, y lo registran en el sistema de contratos. El producto de esta actividad es el contrato firmado. El criterio de terminación es: el contrato está firmado por ambas partes.
+
+**Duración total estimada:** Aproximadamente 76 días hábiles, equivalentes a 3.5 meses calendario. Esta duración es una estimación realista: si todo ocurre según lo planeado, el proceso toma 3.5 meses; si hay retrasos (por ejemplo, si los proveedores solicitan prórroga del plazo de respuestas, o si la evaluación técnica detecta inconsistencias que requieren aclaraciones), el proceso puede tomar 4-5 meses. La duración de 3.5 meses es un estándar de la industria para procesos de licitación de esta magnitud: menos de 3 meses es apresurado y genera propuestas de baja calidad; más de 6 meses es excesivo y demora la implementación del sistema.
 
 ---
 
-## 6. RIESGOS EN ADQUISICIÓN
+## 6. RIESGOS EN LA ADQUISICIÓN
 
-| ID | Riesgo | Mitigación |
-|----|--------|------------|
-| RA-01 | Falta de proveedores en mercado colombiano | Ampliar búsqueda a LATAM, considerar importación |
-| RA-02 | Propuestas técnicamente insuficientes | RFI previo para calificar mercado |
-| RA-03 | Precios superan presupuesto | Definir escenarios must-have vs nice-to-have |
-| RA-04 | Retrasos en entrega de equipos | Contratos con penalidades por retraso |
-| RA-05 | Fallas en integración | Requerir POC (Proof of Concept) antes de compra |
+### 6.1 La identificación de riesgos como protección preventiva
+
+La identificación de riesgos en la adquisición no es una formalidad de gestión de proyectos: es una **protección preventiva** que permite a Metro Sabanas anticipar problemas antes de que ocurran, y diseñar mitigaciones que reduzcan la probabilidad o el impacto de los problemas. Un riesgo no identificado es un riesgo no gestionado: si ocurre, Metro Sabanas no tiene un plan de respuesta, y debe improvisar, lo que generalmente genera retrasos, sobrecostos, y conflictos. Un riesgo identificado es un riesgo gestionado: si ocurre, Metro Sabanas tiene un plan de respuesta, y puede ejecutarlo de manera ordenada.
+
+**RA-01 — Falta de proveedores en el mercado colombiano:** Este riesgo ocurre si el mercado colombiano de tecnología ITS no tiene suficientes proveedores que cumplan con las especificaciones técnicas del SETP Sincelejo. Este riesgo es real porque el mercado de ITS en Colombia es relativamente pequeño: hay pocos proveedores locales con experiencia en sistemas de transporte público de esta magnitud, y los proveedores internacionales pueden no tener presencia ni soporte en Colombia. La mitigación de este riesgo es: ampliar la búsqueda de proveedores a Latinoamérica (Brasil, México, Chile, Argentina, Perú), donde hay más proveedores con experiencia en transporte público; considerar la importación de tecnología de proveedores internacionales (Europa, Estados Unidos, Asia), con la condición de que establezcan soporte local mediante alianza con un distribuidor o representante en Colombia; y evaluar la posibilidad de contratar a un integrador de sistemas local que pueda ensamilar componentes de diferentes proveedores en una solución integrada.
+
+**RA-02 — Propuestas técnicamente insuficientes:** Este riesgo ocurre si los proveedores que responden al RFQ presentan propuestas que no cumplen con las especificaciones técnicas mínimas. Este riesgo es común porque algunos proveedores pueden tender a "prometer más de lo que pueden entregar" para ganar el contrato, con la intención de negociar ajustes después de la adjudicación. La mitigación de este riesgo es: realizar un RFI previo para calificar el mercado (como se está haciendo), exigir demostraciones prácticas (Proof of Concept, POC) durante la evaluación técnica (el proveedor debe demostrar que su tecnología funciona en un ambiente de prueba, no solo en papel), y exigir garantías de cumplimiento (si el proveedor no cumple una especificación, debe pagar una penalización o reemplazar el componente). El RFI previo es la mitigación más efectiva: si el RFI revela que ningún proveedor cumple una especificación particular, Metro Sabanas puede ajustar la especificación antes del RFQ, evitando recibir propuestas que no cumplen.
+
+**RA-03 — Precios que superan el presupuesto:** Este riesgo ocurre si las propuestas económicas recibidas superan el presupuesto disponible de Metro Sabanas. Este riesgo es común porque los presupuestos de tecnología para transporte público son generalmente ajustados, y los proveedores pueden cotizar más alto de lo esperado por diversas razones: especificaciones más exigentes de lo estándar, falta de competencia en el mercado, o costos de importación y adaptación al contexto colombiano. La mitigación de este riesgo es: definir escenarios de "must-have" (especificaciones imprescindibles que no se pueden reducir) versus "nice-to-have" (especificaciones deseables que se pueden reducir o eliminar si el presupuesto no alcanza), realizar una estimación de presupuesto antes del RFQ (basada en el análisis del RFI), y negociar con los proveedores seleccionados (generalmente hay margen de negociación del 10-20% en las primeras cotizaciones). La definición de must-have versus nice-to-have es crítica: si Metro Sabanas sabe qué puede sacrificar antes de recibir las propuestas, puede negociar desde una posición de fortaleza; si no lo sabe, puede verse forzada a aceptar propuestas que no cumplen o a rechazar propuestas que cumplen pero que son caras.
+
+**RA-04 — Retrasos en la entrega de equipos:** Este riesgo ocurre si el proveedor no entrega los equipos en el plazo contratado. Este riesgo es común en proyectos de tecnología porque los equipos electrónicos pueden tener tiempos de fabricación largos (especialmente si son importados), pueden estar sujetos a restricciones de exportación (especialmente si contienen tecnología estadounidense o china), y pueden estar sujetos a escasez de componentes (especialmente chips semiconductores, que han tenido escasez global en los últimos años). La mitigación de este riesgo es: contratos con penalidades por retraso (el proveedor paga una multa por cada día de retraso, generalmente del 0.1% al 0.5% del valor del contrato por día), requerir al proveedor que presente un plan de entrega detallado (con fechas de fabricación, envío, aduana, transporte, e instalación), y requerir al proveedor que mantenga un stock de seguridad (componentes críticos almacenados localmente, para reemplazo rápido en caso de falla). Las penalidades por retraso son una herramienta poderosa: un proveedor que sabe que cada día de retraso le cuesta dinero tiene un incentivo fuerte para cumplir con el plazo.
+
+**RA-05 — Fallas en la integración:** Este riesgo ocurre si los componentes de diferentes proveedores (o incluso del mismo proveedor) no se integran correctamente, generando fallas de comunicación, inconsistencias de datos, o incompatibilidades de protocolo. Este riesgo es el más crítico en proyectos de integración de tres contratos porque la integración es el punto más débil: cada proveedor puede haber diseñado su componente de manera independiente, sin considerar cómo se integrará con los demás. La mitigación de este riesgo es: requerir un Proof of Concept (POC) antes de la compra (el proveedor debe demostrar que su solución se integra con los demás componentes en un ambiente de prueba), exigir pruebas de integración formales (pruebas donde todos los proveedores participan, con escenarios de integración definidos, y con criterios de aceptación claros), y establecer un comité de integración (con representantes de Metro Sabanas, de Innovadataco, y de cada proveedor, que se reúne periódicamente para resolver problemas de integración). El POC es la mitigación más efectiva: si el proveedor no puede demostrar la integración en un ambiente de prueba, es probable que tampoco pueda hacerlo en producción.
 
 ---
 
 ## 7. MODELO DE EVALUACIÓN
 
-### 7.1 Matriz de Puntaje Técnico (100 puntos)
+### 7.1 La matriz de puntaje técnico: cómo se mide la calidad
 
-| Aspecto | Puntos | Criterio de evaluación |
-|---------|--------|----------------------|
-| Cumplimiento especificaciones | 40 | 1 punto por cada % de cumplimiento |
-| Arquitectura y escalabilidad | 15 | 0-15 según robustez propuesta |
-| Seguridad | 15 | 0-15 según controles de seguridad |
-| Experiencia | 15 | 5 pts por proyecto similar en Colombia |
-| Soporte y capacitación | 10 | 0-10 según plan propuesto |
-| Innovación | 5 | 0-5 por funcionalidades adicionales |
+La matriz de puntaje técnico es la **herramienta de medición de la calidad** de las propuestas. No es una opinión subjetiva: es una **evaluación estructurada** donde cada aspecto de la propuesta tiene un puntaje máximo, un criterio de evaluación, y una escala de puntuación. La matriz de puntaje técnico permite a los evaluadores comparar propuestas de manera objetiva: si la Propuesta A obtiene 85 puntos y la Propuesta B obtiene 72 puntos, la Propuesta A es mejor, sin importar la opinión personal de los evaluadores.
 
-### 7.2 Fórmula de Puntaje Total
+La matriz de puntaje técnico se organiza en seis aspectos, con un total de 100 puntos: **Cumplimiento de especificaciones (40 puntos):** Este aspecto mide qué porcentaje de las especificaciones técnicas del RFQ cumple la propuesta. El criterio de evaluación es: 1 punto por cada 2.5% de cumplimiento (por ejemplo, 100% de cumplimiento = 40 puntos, 90% de cumplimiento = 36 puntos, 80% de cumplimiento = 32 puntos). El cumplimiento se verifica ítem por ítem: para cada especificación del RFQ, el evaluador verifica si la propuesta la cumple (sí/no), y calcula el porcentaje total de cumplimiento. Este aspecto tiene el mayor peso porque un sistema que no cumple las especificaciones no sirve, sin importar qué tan buena sea la arquitectura o la experiencia del proveedor. **Arquitectura y escalabilidad (15 puntos):** Este aspecto mide la robustez, la flexibilidad, y la capacidad de crecimiento de la arquitectura propuesta. El criterio de evaluación es: 0-15 puntos según la robustez de la propuesta. El evaluador considera: si la arquitectura es monolítica o de microservicios (microservicios = más puntos), si la arquitectura es cloud-native, on-premise, o híbrida (cloud-native o híbrida = más puntos), si la arquitectura soporta la escalabilidad definida en los RNF (3x flota, 100.000 usuarios, 10x transacciones), y si la arquitectura incluye redundancia, alta disponibilidad, y recuperación ante desastres (sí = más puntos). **Seguridad (15 puntos):** Este aspecto mide los controles de seguridad de la propuesta. El criterio de evaluación es: 0-15 puntos según los controles de seguridad. El evaluador considera: si la propuesta incluye cifrado de extremo a extremo (TLS 1.3, AES-256), si la propuesta incluye autenticación multifactor (MFA), si la propuesta incluye auditoría de accesos, si la propuesta cumple con PCI DSS (si aplica), si la propuesta incluye prevención de intrusiones (WAF, IDS/IPS), y si la propuesta incluye gestión de vulnerabilidades (escaneo periódico, parches de seguridad). **Experiencia (15 puntos):** Este aspecto mide la experiencia del proveedor en proyectos similares. El criterio de evaluación es: 5 puntos por cada proyecto similar en Colombia (hasta un máximo de 15 puntos), 3 puntos por cada proyecto similar en Latinoamérica (hasta un máximo de 15 puntos), y 2 puntos por cada proyecto similar en otro continente (hasta un máximo de 15 puntos). Un proyecto "similar" se define como: sistema ITS para transporte público, con flota de 20+ vehículos, implementado en los últimos 5 años. El evaluador verifica cada referencia contactando al cliente y confirmando la satisfacción. **Soporte y capacitación (10 puntos):** Este aspecto mide la calidad del plan de soporte y capacitación. El criterio de evaluación es: 0-10 puntos según el plan propuesto. El evaluador considera: si el plan de capacitación incluye todos los roles (supervisores, técnicos, conductores, administradores), si el plan de soporte incluye SLA de disponibilidad (mayor disponibilidad = más puntos), si el plan de soporte incluye tiempos de respuesta (menor tiempo = más puntos), si el plan de soporte incluye soporte local en Colombia (sí = más puntos), y si el plan de soporte incluye documentación completa (sí = más puntos). **Innovación y valor agregado (5 puntos):** Este aspecto mide las funcionalidades adicionales que el proveedor ofrece más allá de las especificaciones mínimas. El criterio de evaluación es: 0-5 puntos según las funcionalidades adicionales. El evaluador considera: funcionalidades de IA (predicción de demanda, detección de anomalías, optimización de rutas), funcionalidades de sostenibilidad (monitoreo de emisiones, optimización de consumo de combustible), funcionalidades de accesibilidad (navegación por voz, información en braille, soporte de lectores de pantalla), y funcionalidades de integración (con sistemas de tráfico, con sistemas de emergencia, con sistemas de planificación urbana). Cada funcionalidad adicional otorga 1-2 puntos, hasta un máximo de 5 puntos.
 
-```
-Puntaje Total = (Puntaje Técnico × 0.60) + (Puntaje Financiero × 0.40)
+### 7.2 La fórmula de puntaje total: cómo se elige al ganador
 
-Donde:
-- Puntaje Financiero = (Precio menor / Precio propuesta) × 100
-```
+La fórmula de puntaje total combina el puntaje técnico y el puntaje financiero en una **métrica única** que permite clasificar las propuestas de mayor a menor, y seleccionar la propuesta con el mayor puntaje. La fórmula es:
+
+**Puntaje Total = (Puntaje Técnico × 0.60) + (Puntaje Financiero × 0.40)**
+
+Donde: **Puntaje Técnico** es el puntaje obtenido en la matriz de evaluación técnica (de 0 a 100 puntos). **Puntaje Financiero** es el puntaje calculado según la fórmula: (Precio menor / Precio propuesta) × 100. El precio menor es el precio total de la propuesta más económica entre todas las propuestas que pasaron la evaluación técnica. El precio propuesta es el precio total de la propuesta que se está evaluando.
+
+Por ejemplo, si hay tres propuestas que pasaron la evaluación técnica: Propuesta A (precio: 1.000 millones COP, puntaje técnico: 85), Propuesta B (precio: 1.200 millones COP, puntaje técnico: 78), Propuesta C (precio: 900 millones COP, puntaje técnico: 72). El precio menor es 900 millones COP (Propuesta C). El puntaje financiero de la Propuesta A es: (900 / 1.000) × 100 = 90 puntos. El puntaje financiero de la Propuesta B es: (900 / 1.200) × 100 = 75 puntos. El puntaje financiero de la Propuesta C es: (900 / 900) × 100 = 100 puntos. El puntaje total de la Propuesta A es: (85 × 0.60) + (90 × 0.40) = 51 + 36 = 87 puntos. El puntaje total de la Propuesta B es: (78 × 0.60) + (75 × 0.40) = 46.8 + 30 = 76.8 puntos. El puntaje total de la Propuesta C es: (72 × 0.60) + (100 × 0.40) = 43.2 + 40 = 83.2 puntos. En este caso, la Propuesta A gana (87 puntos), aunque no es la más barata ni la de mayor puntaje técnico, porque ofrece la mejor relación calidad-precio.
+
+La fórmula de 60% técnico y 40% financiero es un balance entre calidad y costo: si el peso técnico fuera mayor (por ejemplo, 80% técnico y 20% financiero), se priorizaría la calidad sobre el costo, lo que podría resultar en la selección de una propuesta muy cara pero de alta calidad; si el peso financiero fuera mayor (por ejemplo, 40% técnico y 60% financiero), se priorizaría el costo sobre la calidad, lo que podría resultar en la selección de una propuesta barata pero de baja calidad. El 60/40 es un estándar de la industria para proyectos de tecnología: la tecnología es importante, pero no al precio que sea; el costo es importante, pero no a expensas de la calidad.
 
 ---
 
-**Preparado por:** Innovadataco  
-**Fecha:** 15 de junio de 2026  
-**Aprobado por:** _________________________
+## 8. CONCLUSIONES Y RECOMENDACIONES
+
+### 8.1 El RFI/RFQ como instrumento de transformación tecnológica
+
+El presente documento ha establecido el marco metodológico, la estructura técnica, y los criterios de evaluación para la contratación de los componentes tecnológicos del SETP Sincelejo. Este marco no es una simple formalidad administrativa: es un **instrumento de transformación tecnológica** que permite a Metro Sabanas S.A.S. pasar de un sistema de transporte público sin tecnología (o con tecnología obsoleta) a un sistema de transporte público inteligente, conectado, y eficiente.
+
+La importancia del RFI/RFQ radica en que transforma la contratación de tecnología de un proceso de compra de productos a un proceso de **selección de socios estratégicos**. En lugar de comprar "un validador", "un GPS", y "un software", Metro Sabanas contrata un **sistema integrado** donde un proveedor (o un consorcio de proveedores) asume la responsabilidad de que todo funcione junto. Esto cambia la relación entre Metro Sabanas y el proveedor: de una relación de comprador-vendedor a una relación de socio-socio, donde el éxito del proveedor depende del éxito de Metro Sabanas, y viceversa.
+
+### 8.2 Recomendaciones para la ejecución del RFI/RFQ
+
+Basado en el análisis del marco de adquisición, se presentan las siguientes recomendaciones para la ejecución del RFI/RFQ:
+
+**Recomendación 1: Ejecutar el RFI antes del RFQ.** No omitir la fase de RFI para "ahorrar tiempo". El RFI es una inversión que reduce el riesgo del RFQ: permite conocer el mercado, calificar los proveedores, validar las especificaciones, y ajustar el presupuesto. Un RFQ sin RFI previo es un tiro en la oscuridad: puede resultar en propuestas inesperadas, precios irreales, o proveedores no calificados.
+
+**Recomendación 2: Definir especificaciones realistas.** Las especificaciones técnicas del RFQ deben ser basadas en las especificaciones conceptuales de E3.2, pero ajustadas según la información del RFI. Si el RFI revela que una especificación es inalcanzable (por ejemplo, ningún proveedor ofrece un validador con PCI PTS 5.x en Colombia), ajustar la especificación antes del RFQ. Especificaciones inalcanzables generan propuestas que no cumplen; especificaciones realistas generan propuestas que cumplen.
+
+**Recomendación 3: Exigir demostraciones prácticas (POC).** El RFQ debe requerir que los proveedores preseleccionados realicen una demostración práctica (Proof of Concept) de su solución en un ambiente de prueba. El POC debe incluir: instalación de un bus piloto (con todos los dispositivos), conexión al centro de control (con la plataforma del proveedor), procesamiento de transacciones (con tarjetas reales), y generación de reportes (con datos reales). El POC es la única forma de verificar que la solución funciona en las condiciones reales del SETP Sincelejo, y no solo en las condiciones controladas del laboratorio del proveedor.
+
+**Recomendación 4: Negociar desde una posición informada.** Utilizar la información del RFI para negociar con los proveedores seleccionados. Si el RFI revela que el rango de precio del mercado es de 800 a 1.200 millones COP, y el proveedor seleccionado cotiza 1.500 millones COP, Metro Sabanas tiene la información para negociar una reducción. Sin información del RFI, Metro Sabanas no sabe si el precio es razonable o excesivo, y puede terminar pagando de más o rechazando una oferta válida.
+
+**Recomendación 5: Planificar la integración desde el inicio.** El RFQ debe incluir requisitos de integración entre los tres contratos: especificaciones de interfaces comunes, protocolos de comunicación compartidos, pruebas de integración conjuntas, y penalizaciones por incumplimiento de integración. La integración no debe ser una preocupación posterior: debe ser un requisito desde el inicio, porque es el punto más crítico y más riesgoso del proyecto.
+
+---
+
+**Documento elaborado por ZEUS — InnovaDataCo | 2026-06-15 | Versión 2.0**

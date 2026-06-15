@@ -4,261 +4,243 @@
 **Cliente:** Metro Sabanas S.A.S.  
 **Contratista:** Innovadataco  
 **Código:** PROYECTO-003-2026-SETP-SINCELEJO / E3.1  
-**Versión:** 1.0  
-**Fecha:** 15 de junio de 2026
+**Versión:** 2.0 — Reescritura argumentada y fluida  
+**Fecha:** 15 de junio de 2026  
+**Elaborado por:** ZEUS — InnovaDataCo  
+**Revisión:** V2.0 — Borrador para validación del CEO
 
 ---
 
-## 1. RESUMEN EJECUTIVO
+## RESUMEN EJECUTIVO
 
-Este documento define el Concepto de Operación Tecnológica (ConOps) del SETP Sincelejo, basado en los **4 sistemas definidos desde 2015** (Steer Davies Gleave + GSD+) y los **3 escenarios institucionales** de operación tecnológica.
+El presente documento define el Concepto de Operación Tecnológica (ConOps) del Sistema Estratégico de Transporte Público de Sincelejo (SETP), basado en los cuatro sistemas tecnológicos definidos desde 2015 (Steer Davies Gleave + GSD+) y los tres escenarios institucionales de operación tecnológica que fueron delineados en el estudio de prefactibilidad original. Este ConOps no es un manual de procedimientos: es una **descripción conceptual de cómo se operaría el sistema** si los cuatro sistemas (SRC, SGCF, SIU, SST) estuvieran implementados, qué roles humanos interactuarían con la tecnología, qué procesos operativos utilizarían, qué indicadores de desempeño medirían y qué escenarios de operación contemplarían.
 
-**Antecedentes históricos:**
-- **2015:** Estructuración tecnológica inicial definiendo SRC, SGCF, SIU y 3 escenarios de operación
-- **2022:** Actualización del modelo (Contrato CM-001-2022, A4 Asociados)
-- **2023:** Proceso de contratación ITS con MinTransporte (46 vehículos, agregado SST)
-- **2025:** RFI integración de 3 contratos (flota + tecnología + operación)
+**Hallazgo principal:** El ConOps del SETP Sincelejo está fuertemente condicionado por los tres escenarios institucionales definidos en 2015, que determinan quién opera la tecnología y, por tanto, qué estructura organizacional, qué procesos y qué indicadores son pertinentes. El escenario "Base" (concesionario externo opera SRC, Metro Sabanas opera SGCF+SIU) implica una operación dividida, con interfaces contractuales entre operadores y mayores riesgos de integración. El escenario "Socio tecnológico" (un único concesionario opera los cuatro sistemas) implica una operación centralizada, con menor fricción pero mayor dependencia de un único proveedor. El escenario "Operador recaudador" (el operador de transporte asume los cuatro sistemas) implica una operación verticalmente integrada, con mayor control operativo pero mayor inversión en capacidad técnica interna. Este ConOps no predice cuál escenario se adoptará: **describe las implicaciones operativas de cada uno**, para que Metro Sabanas S.A.S. pueda evaluarlos en el proceso de contratación.
 
-**Los 4 sistemas operativos:**
-1. **SRC** — Sistema de Recaudo Centralizado
-2. **SGCF** — Sistema de Gestión y Control de Flota
-3. **SIU** — Sistema de Información al Usuario
-4. **SST** — Sistema de Seguridad de Transacciones
-
-**3 escenarios institucionales (2015):**
-| Escenario | Operador de tecnología | Implicación |
-|-----------|------------------------|-------------|
-| **"Base"** | Concesionario externo opera SRC; Metro Sabanas opera SGCF+SIU | Mayor dependencia externa |
-| **"Socio tecnológico"** | Un único concesionario opera los 4 sistemas | Integración total outsource |
-| **"Operador recaudador"** | El operador de transporte asume los 4 sistemas | Mayor control operativo |
-
-> **Alcance:** Esta consultoría define el **Concepto de Operación Tecnológica** (cómo se operaría el sistema) como parte de la estructuración. **NO incluye implementación, instalación, operación real ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+**Alcance:** Este documento define el Concepto de Operación Tecnológica como parte de la estructuración previa a la licitación. No incluye la implementación real del sistema, la instalación de hardware, la contratación de personal operativo ni la puesta en marcha. El objetivo final es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación del componente tecnológico del SETP Sincelejo.
 
 ---
 
-## 2. ROLES Y RESPONSABILIDADES
+## 1. CONTEXTO Y ANTECEDENTES
 
-### 2.1 Estructura Organizacional de Operación
+### 1.1 El ConOps como puente entre la tecnología y la operación
 
-```
-                    DIRECCIÓN SETP
-                         │
-         ┌───────────────┼───────────────┐
-         │               │               │
-    OPERACIONES    TECNOLOGÍA      ADMINISTRACIÓN
-         │               │               │
-    ┌────┴────┐    ┌────┴────┐    ┌────┴────┐
-    │Supervisor│    │Admin   │    │Financiero│
-    │  Flota   │    │Sistema │    │          │
-    ├─────────┤    ├─────────┤    ├─────────┤
-    │Operador  │    │Soporte │    │Recaudo   │
-    │Radio/Chat│    │Técnico │    │          │
-    ├─────────┤    ├─────────┤    ├─────────┤
-    │Conductor │    │Seguridad│   │Talento   │
-    │          │    │Informática│  │Humano    │
-    └─────────┘    └─────────┘    └─────────┘
-```
+El Concepto de Operación Tecnológica (ConOps) es un documento que describe, desde la perspectiva de los usuarios operativos, cómo interactuarán con el sistema tecnológico en su día a día. No es un manual de usuario detallado: es una **visión de alto nivel** que sirve a tres propósitos: (a) validar que la tecnología propuesta es operable por la organización que la recibirá; (b) identificar los cambios organizacionales, de procesos y de capacidades que la implementación de la tecnología implica; y (c) definir los indicadores de desempeño que medirán si la tecnología está cumpliendo su propósito operativo.
 
-### 2.2 Matriz de Roles
+Para el SETP Sincelejo, el ConOps es particularmente importante porque la tecnología no se ha implementado nunca: los cuatro sistemas (SRC, SGCF, SIU, SST) están diseñados desde 2015 pero no han sido operados. Esto significa que no hay una base de experiencia operativa sobre la cual construir el ConOps. El ConOps se construye, por tanto, sobre tres fuentes: (a) los documentos de diseño de 2015 (Steer Davies Gleave + GSD+), que describieron cómo se operarían los tres sistemas originales; (b) la consultoría de 2022 (A4 Asociados), que actualizó el modelo de transporte pero no modificó el concepto de operación; y (c) la experiencia de otros SETP en Colombia que han implementado sistemas similares, que proporciona referencias de cómo operan estos sistemas en la práctica.
 
-| Rol | Responsabilidades | Perfil |
-|-----|-------------------|--------|
-| **Director SETP** | Estrategia, gobierno, relaciones institucionales | Profesional >10 años exp. |
-| **Supervisor de Flota** | Monitoreo, control, atención incidentes | Técnico/Profesional transporte |
-| **Administrador de Sistema** | Configuración, mantenimiento, actualizaciones | Ingeniero sistemas |
-| **Soporte Técnico** | Resolución de incidentes, mantenimiento preventivo | Técnico especializado |
-| **Operador de Radio/Chat** | Comunicación con conductores, atención usuarios | Bachiller + capacitación |
-| **Conductor** | Operación del vehículo, cumplimiento ruta | Licencia conducción C2/C3 |
+### 1.2 Los tres escenarios institucionales como marco de operación
+
+Los tres escenarios institucionales definidos en 2015 no son una curiosidad histórica: son el **marco de referencia** que determina la estructura de la operación tecnológica. Cada escenario implica una distribución diferente de roles, responsabilidades y riesgos entre Metro Sabanas S.A.S., los concesionarios tecnológicos, los operadores de transporte y los usuarios.
+
+El **escenario "Base"** asume que Metro Sabanas S.A.S. opera directamente el SGCF (gestión de flota) y el SIU (información al usuario), mientras que un concesionario externo opera el SRC (recaudo centralizado). Este escenario refleja una división de responsabilidades donde Metro Sabanas retiene el control de la operación y la información, pero externaliza el componente financiero más complejo (el recaudo). La implicación operativa es que Metro Sabanas necesita una capacidad técnica interna para operar el SGCF y el SIU, pero no necesita capacidad financiera para operar el SRC (el concesionario asume esa responsabilidad). La interfaz entre Metro Sabanas y el concesionario del SRC es crítica: Metro Sabanas necesita recibir reportes de recaudo en tiempo real, pero no tiene acceso directo a los datos de transacciones del concesionario.
+
+El **escenario "Socio tecnológico"** asume que un único concesionario opera los cuatro sistemas (SRC, SGCF, SIU, SST). Este escenario refleja una concentración de responsabilidades donde Metro Sabanas externaliza toda la operación tecnológica a un solo proveedor. La implicación operativa es que Metro Sabanas reduce su necesidad de capacidad técnica interna, pero aumenta su dependencia de un único proveedor. La interfaz entre Metro Sabanas y el concesionario es un contrato de servicio nivelado (SLA): Metro Sabanas define los indicadores de desempeño que el concesionario debe cumplir, y el concesionario es responsable de alcanzarlos. Metro Sabanas no opera directamente ningún sistema, pero monitorea el cumplimiento del SLA y aplica penalizaciones si no se cumple.
+
+El **escenario "Operador recaudador"** asume que el operador de transporte (la empresa que opera los buses) asume la operación de los cuatro sistemas. Este escenario refleja una integración vertical donde la operación del transporte y la operación de la tecnología están en la misma empresa. La implicación operativa es que Metro Sabanas retiene el control total de la operación, pero necesita una capacidad técnica interna significativa para operar los cuatro sistemas. La interfaz entre Metro Sabanas y los usuarios es directa: Metro Sabanas opera el SIU, gestiona el SRC, controla el SGCF y asegura el SST.
+
+Estos tres escenarios no son mutuamente excluyentes en el tiempo: Metro Sabanas puede iniciar con el escenario "Base" (externalizando solo el SRC) y migrar al escenario "Operador recaudador" (asumiendo todos los sistemas) a medida que desarrolla capacidad técnica interna. El ConOps debe ser lo suficientemente flexible para describir la operación en cualquiera de los tres escenarios, y lo suficientemente específico para identificar los cambios organizacionales que cada escenario implica.
+
+---
+
+## 2. ROLES Y RESPONSABILIDADES EN LA OPERACIÓN TECNOLÓGICA
+
+### 2.1 La estructura organizacional como función del escenario institucional
+
+La estructura organizacional de la operación tecnológica del SETP Sincelejo depende directamente del escenario institucional adoptado. En el escenario "Base", la estructura se divide en dos áreas operativas: una en Metro Sabanas (SGCF + SIU) y otra en el concesionario del SRC. En el escenario "Socio tecnológico", la estructura operativa está concentrada en el concesionario, con un equipo de monitoreo en Metro Sabanas. En el escenario "Operador recaudador", la estructura operativa está completamente en Metro Sabanas o en el operador de transporte.
+
+A pesar de estas diferencias, existen roles que son comunes a todos los escenarios porque representan funciones que la tecnología no puede automatizar completamente: la supervisión estratégica, la supervisión operativa, la administración técnica, la atención de incidentes, la operación de campo y la administración financiera.
+
+El **Director del SETP** es el rol estratégico que define la visión, los objetivos y la política del sistema. Este rol no opera directamente la tecnología: establece los indicadores de desempeño que la operación debe alcanzar, aproba los cambios en la estructura de rutas y tarifas, gestiona las relaciones institucionales con el Ministerio de Transporte, la Alcaldía de Sincelejo y otros actores, y toma las decisiones de inversión en tecnología. Este rol requiere un profesional con más de diez años de experiencia en transporte público, gestión de proyectos y relaciones institucionales. La tecnología apoya a este rol mediante dashboards ejecutivos que consolidan los indicadores de desempeño en vistas de alto nivel, alertas de cumplimiento de metas y reportes de tendencias que informan las decisiones estratégicas.
+
+El **Supervisor de Flota** es el rol operativo que monitorea la operación en tiempo real, detecta desviaciones, atiende incidentes y coordina la respuesta. Este rol opera directamente el SGCF: visualiza la posición de los buses en el mapa, detecta desvíos de ruta, identifica retrasos, recibe alertas de emergencia y coordina la comunicación con los conductores. En el escenario "Base", este rol está en Metro Sabanas; en el escenario "Socio tecnológico", este rol está en el concesionario pero reporta a Metro Sabanas; en el escenario "Operador recaudador", este rol está en el operador de transporte. La tecnología apoya a este rol mediante el centro de control visual (CVP), las alertas automáticas de desvío y retraso, las herramientas de comunicación (radio, chat) con los conductores y los reportes de cumplimiento de rutas.
+
+El **Administrador de Sistema** es el rol técnico que configura, mantiene y actualiza los sistemas tecnológicos. Este rol opera todos los sistemas a nivel de infraestructura: gestiona los servidores, las bases de datos, las redes, los dispositivos a bordo, las actualizaciones de software y los respaldos de información. Este rol requiere un ingeniero de sistemas con experiencia en administración de servidores Linux, bases de datos PostgreSQL, redes VPN y dispositivos IoT. En el escenario "Base", este rol está dividido entre Metro Sabanas (SGCF + SIU) y el concesionario (SRC); en el escenario "Socio tecnológico", este rol está en el concesionario; en el escenario "Operador recaudador", este rol está en Metro Sabanas o en el operador de transporte. La tecnología apoya a este rol mediante herramientas de monitoreo de infraestructura (Zabbix, Grafana), herramientas de despliegue automatizado (CI/CD pipelines), herramientas de gestión de configuración (Ansible, Terraform) y herramientas de respaldo y recuperación (Veeam, BorgBackup).
+
+El **Soporte Técnico** es el rol operativo que resuelve los incidentes técnicos reportados por los usuarios (conductores, pasajeros, operadores) y realiza el mantenimiento preventivo de los dispositivos. Este rol es el primer nivel de atención: recibe las llamadas, identifica el problema, intenta resolverlo mediante procedimientos estándar y escala al Administrador de Sistema si el problema requiere intervención de infraestructura. Este rol requiere un técnico especializado con capacitación en el hardware y software del sistema, habilidades de comunicación con usuarios no técnicos y procedimientos de resolución de incidentes documentados. En todos los escenarios, este rol está en la organización que opera el sistema. La tecnología apoya a este rol mediante el sistema de tickets de soporte (Zendesk, Freshdesk, Jira Service Management), la base de conocimiento con procedimientos de resolución, las herramientas de acceso remoto a los dispositivos (TeamViewer, AnyDesk) y los reportes de tendencias de incidentes que identifican problemas recurrentes.
+
+El **Operador de Radio/Chat** es el rol operativo que mantiene la comunicación directa con los conductores durante la operación. Este rol es el enlace humano entre el centro de control y los buses: recibe reportes de los conductores, transmite instrucciones del supervisor, coordina la respuesta ante incidentes y proporciona información a los conductores sobre tráfico, desvíos y cambios de programación. Este rol no requiere un perfil técnico avanzado: requiere un bachiller con capacitación en procedimientos de comunicación, manejo de situaciones de estrés y uso del sistema de radio/chat. En todos los escenarios, este rol está en la organización que opera el SGCF. La tecnología apoya a este rol mediante el sistema de radio digital (DMR, TETRA) o el sistema de chat integrado en el centro de control, que permite la comunicación bidireccional con cada conductor de manera individual o en grupos.
+
+El **Conductor** es el rol operativo de campo que opera el vehículo, cumple con la ruta y el horario asignado, y utiliza los dispositivos tecnológicos a bordo. Este rol interactúa directamente con la tecnología: el GPS que le indica la ruta, la pantalla que muestra la próxima parada, el validador que procesa los pagos de los pasajeros, y el botón de emergencia que alerta al centro de control. Este rol requiere una licencia de conducción de categoría C2 o C3 (buses urbanos), capacitación en el uso de los dispositivos tecnológicos y conocimiento de los procedimientos de emergencia. En todos los escenarios, este rol está en el operador de transporte. La tecnología apoya a este rol mediante la pantalla de conductor que muestra la información de ruta en tiempo real, el sistema de navegación que indica desvíos, la validación automática de tarjetas que reduce el tiempo de embarque y el botón de emergencia que conecta directamente con el centro de control.
+
+El **Administrador Financiero** es el rol administrativo que gestiona el recaudo, la conciliación financiera, los reportes de ingresos y los pagos a los proveedores. Este rol opera el backoffice del SRC: recibe las transacciones de los validadores, las concilia con las pasarelas de pago, genera los reportes de recaudo diarios, semanales y mensuales, y administra los subsidios de transporte. Este rol requiere un profesional en contaduría o finanzas con experiencia en conciliación bancaria, reportes financieros y gestión de subsidios. En el escenario "Base", este rol está en el concesionario del SRC; en el escenario "Socio tecnológico", este rol está en el concesionario; en el escenario "Operador recaudador", este rol está en Metro Sabanas o en el operador de transporte. La tecnología apoya a este rol mediante el backoffice de pagos que automatiza la conciliación, los reportes de recaudo que consolidan las transacciones por ruta, por conductor y por período, y las integraciones con los sistemas contables de la empresa.
+
+### 2.2 La distribución de roles por escenario
+
+La distribución de roles entre Metro Sabanas S.A.S. y los proveedores externos varía según el escenario institucional, pero la función de cada rol permanece constante. Esta consistencia es importante porque permite que el ConOps sea aplicable independientemente del escenario adoptado: solo cambia quién realiza cada función, no qué función se realiza.
+
+En el **escenario "Base"**, Metro Sabanas S.A.S. asume los roles de Director del SETP, Supervisor de Flota, Administrador de Sistema (para SGCF + SIU), Operador de Radio/Chat y Conductor (a través del operador de transporte). El concesionario del SRC asume los roles de Administrador de Sistema (para SRC), Soporte Técnico (para SRC) y Administrador Financiero. La interfaz entre Metro Sabanas y el concesionario se gestiona mediante un acuerdo de nivel de servicio (SLA) que define los reportes de recaudo que el concesionario debe entregar, la frecuencia de entrega, el formato de los reportes y las penalizaciones por incumplimiento.
+
+En el **escenario "Socio tecnológico"**, el concesionario asume todos los roles operativos y técnicos: Supervisor de Flota, Administrador de Sistema, Soporte Técnico, Operador de Radio/Chat y Administrador Financiero. Metro Sabanas S.A.S. retiene solo el rol de Director del SETP y el rol de Conductor (a través del operador de transporte). La interfaz entre Metro Sabanas y el concesionario se gestiona mediante un SLA integral que define todos los indicadores de desempeño operativos, tecnológicos y financieros que el concesionario debe cumplir, y las penalizaciones por incumplimiento.
+
+En el **escenario "Operador recaudador"**, Metro Sabanas S.A.S. o el operador de transporte asume todos los roles: Director del SETP, Supervisor de Flota, Administrador de Sistema, Soporte Técnico, Operador de Radio/Chat, Conductor y Administrador Financiero. No hay interfaz con concesionarios externos: toda la operación tecnológica es interna. Esto implica la mayor inversión en capacitación, contratación y retención de talento técnico, pero también proporciona el mayor control operativo y la menor dependencia de terceros.
 
 ---
 
 ## 3. PROCESOS OPERATIVOS
 
-### 3.1 Proceso de Despacho
+### 3.1 El proceso de despacho: el ciclo de vida de un servicio
 
-```
-INICIO
-  │
-  ▼
-┌──────────────────┐
-│ 1. Programación  │──> Definir horarios, rutas, conductores
-│    de Servicio   │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│ 2. Pre-opera-    │──> Checklist vehículo, combustible, SOAT
-│    ción          │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│ 3. Despacho      │──> Asignación de ruta, validación tarjeta
-│                  │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│ 4. Monitoreo en  │──> Seguimiento GPS, tiempos, desvíos
-│    Ruta          │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│ 5. Cierre de     │──> Reporte de fallas, recaudo, kilometraje
-│    Servicio      │
-└────────┬─────────┘
-         │
-         ▼
-        FIN
-```
+El proceso de despacho es el **ciclo de vida de un servicio** de transporte: desde la programación de la ruta hasta el cierre de la operación. Este proceso no es una secuencia mecánica de pasos: es una **orquestación de actividades humanas y tecnológicas** que se coordinan para producir un servicio de transporte público. La tecnología no reemplaza a los humanos en este proceso: los asiste, los informa, los alerta y les proporciona herramientas para tomar decisiones más rápidas y más informadas.
 
-### 3.2 Proceso de Atención a Incidentes
+La **programación de servicio** es la fase de planificación: se definen los horarios de salida, las rutas asignadas, los conductores designados y los buses asignados para cada servicio. Esta fase no es una repetición de la misma programación todos los días: es una **optimización dinámica** que considera la demanda histórica, los eventos especiales (festividades, partidos de fútbol, lluvias), las incidencias del día anterior (buses fuera de servicio, conductores ausentes) y las restricciones operativas (mantenimiento programado, disponibilidad de buses). La tecnología apoya esta fase mediante el sistema de programación del SGCF, que almacena los horarios y rutas, permite la asignación automática de conductores y buses basada en reglas predefinidas, y genera la programación del día en formato digital que se distribuye a los conductores y al centro de control.
 
-| Paso | Acción | Responsable | SLA |
-|------|--------|-------------|-----|
-| 1 | Detección automática (GPS, sensor, reporte) | Sistema / Conductor | < 1 min |
-| 2 | Alerta en Centro de Control | Sistema | Inmediato |
-| 3 | Clasificación de incidente | Supervisor | < 5 min |
-| 4 | Asignación de respuesta | Supervisor | < 10 min |
-| 5 | Ejecución de protocolo | Equipo campo | < 30 min |
-| 6 | Cierre y reporte | Supervisor | < 24 h |
+La **pre-operación** es la fase de preparación: cada conductor realiza un checklist de inspección del vehículo (luces, frenos, llantas, niveles de aceite y combustible, documentos del vehículo: SOAT, revisión técnico-mecánica, póliza de seguro) y verifica que los dispositivos tecnológicos estén funcionando (GPS con señal, validador encendido, pantalla operativa, comunicación con el centro de control). Esta fase no es una formalidad: es una **protección contra la operación con vehículos o dispositivos defectuosos**, que generarían incidentes, retrasos y pérdida de confianza de los usuarios. La tecnología apoya esta fase mediante el sistema de checklist digital que guía al conductor paso a paso, registra automáticamente la hora de inicio de la pre-operación, valida que todos los ítems del checklist estén completos antes de permitir el despacho, y alerta al centro de control si un bus no completa la pre-operación dentro del tiempo esperado.
 
-### 3.3 Proceso de Recaudo y Conciliación
+El **despacho** es la fase de inicio de la operación: el conductor recibe la autorización del centro de control para iniciar la ruta, valida su tarjeta de servicio (credencial de conductor) en el validador a bordo, y el sistema registra automáticamente la hora de salida, la ruta asignada y el estado del bus. Esta fase no es simplemente "salir a la ruta": es una **formalización de la responsabilidad** donde el sistema asocia al conductor, al bus y a la ruta para el período de operación. La tecnología apoya esta fase mediante el validador de credenciales que verifica que el conductor está autorizado para operar ese bus en esa ruta, el GPS que registra la hora y posición de salida, y el sistema de comunicación que notifica al centro de control que el bus ha iniciado la operación.
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│ Validación  │────>│  Backoffice │────>│ Conciliación│
-│ a bordo     │     │  Pagos      │     │ Financiera  │
-│ (Tiempo real)│    │  (Cada 15m) │     │  (Diaria)   │
-└─────────────┘     └─────────────┘     └─────────────┘
-       │                   │                   │
-       ▼                   ▼                   ▼
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│ Tarjetas    │     │ Transacciones│    │ Reporte     │
-│ sin contacto│     │ en BD        │     │ Recaudo     │
-└─────────────┘     └─────────────┘     └─────────────┘
-```
+El **monitoreo en ruta** es la fase de supervisión activa: el centro de control visualiza la posición de todos los buses en el mapa, detecta desviaciones de ruta, identifica retrasos respecto al horario programado, recibe alertas de emergencia (botón de pánico, sensor de impacto, llamada del conductor), y coordina la respuesta a incidentes. Esta fase no es una vigilancia pasiva: es una **gestión proactiva** donde el supervisor anticipa problemas antes de que se conviertan en incidentes graves. Si un bus está retrasado más de cinco minutos respecto al horario, el supervisor puede decidir: (a) notificar a los usuarios mediante el SIU (pantallas en paradas, app móvil) que el bus está retrasado; (b) comunicarse con el conductor para identificar la causa del retraso y buscar alternativas; (c) reasignar un bus de reserva para cubrir la ruta; o (d) ajustar la frecuencia de la ruta para compensar el retraso. La tecnología apoya esta fase mediante el centro de control visual (CVP) que muestra todos los buses en tiempo real, el sistema de alertas automáticas que notifica desviaciones y retrasos, las herramientas de comunicación (radio, chat) con los conductores, y los algoritmos de predicción que estiman el tiempo de llegada a cada parada basado en la posición actual y las condiciones de tráfico.
+
+El **cierre de servicio** es la fase de finalización: el conductor llega al terminal final, registra la hora de llegada, reporta las novedades del servicio (fallas mecánicas, incidentes con pasajeros, daños en el bus, problemas con los dispositivos tecnológicos), entrega el recaudo del día (si el sistema es de pago en efectivo) o confirma que el validador ha registrado todas las transacciones (si el sistema es de pago electrónico), y realiza el checklist de post-operación. Esta fase no es simplemente "apagar el bus y irse": es una **formalización de la rendición de cuentas** donde el conductor reporta el estado del bus, el estado de la operación y el estado de la tecnología. La tecnología apoya esta fase mediante el sistema de reporte de novedades que guía al conductor para documentar cada incidente, el validador que consolida todas las transacciones del día para la conciliación, el GPS que registra la hora y posición de llegada, y el sistema de mantenimiento que genera automáticamente una orden de servicio si el conductor reporta una falla mecánica.
+
+### 3.2 El proceso de atención a incidentes: la respuesta coordinada
+
+El proceso de atención a incidentes es la **respuesta coordinada** ante eventos que interrumpen o degradan la operación normal. Este proceso no es una reacción caótica: es una **secuencia estructurada de acciones** con tiempos de respuesta definidos, responsables asignados y procedimientos documentados. La tecnología no previene todos los incidentes: los detecta, los alerta, los documenta y proporciona información para la respuesta. La respuesta efectiva depende de la coordinación entre el sistema tecnológico, el supervisor de flota, el operador de radio/chat, el conductor y, en casos graves, las autoridades.
+
+La **detección** es la fase de identificación: el incidente puede ser detectado automáticamente por el sistema (sensor de impacto que detecta una colisión, sensor de puerta que detecta una apertura en movimiento, GPS que detecta una desviación de ruta, validador que detecta un intento de fraude), reportado por el conductor (llamada de radio, chat, botón de pánico), o reportado por un usuario (llamada al call center, reporte en la app, queja en redes sociales). La velocidad de detección es crítica: un incidente detectado en un minuto puede ser resuelto en diez minutos; un incidente detectado en treinta minutos puede convertirse en una crisis. La tecnología apoya esta fase mediante los sensores automáticos que detectan eventos físicos (impacto, apertura de puerta, temperatura anómala), el botón de pánico que permite al conductor reportar una emergencia en menos de cinco segundos, el sistema de monitoreo GPS que detecta desviaciones y retrasos, y las herramientas de comunicación que permiten a los usuarios reportar incidentes directamente al centro de control.
+
+La **alerta** es la fase de notificación: una vez detectado el incidente, el sistema alerta automáticamente al supervisor de flota, al operador de radio/chat y, si es necesario, a las autoridades (policía, bomberos, ambulancia). La alerta no es un simple mensaje de texto: es una **notificación estructurada** que incluye la naturaleza del incidente, la ubicación (GPS), la hora, el bus involucrado, el conductor, la ruta, y el nivel de severidad. La tecnología apoya esta fase mediante el sistema de alertas inteligentes que clasifica automáticamente el incidente por severidad (crítico, grave, moderado, leve), envía la alerta al responsable correspondiente (supervisor para incidentes operativos, autoridades para incidentes de seguridad), y registra la alerta en la base de datos para análisis posterior.
+
+La **clasificación** es la fase de evaluación: el supervisor de flota evalúa la naturaleza del incidente, determina su severidad, identifica los recursos necesarios para la respuesta y decide la estrategia de respuesta. Esta fase no es una deliberación prolongada: es una **decisión rápida** basada en procedimientos predefinidos. Si el incidente es un retraso de un bus, la respuesta es una notificación a los usuarios y una comunicación con el conductor. Si el incidente es una colisión, la respuesta es la activación del protocolo de emergencia: notificación a autoridades, aislamiento de la ruta, activación de servicios de contingencia, y reporte al Director del SETP. La tecnología apoya esta fase mediante el sistema de procedimientos de respuesta que sugiere al supervisor las acciones recomendadas según el tipo de incidente, el sistema de recursos que muestra la disponibilidad de buses de reserva, conductores de reemplazo y equipos de respuesta.
+
+La **asignación de respuesta** es la fase de movilización: el supervisor asigna los recursos necesarios para responder al incidente. Si el incidente requiere un bus de reserva, el supervisor identifica el bus más cercano disponible y asigna un conductor. Si el incidente requiere soporte técnico en ruta, el supervisor asigna un técnico con las herramientas y repuestos necesarios. Si el incidente requiere autoridades, el supervisor coordina la llegada de la policía, los bomberos o la ambulancia. La tecnología apoya esta fase mediante el sistema de gestión de recursos que muestra la ubicación y disponibilidad de todos los buses, conductores y técnicos en tiempo real, el sistema de comunicación que permite al supervisor enviar instrucciones directamente a los recursos asignados, y el sistema de seguimiento que permite al supervisor monitorear el progreso de la respuesta.
+
+La **ejecución del protocolo** es la fase de acción: los recursos asignados ejecutan las acciones definidas en el protocolo de respuesta. El conductor del bus de reserva se dirige a la ubicación del incidente, toma la ruta del bus afectado y continúa el servicio. El técnico de soporte llega al bus, diagnostica el problema, repara el dispositivo o reemplaza el equipo defectuoso. Las autoridades llegan al lugar, gestionan la emergencia, toman declaraciones y levantan el acta. La tecnología apoya esta fase mediante el sistema de navegación que guía al bus de reserva a la ubicación más rápida, el sistema de diagnóstico remoto que permite al técnico identificar el problema antes de llegar al bus, y el sistema de registro de incidente que documenta todas las acciones tomadas.
+
+El **cierre y reporte** es la fase de finalización: una vez resuelto el incidente, el supervisor cierra el caso en el sistema, documenta las acciones tomadas, las lecciones aprendidas y las recomendaciones para prevenir incidentes similares, y genera el reporte de incidente para el Director del SETP. Este reporte no es una mera formalidad: es una **herramienta de mejora continua** que alimenta el análisis de tendencias, la identificación de problemas recurrentes y la actualización de los procedimientos de respuesta. La tecnología apoya esta fase mediante el sistema de registro de incidente que guía al supervisor para documentar todos los aspectos del incidente, el sistema de análisis de tendencias que identifica patrones en los incidentes (por ejemplo: "el 30% de los incidentes de validador ocurren en el bus 15, que tiene el validador más antiguo"), y el sistema de generación de reportes que produce informes ejecutivos para el Director del SETP.
+
+### 3.3 El proceso de recaudo y conciliación: el ciclo financiero del SETP
+
+El proceso de recaudo y conciliación es el **ciclo financiero** del SETP Sincelejo: es donde el dinero de los pasajeros se transforma en ingresos reportables, conciliables y auditable. Este proceso no es una simple suma de transacciones: es una **cadena de confianza** donde cada eslabón debe ser verificable para que los usuarios, los inversionistas, las autoridades y los auditores confíen en los números. La tecnología no solo facilita el recaudo: lo **asegura**, lo **documenta** y lo **audita**.
+
+La **validación a bordo** es la fase de captura: el pasajero se acerca al validador, presenta su tarjeta sin contacto, el validador lee la tarjeta, verifica el saldo, calcula la tarifa aplicable, registra la transacción y muestra el saldo restante al pasajero. Esta fase ocurre en tiempo real, en un ambiente móvil, con conectividad intermitente y con usuarios que no son técnicos. La tecnología debe ser robusta: el validador debe funcionar en modo offline si no hay conectividad, almacenar las transacciones localmente, y sincronizarlas cuando la conectividad se restablece. La tecnología debe ser rápida: la validación de una tarjeta debe tomar menos de 300 milisegundos para no retrasar el embarque. La tecnología debe ser segura: el validador debe verificar la autenticidad de la tarjeta, cifrar la transacción, y proteger contra clonación, copia y fraude.
+
+La **transmisión al backoffice** es la fase de transporte: las transacciones registradas en los validadores se transmiten al backoffice de pagos en el centro de control. Esta fase no es una transmisión continua: es una **sincronización periódica** que ocurre cada 15 minutos (o más frecuentemente si hay conectividad disponible) donde el validador envía un lote de transacciones al backoffice. La tecnología debe ser confiable: si una transmisión falla, el validador debe reintentar automáticamente; si el backoffice no recibe una transmisión, debe alertar al soporte técnico; si hay discrepancias entre las transacciones en el validador y las transacciones en el backoffice, debe generar una alerta de conciliación. La tecnología debe ser eficiente: la transmisión debe comprimir los datos para minimizar el uso de ancho de banda celular, y debe cifrar los datos para proteger la información financiera en tránsito.
+
+La **conciliación financiera** es la fase de verificación: el backoffice compara las transacciones registradas en los validadores con las transacciones registradas en las pasarelas de pago (Redeban, Credibanco) y en los bancos (ACH). Esta fase no es una simple suma: es una **verificación detallada** donde cada transacción debe coincidir en monto, fecha, hora, tarjeta y validador. Si hay discrepancias (por ejemplo: una transacción registrada en el validador pero no en la pasarela de pago, o una transacción registrada en la pasarela pero no en el validador), el backoffice debe generar una alerta de investigación. La conciliación debe ser diaria: al final de cada día de operación, el backoffice debe generar un reporte de conciliación que muestre el total de transacciones, el total de montos, las discrepancias detectadas y las acciones de investigación. La tecnología apoya esta fase mediante el motor de conciliación que compara automáticamente las transacciones de todas las fuentes, el sistema de alertas que notifica las discrepancias, y el sistema de investigación que guía al administrador financiero para resolver cada discrepancia.
+
+El **reporte de recaudo** es la fase de consolidación: el backoffice genera los reportes de recaudo que consolidan las transacciones por período (diario, semanal, mensual), por ruta, por bus, por conductor, por tipo de tarifa, por tipo de usuario, y por método de pago. Estos reportes no son solo para la contabilidad: son **herramientas de gestión** que permiten al Director del SETP analizar la rentabilidad de cada ruta, la productividad de cada conductor, la efectividad de cada tarifa, y la evolución de la demanda. La tecnología apoya esta fase mediante el motor de reportes que genera automáticamente los reportes según la programación definida, el sistema de visualización que presenta los reportes en dashboards interactivos, y el sistema de exportación que permite exportar los reportes en formatos estándar (Excel, PDF, CSV) para su distribución a las autoridades, los auditores y los accionistas.
 
 ---
 
 ## 4. INDICADORES DE DESEMPEÑO (KPIs)
 
-### 4.1 KPIs Operativos
+### 4.1 La medición de la operación: más allá de los números
 
-| ID | Indicador | Fórmula | Meta | Frecuencia |
-|----|-----------|---------|------|------------|
-| KPI-01 | Cumplimiento de rutas | (Rutas completadas / Programadas) × 100 | > 95% | Diaria |
-| KPI-02 | Puntualidad | (Salidas a tiempo / Total salidas) × 100 | > 90% | Diaria |
-| KPI-03 | Velocidad promedio | Distancia total / Tiempo total | Según ruta | Diaria |
-| KPI-04 | Desvíos | Número de desvíos no autorizados | < 2% | Semanal |
-| KPI-05 | Incidentes | Número de incidentes / 10.000 km | < 5 | Mensual |
+Los Indicadores de Desempeño (KPIs) no son solo números: son **herramientas de gestión** que traducen la complejidad de la operación en métricas comprensibles, comparables y accionables. Un KPI bien diseñado no solo mide: **alerta cuando hay problemas, identifica tendencias cuando hay oportunidades, y proporciona una base para la toma de decisiones**. Un KPI mal diseñado no solo es inútil: puede ser perjudicial si mide lo incorrecto o si crea incentivos para comportamientos no deseados (por ejemplo, si el KPI de puntualidad incentiva a los conductores a saltarse paradas para no retrasarse).
 
-### 4.2 KPIs de Servicio al Usuario
+Para el SETP Sincelejo, los KPIs se organizan en tres categorías: operativos, de servicio al usuario y tecnológicos. Esta categorización no es una formalidad: refleja las tres dimensiones de la operación que la tecnología debe habilitar. Los KPIs operativos miden si la operación está cumpliendo con su objetivo principal (transportar pasajeros de manera eficiente, segura y puntual). Los KPIs de servicio al usuario miden si la operación está satisfaciendo las expectativas de los pasajeros (información clara, tiempos de espera razonables, atención a quejas). Los KPIs tecnológicos miden si la tecnología está funcionando correctamente (disponibilidad, latencia, transacciones exitosas, dispositivos conectados).
 
-| ID | Indicador | Fórmula | Meta | Frecuencia |
-|----|-----------|---------|------|------------|
-| KPI-06 | Satisfacción | Encuestas positivas / Total encuestas | > 85% | Mensual |
-| KPI-07 | Tiempo espera | Tiempo promedio en parada | < 10 min | Diaria |
-| KPI-08 | Información en tiempo real | % paradas con info actualizada | 100% | Continua |
-| KPI-09 | Quejas | Número de quejas / 1.000 usuarios | < 5 | Mensual |
+### 4.2 KPIs operativos: la eficiencia del sistema de transporte
 
-### 4.3 KPIs Tecnológicos
+El KPI de **cumplimiento de rutas** mide el porcentaje de rutas que se completaron según la programación del día. Una ruta "completada" es una ruta que inició en el punto de origen, siguió todos los puntos de la ruta programada, y llegó al punto final sin desviaciones no autorizadas. Una ruta "programada" es una ruta que estaba en la programación del día. La fórmula es: (rutas completadas / rutas programadas) × 100. La meta es superior al 95%, lo que significa que, como máximo, el 5% de las rutas pueden no completarse por incidencias (fallas mecánicas, emergencias, desvíos autorizados por tráfico). Este KPI no solo mide la puntualidad: mide la **confiabilidad** del sistema. Un pasajero que puede confiar en que el bus llegará a su parada según el horario programado es un pasajero satisfecho; un pasajero que no puede confiar es un pasajero que dejará de usar el sistema.
 
-| ID | Indicador | Fórmula | Meta | Frecuencia |
-|----|-----------|---------|------|------------|
-| KPI-10 | Disponibilidad sistema | (Tiempo operativo / Tiempo total) × 100 | > 99.5% | Mensual |
-| KPI-11 | Latencia GPS | Tiempo desde evento hasta visualización | < 5 seg | Continua |
-| KPI-12 | Transacciones exitosas | (Transacciones OK / Total) × 100 | > 99.9% | Diaria |
-| KPI-13 | Dispositivos online | (Dispositivos conectados / Total) × 100 | > 98% | Continua |
+El KPI de **puntualidad** mide el porcentaje de salidas que ocurrieron a la hora programada. Una salida "a tiempo" es una salida que ocurrió dentro de una ventana de tolerancia (generalmente ±2 minutos) respecto al horario programado. La fórmula es: (salidas a tiempo / total de salidas) × 100. La meta es superior al 90%, lo que significa que el 10% de las salidas pueden tener un retraso menor a la ventana de tolerancia. Este KPI es más sensible que el cumplimiento de rutas: una ruta puede completarse pero con retrasos acumulados en cada parada. La puntualidad mide la **regularidad** del servicio: un bus que llega cada 10 minutos de manera regular es más útil que un bus que llega a veces en 5 minutos y a veces en 20 minutos.
+
+El KPI de **velocidad promedio** mide la velocidad media de los buses en cada ruta. La fórmula es: distancia total de la ruta / tiempo total de la ruta. Este KPI no tiene una meta única: depende de la ruta. Una ruta por una avenida principal tendrá una velocidad promedio más alta que una ruta por calles secundarias con muchas paradas. El valor de este KPI es su uso **comparativo**: si la velocidad promedio de una ruta disminuye significativamente respecto a su histórico, eso indica un problema (congestión, obras, cambios en el tráfico) que requiere atención. La tecnología apoya este KPI mediante el GPS que registra la posición y velocidad de cada bus en cada punto de la ruta, y el análisis de tendencias que identifica cambios en la velocidad promedio.
+
+El KPI de **desvíos** mide el número de desvíos no autorizados por cada 100 servicios. Un desvío "no autorizado" es una desviación de la ruta programada que no fue aprobada por el supervisor de flota. La fórmula es: (número de desvíos no autorizados / número de servicios) × 100. La meta es inferior al 2%, lo que significa que la gran mayoría de los servicios siguen la ruta programada. Este KPI mide la **disciplina operativa**: un conductor que desvía la ruta habitualmente puede estar evitando zonas con tráfico, evitando paradas con mucha demanda, o utilizando el bus para fines personales. La tecnología apoya este KPI mediante el GPS que detecta automáticamente las desviaciones de ruta, y el sistema de alertas que notifica al supervisor cuando un bus se desvía más de una distancia umbral (por ejemplo, 200 metros) de la ruta programada.
+
+El KPI de **incidentes** mide el número de incidentes por cada 10.000 kilómetros operados. Un "incidente" es cualquier evento que interrumpa o degrade la operación: fallas mecánicas, fallas tecnológicas, colisiones, emergencias médicas, alteraciones de orden público. La fórmula es: (número de incidentes / kilómetros operados) × 10.000. La meta es inferior a 5 incidentes por cada 10.000 km, lo que significa que la operación es segura y confiable. Este KPI mide la **seguridad operativa**: un sistema con pocos incidentes es un sistema que los pasajeros perciben como seguro y que los conductores perciben como manejable. La tecnología apoya este KPI mediante los sensores automáticos que detectan eventos de incidente, el sistema de registro de incidentes que documenta cada evento, y el análisis de tendencias que identifica patrones de incidentes (por ejemplo: "el 40% de los incidentes de falla tecnológica ocurren en el bus 8, que tiene el hardware más antiguo").
+
+### 4.3 KPIs de servicio al usuario: la satisfacción del pasajero
+
+El KPI de **satisfacción** mide el porcentaje de encuestas de satisfacción que son positivas. La fórmula es: (encuestas positivas / total de encuestas) × 100. La meta es superior al 85%, lo que significa que la gran mayoría de los pasajeros están satisfechos con el servicio. Este KPI no es una medición objetiva: es una **medición subjetiva** que captura la percepción del pasajero. Un pasajero puede estar satisfecho con el servicio aunque el bus esté retrasado, si la información sobre el retraso es clara y oportuna. Un pasajero puede estar insatisfecho con el servicio aunque el bus llegue a tiempo, si el conductor es grosero o si el bus está sucio. La tecnología apoya este KPI mediante el sistema de encuestas digitales que se envían a los pasajeros después de cada viaje (mediante la app, SMS o email), el análisis de sentimiento que clasifica los comentarios como positivos, negativos o neutros, y la correlación entre satisfacción y otros KPIs (por ejemplo: "los pasajeros de la ruta 3 son los menos satisfechos, y esa ruta tiene la mayor cantidad de retrasos").
+
+El KPI de **tiempo de espera** mide el tiempo promedio que un pasajero espera en una parada antes de que llegue su bus. La fórmula es: tiempo promedio de espera en parada. La meta es inferior a 10 minutos, lo que significa que los pasajeros no esperan más de 10 minutos en promedio. Este KPI es una de las medidas más importantes de la calidad del servicio: los estudios de transporte público muestran que el tiempo de espera percibido es el factor más importante en la decisión de un pasajero de usar o no usar el transporte público. Un pasajero que espera 15 minutos considera que el servicio es "lento"; un pasajero que espera 5 minutos considera que el servicio es "rápido". La tecnología apoya este KPI mediante el sistema de predicción de tiempos de llegada que estima, basado en la posición GPS de los buses y las condiciones de tráfico, cuánto tiempo faltará para que llegue el próximo bus a cada parada, y muestra esta información en las pantallas de las paradas, en la app móvil y en el portal web.
+
+El KPI de **información en tiempo real** mide el porcentaje de paradas que tienen información actualizada sobre los tiempos de llegada de los buses. La fórmula es: (paradas con información actualizada / total de paradas) × 100. La meta es 100%, lo que significa que todas las paradas deben tener información en tiempo real. Este KPI mide la **cobertura del SIU**: una parada sin información en tiempo real es una parada donde los pasajeros no saben cuándo llegará su bus, lo que genera insatisfacción y desconfianza. La tecnología apoya este KPI mediante el sistema de pantallas en paradas que muestran los tiempos de llegada, la app móvil que muestra los tiempos de llegada para todas las paradas, y el sistema de monitoreo que detecta si una pantalla está offline o si la información está desactualizada.
+
+El KPI de **quejas** mide el número de quejas por cada 1.000 usuarios. La fórmula es: (número de quejas / número de usuarios) × 1.000. La meta es inferior a 5 quejas por cada 1.000 usuarios, lo que significa que la mayoría de los usuarios no tienen motivos de queja. Este KPI no mide solo la cantidad de quejas: mide la **efectividad de la resolución de quejas**. Una queja que se resuelve en 24 horas genera un usuario satisfecho; una queja que no se resuelve en una semana genera un usuario insatisfecho que probablemente abandonará el sistema. La tecnología apoya este KPI mediante el sistema de gestión de quejas que registra cada queja, la asigna a un responsable, monitorea el tiempo de resolución, y genera alertas cuando una queja excede el tiempo máximo de resolución (24 horas para quejas operativas, 48 horas para quejas financieras, 72 horas para quejas tecnológicas).
+
+### 4.4 KPIs tecnológicos: la salud del sistema
+
+El KPI de **disponibilidad del sistema** mide el porcentaje de tiempo que el sistema está operativo respecto al tiempo total. La fórmula es: (tiempo operativo / tiempo total) × 100. La meta es superior al 99.5%, lo que significa que el sistema puede estar inoperativo menos de 43 horas al año (aproximadamente 3.6 horas al mes). Este KPI es el más importante de los KPIs tecnológicos porque mide la **confiabilidad del sistema**: si el sistema no está disponible, no se pueden procesar pagos, no se puede rastrear la flota, no se puede informar a los usuarios, y la operación se degrada o se detiene. La tecnología apoya este KPI mediante el monitoreo de infraestructura que detecta automáticamente cuando un componente del sistema falla, el sistema de redundancia que activa automáticamente el componente de respaldo, y el sistema de alertas que notifica al administrador del sistema cuando la disponibilidad cae por debajo del umbral.
+
+El KPI de **latencia GPS** mide el tiempo que transcurre desde que ocurre un evento GPS (el bus se mueve, cambia de velocidad, llega a una parada) hasta que ese evento es visualizado en el centro de control. La fórmula es: tiempo desde el evento hasta la visualización. La meta es inferior a 5 segundos, lo que significa que el supervisor de flota ve la posición de los buses con un retraso máximo de 5 segundos. Este KPI mide la **frescura de la información**: un supervisor que ve la posición de los buses con 5 segundos de retraso puede tomar decisiones en tiempo real; un supervisor que ve la posición con 5 minutos de retraso está tomando decisiones basadas en información obsoleta. La tecnología apoya este KPI mediante el procesamiento edge en el dispositivo a bordo (el GPS procesa y envía la posición en intervalos de 5-10 segundos), la red celular 4G/LTE (que transmite los datos en menos de 1 segundo), y el centro de control que procesa y visualiza los datos en menos de 1 segundo.
+
+El KPI de **transacciones exitosas** mide el porcentaje de transacciones de pago que se completan correctamente respecto al total de transacciones intentadas. La fórmula es: (transacciones exitosas / total de transacciones) × 100. La meta es superior al 99.9%, lo que significa que menos del 0.1% de las transacciones fallan. Este KPI mide la **confiabilidad del sistema de pago**: un pasajero cuya tarjeta no es aceptada por el validador genera una experiencia negativa, un retraso en el embarque, y potencialmente una queja. Si el 1% de las transacciones fallan, en un día con 15.000 transacciones, 150 pasajeros tendrán una experiencia negativa. La tecnología apoya este KPI mediante el validador robusto que acepta tarjetas en condiciones adversas (movimiento del bus, luz solar directa, tarjetas desgastadas), el sistema de reintentos automáticos que intenta la transacción nuevamente si la primera falla, y el sistema de diagnóstico que identifica validadores con tasas de fallo altas para mantenimiento preventivo.
+
+El KPI de **dispositivos online** mide el porcentaje de dispositivos a bordo (GPS, validadores, pantallas) que están conectados al sistema respecto al total de dispositivos. La fórmula es: (dispositivos conectados / total de dispositivos) × 100. La meta es superior al 98%, lo que significa que, como máximo, el 2% de los dispositivos pueden estar offline por mantenimiento, fallas o conectividad intermitente. Este KPI mide la **cobertura tecnológica**: un bus sin GPS no puede ser rastreado, un bus sin validador no puede recaudar, un bus sin pantalla no puede informar a los pasajeros. La tecnología apoya este KPI mediante el monitoreo de dispositivos que detecta automáticamente cuando un dispositivo se desconecta, el sistema de alertas que notifica al soporte técnico, y el sistema de diagnóstico remoto que permite al soporte técnico identificar la causa de la desconexión (falla de hardware, falla de software, falla de conectividad) antes de enviar un técnico al bus.
 
 ---
 
 ## 5. ESCENARIOS DE OPERACIÓN
 
-### 5.1 Escenario Normal
+### 5.1 La operación en condiciones normales: el estado base
 
-Condiciones:
-- Clima favorable
-- Tráfico habitual
-- Todos los sistemas operativos
-- Personal completo
+El escenario de operación normal es el **estado base** del sistema: todas las condiciones están dentro de los parámetros esperados, todos los sistemas están operativos, el personal está completo, y la operación sigue la programación sin desviaciones. Este escenario no es la realidad permanente: es el **punto de referencia** contra el cual se miden los otros escenarios. Cuando el supervisor de flota detecta una anomalía, la compara con el escenario normal para determinar si es un incidente que requiere respuesta.
 
-Operación:
-- Ruta y horario según programación
-- Monitoreo estándar
-- Reportes periódicos
+En el escenario normal, la operación se desarrolla según la programación del día: los conductores llegan al terminal, realizan la pre-operación, reciben el despacho, operan la ruta según el horario, el centro de control monitorea la operación en tiempo real, los usuarios reciben información actualizada sobre los tiempos de llegada, y el recaudo se procesa automáticamente. No hay incidentes, no hay retrasos significativos, no hay fallas tecnológicas, no hay emergencias. La tecnología cumple su función de asistencia: proporciona información, automatiza procesos, alerta sobre desviaciones menores, y genera reportes periódicos.
 
-### 5.2 Escenario de Lluvia / Evento Climático
+Este escenario es el más frecuente: la mayoría de los días de operación son días normales. Pero la planificación de la operación no se hace para los días normales: se hace para los días anormales. Los días normales no requieren decisiones complejas; los días anormales sí. La tecnología debe ser diseñada para soportar los días anormales: si el sistema solo funciona en condiciones normales, fallará en el momento más crítico.
 
-Activación: Alerta meteorológica o condiciones detectadas
+### 5.2 La operación en condiciones climáticas adversas: la respuesta al caos
 
-Acciones:
-1. Aumentar frecuencia de monitoreo
-2. Activar protocolo de seguridad
-3. Ajustar tiempos de ruta (hasta +20%)
-4. Comunicar a usuarios vía app/pantallas
-5. Preparar servicios de contingencia
+El escenario de lluvia o evento climático es una **perturbación previsible**: no ocurre todos los días, pero ocurre con suficiente frecuencia para que la operación deba estar preparada. La lluvia afecta la operación de múltiples maneras: reduce la visibilidad de los conductores, aumenta los tiempos de viaje por el tráfico más lento, incrementa el riesgo de accidentes por pavimento resbaladizo, y aumenta la demanda de transporte público porque los usuarios que normalmente caminan o usan bicicleta prefieren tomar el bus.
 
-### 5.3 Escenario de Falla Tecnológica
+La respuesta a este escenario se activa automáticamente cuando el sistema detecta una alerta meteorológica (integración con el servicio meteorológico nacional) o cuando los sensores de los buses detectan condiciones de lluvia (sensor de parabrisas, reducción de velocidad promedio en más del 20%). La respuesta incluye: (a) aumentar la frecuencia de monitoreo en el centro de control (de cada 10 minutos a cada 5 minutos); (b) activar el protocolo de seguridad (alertas a los conductores sobre condiciones de pavimento, recordatorios de reducir la velocidad, activación de luces de emergencia); (c) ajustar los tiempos de ruta (hasta un 20% de aumento) para reflejar las condiciones de tráfico más lentas; (d) comunicar a los usuarios mediante el SIU (mensajes en la app: "Debido a lluvias, los tiempos de llegada pueden ser mayores a los programados"; actualización de los tiempos estimados en las pantallas de paradas); y (e) preparar servicios de contingencia (buses de reserva en estado de alerta, conductores de reemplazo listos para ser asignados).
 
-Activación: Pérdida de conectividad GPS, validador, etc.
+La tecnología apoya esta respuesta mediante el sistema de alertas meteorológicas que recibe automáticamente las alertas del servicio meteorológico, el sistema de ajuste de tiempos de ruta que recalcula automáticamente los tiempos estimados basado en las condiciones de tráfico en tiempo real, el sistema de comunicación masiva que envía mensajes a todos los usuarios de la app, y el sistema de gestión de recursos que muestra la disponibilidad de buses de reserva y conductores de reemplazo.
 
-Acciones:
-1. Alerta automática a Centro de Control
-2. Modo offline del bus (datos locales)
-3. Protocolo de respaldo manual
-4. Soporte técnico en ruta si es crítico
-5. Registro de incidente para análisis
+### 5.3 La operación ante fallas tecnológicas: la resiliencia del sistema
 
-### 5.4 Escenario de Emergencia (Accidente, Seguridad)
+El escenario de falla tecnológica es una **perturbación técnica**: un componente del sistema deja de funcionar, y la operación debe continuar con capacidad reducida o mediante procedimientos de respaldo. Las fallas tecnológicas son inevitables: el hardware se desgasta, el software tiene bugs, la conectividad se interrumpe, y los usuarios cometen errores. La pregunta no es si ocurrirá una falla: es **cómo el sistema responde cuando ocurre**.
 
-Activación: Botón de pánico, sensor impacto, llamada de emergencia
+La respuesta a este escenario se activa automáticamente cuando el sistema detecta una falla (el GPS de un bus deja de transmitir, el validador deja de aceptar tarjetas, la pantalla del conductor se apaga, la conectividad 4G se pierde). La respuesta incluye: (a) alerta automática al centro de control (el sistema identifica el bus, el dispositivo, la naturaleza de la falla, y el impacto en la operación); (b) modo offline del bus (el dispositivo a bordo almacena los datos localmente y continúa operando con funcionalidad reducida: el validador acepta tarjetas en modo offline, el GPS registra posiciones localmente, la pantalla muestra información almacenada); (c) protocolo de respaldo manual (el conductor activa el procedimiento de respaldo: recaudo en efectivo si el validador no funciona, registro manual de la ruta si el GPS no funciona, comunicación por radio si la pantalla no funciona); (d) soporte técnico en ruta (si la falla es crítica y no puede resolverse mediante el modo offline, el soporte técnico se dirige al bus para reparar o reemplazar el dispositivo); y (e) registro de incidente para análisis (la falla se documenta en el sistema de incidentes, se analiza la causa raíz, y se implementan medidas preventivas para evitar fallas similares).
 
-Acciones:
-1. Alerta inmediata a Centro de Control
-2. Notificación a autoridades (policía, bomberos, ambulancia)
-3. Activación de protocolo de evacuación
-4. Aislamiento de ruta si es necesario
-5. Servicios de contingencia
-6. Reporte y análisis post-incidente
+La tecnología apoya esta respuesta mediante el sistema de detección de fallas que monitorea el estado de todos los dispositivos en tiempo real, el sistema de modo offline que permite la operación continua con funcionalidad reducida, el sistema de procedimientos de respaldo que guía al conductor paso a paso, el sistema de gestión de recursos que asigna el soporte técnico más cercano al bus afectado, y el sistema de análisis de causa raíz que identifica patrones de fallas (por ejemplo: "el 60% de las fallas de validador ocurren en buses que operan más de 12 horas al día, lo que sugiere sobrecalentamiento").
+
+### 5.4 La operación ante emergencias: la respuesta a la crisis
+
+El escenario de emergencia (accidente, seguridad, incidente grave) es una **perturbación extrema**: un evento que pone en riesgo la vida de los pasajeros, la integridad del bus, o la seguridad pública. Las emergencias son raras pero críticas: una respuesta efectiva puede salvar vidas; una respuesta inefectiva puede causar tragedias. La tecnología no previene las emergencias: **las detecta, las alerta, y coordina la respuesta**.
+
+La respuesta a este escenario se activa automáticamente cuando el sistema detecta una emergencia (el botón de pánico del conductor es presionado, el sensor de impacto detecta una colisión, el sensor de puerta detecta una apertura en movimiento, el conductor realiza una llamada de emergencia). La respuesta incluye: (a) alerta inmediata al centro de control (el sistema identifica el bus, la ubicación GPS, la naturaleza de la emergencia, y el nivel de severidad); (b) notificación a las autoridades (policía, bomberos, ambulancia) mediante integración con los sistemas de emergencia locales (línea 123, cuerpo de bomberos, hospital más cercano); (c) activación del protocolo de evacuación (el sistema envía instrucciones al conductor sobre el procedimiento de evacuación, los puntos de reunión, y las medidas de seguridad); (d) aislamiento de la ruta (el sistema notifica a los usuarios que la ruta está suspendida, sugiere rutas alternativas, y reasigna los buses cercanos para cubrir la demanda); (e) servicios de contingencia (el sistema activa los buses de reserva para reemplazar el bus afectado, asigna conductores de reemplazo, y ajusta la programación para minimizar el impacto en los usuarios); y (f) reporte y análisis post-incidente (el sistema documenta todos los eventos del incidente, genera un reporte para las autoridades, y alimenta el análisis de mejora continua).
+
+La tecnología apoya esta respuesta mediante el botón de pánico que permite al conductor reportar una emergencia en menos de cinco segundos, el sensor de impacto que detecta automáticamente colisiones, el sistema de notificación a autoridades que envía automáticamente la alerta con la ubicación GPS y la naturaleza de la emergencia, el sistema de instrucciones de evacuación que muestra al conductor el procedimiento paso a paso, el sistema de comunicación masiva que notifica a todos los usuarios de la suspensión de la ruta, y el sistema de registro de incidente que documenta la cronología completa del evento para investigación.
 
 ---
 
-## 6. PROCEDIMIENTOS ESPECÍFICOS
+## 6. PROCEDIMIENTOS ESPECÍFICOS DE OPERACIÓN
 
-### 6.1 Apertura y Cierre de Servicio
+### 6.1 La apertura y cierre de servicio: los rituales operativos
 
-| Actividad | Responsable | Checklist |
-|-----------|-------------|-----------|
-| Inspección vehículo | Conductor | Luces, frenos, llantas, aceite |
-| Encendido sistema | Conductor | GPS online, validador funcionando |
-| Validación tarjeta | Conductor | Tarjeta de servicio activa |
-| Cierre de servicio | Conductor | Reporte de novedades, recaudo |
+La apertura y cierre de servicio son los **rituales operativos** que marcan el inicio y el fin de la operación de cada bus. No son simples formalidades administrativas: son **puntos de control** que aseguran que cada bus sale a la ruta en condiciones operativas y regresa del servicio con la información completa para la conciliación y el mantenimiento.
 
-### 6.2 Cambio de Turno
+La **apertura de servicio** incluye tres actividades: la inspección del vehículo, el encendido del sistema y la validación de la credencial. La inspección del vehículo es un checklist que el conductor completa antes de salir: verifica las luces (frontales, traseras, direccionales, de freno), los frenos (pedal firme, freno de mano funciona), las llantas (presión, desgaste, daños), los niveles de aceite y combustible, y los documentos del vehículo (SOAT vigente, revisión técnico-mecánica al día, póliza de seguro vigente). El encendido del sistema es la verificación de que los dispositivos tecnológicos están funcionando: el GPS tiene señal satelital (al menos 4 satélites visibles), el validador está encendido y conectado al backoffice, la pantalla del conductor muestra la información de ruta, y el sistema de comunicación está online. La validación de la credencial es la verificación de que el conductor está autorizado para operar ese bus en esa ruta: el conductor presenta su tarjeta de servicio en el validador, el sistema verifica su identidad, su autorización y su estado (si está suspendido, no puede operar), y registra el inicio de su turno.
 
-| Paso | Acción | Sistema |
-|------|--------|---------|
-| 1 | Conductor A finaliza turno | Registro hora fin |
-| 2 | Conductor B inicia turno | Validación credencial |
-| 3 | Transferencia de información | Estado del bus, recaudo parcial |
-| 4 | Continuación de servicio | Nueva asignación si aplica |
+La tecnología apoya la apertura de servicio mediante el sistema de checklist digital que guía al conductor paso a paso, registra automáticamente la hora de inicio, valida que todos los ítems estén completos, y bloquea el despacho si hay ítems críticos pendientes (por ejemplo: no puede salir si el SOAT está vencido o si el GPS no tiene señal). El sistema de checklist digital no es una imposición: es una **protección** que evita que un bus con fallas mecánicas o tecnológicas salga a la ruta, generando incidentes y poniendo en riesgo a los pasajeros.
 
----
+El **cierre de servicio** incluye tres actividades: el reporte de novedades, la entrega de recaudo y el checklist de post-operación. El reporte de novedades es la documentación de todos los eventos ocurridos durante el servicio: fallas mecánicas, incidentes con pasajeros, daños en el bus, problemas con los dispositivos tecnológicos, desvíos autorizados, retrasos. El sistema de reporte de novedades guía al conductor para documentar cada incidente con la hora, la ubicación, la naturaleza y el impacto. La entrega de recaudo es la confirmación de que el validador ha registrado todas las transacciones del día y que el monto total coincide con las transacciones reportadas. Si hay discrepancias, el sistema genera una alerta de investigación. El checklist de post-operación es la verificación de que el bus está en condiciones para el siguiente servicio: luces apagadas, puertas cerradas, dispositivos tecnológicos en modo de espera, y combustible suficiente para el siguiente servicio.
 
-## 7. CAPACITACIÓN Y MANTENIMIENTO
+### 6.2 El cambio de turno: la transferencia de responsabilidad
 
-| Tema | Audiencia | Periodicidad |
-|------|-----------|--------------|
-| Operación del sistema | Conductores | Mensual (refresher) |
-| Atención de incidentes | Supervisores | Trimestral |
-| Mantenimiento preventivo | Soporte técnico | Mensual |
-| Actualizaciones de sistema | Administradores | Según versión |
-| Seguridad informática | Todo el personal | Semestral |
+El cambio de turno es la **transferencia de responsabilidad** entre dos conductores que operan el mismo bus en turnos diferentes. Este proceso no es una simple entrega de llaves: es una **formalización de la información** donde el conductor saliente transmite al conductor entrante el estado del bus, el estado de la operación y el estado de la tecnología.
+
+El proceso de cambio de turno incluye cuatro pasos: el conductor saliente finaliza su turno en el sistema (registra la hora de fin, el kilometraje recorrido, el recaudo parcial, las novedades del turno), el conductor entrante inicia su turno (presenta su credencial en el validador, el sistema verifica su identidad y autorización), el sistema transfiere la información del turno (el conductor entrante recibe en su pantalla la información del bus: estado de los dispositivos, recaudo acumulado, novedades pendientes, y la ruta asignada para el siguiente servicio), y el sistema continúa la operación (asigna el nuevo conductor al bus, actualiza el registro de turnos, y notifica al centro de control del cambio).
+
+La tecnología apoya el cambio de turno mediante el sistema de registro de turnos que automatiza la transferencia de información, el sistema de validación de credenciales que verifica que el conductor entrante está autorizado, y el sistema de notificación que alerta al centro de control de cada cambio de turno para que el supervisor tenga visibilidad de quién está operando cada bus en cada momento.
 
 ---
 
-**Preparado por:** Innovadataco  
-**Fecha:** 15 de junio de 2026  
-**Aprobado por:** _________________________
+## 7. CAPACITACIÓN Y MANTENIMIENTO DE LA OPERACIÓN
+
+### 7.1 La capacitación como inversión operativa
+
+La capacitación no es un costo: es una **inversión operativa** que reduce incidentes, mejora la eficiencia, aumenta la satisfacción del usuario y prolonga la vida útil de la tecnología. Un conductor que no sabe usar el validador genera transacciones fallidas, retrasos en el embarque y quejas de los pasajeros. Un supervisor que no sabe interpretar las alertas del centro de control genera respuestas tardías, incidentes prolongados y pérdida de confianza. Un soporte técnico que no sabe diagnosticar el hardware genera visitas innecesarias a los buses, costos de mantenimiento elevados y tiempos de reparación prolongados.
+
+La capacitación se organiza en cinco programas, cada uno dirigido a una audiencia específica. La **capacitación en operación del sistema** está dirigida a los conductores y cubre el uso de los dispositivos a bordo (GPS, validador, pantalla, botón de emergencia), los procedimientos de pre-operación y post-operación, los protocolos de respuesta a incidentes, y las normas de seguridad. Esta capacitación se imparte mensualmente como refrescador, con evaluaciones prácticas que simulan situaciones reales (validador en modo offline, GPS sin señal, emergencia en ruta). La **capacitación en atención de incidentes** está dirigida a los supervisores de flota y cubre la clasificación de incidentes, la asignación de recursos, la comunicación con autoridades, y la documentación de incidentes. Esta capacitación se imparte trimestralmente con simulacros de incidentes donde los supervisores deben responder a escenarios predefinidos.
+
+La **capacitación en mantenimiento preventivo** está dirigida al soporte técnico y cubre el diagnóstico de hardware, la reparación de dispositivos, el reemplazo de componentes, y la actualización de software. Esta capacitación se imparte mensualmente con talleres prácticos donde los técnicos desarman y reensamblan los dispositivos, identifican fallas simuladas, y practican los procedimientos de reparación. La **capacitación en actualizaciones de sistema** está dirigida a los administradores de sistema y cubre la instalación de parches de seguridad, la actualización de versiones de software, la migración de bases de datos, y la prueba de compatibilidad. Esta capacitación se imparte según la frecuencia de actualizaciones del sistema (generalmente trimestral). La **capacitación en seguridad informática** está dirigida a todo el personal y cubre la identificación de amenazas (phishing, malware, ingeniería social), las prácticas de seguridad (contraseñas fuertes, bloqueo de pantalla, no compartir credenciales), y los procedimientos de respuesta ante una brecha de seguridad. Esta capacitación se imparte semestralmente con evaluaciones de simulación (por ejemplo: un correo de phishing simulado que mide cuántos empleados lo identifican correctamente).
+
+### 7.2 El mantenimiento preventivo como estrategia de resiliencia
+
+El mantenimiento preventivo no es una reparación después de la falla: es una **estrategia de resiliencia** que previene las fallas antes de que ocurran. La premisa del mantenimiento preventivo es que las fallas tecnológicas no son aleatorias: siguen patrones predecibles basados en el uso, el desgaste, la edad y las condiciones ambientales. Un validador que ha procesado 100.000 transacciones tiene una mayor probabilidad de falla que uno que ha procesado 10.000. Un GPS que ha operado 2 años en un bus sin aire acondicionado tiene una mayor probabilidad de falla por sobrecalentamiento que uno en un bus con aire acondicionado. Un dispositivo que ha sido expuesto a vibraciones constantes durante 12 horas al día tiene una mayor probabilidad de falla por desconexión de cables que uno que opera 6 horas al día.
+
+El mantenimiento preventivo se organiza en cuatro niveles. El **nivel 1 (inspección diaria)** es realizado por el conductor durante la pre-operación: verifica que los dispositivos estén encendidos, que tengan señal, que la pantalla muestre información correcta, y que el validador acepte tarjetas. Si detecta una anomalía, reporta al soporte técnico antes de salir a la ruta. El **nivel 2 (mantenimiento semanal)** es realizado por el soporte técnico en el terminal: inspecciona todos los dispositivos de los buses que terminaron su semana de operación, limpia los componentes, ajusta las conexiones, actualiza el software si hay parches disponibles, y reemplaza los componentes que muestran signos de desgaste. El **nivel 3 (mantenimiento mensual)** es realizado por el soporte técnico con apoyo del administrador de sistema: realiza un diagnóstico completo de cada dispositivo, mide el rendimiento (velocidad de procesamiento, latencia de comunicación, precisión del GPS), compara con los valores de referencia, identifica las tendencias de degradación, y planifica el reemplazo de componentes que se acercan al final de su vida útil. El **nivel 4 (mantenimiento trimestral)** es realizado por el administrador de sistema con apoyo externo si es necesario: actualiza las versiones mayores de software, realiza pruebas de carga del sistema, verifica la integridad de los respaldos, audita la seguridad del sistema, y actualiza la documentación técnica.
+
+La tecnología apoya el mantenimiento preventivo mediante el sistema de monitoreo de salud de dispositivos que mide continuamente el rendimiento de cada componente y alerta cuando los valores se desvían de los rangos normales, el sistema de gestión de mantenimiento que programa automáticamente las inspecciones y mantenimientos basado en el uso de cada dispositivo, y el sistema de predicción de fallas que utiliza algoritmos de machine learning para identificar patrones de degradación y predecir fallas antes de que ocurran.
+
+---
+
+**Documento elaborado por ZEUS — InnovaDataCo | 2026-06-15 | Versión 2.0**

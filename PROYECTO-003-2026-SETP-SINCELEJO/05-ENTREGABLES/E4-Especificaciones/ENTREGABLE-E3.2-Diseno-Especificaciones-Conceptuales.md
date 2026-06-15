@@ -1,333 +1,360 @@
-# ENTREGABLE 3.2 — DISEÑO Y ESPECIFICACIONES CONCEPTUALES
+# ENTREGABLE 3.2 — DISEÑO Y ESPECIFICACIONES CONCEPTUALES DE LOS SISTEMAS TECNOLÓGICOS DEL SETP
 
 **Proyecto:** Estructuración de los Componentes Tecnológicos del SETP Sincelejo  
 **Cliente:** Metro Sabanas S.A.S.  
 **Contratista:** Innovadataco  
 **Código:** PROYECTO-003-2026-SETP-SINCELEJO / E3.2  
-**Versión:** 1.0  
-**Fecha:** 15 de junio de 2026
-
----
-
-## 1. RESUMEN EJECUTIVO
-
-Este documento presenta el diseño conceptual y las especificaciones técnicas de los **4 sistemas tecnológicos del SETP Sincelejo**, definidos desde 2015 (Steer Davies Gleave + GSD+) y actualizados en 2022-2023.
-
-**Sistemas a especificar:**
-1. **SRC** — Sistema de Recaudo Centralizado (validadores, tarjetas, backoffice de recaudo)
-2. **SGCF** — Sistema de Gestión y Control de Flota (GPS, centro de control, reportes)
-3. **SIU** — Sistema de Información al Usuario (app, web, pantallas, call center)
-4. **SST** — Sistema de Seguridad de Transacciones (cifrado, certificación, auditoría)
-
-**Escala:** 46 vehículos (proceso de contratación 2023 con MinTransporte)
-
-**Normativa aplicable:** Resolución 20203040034065 del MinTransporte (2020)
-
-> **Alcance:** Esta consultoría cubre exclusivamente la **estructuración** (diseño conceptual y especificación). **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
-
----
-
-## 2. ESPECIFICACIONES DE SUBSISTEMAS
-
-### 2.1 Subsistema de Gestión de Flota
-
-#### 2.1.1 Hardware Onboard
-
-| Componente | Especificación mínima | Especificación recomendada |
-|------------|----------------------|---------------------------|
-| **CPU** | ARM Cortex-A53, 4 núcleos @ 1.2 GHz | ARM Cortex-A72, 4 núcleos @ 1.5 GHz |
-| **RAM** | 2 GB LPDDR4 | 4 GB LPDDR4 |
-| **Almacenamiento** | 32 GB eMMC | 64 GB eMMC |
-| **GPS** | U-Blox NEO-M8N, GPS/GLONASS | U-Blox NEO-M9N, multi-GNSS |
-| **4G/LTE** | Cat-4, 150 Mbps down | Cat-6, 300 Mbps down |
-| **WiFi** | 802.11n | 802.11ac dual-band |
-| **Bluetooth** | 4.2 | 5.0 |
-| **Entradas digitales** | 4x GPIO | 8x GPIO |
-| **Entradas analógicas** | 2x ADC | 4x ADC |
-| **Comunicación vehículo** | RS-485 | RS-485 + CAN Bus |
-| **Alimentación** | 9-36V DC | 9-36V DC con protección ISO 7637 |
-| **Temperatura** | -10°C a +60°C | -20°C a +70°C |
-| **Protección** | IP54 | IP65 |
-| **Certificación** | FCC, CE | FCC, CE, Anatel (si aplica) |
-
-#### 2.1.2 Software Onboard
-
-| Componente | Especificación |
-|------------|---------------|
-| **Sistema Operativo** | Yocto Linux 4.0 o Ubuntu Core 22 |
-| **Container Runtime** | Docker CE |
-| **Orquestación** | K3s (Kubernetes ligero) |
-| **Base de datos local** | SQLite / DuckDB |
-| **Mensajería** | MQTT Client (Eclipse Paho) |
-| **VPN** | WireGuard |
-| **Actualizaciones OTA** | Mender / RAUC |
-
-#### 2.1.3 Funciones del Sistema Onboard
-
-```python
-# Pseudocódigo de funciones principales
-
-class OnboardUnit:
-    def track_location(self):
-        """Transmite posición GPS cada 10-30 segundos"""
-        pass
-    
-    def monitor_doors(self):
-        """Detecta apertura/cierre de puertas"""
-        pass
-    
-    def count_passengers(self):
-        """Cuenta embarques/desembarques"""
-        pass
-    
-    def validate_fare(self):
-        """Comunicación con validador de tarifas"""
-        pass
-    
-    def display_route_info(self):
-        """Muestra información en pantalla conductor"""
-        pass
-    
-    def emergency_button(self):
-        """Gestiona botón de pánico"""
-        pass
-    
-    def offline_mode(self):
-        """Operación sin conectividad, sincronización posterior"""
-        pass
-```
-
----
-
-### 2.2 Subsistema Centro de Control (CVP)
-
-#### 2.2.1 Infraestructura Servidor
-
-| Componente | Especificación mínima | Especificación recomendada |
-|------------|----------------------|---------------------------|
-| **Servidor aplicación** | 2x VMs, 4 vCPU, 16 GB RAM | 2x VMs, 8 vCPU, 32 GB RAM |
-| **Base de datos** | PostgreSQL 14, 1 instancia | PostgreSQL 15, cluster HA |
-| **Almacenamiento** | 500 GB SSD | 2 TB SSD NVMe, RAID 10 |
-| **Red** | 1 Gbps, VLAN única | 10 Gbps, VLAN segregada |
-| **Firewall** | Básico | Perimetral + WAF |
-| **UPS** | 1 kVA, 15 min | 2 kVA, 30 min |
-| **Aire acondicionado** | No requerido | Split 12.000 BTU |
-
-#### 2.2.2 Software del Centro de Control
-
-| Módulo | Función | Tecnología |
-|--------|---------|-----------|
-| **Visualización** | Mapa en tiempo real, tableros | Grafana, Mapbox, Leaflet |
-| **Alarmas** | Detección de eventos, notificaciones | Prometheus Alertmanager |
-| **Reportes** | Generación de informes operativos | Apache Superset / Metabase |
-| **Comunicaciones** | Mensajería con buses | MQTT Broker (EMQ X / Mosquitto) |
-| **Video** | CCTV, videovigilancia | ZoneMinder / Shinobi |
-| **API** | Integraciones externas | Node.js / Python FastAPI |
-
----
-
-### 2.3 Subsistema de Pago Electrónico
-
-#### 2.3.1 Validador a Bordo
-
-| Característica | Especificación |
-|----------------|---------------|
-| **Pantalla** | LCD TFT 5" táctil, 800x480 |
-| **Lector NFC** | ISO 14443 A/B, MIFARE DESFire EV2 |
-| **Lector QR** | Cámara 2D, lectura < 200 ms |
-| **Procesador** | Qualcomm Snapdragon 450 o equivalente |
-| **RAM** | 2 GB |
-| **Almacenamiento** | 16 GB eMMC |
-| **Conectividad** | 4G/LTE, WiFi, Bluetooth |
-| **Audio** | Buzzer + altavoz |
-| **Indicadores LED** | Rojo/Verde/Azul para estados |
-| **Alimentación** | 12V DC, 2A |
-| **Temperatura** | 0°C a +50°C |
-| **Certificación** | PCI PTS 5.x, EMVCo |
-
-#### 2.3.2 Flujo de Transacción
-
-```
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│  Usuario │───>│ Validador│───>│ Backoffice│───>│  Pasarela │
-│  Tarjeta │ NFC│  a Bordo │ 4G │   Pagos   │ TLS│   Pagos   │
-└──────────┘    └──────────┘    └──────────┘    └────┬─────┘
-                                                      │
-                                              ┌───────┴───────┐
-                                              │  Banco / ACH  │
-                                              │  (Redeban)    │
-                                              └───────────────┘
-```
-
-#### 2.3.3 Backoffice de Pagos
-
-| Función | Descripción |
-|---------|-------------|
-| **Conciliación** | Emparejamiento de transacciones con banco |
-| **Reportes** | Ingresos por línea, bus, conductor |
-| **Subsidios** | Gestión de subsidios de transporte |
-| **Tarifas** | Configuración de tarifas y excepciones |
-| **Blacklist** | Tarjetas bloqueadas o reportadas |
-
----
-
-### 2.4 Subsistema de Información al Usuario
-
-#### 2.4.1 Aplicación Móvil
-
-| Característica | Especificación |
-|----------------|---------------|
-| **Plataformas** | iOS 14+, Android 8+ |
-| **Tecnología** | Flutter / React Native |
-| **Funciones** | Rutas, tiempos, recargas, reportes |
-| **Notificaciones** | Push (Firebase Cloud Messaging) |
-| **Accesibilidad** | WCAG 2.1 nivel AA |
-
-#### 2.4.2 Pantallas en Paradas
-
-| Característica | Especificación |
-|----------------|---------------|
-| **Tipo** | LED RGB full color o e-ink (opción solar) |
-| **Tamaño** | 32" o 43" (según afluencia) |
-| **Conectividad** | 4G/WiFi / Ethernet |
-| **Alimentación** | 110-240V AC / Panel solar + batería |
-| **Información** | Tiempo estimado, próximos buses, alertas |
-| **Actualización** | Tiempo real vía MQTT/WebSocket |
-
----
-
-## 3. ESPECIFICACIONES DE INTERFACES
-
-### 3.1 API del Sistema
-
-```yaml
-# Especificación OpenAPI 3.0
-openapi: 3.0.0
-info:
-  title: SETP Sincelejo API
-  version: 1.0.0
-paths:
-  /buses:
-    get:
-      summary: Lista de buses en operación
-      parameters:
-        - name: route
-          in: query
-          schema:
-            type: string
-      responses:
-        200:
-          description: Lista de buses
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Bus'
-  
-  /buses/{id}/location:
-    get:
-      summary: Ubicación en tiempo real
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Coordenadas GPS
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Location'
-
-components:
-  schemas:
-    Bus:
-      type: object
-      properties:
-        id: { type: string }
-        plate: { type: string }
-        route: { type: string }
-        status: { type: string, enum: [active, inactive, maintenance] }
-    Location:
-      type: object
-      properties:
-        lat: { type: number }
-        lng: { type: number }
-        timestamp: { type: string, format: date-time }
-        speed: { type: number }
-```
-
-### 3.2 Protocolos de Comunicación
-
-| Protocolo | Uso | Puerto |
-|-----------|-----|--------|
-| **MQTT** | Telemetría buses | 8883 (TLS) |
-| **HTTPS/REST** | API pública y privada | 443 |
-| **WebSocket** | Actualizaciones en tiempo real | 443 |
-| **NMEA 0183** | GPS | Serial |
-| **SAE J1939** | Datos vehículo (CAN) | CAN Bus |
-| **Modbus RTU** | Sensores industriales | RS-485 |
-
----
-
-## 4. ESPECIFICACIONES DE SEGURIDAD
-
-### 4.1 Cifrado
-
-| Capa | Método | Implementación |
-|------|--------|----------------|
-| **Comunicación** | TLS 1.3 | Certificados Let's Encrypt |
-| **Datos sensibles** | AES-256-GCM | Librería libsodium |
-| **Contraseñas** | Argon2id | Hashing seguro |
-| **Backup** | AES-256-CBC | Cifrado en reposo |
-
-### 4.2 Autenticación
-
-| Componente | Método |
-|------------|--------|
-| **Usuarios** | OAuth 2.0 + MFA |
-| **API** | JWT (RS256) |
-| **Dispositivos** | Certificados X.509 |
-| **Conductores** | Tarjeta NFC + PIN |
-
-### 4.3 Auditoría
-
-| Evento | Registro | Retención |
-|--------|----------|-----------|
-| **Inicio sesión** | Usuario, IP, timestamp | 2 años |
-| **Transacciones** | ID, monto, estado | 5 años |
-| **Cambios config** | Usuario, cambio, anterior | 2 años |
-| **Alertas** | Tipo, severidad, respuesta | 1 año |
-
----
-
-## 5. PLAN DE MIGRACIÓN Y ROLLOUT
-
-### 5.1 Fases de Implementación
-
-| Fase | Duración | Alcance |
-|------|----------|---------|
-| **Fase 1** | Mes 1-2 | Infraestructura cloud + centro de control |
-| **Fase 2** | Mes 3-4 | Instalación onboard 10 buses piloto |
-| **Fase 3** | Mes 5-6 | Rollout flota completa (46 vehículos) |
-| **Fase 4** | Mes 7-8 | Pago electrónico + app usuarios |
-| **Fase 5** | Mes 9-12 | Optimización, integraciones, analytics |
-
-### 5.2 Estrategia de Go-Live
-
-```
-Semana -2: Capacitación conductores y supervisores
-Semana -1: Pruebas integrales en ambiente de producción
-Semana  0: Go-live con monitoreo intensivo 24/7
-Semana +1: Ajustes, resolución de incidentes
-Semana +2: Operación normal, reporte de estabilización
-```
-
----
-
-**Preparado por:** Innovadataco  
+**Versión:** 2.0 — Reescritura argumentada y fluida  
 **Fecha:** 15 de junio de 2026  
-**Aprobado por:** _________________________
+**Elaborado por:** ZEUS — InnovaDataCo  
+**Revisión:** V2.0 — Borrador para validación del CEO
+
+---
+
+## RESUMEN EJECUTIVO
+
+El presente documento establece el diseño conceptual y las especificaciones técnicas de los cuatro sistemas tecnológicos del Sistema Estratégico de Transporte Público de Sincelejo (SETP), definidos desde 2015 en el estudio de prefactibilidad de Steer Davies Gleave + GSD+ y actualizados en la consultoría de 2022-2023 de A4 Asociados. Estas especificaciones no son un catálogo de productos comerciales: son una **descripción técnica de los componentes, interfaces, protocolos y estándares** que deberán cumplir los sistemas que se contraten en el proceso de licitación, para que Metro Sabanas S.A.S. pueda evaluar las propuestas de los proveedores con criterios objetivos, medibles y verificables.
+
+**Hallazgo principal:** Los cuatro sistemas (SRC, SGCF, SIU, SST) fueron diseñados en 2015 con una arquitectura de comunicaciones entre el bus y el centro de control basada en radio convencional y transmisión de datos por celular, con procesamiento de transacciones de pago en batch y visualización de información al usuario mediante pantallas LED en paradas y una aplicación web básica. En 2022-2023, la consultoría de A4 Asociados actualizó el modelo de transporte y los perfiles de flota, pero no actualizó las especificaciones tecnológicas de los cuatro sistemas. Esto significa que las especificaciones originales de 2015, aunque conceptualmente sólidas, requieren una **actualización tecnológica** para incorporar los avances de los últimos diez años en: conectividad 4G/LTE y próxima 5G, computación edge en dispositivos a bordo, contenedores y orquestación de microservicios, cifrado de extremo a extremo, APIs REST abiertas, y estándares de accesibilidad WCAG 2.1.
+
+**Estructura del documento:** Este documento presenta las especificaciones conceptuales de cada sistema en tres niveles: (a) el hardware a bordo del bus, que es la interfaz física entre el sistema y el conductor; (b) el software a bordo del bus, que es la lógica de procesamiento local que permite la operación en modo offline; y (c) el centro de control, que es la plataforma centralizada de monitoreo, gestión, conciliación y reporte. Para cada sistema, se definen las especificaciones mínimas (que todo proveedor debe cumplir) y las especificaciones recomendadas (que un proveedor de clase mundial debería cumplir). Las especificaciones mínimas aseguran que el sistema sea funcional; las especificaciones recomendadas aseguran que el sistema sea eficiente, escalable y futuro.
+
+**Alcance:** Este documento cubre exclusivamente la **estructuración** (diseño conceptual y especificación). No incluye la implementación real del hardware, la instalación de los dispositivos, la configuración del software, la contratación de los proveedores ni la puesta en marcha. El objetivo final es producir los **Estudios Previos ITS** que alimentarán el proceso de licitación/contratación del componente tecnológico del SETP Sincelejo.
+
+---
+
+## 1. CONTEXTO Y ANTECEDENTES
+
+### 1.1 El propósito de las especificaciones conceptuales
+
+Las especificaciones conceptuales no son un manual de instalación ni un diseño detallado de ingeniería: son un **marco técnico de referencia** que define qué debe hacer el sistema, cómo debe hacerlo, y con qué nivel de calidad. Este marco sirve a tres propósitos: (a) para Metro Sabanas S.A.S., es la base para evaluar las propuestas de los proveedores en el proceso de licitación, permitiendo comparar ofertas técnicamente en términos de cumplimiento de especificaciones; (b) para los proveedores, es la guía de requisitos que debe cumplir su propuesta técnica, eliminando ambigüedades y suposiciones; y (c) para los auditores y reguladores, es la evidencia de que la contratación se hizo con criterios técnicos claros, medibles y objetivos.
+
+La diferencia entre especificaciones conceptuales y especificaciones detalladas es importante. Las especificaciones conceptuales definen el **qué** y el **cómo a nivel de arquitectura**: qué sistemas se requieren, qué funciones deben cumplir, qué interfaces deben tener, qué protocolos deben usar, y qué estándares deben seguir. Las especificaciones detalladas definen el **cómo a nivel de implementación**: qué modelo exacto de CPU, qué versión exacta de software, qué configuración exacta de red, qué proveedor exacto de hardware. Este documento se limita a las especificaciones conceptuales porque, en la fase de estructuración, no se ha seleccionado un proveedor y no se conoce la tecnología específica que se implementará. El proveedor seleccionado en la licitación será el responsable de desarrollar las especificaciones detalladas basado en su solución propuesta.
+
+### 1.2 Los cuatro sistemas como arquitectura integrada
+
+Los cuatro sistemas (SRC, SGCF, SIU, SST) no son silos independientes: son **componentes de una arquitectura integrada** donde cada sistema depende de los otros para cumplir su propósito. El SGCF (Gestión de Flota) depende del GPS para saber dónde están los buses, pero ese GPS también alimenta al SIU (Información al Usuario) para mostrar los tiempos de llegada. El SRC (Recaudo Centralizado) depende del validador para procesar los pagos, pero ese validador también alimenta al SGCF para contar los pasajeros embarcados. El SST (Seguridad de Transacciones) protege todas las transacciones del SRC, pero también protege las comunicaciones entre el SGCF y el SIU. Esta interdependencia significa que las especificaciones de cada sistema no pueden definirse en aislamiento: deben definirse en términos de **interfaces, protocolos y estándares comunes** que aseguren la interoperabilidad.
+
+La arquitectura de referencia del SETP Sincelejo, definida en 2015, estableció una división clara entre los sistemas "a bordo" (onboard) y los sistemas "en tierra" (backoffice). Los sistemas a bordo son los dispositivos físicos que van en el bus: el GPS, el validador, la pantalla del conductor, la unidad de comunicaciones. Los sistemas en tierra son las plataformas centralizadas que se ejecutan en el centro de control: el servidor de gestión de flota, el backoffice de pagos, el portal web, la base de datos. La comunicación entre a bordo y en tierra se realiza mediante una red celular (4G/LTE) con protocolos de mensajería (MQTT) y sincronización de datos (HTTPS/REST). Esta arquitectura de "edge + cloud" es la base sobre la cual se construyen las especificaciones conceptuales de este documento.
+
+---
+
+## 2. ESPECIFICACIONES CONCEPTUALES DEL SISTEMA DE GESTIÓN Y CONTROL DE FLOTA (SGCF)
+
+### 2.1 La unidad de procesamiento a bordo: el cerebro del bus
+
+La unidad de procesamiento a bordo, conocida como Unidad de Bordo (Onboard Unit, OBU), es el **cerebro tecnológico del bus**. No es un simple dispositivo de rastreo: es una **plataforma de computación edge** que procesa datos localmente, toma decisiones autónomas, y sincroniza con el centro de control cuando la conectividad está disponible. La OBU es el componente más crítico del SGCF porque es la interfaz entre el bus y el sistema: si la OBU falla, el bus no puede ser rastreado, el conductor no recibe información, el validador no puede comunicarse, y el SIU no puede mostrar los tiempos de llegada.
+
+Las especificaciones de la OBU se definen en dos niveles: mínimas y recomendadas. Las especificaciones mínimas aseguran que la OBU sea funcional en condiciones normales de operación. Las especificaciones recomendadas aseguran que la OBU sea robusta, eficiente y adaptable a condiciones adversas.
+
+**Procesador (CPU):** El procesador es el componente que ejecuta el software de la OBU. Una especificación mínima de un procesador ARM Cortex-A53 con 4 núcleos a 1.2 GHz es suficiente para ejecutar las funciones básicas de rastreo GPS, monitoreo de puertas, conteo de pasajeros y comunicación con el centro de control. Sin embargo, esta especificación mínima no permite ejecutar funciones avanzadas como procesamiento de video (para conteo de pasajeros por visión artificial), aprendizaje automático (para predicción de demanda en ruta), o virtualización (para ejecutar múltiples sistemas en contenedores). Una especificación recomendada de un procesador ARM Cortex-A72 con 4 núcleos a 1.5 GHz proporciona un margen de capacidad para funciones avanzadas, reduce el consumo de energía por tarea procesada (eficiencia energética), y extiende la vida útil del dispositivo antes de que requiera actualización.
+
+**Memoria RAM:** La RAM es la memoria de trabajo donde el procesador almacena temporalmente los datos y el código en ejecución. Una especificación mínima de 2 GB de RAM LPDDR4 es suficiente para ejecutar el sistema operativo, el middleware de comunicaciones, y las aplicaciones de rastreo y monitoreo. Sin embargo, con 2 GB de RAM, la OBU no puede ejecutar múltiples aplicaciones simultáneamente sin degradación del rendimiento. Una especificación recomendada de 4 GB de RAM LPDDR4 permite ejecutar múltiples contenedores Docker (por ejemplo: uno para el rastreo GPS, otro para el monitoreo de puertas, otro para la comunicación con el validador), mantiene el sistema responsivo bajo carga, y proporciona margen para futuras actualizaciones de software que requieran más memoria.
+
+**Almacenamiento:** El almacenamiento es la memoria persistente donde se guardan el sistema operativo, el software de aplicaciones, los datos de configuración, y los datos de operación en modo offline. Una especificación mínima de 32 GB de almacenamiento eMMC es suficiente para el sistema operativo (aproximadamente 8 GB), el software de aplicaciones (aproximadamente 4 GB), y los datos de operación de un día (aproximadamente 2 GB para rastreo GPS, transacciones de validador, y registros de eventos). Sin embargo, con 32 GB, el almacenamiento se llena rápidamente si el bus opera en modo offline por varios días (por ejemplo, durante una falla de conectividad celular) o si se almacenan datos de video de CCTV. Una especificación recomendada de 64 GB de almacenamiento eMMC proporciona margen para almacenar hasta una semana de datos en modo offline, permite almacenar logs de diagnóstico extendidos, y reduce la frecuencia de mantenimiento para limpieza de almacenamiento.
+
+**GPS:** El GPS es el componente que determina la posición, velocidad y dirección del bus. Una especificación mínima de un módulo U-Blox NEO-M8N que soporte GPS y GLONASS es suficiente para obtener una posición precisa de ±5 metros en condiciones normales de visibilidad satelital. Sin embargo, este módulo no tiene la sensibilidad para operar en túneles, bajo pasos elevados, o en zonas urbanas con edificios altos que bloquean las señales satelitales. Una especificación recomendada de un módulo U-Blox NEO-M9N que soporte múltiples sistemas de navegación (GPS, GLONASS, Galileo, BeiDou) proporciona mayor precisión (±2 metros), mayor sensibilidad (operación en condiciones de visibilidad reducida), y mayor redundancia (si un sistema de navegación falla, el módulo puede usar otro).
+
+**Conectividad 4G/LTE:** La conectividad celular es el enlace de comunicación entre la OBU y el centro de control. Una especificación mínima de un módulo 4G/LTE Cat-4 con velocidad de descarga de 150 Mbps es suficiente para transmitir datos de rastreo GPS (aproximadamente 1 KB cada 10 segundos), transacciones de validador (aproximadamente 500 bytes cada transacción), y actualizaciones de software (aproximadamente 100 MB cada actualización). Sin embargo, esta velocidad no es suficiente para transmitir video de CCTV en tiempo real (que requiere 2-4 Mbps por cámara) o para actualizaciones de software grandes (que con 150 Mbps toman 10-15 minutos). Una especificación recomendada de un módulo 4G/LTE Cat-6 con velocidad de descarga de 300 Mbps y soporte de agregación de portadoras (CA) permite transmitir video de CCTV, reduce el tiempo de actualización de software a 5-7 minutos, y proporciona mayor estabilidad de conexión en zonas con cobertura celular irregular.
+
+**WiFi:** El WiFi es la interfaz de comunicación local entre la OBU y otros dispositivos del bus (validador, pantalla del conductor, pantallas de pasajeros, cámaras CCTV). Una especificación mínima de WiFi 802.11n (2.4 GHz, velocidad de 150 Mbps) es suficiente para comunicación con un validador y una pantalla. Sin embargo, esta especificación no soporta múltiples dispositivos simultáneos con alta demanda de ancho de banda (por ejemplo, 4 cámaras CCTV de 2 Mbps cada una). Una especificación recomendada de WiFi 802.11ac dual-band (2.4 GHz y 5 GHz, velocidad de 867 Mbps) permite conectar múltiples dispositivos de alta demanda, reduce la interferencia en la banda de 2.4 GHz (que está saturada en zonas urbanas), y proporciona menor latencia para aplicaciones en tiempo real.
+
+**Bluetooth:** El Bluetooth es la interfaz de comunicación de corto alcance para configuración, diagnóstico y comunicación con dispositivos portátiles. Una especificación mínima de Bluetooth 4.2 es suficiente para configuración inicial y diagnóstico básico. Sin embargo, Bluetooth 4.2 tiene un alcance limitado (aproximadamente 10 metros) y una velocidad de transmisión baja (aproximadamente 1 Mbps). Una especificación recomendada de Bluetooth 5.0 proporciona mayor alcance (hasta 40 metros en línea visual), mayor velocidad (2 Mbps), y menor consumo de energía, lo que permite diagnósticos remotos desde el exterior del bus y comunicación con sensores de bajo consumo (beacons, sensores de temperatura).
+
+**Entradas/Salidas Digitales (GPIO):** Las entradas y salidas digitales son las interfaces físicas entre la OBU y los sensores y actuadores del bus (puertas, luces, botón de pánico, sensores de impacto). Una especificación mínima de 4 entradas digitales es suficiente para monitorear las puertas delanteras y traseras, y el botón de pánico. Sin embargo, con solo 4 entradas, no se pueden monitorear sensores adicionales (luces de freno, luces direccionales, sensor de temperatura del motor, sensor de nivel de combustible). Una especificación recomendada de 8 entradas digitales permite monitorear todos los sensores relevantes del bus, proporcionando una visión completa del estado del vehículo.
+
+**Entradas Analógicas (ADC):** Las entradas analógicas son las interfaces para sensores que proporcionan valores continuos (temperatura, presión, voltaje). Una especificación mínima de 2 entradas analógicas es suficiente para monitorear la temperatura del motor y el voltaje de la batería. Una especificación recomendada de 4 entradas analógicas permite monitorear adicionalmente la presión de aceite y la temperatura del aceite, proporcionando información valiosa para el mantenimiento preventivo del vehículo.
+
+**Comunicación Vehículo:** La comunicación con el vehículo es la interfaz entre la OBU y el sistema de control electrónico del bus (ECU). Una especificación mínima de RS-485 es suficiente para comunicación con sistemas de control simples. Sin embargo, RS-485 es un protocolo de comunicación antiguo que no proporciona acceso a la gran cantidad de datos que el ECU moderno genera (velocidad del motor, torque, consumo de combustible, códigos de falla, presión de frenos). Una especificación recomendada de RS-485 + CAN Bus permite acceder a todos los datos del ECU mediante el protocolo SAE J1939 (estándar de la industria para buses comerciales), proporcionando información detallada del estado del vehículo para el mantenimiento predictivo y la seguridad operativa.
+
+**Alimentación:** La alimentación es la fuente de energía que alimenta la OBU. Una especificación mínima de 9-36V DC es suficiente para adaptarse a la fluctuación del voltaje de la batería del bus (12V en reposo, 14.4V en carga, picos de hasta 24V durante el arranque). Sin embargo, esta especificación no protege contra picos de voltaje transitorios que pueden dañar la electrónica (por ejemplo, un pico de 80V durante el arranque en frío). Una especificación recomendada de 9-36V DC con protección ISO 7637 (estándar de la industria automotriz para inmunidad a transitorios de voltaje) protege la OBU contra picos de voltaje, inversión de polaridad, y ruido electromagnético, aumentando la confiabilidad y la vida útil del dispositivo.
+
+**Temperatura:** La temperatura de operación define el rango de temperaturas en el que la OBU funciona correctamente. Una especificación mínima de -10°C a +60°C es suficiente para la mayoría de las condiciones climáticas de Sincelejo (temperatura promedio de 27°C, máxima de 35°C). Sin embargo, esta especificación no cubre condiciones extremas: un bus estacionado al sol puede alcanzar 70°C en el interior, y un bus en operación nocturna puede enfrentar temperaturas de 15°C. Una especificación recomendada de -20°C a +70°C cubre todas las condiciones climáticas de Sincelejo, incluyendo días de calor extremo y noches frías, y proporciona margen para condiciones no previstas.
+
+**Protección (IP):** El grado de protección IP (Ingress Protection) define la resistencia de la OBU al polvo y al agua. Una especificación mínima de IP54 (protegido contra polvo limitado y salpicaduras de agua) es suficiente para proteger contra la limpieza del bus con manguera y el polvo de las carreteras. Sin embargo, IP54 no protege contra lluvias torrenciales o inundaciones (que pueden ocurrir durante la temporada de lluvias en Sincelejo). Una especificación recomendada de IP65 (protegido contra polvo total y chorros de agua) asegura que la OBU sobreviva a condiciones de lluvia intensa, lavado a presión, y salpicaduras de agua de charcos, reduciendo la probabilidad de fallas por humedad.
+
+**Certificación:** La certificación es la evidencia de que la OBU cumple con estándares de seguridad, EMC (compatibilidad electromagnética) e interoperabilidad. Una especificación mínima de FCC (Estados Unidos) y CE (Unión Europea) es suficiente para demostrar que la OBU cumple con los estándares básicos de emisiones electromagnéticas y seguridad eléctrica. Sin embargo, estas certificaciones no son específicas para la industria automotriz ni para las regulaciones colombianas. Una especificación recomendada que incluya Anatel (Brasil) y certificaciones de la industria automotriz (E-Mark, ISO 16750) proporciona mayor confianza en que la OBU ha sido probada en condiciones de operación similar a las de Colombia (clima tropical, carreteras irregulares, alto uso de vehículos comerciales).
+
+### 2.2 El software a bordo: la lógica de operación en el edge
+
+El software a bordo de la OBU no es una aplicación monolítica: es una **arquitectura de microservicios** donde cada función del sistema se ejecuta en un contenedor independiente, aislado de los demás, y orquestado por un sistema de contenedores ligero. Esta arquitectura proporciona tres ventajas: (a) **aislamiento de fallas**, si un contenedor falla (por ejemplo, el de rastreo GPS), los otros contenedores (monitoreo de puertas, conteo de pasajeros) continúan funcionando; (b) **actualización independiente**, cada contenedor puede actualizarse sin afectar a los demás, permitiendo parches de seguridad y nuevas funciones sin detener el sistema; y (c) **escalabilidad**, si una función requiere más recursos (por ejemplo, el conteo de pasajeros por visión artificial requiere más CPU), se puede asignar más recursos a ese contenedor sin afectar a los demás.
+
+**Sistema Operativo:** El sistema operativo de la OBU debe ser una distribución Linux optimizada para dispositivos embebidos, con un footprint reducido (menor consumo de almacenamiento y memoria), soporte de contenedores, y herramientas de actualización Over-The-Air (OTA). Las opciones viables son Yocto Linux 4.0 (una distribución construida a medida para el hardware específico) o Ubuntu Core 22 (una distribución comercial con soporte de seguridad y actualizaciones automatizadas). Yocto Linux proporciona el máximo control sobre la configuración del sistema, pero requiere conocimiento especializado para construir y mantener. Ubuntu Core proporciona una solución más estandarizada, con soporte de Canonical, actualizaciones de seguridad automáticas, y una tienda de aplicaciones (Snap Store) que simplifica la distribución de software.
+
+**Container Runtime:** El runtime de contenedores es la capa que ejecuta los contenedores en la OBU. Docker CE es la opción estándar de la industria, con amplia documentación, comunidad activa, y soporte de múltiples arquitecturas de hardware (ARM, x86). Docker CE permite empaquetar cada aplicación del SGCF (rastreo GPS, monitoreo de puertas, conteo de pasajeros, comunicación con validador, pantalla del conductor, botón de emergencia) en un contenedor independiente, con sus dependencias, configuraciones y recursos asignados.
+
+**Orquestación:** La orquestación de contenedores es la capa que gestiona el ciclo de vida de los contenedores: inicio, parada, reinicio, balanceo de carga, y recuperación ante fallas. K3s es una distribución ligera de Kubernetes (el estándar de orquestación de contenedores) diseñada para dispositivos de recursos limitados como la OBU. K3s proporciona todas las funciones de Kubernetes (inicio automático de contenedores, reinicio ante fallas, balanceo de carga, descubrimiento de servicios) pero con un consumo de recursos significativamente menor (menor a 512 MB de RAM y menor a 200 MB de almacenamiento para el motor de orquestación).
+
+**Base de Datos Local:** La base de datos local es el componente que almacena los datos de operación cuando el bus está en modo offline (sin conectividad celular). SQLite es la opción mínima: una base de datos embebida, sin servidor, que almacena datos en un archivo local, con un footprint de menos de 1 MB. SQLite es suficiente para almacenar datos de rastreo GPS, transacciones de validador, y registros de eventos. Sin embargo, SQLite no es eficiente para consultas analíticas complejas (por ejemplo, "calcular el promedio de velocidad de los últimos 30 días") ni para almacenar grandes volúmenes de datos (más de 1 GB). DuckDB es una opción recomendada: una base de datos embebida diseñada para análisis analítico, con rendimiento comparable a bases de datos columnares (como ClickHouse o Apache Druid), pero con la simplicidad de SQLite. DuckDB permite ejecutar consultas analíticas complejas localmente en la OBU, generando reportes de rendimiento y eficiencia sin necesidad de conectividad con el centro de control.
+
+**Mensajería:** El cliente de mensajería es el componente que publica datos en el centro de control y recibe comandos del centro de control. MQTT (Message Queuing Telemetry Transport) es el protocolo estándar de la industria para IoT (Internet de las Cosas): ligero, bidireccional, con soporte de calidad de servicio (QoS) que garantiza la entrega de mensajes, y con soporte de TLS para cifrado. Eclipse Paho es la implementación de referencia de cliente MQTT, con soporte para múltiples lenguajes de programación (Python, C, Java, JavaScript) y múltiples plataformas (Linux, Windows, Android).
+
+**VPN:** La VPN (Virtual Private Network) es el túnel cifrado que protege la comunicación entre la OBU y el centro de control. WireGuard es la tecnología de VPN moderna, con un código base de menos de 4.000 líneas (comparado con más de 400.000 líneas de OpenVPN), mayor rendimiento (hasta 5 veces más rápida que IPsec), y configuración más simple. WireGuard crea una red privada virtual entre cada OBU y el centro de control, de modo que toda la comunicación (MQTT, HTTPS, SSH) viaja cifrada y autenticada, protegida contra interceptación y spoofing.
+
+**Actualizaciones OTA:** Las actualizaciones Over-The-Air (OTA) son el mecanismo para actualizar el software de la OBU sin necesidad de intervención física. Mender es una plataforma de actualización OTA de código abierto, con soporte de A/B updates (dos particiones de sistema: si la actualización falla, el sistema vuelve automáticamente a la partición anterior), rollback automático, y gestión de versiones. RAUC (Robust Auto-Update Controller) es una alternativa ligera, integrada en Yocto Linux, con funciones similares de A/B updates y rollback. La capacidad de actualización OTA es crítica porque permite aplicar parches de seguridad, nuevas funciones y correcciones de bugs sin detener la operación del bus ni enviar técnicos a cada vehículo.
+
+### 2.3 Las funciones del sistema a bordo: el ciclo de vida de la operación
+
+El software a bordo de la OBU implementa un conjunto de funciones que cubren el ciclo completo de la operación del bus: desde el arranque del motor hasta el cierre del servicio. Cada función es un microservicio independiente que opera autónomamente, pero se coordina con los demás para proporcionar una visión integrada del estado del bus.
+
+**Rastreo de Ubicación (track_location):** Esta función es el corazón del SGCF: lee la posición GPS del bus, la procesa (filtrando ruido, suavizando la trayectoria, detectando paradas), y la transmite al centro de control cada 10-30 segundos. La transmisión no es un simple envío de coordenadas: es un mensaje estructurado que incluye la latitud, la longitud, la velocidad, la dirección, el timestamp, la identificación del bus, la ruta asignada, y el estado operativo (en servicio, fuera de servicio, en mantenimiento). La frecuencia de transmisión (10-30 segundos) es un balance entre la precisión del rastreo (más frecuente = más preciso) y el consumo de ancho de banda (más frecuente = más costoso). En zonas de alta densidad (centro de la ciudad), la transmisión puede ser cada 10 segundos para detectar desviaciones de ruta rápidamente. En zonas de baja densidad (autopistas), la transmisión puede ser cada 30 segundos para ahorrar ancho de banda.
+
+**Monitoreo de Puertas (monitor_doors):** Esta función detecta la apertura y cierre de las puertas del bus mediante sensores magnéticos o de proximidad conectados a las entradas digitales de la OBU. La detección no es un simple conteo: es una **secuencia de estado** que identifica patrones operativos. Por ejemplo: puerta trasera abierta antes de puerta delantera = patrón de embarque en una parada de demanda media; puerta delantera abierta y trasera cerrada = patrón de embarque en una parada de demanda baja; ambas puertas abiertas simultáneamente = patrón de embarque en una parada de demanda alta. Esta información es valiosa para el análisis de demanda y la optimización de la distribución de buses.
+
+**Conteo de Pasajeros (count_passengers):** Esta función cuenta el número de pasajeros que embarcan y desembarcan en cada parada. El conteo puede realizarse mediante dos tecnologías: (a) sensores de haz infrarrojo en las puertas, que cuentan el número de interrupciones del haz (cada interrupción = un pasajero); o (b) visión artificial (cámaras apuntando a las puertas + algoritmo de detección de personas), que cuenta el número de personas que cruzan la puerta. Los sensores de haz son más baratos y simples, pero menos precisos (no distinguen entre adultos y niños, ni entre una persona y un objeto). La visión artificial es más cara y compleja, pero más precisa y proporciona información adicional (dirección del flujo, densidad de pasajeros, demografía aproximada). El conteo de pasajeros es crítico para dos propósitos: (a) validar la conciliación financiera (el número de transacciones del validador debe coincidir aproximadamente con el número de embarques), y (b) analizar la demanda (qué paradas tienen más demanda, qué horas tienen más demanda, qué rutas están saturadas).
+
+**Validación de Tarifa (validate_fare):** Esta función es la interfaz entre la OBU y el validador de tarifas. Cuando el validador procesa una tarjeta, envía la información de la transacción a la OBU (a través de la red WiFi local), y la OBU la retransmite al centro de control (a través de la red celular 4G). La OBU no procesa la transacción financieramente: solo la transporta. Sin embargo, la OBU sí verifica que la transacción sea válida (formato correcto, campos obligatorios presentes, checksum válido) antes de retransmitirla, filtrando transacciones corruptas que podrían generar errores en el backoffice de pagos.
+
+**Visualización de Información de Ruta (display_route_info):** Esta función envía la información de ruta a la pantalla del conductor: el nombre de la ruta, la próxima parada, la hora estimada de llegada al terminal, alertas de tráfico o desvíos, y mensajes del centro de control. La información no es estática: se actualiza en tiempo real basado en la posición GPS del bus, la velocidad actual, y las condiciones de tráfico. La pantalla del conductor es una interfaz crítica de seguridad: si el conductor puede ver la información de ruta sin distraerse del camino, la operación es más segura y más eficiente.
+
+**Botón de Emergencia (emergency_button):** Esta función gestiona el botón de pánico del conductor. Cuando el conductor presiona el botón, la OBU envía inmediatamente un mensaje de emergencia al centro de control con la información del bus, la posición GPS, la hora, y la naturaleza de la emergencia (el botón puede tener diferentes niveles de presión para distinguir entre "asistencia requerida" y "emergencia grave"). La OBU también activa automáticamente el micrófono del bus para transmitir audio al centro de control, y puede activar las cámaras CCTV para transmitir video. La función de emergencia es crítica: debe funcionar incluso si la OBU está en modo offline, almacenando el mensaje de emergencia localmente y transmitiéndolo tan pronto como la conectividad se restablece.
+
+**Modo Offline (offline_mode):** Esta función es la **resiliencia del sistema ante la pérdida de conectividad**. Cuando la OBU detecta que no hay conectividad celular (no puede enviar mensajes al centro de control durante más de 60 segundos), activa automáticamente el modo offline: almacena todos los datos localmente (rastreo GPS, transacciones de validador, eventos de puertas, registros de emergencia), continúa operando todas las funciones locales (pantalla del conductor, validador en modo offline, conteo de pasajeros), y monitorea la conectividad cada 30 segundos para detectar la recuperación. Cuando la conectividad se restablece, la OBU sincroniza automáticamente todos los datos almacenados con el centro de control, en orden cronológico, priorizando los mensajes de emergencia. El modo offline es crítico porque la conectividad celular no es 100% confiable: hay zonas de cobertura deficiente, fallas de la red celular, y congestión de red. Un sistema que no puede operar en modo offline es un sistema que se detiene cada vez que la red falla.
+
+### 2.4 El Centro de Control Visual (CVP): el cerebro de la operación
+
+El Centro de Control Visual (CVP) no es una simple pantalla de monitoreo: es la **plataforma centralizada de gestión operativa** donde el supervisor de flota visualiza, analiza, decide y actúa. El CVP es la interfaz entre el supervisor y los 46 buses: sin el CVP, el supervisor no puede rastrear la flota, detectar incidentes, comunicarse con los conductores, ni generar reportes. El CVP es también el repositorio central de datos: almacena el historial completo de posiciones, velocidades, eventos, transacciones y alertas de todos los buses, desde el primer día de operación.
+
+**Infraestructura de Servidores:** La infraestructura del CVP debe ser robusta, escalable y redundante. Una especificación mínima de 2 máquinas virtuales (VMs) con 4 vCPU y 16 GB de RAM cada una es suficiente para ejecutar la plataforma de visualización, la base de datos, y los servicios de API para una flota de 46 buses. Sin embargo, esta especificación no proporciona redundancia: si una VM falla, la plataforma se detiene. Una especificación recomendada de 2 VMs con 8 vCPU y 32 GB de RAM cada una, en configuración de alta disponibilidad (HA), proporciona redundancia activa: si una VM falla, la otra asume automáticamente la carga, sin interrupción del servicio. La alta disponibilidad es crítica porque el CVP es el sistema más importante de la operación: si el CVP falla, el supervisor no puede monitorear la flota.
+
+**Base de Datos:** La base de datos del CVP almacena el historial completo de operación: posiciones GPS, eventos de puertas, transacciones de validador, alertas, reportes de incidentes, y configuraciones. PostgreSQL es la opción estándar de la industria: robusta, escalable, con soporte de replicación maestro-esclavo, y con extensiones geoespaciales (PostGIS) que permiten consultas de proximidad ("¿qué buses están dentro de 500 metros de esta parada?"). Una especificación mínima de PostgreSQL 14 en una sola instancia es suficiente para almacenar los datos de 46 buses durante un año. Una especificación recomendada de PostgreSQL 15 en un cluster de alta disponibilidad (mínimo 3 nodos: 1 maestro + 2 réplicas) proporciona redundancia de datos (si un nodo falla, los datos están en los otros nodos), escalabilidad de lectura (las consultas de reporte se distribuyen entre las réplicas, reduciendo la carga del maestro), y recuperación ante desastres (si el maestro falla, una réplica se promueve automáticamente a maestro).
+
+**Almacenamiento:** El almacenamiento del CVP debe ser rápido, confiable y escalable. Una especificación mínima de 500 GB de SSD es suficiente para almacenar los datos de 46 buses durante un año (aproximadamente 10 GB por mes de datos de rastreo, transacciones y eventos). Sin embargo, 500 GB no proporciona margen para el crecimiento de la flota (si el SETP Sincelejo crece a 100 buses, el almacenamiento se duplica), ni para el almacenamiento de video de CCTV (que puede consumir 50 GB por bus por mes). Una especificación recomendada de 2 TB de SSD NVMe en configuración RAID 10 (espejado + striping) proporciona cuatro veces más capacidad, mayor velocidad de lectura/escritura (NVMe es 5-10 veces más rápido que SSD SATA), y redundancia de datos (si un disco falla, los datos están en el disco espejado).
+
+**Red:** La red del CVP debe ser rápida, segura y segmentada. Una especificación mínima de 1 Gbps con una VLAN única es suficiente para la comunicación entre los servidores, la base de datos, y la red interna. Sin embargo, una VLAN única no proporciona segmentación de seguridad: si un atacante compromete un servidor de la VLAN, tiene acceso a todos los servidores. Una especificación recomendada de 10 Gbps con VLANs segregadas (una VLAN para la red de producción, otra para la red de administración, otra para la red de respaldo, y otra para la red de monitoreo) proporciona mayor velocidad (10 Gbps permite transmitir video de CCTV en tiempo real), segmentación de seguridad (si un atacante compromete un servidor, solo tiene acceso a la VLAN de ese servidor), y aislamiento de tráfico (el tráfico de producción no se mezcla con el tráfico de respaldo, evitando interferencias).
+
+**Firewall:** El firewall es la barrera de seguridad que protege el CVP contra accesos no autorizados. Una especificación mínima de un firewall básico (por ejemplo, el firewall integrado del sistema operativo, iptables) es suficiente para filtrar el tráfico por puerto y dirección IP. Sin embargo, un firewall básico no proporciona protección contra ataques de aplicación (SQL injection, cross-site scripting, DDoS). Una especificación recomendada de un firewall perimetral (por ejemplo, pfSense, OPNsense) más un Web Application Firewall (WAF) (por ejemplo, ModSecurity, Cloudflare WAF) proporciona protección multicapa: el firewall perimetral filtra el tráfico a nivel de red, y el WAF filtra el tráfico a nivel de aplicación, detectando y bloqueando ataques sofisticados.
+
+**UPS:** El Sistema de Alimentación Ininterrumpida (UPS) es la fuente de respaldo de energía que mantiene el CVP operativo durante cortes de energía. Una especificación mínima de 1 kVA con 15 minutos de autonomía es suficiente para mantener los servidores operativos durante cortes breves (que son los más comunes: cortes de 5-10 minutos durante tormentas o mantenimiento de la red eléctrica). Sin embargo, 15 minutos no es suficiente para mantener la operación durante cortes prolongados (que pueden durar horas durante emergencias o fallas de infraestructura). Una especificación recomendada de 2 kVA con 30 minutos de autonomía proporciona el doble de capacidad y el doble de tiempo de respaldo, permitiendo: (a) mantener la operación durante cortes prolongados, (b) realizar un apagado ordenado de los servidores si el corte excede los 30 minutos (evitando corrupción de datos), y (c) alimentar no solo los servidores sino también el router, el firewall, y el switch de red.
+
+**Aire Acondicionado:** El aire acondicionado es el sistema de climatización que mantiene la temperatura de los servidores dentro de rangos seguros. Una especificación mínima de "no requerido" es aceptable si el CVP está ubicado en un centro de datos comercial que ya tiene climatización. Sin embargo, si el CVP está ubicado en las oficinas de Metro Sabanas S.A.S., el aire acondicionado es esencial: los servidores generan calor, y una temperatura ambiente superior a 30°C puede causar fallas térmicas, reducción del rendimiento, y acortamiento de la vida útil de los componentes. Una especificación recomendada de un aire acondicionado split de 12.000 BTU proporciona la capacidad de enfriamiento necesaria para mantener la temperatura ambiente entre 18°C y 24°C, que es el rango óptimo para servidores.
+
+**Software de Visualización:** El software de visualización es la capa que presenta la información al supervisor de flota en un formato comprensible y accionable. Grafana es la opción estándar de la industria para visualización de métricas en tiempo real: permite crear dashboards personalizados con gráficos, tablas, mapas, y alertas, con soporte de múltiples fuentes de datos (PostgreSQL, InfluxDB, Prometheus), y con una interfaz web responsive que se puede acceder desde cualquier dispositivo. Mapbox o Leaflet son las opciones estándar para visualización de mapas: permiten mostrar la posición de los buses en un mapa interactivo, con capas de información (rutas, paradas, zonas de tráfico, alertas), y con soporte de personalización de estilos (colores, iconos, tipografías). La combinación de Grafana + Mapbox/Leaflet proporciona al supervisor una vista unificada de la operación: mapa en tiempo real, métricas de rendimiento, alertas activas, y reportes históricos, todo en una sola interfaz.
+
+**Software de Alarmas:** El software de alarmas es la capa que detecta eventos anómalos y notifica al supervisor. Prometheus Alertmanager es la opción estándar de la industria: permite definir reglas de alerta basadas en métricas (por ejemplo, "alertar si un bus está detenido por más de 5 minutos en una zona que no es parada"), enrutar las alertas a diferentes canales (email, SMS, Slack, webhook), y gestionar el ciclo de vida de las alertas (silenciar, confirmar, escalar). Prometheus Alertmanager se integra con Grafana para mostrar las alertas en el dashboard, y con el sistema de comunicaciones para enviar alertas al supervisor en tiempo real.
+
+**Software de Reportes:** El software de reportes es la capa que genera informes operativos, financieros y de cumplimiento. Apache Superset o Metabase son las opciones estándar de la industria para Business Intelligence (BI) de código abierto: permiten crear reportes interactivos con filtros, agrupaciones, y visualizaciones, con soporte de múltiples fuentes de datos, y con la capacidad de exportar reportes en múltiples formatos (PDF, Excel, CSV). Los reportes generados incluyen: reportes de cumplimiento de rutas (por ruta, por bus, por conductor, por período), reportes de velocidad promedio (por ruta, por hora, por día), reportes de incidentes (por tipo, por severidad, por tiempo de resolución), y reportes de recaudo (por ruta, por bus, por conductor, por período).
+
+**Software de Comunicaciones:** El software de comunicaciones es la capa que gestiona la mensajería bidireccional entre el centro de control y los buses. Un broker MQTT (EMQ X o Mosquitto) es el componente central de la arquitectura de comunicaciones: recibe los mensajes de los buses (publicaciones), los enruta a los suscriptores (centro de control, backoffice de pagos, SIU), y gestiona la calidad de servicio (QoS) que garantiza la entrega de mensajes. EMQ X es la opción recomendada para despliegues empresariales: soporta millones de conexiones simultáneas, clusterización para alta disponibilidad, y reglas de enrutamiento que filtran y transforman los mensajes antes de entregarlos a los suscriptores. Mosquitto es la opción mínima: ligero, simple, adecuado para despliegues pequeños (menos de 1.000 conexiones), pero sin soporte de clusterización ni reglas de enrutamiento avanzadas.
+
+**Software de Video:** El software de video es la capa que gestiona las cámaras CCTV de los buses. ZoneMinder o Shinobi son las opciones de código abierto para videovigilancia: permiten conectar cámaras IP, grabar video continuo o por evento, detectar movimiento, y generar alertas de video. ZoneMinder es la opción más madura: con más de 20 años de desarrollo, soporte de cientos de modelos de cámaras, y una interfaz web de gestión. Shinobi es una alternativa moderna: con una arquitectura de microservicios, soporte de contenedores Docker, y una interfaz web más ligera. La integración del software de video con el CVP permite al supervisor visualizar las cámaras de un bus directamente desde el dashboard de monitoreo, facilitando la respuesta a incidentes.
+
+**API:** La API (Application Programming Interface) es la interfaz programática que permite a otros sistemas interactuar con el CVP. Una API REST en Node.js o Python FastAPI es la opción estándar de la industria: permite que el SIU consulte los tiempos de llegada de los buses, que el backoffice de pagos consulte las posiciones de los buses para la conciliación, que la app móvil consulte la disponibilidad de rutas, y que los sistemas externos (por ejemplo, el sistema de tráfico de la Alcaldía de Sincelejo) consulten la información de la flota. Node.js es la opción recomendada para APIs de alto rendimiento (maneja miles de conexiones simultáneas con bajo consumo de recursos). Python FastAPI es la opción recomendada para APIs con lógica compleja (maneja automáticamente la validación de datos, la generación de documentación OpenAPI, y la serialización de respuestas).
+
+---
+
+## 3. ESPECIFICACIONES CONCEPTUALES DEL SISTEMA DE RECAUDO CENTRALIZADO (SRC)
+
+### 3.1 El validador a bordo: el punto de pago
+
+El validador a bordo no es un simple lector de tarjetas: es el **punto de pago del sistema de transporte**, donde el pasajero interactúa con la tecnología de manera directa y tangible. El validador es el componente más visible del SETP para los usuarios: si el validador es rápido, confiable y fácil de usar, los usuarios perciben el sistema como moderno y eficiente; si el validador es lento, falla frecuentemente o es difícil de usar, los usuarios perciben el sistema como obsoleto y deficiente. La experiencia del usuario en el validador es crítica para la adopción del sistema de pago electrónico: un usuario que tiene una experiencia positiva en su primer uso es más probable que adopte el sistema; un usuario que tiene una experiencia negativa es más probable que continúe usando efectivo.
+
+**Pantalla:** La pantalla del validador es la interfaz visual que guía al usuario durante el proceso de pago. Una especificación mínima de una pantalla LCD TFT de 5 pulgadas con resolución de 800x480 es suficiente para mostrar el saldo de la tarjeta, el monto de la tarifa, y el saldo restante. Sin embargo, esta resolución no permite mostrar gráficos detallados (por ejemplo, un mapa de la ruta) ni información adicional (por ejemplo, publicidad, noticias, alertas de servicio). Una especificación recomendada de una pantalla de 7 pulgadas con resolución de 1280x800 permite mostrar información más detallada, gráficos de mayor calidad, y contenido multimedia, mejorando la experiencia del usuario y proporcionando un canal de comunicación con los pasajeros.
+
+**Lector NFC:** El lector NFC (Near Field Communication) es el componente que lee la tarjeta sin contacto del pasajero. Una especificación mínima de ISO 14443 A/B (estándar internacional para tarjetas sin contacto) con soporte de MIFARE DESFire EV2 (tarjeta de alta seguridad, cifrada, con capacidad de almacenamiento de múltiples aplicaciones) es suficiente para procesar tarjetas de transporte estándar. Sin embargo, MIFARE DESFire EV2 es una tecnología de NXP Semiconductors que requiere licencias y tiene costos de royalty. Una especificación recomendada que incluya soporte para múltiples tecnologías de tarjeta (MIFARE DESFire, MIFARE Plus, FeliCa, NFC Forum Type 1-4) permite que el validador acepte no solo tarjetas propietarias del SETP, sino también tarjetas de otros sistemas de transporte (interoperabilidad), tarjetas bancarias de contactless (pago directo con tarjeta de crédito/débito), y tarjetas de identidad nacional (si el gobierno colombiano implementa una tarjeta de identidad con NFC).
+
+**Lector QR:** El lector QR es el componente que lee los códigos QR de los boletos digitales. Una especificación mínima de una cámara 2D con tiempo de lectura menor a 200 milisegundos es suficiente para leer códigos QR estándar. Sin embargo, esta especificación no permite leer códigos QR dañados (rayados, doblados, con baja resolución) ni códigos QR de alta densidad (que contienen más información). Una especificación recomendada de un escáner de código de barras 2D con tecnología de imagen (imager) en lugar de láser proporciona mayor velocidad de lectura (menos a 100 milisegundos), mayor capacidad de lectura de códigos dañados, y soporte de múltiples formatos de código (QR, DataMatrix, PDF417, Aztec).
+
+**Procesador:** El procesador del validador es el componente que ejecuta el software de validación. Una especificación mínima de un Qualcomm Snapdragon 450 (8 núcleos ARM Cortex-A53 a 1.8 GHz) o equivalente es suficiente para procesar tarjetas NFC, códigos QR, y transacciones de pago en tiempo real. Sin embargo, este procesador no tiene la capacidad para ejecutar funciones avanzadas como reconocimiento facial (para validación de identidad de tarjetas subsidiadas), análisis de video (para conteo de pasajeros), o aprendizaje automático (para detección de fraude). Una especificación recomendada de un Qualcomm Snapdragon 665 (8 núcleos Kryo 260 a 2.0 GHz) con unidad de procesamiento de IA (Hexagon 686) proporciona la capacidad para ejecutar funciones avanzadas de IA en el edge, mejorando la seguridad y la eficiencia del sistema.
+
+**Memoria RAM:** La RAM del validador es la memoria de trabajo para el procesamiento de transacciones. Una especificación mínima de 2 GB de RAM es suficiente para ejecutar el sistema operativo, el middleware de pago, y las aplicaciones de validación. Una especificación recomendada de 4 GB de RAM permite ejecutar múltiples aplicaciones simultáneamente (por ejemplo, validación de tarjetas, validación de QR, publicidad en pantalla, conteo de pasajeros por visión artificial), y proporciona margen para futuras actualizaciones de software.
+
+**Almacenamiento:** El almacenamiento del validador es la memoria persistente para el sistema operativo, el software, y los datos de transacciones en modo offline. Una especificación mínima de 16 GB de almacenamiento eMMC es suficiente para el sistema operativo (4 GB), el software de validación (2 GB), y los datos de transacciones de un día (2 GB). Sin embargo, 16 GB no proporciona margen para almacenar datos de varios días en modo offline ni para instalar aplicaciones adicionales. Una especificación recomendada de 32 GB de almacenamiento eMMC permite almacenar hasta una semana de transacciones en modo offline, instalar aplicaciones adicionales, y almacenar contenido multimedia (publicidad, información de servicio).
+
+**Conectividad:** La conectividad del validador es el enlace de comunicación con el centro de control y el backoffice de pagos. Una especificación mínima de 4G/LTE, WiFi y Bluetooth es suficiente para la comunicación con la OBU (a través de WiFi) y con el backoffice (a través de 4G/LTE). Sin embargo, esta especificación no proporciona redundancia de conectividad: si el WiFi de la OBU falla, el validador no puede comunicarse. Una especificación recomendada que incluya una ranura para SIM card dual (dual SIM) permite que el validador se conecte directamente a la red celular si la conexión WiFi con la OBU falla, proporcionando redundancia de comunicación y mayor confiabilidad.
+
+**Audio:** El audio del validador es la interfaz sonora que proporciona retroalimentación al usuario. Un buzzer simple es suficiente para indicar que la tarjeta fue leída (un "beep" corto) o que la tarjeta fue rechazada (un "beep" largo). Un altavoz permite proporcionar mensajes de voz más detallados ("Tarjeta aceptada, saldo restante: 5.000 pesos", "Tarjeta rechazada, saldo insuficiente", "Por favor acérquese más al lector"). La retroalimentación sonora es crítica para usuarios con discapacidad visual y para situaciones de baja visibilidad (por ejemplo, en la noche, cuando el pasajero no puede ver la pantalla).
+
+**Indicadores LED:** Los indicadores LED son la interfaz visual de estado del validador. LEDs de colores (rojo, verde, azul) indican el estado de la transacción: verde = tarjeta aceptada, rojo = tarjeta rechazada, azul = procesando. Los LEDs también pueden indicar el estado del sistema: parpadeo verde = sistema operativo normal, parpadeo rojo = sistema en modo offline, parpadeo azul = sistema actualizando. Los indicadores LED son visibles a distancia y en condiciones de luz solar directa, donde la pantalla puede ser difícil de ver.
+
+**Alimentación:** La alimentación del validador es la fuente de energía que lo alimenta. Una especificación mínima de 12V DC a 2A es suficiente para el procesador, la pantalla, el lector NFC, y el lector QR. Sin embargo, esta especificación no proporciona protección contra picos de voltaje ni inversión de polaridad. Una especificación recomendada de 12V DC a 3A con protección de sobretensión, subtensión, y cortocircuito protege el validador contra daños por fluctuaciones de voltaje, aumentando la confiabilidad y la vida útil del dispositivo.
+
+**Temperatura:** La temperatura de operación del validador define el rango de temperaturas en el que funciona correctamente. Una especificación mínima de 0°C a +50°C es suficiente para la mayoría de las condiciones de operación del bus. Sin embargo, un bus estacionado al sol puede alcanzar 60°C en el interior, y un bus en operación nocturna puede enfrentar temperaturas de 10°C. Una especificación recomendada de -10°C a +60°C cubre todas las condiciones de operación, incluyendo días de calor extremo y noches frías.
+
+**Certificación:** La certificación del validador es la evidencia de que cumple con estándares de seguridad de pagos. PCI PTS (Payment Card Industry Pin Transaction Security) es la certificación internacional para dispositivos de pago: asegura que el validador cumple con estándares de cifrado de datos, protección contra manipulación física, y aislamiento de datos sensibles. Una especificación mínima de PCI PTS 5.x es la versión actual del estándar. EMVCo es la certificación para dispositivos que procesan tarjetas chip (EMV): asegura que el validador cumple con los estándares de la industria de tarjetas de pago. La certificación PCI PTS + EMVCo es esencial si el validador va a aceptar tarjetas bancarias de contactless, porque sin estas certificaciones, las pasarelas de pago (Redeban, Credibanco) no autorizarán la transacción.
+
+### 3.2 El flujo de transacción: la cadena de confianza del pago
+
+El flujo de transacción del SRC no es un simple intercambio de datos: es una **cadena de confianza** donde cada eslabón verifica la autenticidad, integridad y autorización del pago. Si un eslabón de la cadena falla, toda la transacción falla. La cadena de confianza comienza cuando el pasajero presenta su tarjeta al validador, y termina cuando el backoffice de pagos confirma que la transacción fue procesada correctamente y el saldo de la tarjeta fue actualizado.
+
+**El Usuario y la Tarjeta:** El pasajero presenta su tarjeta sin contacto al lector NFC del validador. La tarjeta es un dispositivo seguro que almacena el saldo del pasajero, el historial de transacciones, y la clave criptográfica de autenticación. La tarjeta no es un simple dispositivo de almacenamiento: es un microprocesador con capacidad de cifrado, que puede verificar la autenticidad del validador antes de permitir la transacción (autenticación mutua). Esto protege contra clonación de tarjetas: un atacante que clone la tarjeta no podrá realizar transacciones porque no tiene la clave criptográfica privada de la tarjeta.
+
+**El Validador a Bordo:** El validador lee la tarjeta, verifica su autenticidad (mediante criptografía de clave pública), verifica que el saldo sea suficiente para la tarifa, calcula la tarifa aplicable (que puede variar según la hora, la ruta, el tipo de usuario, y las promociones), debita el saldo de la tarjeta, registra la transacción localmente, y muestra el resultado al pasajero (saldo restante, tarifa aplicada). Si el validador tiene conectividad, envía la transacción inmediatamente al backoffice de pagos a través de la red 4G/LTE (o WiFi a través de la OBU). Si el validador no tiene conectividad, almacena la transacción localmente y la sincroniza cuando la conectividad se restablece. El validador no procesa la transacción financieramente: solo la captura y la transporta. El procesamiento financiero real ocurre en el backoffice.
+
+**El Backoffice de Pagos:** El backoffice de pagos es la plataforma centralizada que recibe las transacciones de todos los validadores, las procesa financieramente, las concilia con las pasarelas de pago, y genera los reportes de recaudo. El backoffice no es un simple receptor de datos: es un **motor de procesamiento financiero** que verifica cada transacción, detecta anomalías, previene fraude, y asegura la integridad del recaudo. Las funciones del backoffice incluyen:
+
+- **Conciliación:** El backoffice compara las transacciones registradas en los validadores con las transacciones registradas en las pasarelas de pago (Redeban, Credibanco) y en los bancos (ACH). Si hay discrepancias (transacción en validador pero no en pasarela, o viceversa), el backoffice genera una alerta de investigación. La conciliación es un proceso automatizado que ocurre diariamente, generando un reporte de conciliación que muestra el total de transacciones, el total de montos, y las discrepancias detectadas.
+
+- **Reportes de Ingresos:** El backoffice genera reportes de ingresos que consolidan las transacciones por período (diario, semanal, mensual), por ruta, por bus, por conductor, por tipo de tarifa, por tipo de usuario, y por método de pago. Estos reportes son la base para la distribución de ingresos entre Metro Sabanas S.A.S., el operador de transporte, y el proveedor tecnológico (según el modelo de negocio definido en el contrato).
+
+- **Gestión de Subsidios:** El backoffice gestiona los subsidios de transporte que el gobierno proporciona a ciertos grupos de usuarios (estudiantes, adultos mayores, personas con discapacidad). La gestión de subsidios incluye: la configuración de tarifas subsidiadas (por ejemplo, 50% de descuento para estudiantes), la validación de elegibilidad (verificación de la tarjeta subsidiada contra una base de datos de beneficiarios), la conciliación de subsidios (cálculo del monto total de subsidios aplicados en un período), y la facturación de subsidios (generación de la factura al gobierno para el reembolso de los subsidios aplicados).
+
+- **Configuración de Tarifas:** El backoffice permite configurar las tarifas del sistema: tarifa base, tarifas por ruta, tarifas por hora (pico, valle, noche), tarifas por tipo de usuario (adulto, estudiante, adulto mayor, discapacitado), promociones (2x1, descuentos por frecuencia), y excepciones (días festivos, eventos especiales). La configuración de tarifas es una función crítica porque afecta directamente los ingresos del sistema: una tarifa mal configurada puede generar pérdidas financieras o rechazo de los usuarios.
+
+- **Blacklist:** El backoffice mantiene una lista de tarjetas bloqueadas o reportadas (tarjetas robadas, tarjetas fraudulentas, tarjetas con saldo negativo). Cuando un validador procesa una tarjeta, consulta la blacklist en tiempo real (si hay conectividad) o localmente (si está en modo offline, con una copia de la blacklist descargada periódicamente). Si la tarjeta está en la blacklist, el validador la rechaza y alerta al backoffice. La blacklist es una herramienta de seguridad crítica: sin ella, un atacante podría usar tarjetas robadas o clonadas indefinidamente.
+
+### 3.3 La pasarela de pagos: el puente con el sistema financiero
+
+La pasarela de pagos es el **puente entre el SRC y el sistema financiero colombiano**. El SRC no es un banco: no puede procesar directamente transacciones con tarjetas de crédito o débito. La pasarela de pagos es el intermediario que recibe las transacciones del SRC, las formatea según los estándares de la industria de pagos (ISO 8583), las envía a la red de procesamiento de tarjetas (Redeban, Credibanco), y recibe la respuesta de autorización (aprobada o rechazada). La pasarela de pagos también es responsable de la conciliación financiera: al final de cada día, compara las transacciones del SRC con los movimientos de la cuenta bancaria de Metro Sabanas S.A.S., identificando discrepancias y generando reportes de conciliación.
+
+La integración con la pasarela de pagos es una de las decisiones técnicas más críticas del SRC porque determina: (a) qué tarjetas puede aceptar el sistema (solo tarjetas propietarias del SETP, o también tarjetas bancarias de contactless); (b) qué tarifas de intercambio paga Metro Sabanas S.A.S. por cada transacción (las tarifas de intercambio son el costo que paga el comerciante por procesar una tarjeta bancaria, generalmente del 1.5% al 3.5% del monto de la transacción); (c) qué tiempo de liquidación tiene el sistema (cuánto tiempo tarda el dinero de las transacciones en llegar a la cuenta bancaria de Metro Sabanas S.A.S., generalmente de 1 a 3 días hábiles); y (d) qué nivel de seguridad tiene el sistema (las pasarelas de pagos certificadas por PCI DSS proporcionan un nivel de seguridad más alto que las pasarelas no certificadas).
+
+---
+
+## 4. ESPECIFICACIONES CONCEPTUALES DEL SISTEMA DE INFORMACIÓN AL USUARIO (SIU)
+
+### 4.1 La aplicación móvil: la ventana del usuario al sistema
+
+La aplicación móvil del SIU no es un simple visor de rutas: es la **ventana principal del usuario al sistema de transporte**, donde el pasajero planifica su viaje, consulta los tiempos de llegada, recarga su tarjeta, reporta incidentes, y recibe notificaciones de servicio. La app es el componente más visible del SIU para los usuarios: si la app es rápida, intuitiva y confiable, los usuarios la adoptan y el sistema de transporte gana usuarios; si la app es lenta, confusa o falla, los usuarios la abandonan y el sistema de transporte pierde usuarios. La adopción de la app es un indicador indirecto de la satisfacción del usuario: un usuario que descarga la app, la usa regularmente, y la mantiene instalada es un usuario satisfecho; un usuario que la descarga, la usa una vez, y la desinstala es un usuario insatisfecho.
+
+**Plataformas:** La app debe estar disponible en las dos plataformas móviles dominantes: iOS y Android. iOS 14+ y Android 8+ son las versiones mínimas que deben soportarse, porque representan más del 95% de los dispositivos móviles en uso en Colombia. Sin embargo, soportar versiones antiguas (iOS 12, Android 6) aumenta el costo de desarrollo y mantenimiento, porque requiere pruebas adicionales y adaptaciones de interfaz. Una especificación recomendada de iOS 15+ y Android 10+ permite utilizar las funciones más recientes de las plataformas (notificaciones enriquecidas, widgets de pantalla de inicio, acceso a NFC para recarga de tarjeta), y reduce el costo de mantenimiento al soportar menos versiones.
+
+**Tecnología:** La tecnología de desarrollo de la app debe permitir un desarrollo eficiente, un mantenimiento sencillo, y una experiencia de usuario nativa. Flutter y React Native son las dos opciones principales para desarrollo multiplataforma: permiten escribir una sola base de código que se compila en apps nativas para iOS y Android, reduciendo el costo de desarrollo en un 40-50% comparado con el desarrollo nativo separado (Swift para iOS, Kotlin para Android). Flutter es la opción recomendada por Google: proporciona un rendimiento cercano al nativo (60 fps), una interfaz de usuario altamente personalizable, y un ecosistema de widgets que acelera el desarrollo. React Native es la opción recomendada por Facebook: proporciona una curva de aprendizaje más suave para equipos con experiencia en JavaScript, y una mayor cantidad de bibliotecas de terceros.
+
+**Funciones:** La app debe proporcionar las funciones esenciales para el usuario del transporte público: consulta de rutas (mapa interactivo con todas las rutas del sistema, paradas, y horarios), tiempos de llegada en tiempo real (basado en la posición GPS de los buses, con estimación de tiempo de llegada a cada parada), recarga de tarjeta (integración con pasarelas de pago para recargar la tarjeta del SETP con tarjeta de crédito, débito, o PSE), historial de viajes (registro de todas las transacciones del usuario, con fecha, hora, ruta, tarifa, y saldo), reporte de incidentes (formulario para reportar problemas con el servicio, con foto, ubicación, y categoría), y notificaciones de servicio (alertas de desvíos, retrasos, cambios de rutas, y eventos especiales).
+
+**Notificaciones:** El sistema de notificaciones push es la capa que envía alertas a los usuarios en tiempo real. Firebase Cloud Messaging (FCM) es la opción estándar para Android, y Apple Push Notification Service (APNs) es la opción estándar para iOS. Firebase Cloud Messaging proporciona una plataforma unificada que permite enviar notificaciones a ambas plataformas desde un único servidor, con soporte de segmentación de usuarios (enviar notificaciones solo a usuarios de una ruta específica), programación de notificaciones (enviar notificaciones en horarios específicos), y análisis de entrega (medir la tasa de apertura de notificaciones).
+
+**Accesibilidad:** La app debe cumplir con los estándares de accesibilidad WCAG 2.1 nivel AA, que aseguran que la app sea usable por personas con discapacidad visual (soporte de lectores de pantalla como VoiceOver y TalkBack), discapacidad auditiva (subtítulos en videos, transcripciones de audio), discapacidad motora (botones grandes, navegación por teclado), y discapacidad cognitiva (lenguaje simple, instrucciones claras, retroalimentación inmediata). La accesibilidad no es un requisito opcional: es un requisito legal en Colombia (Ley 1618 de 2013) y un requisito ético para un sistema de transporte público que sirve a toda la población.
+
+### 4.2 Las pantallas en paradas: la información física
+
+Las pantallas en paradas no son simples carteles electrónicos: son la **interfaz física de información** para los usuarios que no tienen la app móvil (turistas, personas mayores sin smartphone, personas de bajos recursos sin datos móviles). Las pantallas son el componente más democrático del SIU: proporcionan información a todos los usuarios, independientemente de su acceso a tecnología. La ubicación, el tamaño, y el tipo de pantalla en cada parada deben estar determinados por la afluencia de pasajeros: paradas con alta afluencia (centros comerciales, hospitales, universidades) requieren pantallas grandes y visibles; paradas con baja afluencia (zonas residenciales, calles secundarias) pueden tener pantallas más pequeñas o incluso e-ink (papel electrónico) con alimentación solar.
+
+**Tipo de Pantalla:** Las pantallas LED RGB full color son la opción estándar para paradas urbanas: proporcionan alto brillo (visible a plena luz del sol), colores vivos (para alertas y publicidad), y ángulos de visión amplios. Las pantallas e-ink (papel electrónico) son una alternativa ecológica para paradas con baja afluencia o sin acceso a energía eléctrica: consumen energía solo cuando cambian la imagen (lo que las hace ideales para alimentación solar), proporcionan una visibilidad excelente en luz solar directa (mejor que las pantallas LED), y tienen una vida útil de más de 10 años. Sin embargo, las pantallas e-ink no pueden mostrar video ni animaciones, y tienen un tiempo de actualización más lento (1-2 segundos para cambiar la imagen, comparado con 16 milisegundos para las pantallas LED).
+
+**Tamaño:** El tamaño de la pantalla debe estar determinado por la distancia de visualización y la cantidad de información a mostrar. Una pantalla de 32 pulgadas es adecuada para paradas con visualización a 2-3 metros (la mayoría de las paradas urbanas). Una pantalla de 43 pulgadas es adecuada para paradas con visualización a 3-5 metros (paradas de alta afluencia, intercambiadores). Una pantalla de 55 pulgadas o más es adecuada para terminales y estaciones principales donde la visualización es a más de 5 metros.
+
+**Conectividad:** La conectividad de la pantalla debe ser redundante: 4G/LTE como conectividad primaria (para paradas sin acceso a internet cableado), WiFi como conectividad secundaria (para paradas cerca de edificios con WiFi), y Ethernet como conectividad terciaria (para paradas con acceso a cableado de red). La redundancia de conectividad es crítica porque una pantalla offline no proporciona información, lo que genera insatisfacción y desconfianza.
+
+**Alimentación:** La alimentación de la pantalla puede ser cableada (110-240V AC) o solar (panel solar + batería). La alimentación cableada es la opción estándar para paradas con acceso a la red eléctrica. La alimentación solar es la opción para paradas sin acceso a la red eléctrica (zonas rurales, calles secundarias, paradas nuevas que aún no tienen infraestructura eléctrica). Un panel solar de 100W con una batería de 100Ah proporciona suficiente energía para una pantalla e-ink durante 3-5 días sin sol, o para una pantalla LED de bajo consumo durante 1-2 días sin sol.
+
+**Información:** La información mostrada en la pantalla debe ser: tiempo estimado de llegada del próximo bus (basado en la posición GPS en tiempo real), nombre de la ruta, destino del bus, alertas de servicio (retrasos, desvíos, suspensiones), y publicidad (para generar ingresos adicionales que subsidien la operación del SIU). La información debe actualizarse en tiempo real: una pantalla que muestra información obsoleta (por ejemplo, un bus que ya pasó) es peor que una pantalla que no muestra nada, porque genera confusión y frustración.
+
+---
+
+## 5. ESPECIFICACIONES CONCEPTUALES DEL SISTEMA DE SEGURIDAD DE TRANSACCIONES (SST)
+
+### 5.1 El cifrado: la protección de los datos en reposo y en tránsito
+
+El cifrado no es una opción: es una **obligación** para cualquier sistema que maneja datos financieros y personales. El SST es la capa de seguridad que protege todos los datos del SRC y del SGCF: las transacciones de pago, los datos personales de los usuarios, las credenciales de los conductores, y las configuraciones del sistema. El cifrado se aplica en tres capas: comunicación (datos en tránsito entre el bus y el centro de control), datos sensibles (datos almacenados en la base de datos), y contraseñas (credenciales de acceso al sistema).
+
+**Cifrado de Comunicación (TLS 1.3):** La comunicación entre el bus y el centro de control debe estar cifrada mediante TLS (Transport Layer Security) versión 1.3, el estándar actual de la industria para cifrado de comunicaciones web. TLS 1.3 proporciona cifrado de extremo a extremo: los datos se cifran en el bus antes de ser transmitidos, y solo se descifran en el centro de control, protegiendo contra interceptación en la red celular. TLS 1.3 también proporciona autenticación mutua: el bus verifica que el centro de control es auténtico (mediante certificados digitales), y el centro de control verifica que el bus es auténtico, protegiendo contra ataques de suplantación (man-in-the-middle). Los certificados digitales deben ser emitidos por una autoridad de certificación confiable (Let's Encrypt es una opción gratuita y automatizada, o una autoridad de certificación comercial como DigiCert para mayor confianza).
+
+**Cifrado de Datos Sensibles (AES-256-GCM):** Los datos sensibles almacenados en la base de datos (números de tarjeta, saldos, transacciones, datos personales) deben estar cifrados mediante AES-256-GCM (Advanced Encryption Standard con Galois/Counter Mode), el estándar de la industria para cifrado de datos en reposo. AES-256-GCM proporcuye cifrado autenticado: los datos se cifran y se genera un código de autenticación (MAC) que verifica que los datos no fueron modificados. La clave de cifrado debe ser gestionada por un sistema de gestión de claves (KMS) que almacene las claves de manera segura, rote las claves periódicamente, y audite el acceso a las claves. Librería libsodium es la implementación de referencia de criptografía moderna: proporciona AES-256-GCM, pero también proporciona algoritmos más modernos y seguros como XChaCha20-Poly1305 (que es más rápido y más seguro que AES-256-GCM en implementaciones de software).
+
+**Cifrado de Contraseñas (Argon2id):** Las contraseñas de los usuarios, conductores y administradores no deben almacenarse en texto plano ni en formato reversible (como MD5 o SHA-1, que son obsoletos e inseguros). Las contraseñas deben almacenarse como hashes criptográficos mediante Argon2id, el ganador de la competición Password Hashing Competition (PHC) y el estándar recomendado por OWASP. Argon2id es un algoritmo de hashing de memoria dura: requiere una gran cantidad de memoria para calcular el hash, lo que hace que los ataques de fuerza bruta (probar millones de contraseñas por segundo) sean económicamente inviables. Los parámetros de Argon2id (memoria, iteraciones, paralelismo) deben configurarse para que el cálculo del hash tome al menos 500 milisegundos en el hardware del servidor, lo que limita la velocidad de los ataques de fuerza bruta a 2 intentos por segundo por núcleo de CPU.
+
+**Cifrado de Respaldo (AES-256-CBC):** Los respaldos de la base de datos y los archivos de configuración deben estar cifrados antes de ser almacenados en el medio de respaldo (disco externo, nube, cinta). AES-256-CBC (Cipher Block Chaining) es el estándar para cifrado de respaldos: proporciona cifrado de bloques donde cada bloque de datos depende del bloque anterior, asegurando que los datos no puedan ser descifrados parcialmente. La clave de cifrado de respaldo debe ser diferente de la clave de cifrado de datos en producción, y debe almacenarse en un lugar seguro separado del medio de respaldo (por ejemplo, en un cofre físico o en un sistema de gestión de secretos como HashiCorp Vault).
+
+### 5.2 La autenticación: la verificación de identidad
+
+La autenticación no es solo un login: es la **verificación de identidad** que determina quién puede acceder a qué datos y qué funciones del sistema. El SST define cuatro niveles de autenticación, cada uno con un método diferente según el nivel de riesgo y el tipo de usuario.
+
+**Usuarios (OAuth 2.0 + MFA):** Los usuarios de la app móvil y del portal web se autentican mediante OAuth 2.0 (Open Authorization), el estándar de la industria para autenticación delegada. OAuth 2.0 permite que los usuarios se autentiquen con proveedores de identidad de terceros (Google, Facebook, Apple) o con una cuenta local del SETP. OAuth 2.0 también permite la autenticación multifactor (MFA): después de ingresar la contraseña, el usuario debe verificar su identidad mediante un segundo factor (código enviado por SMS, código generado por una app de autenticación como Google Authenticator, o notificación push en el smartphone). La MFA es obligatoria para los usuarios con acceso a funciones sensibles (recarga de tarjeta, consulta de saldo, modificación de perfil), porque una contraseña comprometida no es suficiente para acceder a la cuenta: el atacante también necesita el segundo factor.
+
+**API (JWT RS256):** Las APIs del sistema se autentican mediante JWT (JSON Web Token) con algoritmo de firma RS256 (RSA con SHA-256). JWT es un estándar de token de acceso que contiene la identidad del solicitante, los permisos concedidos, y la firma digital del emisor. RS256 es un algoritmo asimétrico: el emisor firma el token con su clave privada, y el receptor verifica la firma con la clave pública del emisor. Esto permite que cualquier servicio del sistema verifique la autenticidad del token sin necesidad de contactar al emisor, reduciendo la latencia y la dependencia de un servicio central de autenticación.
+
+**Dispositivos (Certificados X.509):** Los dispositivos a bordo (OBU, validador, pantalla) se autentican mediante certificados digitales X.509, el estándar de la industria para autenticación de dispositivos. Cada dispositivo tiene un certificado único emitido por una autoridad de certificación interna del SETP, que contiene la identidad del dispositivo, su clave pública, y la firma de la autoridad de certificación. Cuando un dispositivo se conecta al centro de control, presenta su certificado, y el centro de control verifica que el certificado es válido (no ha expirado, no ha sido revocado, y fue emitido por una autoridad de confianza). Los certificados X.509 proporcionan autenticación criptográfica fuerte: un atacante que intente suplantar un dispositivo necesitaría el certificado y la clave privada del dispositivo, que están almacenados de manera segura en el hardware del dispositivo (en un chip TPM o HSM).
+
+**Conductores (Tarjeta NFC + PIN):** Los conductores se autentican en el sistema mediante una tarjeta NFC de credencial de servicio y un PIN numérico. La tarjeta NFC contiene la identidad del conductor, su foto, y su clave criptográfica. El PIN es un código numérico de 4-6 dígitos que el conductor memoriza y nunca comparte. La autenticación de dos factores (tarjeta NFC + PIN) proporciona un nivel de seguridad adecuado para la operación del bus: un conductor que pierde su tarjeta no puede ser suplantado sin el PIN, y un conductor que olvida su PIN no puede operar sin la tarjeta. La tarjeta NFC también registra automáticamente el inicio y fin del turno del conductor, proporcionando un registro de asistencia y horas de trabajo.
+
+### 5.3 La auditoría: el registro de actividad
+
+La auditoría no es un simple log de eventos: es el **registro de actividad** que permite reconstruir qué sucedió, quién lo hizo, y cuándo lo hizo. La auditoría es crítica para la seguridad (detectar intrusiones), el cumplimiento (demostrar que se cumplen las normativas), y la resolución de disputas (demostrar que una transacción ocurrió o no ocurrió). El SST define cuatro categorías de eventos que deben ser auditados, cada una con su propio período de retención.
+
+**Inicio de Sesión:** Cada vez que un usuario, conductor o administrador inicia sesión en el sistema, se registra: el nombre de usuario, la dirección IP desde la que se conectó, el timestamp de inicio, el timestamp de fin, y el resultado (éxito o fracaso). Este registro permite detectar accesos no autorizados (inicios de sesión desde IPs desconocidas, inicios de sesión fuera de horario, múltiples intentos fallidos de inicio de sesión). El período de retención de 2 años es el estándar de la industria para registros de autenticación.
+
+**Transacciones:** Cada transacción de pago se registra con: el ID de la transacción, el monto, la tarjeta utilizada, el validador que procesó la transacción, el bus donde ocurrió, la ruta, el timestamp, y el estado (aprobada, rechazada, pendiente). Este registro es la base de la conciliación financiera y la resolución de disputas: si un usuario reclama que su tarjeta fue debitada dos veces, el registro de transacciones permite verificar si ocurrieron dos transacciones o solo una. El período de retención de 5 años es el estándar financiero para registros de transacciones, y coincide con el período de prescripción de reclamaciones financieras en Colombia.
+
+**Cambios de Configuración:** Cada vez que un administrador modifica la configuración del sistema (tarifas, rutas, horarios, permisos de usuarios), se registra: el nombre del administrador, la configuración anterior, la configuración nueva, el timestamp, y la razón del cambio. Este registro permite detectar cambios no autorizados (por ejemplo, un administrador que modifica las tarifas sin autorización) y permite revertir cambios erróneos (si un administrador comete un error, se puede restaurar la configuración anterior). El período de retención de 2 años es suficiente para la mayoría de las investigaciones de cambios no autorizados.
+
+**Alertas:** Cada alerta generada por el sistema (falla de dispositivo, desvío de ruta, retraso, intento de fraude, acceso no autorizado) se registra con: el tipo de alerta, la severidad, la ubicación, el bus involucrado, el timestamp, y la respuesta tomada. Este registro permite analizar la frecuencia y la gravedad de los incidentes, identificar patrones (por ejemplo, "el bus 15 genera alertas de falla de validador cada 3 días"), y evaluar la efectividad de las respuestas. El período de retención de 1 año es suficiente para el análisis de tendencias operativas.
+
+---
+
+## 6. ESPECIFICACIONES DE INTERFACES Y PROTOCOLOS
+
+### 6.1 La API del sistema: la interfaz programática
+
+La API (Application Programming Interface) del sistema es la **interfaz programática** que permite a los sistemas internos (SIU, SRC, SGCF, SST) y a los sistemas externos (pasarela de pagos, sistema de tráfico de la Alcaldía, sistema de información del Ministerio de Transporte) interactuar con el CVP. La API no es un simple conjunto de endpoints: es un **contrato técnico** que define cómo se solicitan los datos, cómo se formatean las respuestas, cómo se manejan los errores, y cómo se asegura la autenticación.
+
+La API debe seguir la especificación OpenAPI 3.0 (anteriormente conocida como Swagger), el estándar de la industria para documentación de APIs. OpenAPI 3.0 permite generar automáticamente la documentación de la API, los clientes de la API en múltiples lenguajes de programación, y las pruebas de validación de la API. La API debe proporcionar endpoints para las funciones más importantes: consulta de buses en operación (lista de buses activos, con su ruta, estado, y posición), consulta de ubicación en tiempo real (coordenadas GPS, velocidad, y timestamp de un bus específico), consulta de tiempos de llegada (estimación de tiempo de llegada de un bus a una parada específica), consulta de transacciones (lista de transacciones de un bus, validador, o período), y consulta de alertas (lista de alertas activas, con su tipo, severidad, y ubicación).
+
+La API debe utilizar HTTPS (HTTP Secure) en el puerto 443, con TLS 1.3 para cifrado y autenticación mutua mediante certificados X.509. La API debe requerir autenticación mediante JWT (JSON Web Token) con algoritmo RS256, y debe validar que el solicitante tiene permisos para acceder al recurso solicitado (autorización basada en roles). La API debe manejar errores de manera estandarizada: códigos de estado HTTP apropiados (200 OK, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error), mensajes de error descriptivos en español, y sugerencias de corrección.
+
+### 6.2 Los protocolos de comunicación: el lenguaje del sistema
+
+Los protocolos de comunicación son el **lenguaje** que utilizan los componentes del sistema para comunicarse entre sí. La elección de protocolos es crítica porque determina la eficiencia, la confiabilidad, y la seguridad de la comunicación. El sistema utiliza seis protocolos principales, cada uno para un propósito específico.
+
+**MQTT (Message Queuing Telemetry Transport):** MQTT es el protocolo estándar para IoT (Internet de las Cosas): ligero, bidireccional, con soporte de calidad de servicio (QoS) que garantiza la entrega de mensajes, y con soporte de TLS para cifrado. MQTT utiliza un modelo de publicación-suscripción: los buses publican mensajes en "topics" (por ejemplo, "bus/15/location", "bus/15/doors"), y el centro de control se suscribe a estos topics para recibir los mensajes. MQTT utiliza el puerto 8883 (TLS) para cifrado, o el puerto 1883 (sin cifrado) solo para pruebas internas. MQTT es ideal para la telemetría de los buses porque es eficiente: un mensaje de rastreo GPS tiene un overhead de solo 2 bytes (comparado con HTTP que tiene un overhead de cientos de bytes por solicitud), y la conexión TCP permanente entre el bus y el broker MQTT reduce la latencia de comunicación.
+
+**HTTPS/REST:** HTTPS (HTTP Secure) es el protocolo estándar para APIs web: solicitudes de recursos (GET, POST, PUT, DELETE) con respuestas en formato JSON. HTTPS utiliza el puerto 443 y TLS 1.3 para cifrado. REST (Representational State Transfer) es el estilo arquitectónico para APIs: cada recurso (bus, ruta, parada, transacción) tiene una URL única, y las operaciones sobre el recurso se realizan mediante los métodos HTTP estándar. HTTPS/REST es ideal para la API pública y privada del sistema porque es universalmente soportado por todos los lenguajes de programación y plataformas, y porque es fácil de documentar y probar.
+
+**WebSocket:** WebSocket es el protocolo estándar para comunicación bidireccional en tiempo real entre un cliente y un servidor. WebSocket utiliza el puerto 443 (mismo que HTTPS) y establece una conexión persistente que permite al servidor enviar datos al cliente sin que el cliente solicite explícitamente (push). WebSocket es ideal para las actualizaciones en tiempo real de la app móvil y del portal web: cuando un bus cambia de posición, el servidor envía la actualización a todos los clientes suscritos a esa ruta, sin necesidad de que cada cliente consulte periódicamente al servidor (polling). WebSocket reduce la latencia de actualización a menos de 1 segundo y reduce el consumo de ancho de banda en un 80% comparado con polling.
+
+**NMEA 0183:** NMEA 0183 es el protocolo estándar de la industria para comunicación GPS. NMEA 0183 define un formato de mensajes de texto (sentences) que contienen la posición, velocidad, dirección, y hora del GPS. NMEA 0183 utiliza una conexión serial (RS-232 o RS-485) entre el módulo GPS y la OBU. NMEA 0183 es ideal para la comunicación GPS porque es simple, universalmente soportado por todos los módulos GPS, y no requiere procesamiento complejo.
+
+**SAE J1939:** SAE J1939 es el protocolo estándar de la industria automotriz para comunicación CAN Bus (Controller Area Network) en vehículos comerciales. SAE J1939 define un formato de mensajes que contienen los datos del ECU (Electronic Control Unit) del vehículo: velocidad del motor, torque, consumo de combustible, presión de aceite, temperatura del motor, códigos de falla. SAE J1939 utiliza el bus CAN del vehículo para comunicación entre la OBU y el ECU. SAE J1939 es ideal para la comunicación vehicular porque proporciona acceso a una gran cantidad de datos del vehículo que son valiosos para el mantenimiento predictivo y la seguridad operativa.
+
+**Modbus RTU:** Modbus RTU es el protocolo estándar de la industria para comunicación con sensores industriales. Modbus RTU define un formato de mensajes maestro-esclavo donde el maestro (la OBU) solicita datos a los esclavos (los sensores) y los esclavos responden con los datos solicitados. Modbus RTU utiliza una conexión serial RS-485. Modbus RTU es ideal para la comunicación con sensores de puertas, sensores de temperatura, sensores de presión, y otros sensores industriales que no utilizan protocolos modernos.
+
+---
+
+## 7. PLAN DE MIGRACIÓN Y ROLLOUT
+
+### 7.1 Las fases de implementación: de la infraestructura a la operación
+
+El plan de migración y rollout no es un simple cronograma: es una **estrategia de implementación** que minimiza el riesgo operativo, maximiza la adopción de los usuarios, y asegura la calidad del sistema. La implementación de los cuatro sistemas tecnológicos del SETP Sincelejo se divide en cinco fases, cada una con un alcance, una duración, y un objetivo específico.
+
+**Fase 1: Infraestructura Cloud y Centro de Control (Meses 1-2):** Esta fase es la base de todo: sin infraestructura, no hay sistema. El alcance de esta fase incluye: la contratación de la infraestructura cloud (servidores virtuales, base de datos, almacenamiento, red, firewall), la instalación y configuración del software del centro de control (visualización, alarmas, reportes, comunicaciones, API), la configuración de la red VPN (WireGuard), la configuración del broker MQTT (EMQ X), la configuración de la base de datos (PostgreSQL), y la configuración del sistema de monitoreo (Grafana, Prometheus). El objetivo de esta fase es tener un centro de control operativo, capaz de recibir datos de los buses y de mostrar la información al supervisor. Esta fase no requiere buses: se puede probar con simuladores de buses que generan datos ficticios de rastreo, transacciones y eventos.
+
+**Fase 2: Instalación Onboard en Buses Piloto (Meses 3-4):** Esta fase es la prueba de concepto: se instala la tecnología en un subconjunto de buses para validar que la tecnología funciona en las condiciones reales de operación. El alcance de esta fase incluye: la selección de 10 buses piloto (preferiblemente de diferentes rutas, diferentes horarios, y diferentes condiciones de operación), la instalación de la OBU, el validador, la pantalla del conductor, y las cámaras CCTV en cada bus piloto, la configuración de los dispositivos (registro en el sistema, asignación de rutas, configuración de parámetros), la capacitación de los conductores de los buses piloto, y el monitoreo intensivo de la operación de los buses piloto (supervisor dedicado, reportes diarios, reuniones semanales de revisión). El objetivo de esta fase es identificar problemas de integración, problemas de rendimiento, problemas de usabilidad, y problemas operativos antes de desplegar la tecnología en toda la flota. Los problemas identificados en esta fase se corrigen antes de la Fase 3, reduciendo el riesgo del rollout completo.
+
+**Fase 3: Rollout de la Flota Completa (Meses 5-6):** Esta fase es la expansión: se instala la tecnología en los 46 buses de la flota. El alcance de esta fase incluye: la instalación de la OBU, el validador, la pantalla del conductor, y las cámaras CCTV en cada uno de los 46 buses, la configuración de los dispositivos, la capacitación de todos los conductores, la capacitación de los supervisores de flota, y el monitoreo de la operación de la flota completa. El objetivo de esta fase es tener toda la flota rastreable, con todos los buses enviando datos al centro de control, y con todos los conductores utilizando la tecnología. Esta fase es la más compleja logísticamente: requiere coordinar la instalación de 46 buses en un período de 2 meses, lo que implica aproximadamente 1 bus por día de trabajo.
+
+**Fase 4: Pago Electrónico y App de Usuarios (Meses 7-8):** Esta fase es la activación del sistema de pago: se habilita el pago electrónico en los validadores, se lanza la app móvil, y se inicia la campaña de adopción de usuarios. El alcance de esta fase incluye: la configuración del backoffice de pagos (conciliación, reportes, gestión de subsidios, configuración de tarifas, blacklist), la integración con la pasarela de pagos (Redeban, Credibanco), la configuración del sistema de recarga de tarjetas (app móvil, puntos de recarga físicos), el lanzamiento de la app móvil en las tiendas de aplicaciones (App Store, Google Play), la campaña de comunicación a los usuarios (cómo usar la app, cómo recargar la tarjeta, cómo pagar con la tarjeta), y el monitoreo de la adopción de usuarios (número de descargas de la app, número de tarjetas emitidas, número de transacciones electrónicas). El objetivo de esta fase es migrar a los usuarios del pago en efectivo al pago electrónico, reduciendo el manejo de efectivo, acelerando el embarque, y aumentando la seguridad del recaudo.
+
+**Fase 5: Optimización, Integraciones y Analytics (Meses 9-12):** Esta fase es la maduración: se optimiza el sistema basado en los datos de operación, se integra con sistemas externos, y se activan las funciones avanzadas de análisis. El alcance de esta fase incluye: la optimización de la configuración del sistema (ajuste de parámetros de rastreo, ajuste de frecuencias de transmisión, ajuste de umbrales de alerta), la integración con sistemas externos (sistema de tráfico de la Alcaldía, sistema de información del Ministerio de Transporte, sistema de planificación urbana), la activación de funciones avanzadas (machine learning para predicción de demanda, análisis de patrones de tráfico, detección de anomalías en transacciones), y la generación de reportes analíticos (dashboards ejecutivos, reportes de eficiencia, reportes de satisfacción del usuario). El objetivo de esta fase es transformar el sistema de una herramienta de monitoreo a una herramienta de inteligencia operativa, que no solo muestra qué está pasando, sino que predice qué va a pasar y sugiere acciones para optimizar la operación.
+
+### 7.2 La estrategia de go-live: del ensayo a la operación
+
+La estrategia de go-live no es un simple "encender el sistema": es una **secuencia de actividades de preparación, prueba, y activación** que minimiza el riesgo de fallas en el primer día de operación. El go-live se divide en cinco semanas, cada una con un enfoque específico.
+
+**Semana -2: Capacitación:** Esta semana es la preparación del personal: se capacita a los conductores en el uso de los dispositivos a bordo (OBU, validador, pantalla, botón de emergencia), se capacita a los supervisores de flota en el uso del centro de control (visualización, alarmas, reportes, comunicaciones), y se capacita al soporte técnico en el diagnóstico y reparación de dispositivos. La capacitación no es teórica: es práctica, con simulacros de operación en un ambiente de prueba, ejercicios de respuesta a incidentes, y evaluaciones de competencia. Un conductor que no aprueba la evaluación de competencia no puede operar un bus con tecnología.
+
+**Semana -1: Pruebas Integrales:** Esta semana es la validación del sistema: se realizan pruebas integrales en el ambiente de producción, simulando la operación completa con todos los sistemas activos. Las pruebas incluyen: pruebas de rastreo (verificar que todos los buses envían posición GPS correctamente), pruebas de validación (verificar que todos los validadores procesan tarjetas correctamente), pruebas de comunicación (verificar que el centro de control recibe datos de todos los buses en tiempo real), pruebas de alertas (verificar que todas las alertas se generan correctamente y se envían al supervisor), pruebas de reportes (verificar que todos los reportes se generan correctamente y contienen datos precisos), y pruebas de carga (verificar que el sistema soporta la carga máxima de 46 buses simultáneos). Las pruebas se realizan con los buses piloto, pero simulando la carga de la flota completa mediante generadores de tráfico.
+
+**Semana 0: Go-Live:** Esta semana es la activación: el sistema se pone en operación real. El go-live se realiza en un horario de baja demanda (por ejemplo, un sábado por la mañana) para minimizar el impacto de posibles fallas. El supervisor de flota monitorea el sistema 24/7 durante los primeros 7 días, con un equipo de soporte técnico en alerta máxima. Cada incidente se documenta, se clasifica por severidad, y se resuelve según el procedimiento de respuesta. Los usuarios se informan mediante la app, las pantallas en paradas, y el call center sobre cualquier interrupción del servicio.
+
+**Semana +1: Ajustes:** Esta semana es la estabilización: se realizan los ajustes necesarios basados en los incidentes de la primera semana. Los ajustes incluyen: corrección de bugs de software, ajuste de parámetros de configuración, actualización de procedimientos operativos, y capacitación adicional del personal que mostró debilidades. La semana de ajustes es crítica: sin ella, los problemas de la primera semana se convierten en problemas crónicos que degradan la operación y la confianza de los usuarios.
+
+**Semana +2: Estabilización:** Esta semana es la normalización: la operación se estabiliza, los incidentes disminuyen, y el sistema opera dentro de los parámetros normales. El supervisor de flota genera el primer reporte de estabilización, que documenta: el número de incidentes resueltos, el tiempo promedio de resolución, los ajustes realizados, las lecciones aprendidas, y las recomendaciones para la mejora continua. El reporte de estabilización es la evidencia de que el sistema está listo para la operación normal, y que el personal está capacitado para operarlo.
+
+---
+
+## 8. CONCLUSIONES Y RECOMENDACIONES
+
+### 8.1 La especificación como base de la contratación
+
+El presente documento ha establecido las especificaciones conceptuales de los cuatro sistemas tecnológicos del SETP Sincelejo (SRC, SGCF, SIU, SST) en tres niveles: hardware a bordo, software a bordo, y centro de control. Estas especificaciones no son un diseño final: son un **marco técnico de referencia** que Metro Sabanas S.A.S. puede utilizar para evaluar las propuestas de los proveedores en el proceso de licitación.
+
+La importancia de estas especificaciones radica en que transforman la contratación de un sistema tecnológico de un proceso de compra de productos a un proceso de **evaluación de soluciones**. En lugar de comprar un validador, una OBU, una pantalla, y un software, Metro Sabanas S.A.S. contrata una solución integrada que cumple con un conjunto de requisitos técnicos definidos. Esto permite comparar las propuestas de diferentes proveedores en términos de cumplimiento de especificaciones, en lugar de comparar precios de productos individuales que pueden no ser intercambiables.
+
+### 8.2 Recomendaciones para la contratación
+
+Basado en el análisis de las especificaciones, se presentan las siguientes recomendaciones para la contratación del componente tecnológico del SETP Sincelejo:
+
+**Recomendación 1: Especificar requisitos, no productos.** El pliego de licitación debe especificar los requisitos funcionales y no funcionales que la solución debe cumplir, en lugar de especificar productos comerciales específicos. Por ejemplo, en lugar de especificar "OBU modelo X de marca Y", el pliego debe especificar "OBU con procesador ARM Cortex-A72, 4 GB RAM, 64 GB almacenamiento, GPS multi-GNSS, 4G/LTE Cat-6, y certificación IP65". Esto permite que diferentes proveedores compitan con diferentes productos que cumplen con los mismos requisitos, fomentando la competencia y reduciendo el costo.
+
+**Recomendación 2: Exigir demostración práctica.** El pliego de licitación debe requerir que los proveedores realicen una demostración práctica de su solución en un ambiente de prueba, con buses reales, conductores reales, y transacciones reales. La demostración práctica es la única forma de verificar que la solución funciona en las condiciones reales de operación del SETP Sincelejo, y no solo en las condiciones controladas de un laboratorio del proveedor.
+
+**Recomendación 3: Incluir pruebas de aceptación.** El pliego de licitación debe definir un conjunto de pruebas de aceptación que la solución debe pasar antes de ser aceptada. Las pruebas de aceptación deben incluir: pruebas de funcionalidad (verificar que todas las funciones especificadas funcionan correctamente), pruebas de rendimiento (verificar que el sistema soporta la carga máxima de 46 buses simultáneos), pruebas de seguridad (verificar que el sistema resiste ataques de penetración), pruebas de usabilidad (verificar que los conductores y usuarios pueden usar el sistema sin dificultad), y pruebas de interoperabilidad (verificar que el sistema se integra con los sistemas externos especificados).
+
+**Recomendación 4: Definir un período de garantía.** El pliego de licitación debe definir un período de garantía de al menos 12 meses después de la aceptación del sistema, durante el cual el proveedor es responsable de corregir cualquier defecto de software o hardware sin costo adicional. El período de garantía debe incluir: soporte técnico 24/7, tiempo de respuesta máximo de 4 horas para incidentes críticos, tiempo de resolución máximo de 24 horas para incidentes críticos, y reemplazo de hardware defectuoso sin costo.
+
+**Recomendación 5: Requerir documentación completa.** El pliego de licitación debe requerir que el proveedor entregue documentación completa del sistema: manuales de instalación, manuales de configuración, manuales de operación, manuales de mantenimiento, manuales de usuario, diagramas de arquitectura, diagramas de red, diagramas de flujo de datos, y código fuente del software (con licencia de uso perpetuo para Metro Sabanas S.A.S.). La documentación completa es esencial para la operación, el mantenimiento, y la evolución del sistema a largo plazo.
+
+---
+
+**Documento elaborado por ZEUS — InnovaDataCo | 2026-06-15 | Versión 2.0**

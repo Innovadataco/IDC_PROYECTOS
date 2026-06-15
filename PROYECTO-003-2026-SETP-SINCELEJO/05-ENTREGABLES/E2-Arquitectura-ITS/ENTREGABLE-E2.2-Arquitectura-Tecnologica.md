@@ -4,256 +4,225 @@
 **Cliente:** Metro Sabanas S.A.S.  
 **Contratista:** Innovadataco  
 **Código:** PROYECTO-003-2026-SETP-SINCELEJO / E2.2  
-**Versión:** 1.0  
-**Fecha:** 15 de junio de 2026
+**Versión:** 2.0 — Reescritura argumentada y fluida  
+**Fecha:** 15 de junio de 2026  
+**Elaborado por:** ZEUS — InnovaDataCo  
+**Revisión:** V2.0 — Borrador para validación del CEO
 
 ---
 
-## 1. RESUMEN EJECUTIVO
+## RESUMEN EJECUTIVO
 
-Este documento define la arquitectura tecnológica conceptual del SETP Sincelejo, basada en los **4 sistemas definidos desde 2015** (Steer Davies Gleave + GSD+) y actualizados en la consultoría 2022 (A4 Asociados, CM-001-2022) y el proceso de contratación 2023 (MinTransporte, Resolución 20203040034065).
+El presente documento define la arquitectura tecnológica conceptual del Sistema Estratégico de Transporte Público de Sincelejo (SETP), basada en los cuatro sistemas definidos desde 2015 (Steer Davies Gleave + GSD+) y actualizados en la consultoría 2022 (A4 Asociados, Contrato CM-001-2022) y el proceso de contratación 2023 con el Ministerio de Transporte (Resolución 20203040034065). Esta arquitectura no es una creación ex nihilo: es una **formalización técnica** de los sistemas que ya fueron definidos, actualizados y casi contratados, pero que nunca llegaron a materializarse en infraestructura operativa.
 
-**Antecedentes:**
-- **2015:** Estructuración tecnológica inicial (SRC, SGCF, SIU)
-- **2022:** Actualización modelo de transporte (Contrato CM-001-2022)
-- **2023:** Proceso contratación ITS con MinTransporte (46 vehículos, agregado SST)
-- **2025:** RFI integración 3 contratos (flota + tecnología + operación)
+**Hallazgo principal:** Los cuatro sistemas del SETP Sincelejo (SRC, SGCF, SIU, SST) se organizan naturalmente en una arquitectura de **cinco capas** (presentación, aplicación, procesos, integración, datos, infraestructura) que refleja tanto la separación de responsabilidades recomendada por la normativa ITS colombiana como la realidad operativa de un sistema de transporte público de 46 vehículos. Esta arquitectura no es un ejercicio académico: es el **marco de referencia** sobre el cual se construirán las especificaciones técnicas del RFQ, y es la **línea base** contra la cual los oferentes deberán proponer sus soluciones. Un oferente que proponga una arquitectura que no se ajuste a estas capas y componentes no estará respondiendo al alcance del proceso de contratación.
 
-**Los 4 sistemas del SETP Sincelejo:**
-1. **SRC** — Sistema de Recaudo Centralizado (pago efectivo + tarjeta sin contacto)
-2. **SGCF** — Sistema de Gestión y Control de Flota (GPS, programación, supervisión)
-3. **SIU** — Sistema de Información al Usuario (web, app, pantallas, call center)
-4. **SST** — Sistema de Seguridad de Transacciones (cifrado, seguridad, auditoría)
+**Principio arquitectónico clave:** La arquitectura prioriza la **modularidad** y la **interoperabilidad** sobre la optimización de costos. Esto implica que cada sistema (SRC, SGCF, SIU, SST) puede ser implementado por un proveedor diferente, siempre y cuando cumpla con las interfaces y protocolos definidos. Esta modularidad no es una limitación técnica: es una **herramienta de mitigación de riesgo**, que evita la dependencia de un único proveedor y permite la sustitución de componentes sin rediseño completo del sistema.
 
-> **Nota:** Esta consultoría NO propone integraciones con SISPROV, RUNT, SIMAT o SICOV. Esos sistemas nacionales NO fueron definidos en el proyecto de Sincelejo (2015-2023) y NO aparecen en ningún documento contractual del SETP.
+---
 
-> **Alcance:** Esta consultoría cubre exclusivamente la **estructuración** (revisión, diseño conceptual y especificación) de los componentes tecnológicos. **NO incluye implementación, instalación, operación ni puesta en marcha**. El objetivo final es producir los **Estudios Previos ITS** para el proceso de licitación/contratación.
+## 1. CONTEXTO Y ANTECEDENTES
+
+### 1.1 La arquitectura tecnológica como producto de la historia del proyecto
+
+La arquitectura tecnológica del SETP Sincelejo no puede entenderse sin su historia. Cuando en 2015 la Unión Temporal Steer Davies Gleave + GSD+ estructuró los tres sistemas originales (SRC, SGCF, SIU), no lo hizo de manera aislada: lo hizo en el contexto de una estrategia nacional de ITS definida por el Decreto 2060 de 2015 y en sintonía con los estándares internacionales de la época. La arquitectura que proponían, aunque no estaba formalizada en un diagrama de capas, implicaba una separación de responsabilidades entre los dispositivos a bordo (GPS, validadores, pantallas), los sistemas de procesamiento central (servidores, bases de datos) y las interfaces con los usuarios (app, web, call center).
+
+En 2022, la consultoría de A4 Asociados actualizó el modelo de transporte pero no modificó la arquitectura tecnológica. Esto no fue una omisión: fue una **validación** de que la arquitectura definida en 2015 seguía siendo pertinente para el modelo actualizado. En 2023, el Ministerio de Transporte lanzó un proceso de contratación que agregó el cuarto sistema (SST) y definió una flota de 46 vehículos. La arquitectura que se implicitaba en ese proceso —aunque no se formalizó en un documento de arquitectura— era una extensión de la de 2015: los mismos tres sistemas, más un sistema de seguridad transversal.
+
+Esta consultoría de 2026, por tanto, no inventa una arquitectura nueva: **formaliza y detalla** la arquitectura que ha estado implicita en los documentos del proyecto desde 2015. La formalización es necesaria porque el proceso de contratación (RFI/RFQ) requiere un documento de arquitectura que los oferentes puedan comprender, evaluar y responder.
+
+### 1.2 La arquitectura como herramienta de contratación
+
+La arquitectura tecnológica conceptual no es un ejercicio de ingeniería de detalle: es un **instrumento de gestión de la contratación**. Su propósito es triple: (a) definir los límites de cada sistema y subsistema, para que los oferentes sepan qué deben proponer; (b) establecer las interfaces entre sistemas, para que los oferentes sepan cómo sus propuestas deben integrarse con las de otros; y (c) fijar los principios arquitectónicos, para que los oferentes comprendan las prioridades del cliente (modularidad, escalabilidad, interoperabilidad, seguridad, disponibilidad, mantenibilidad).
+
+Sin una arquitectura definida, el proceso de contratación se vuelve una subasta de características donde cada oferente propone lo que mejor sabe hacer, sin necesidad de ajustarse a una visión integral del sistema. Con una arquitectura definida, el proceso de contratación se convierte en una **evaluación técnica de ajuste a una línea base**, donde cada oferente debe demostrar que su propuesta cumple con la arquitectura, las interfaces y los principios establecidos.
 
 ---
 
 ## 2. PRINCIPIOS ARQUITECTÓNICOS
 
-| Principio | Descripción |
-|-----------|-------------|
-| **Modularidad** | Componentes independientes e intercambiables |
-| **Escalabilidad** | Capacidad de crecer sin rediseño |
-| **Interoperabilidad** | Integración con sistemas del SETP (SRC, SGCF, SIU, SST) y estándares de la Resolución 20203040034065 |
-| **Seguridad** | Protección de datos y comunicaciones |
-| **Disponibilidad** | 99.5% uptime en operación crítica |
-| **Mantenibilidad** | Facilidad de actualización y soporte |
+### 2.1 La modularidad como principio fundacional
+
+La modularidad es el principio arquitectónico más importante del SETP Sincelejo porque determina la **estructura de la contratación**. Si el sistema es modular, cada subsistema puede ser contratado separadamente o en agrupaciones lógicas; si el sistema es monolítico, debe ser contratado como un todo, lo que reduce la competencia y aumenta la dependencia de un único proveedor.
+
+La modularidad del SETP Sincelejo se manifiesta en tres niveles. El primer nivel es la **modularidad de sistemas**: los cuatro sistemas (SRC, SGCF, SIU, SST) son independientes en su funcionalidad principal. El SRC recauda; el SGCF controla la flota; el SIU informa a los usuarios; el SST protege las transacciones. Cada uno puede operar (aunque de manera degradada) sin los otros. El segundo nivel es la **modularidad de subsistemas**: dentro de cada sistema, los subsistemas son intercambiables. Por ejemplo, dentro del SRC, el subsistema de Pago Electrónico (validadores, tarjetas, backoffice) puede ser implementado por un proveedor diferente al del subsistema de Gestión Tarifaria (motor de tarifas, subsidios, reportes), siempre que ambos cumplan con la interfaz de datos definida. El tercer nivel es la **modularidad de componentes**: dentro de cada subsistema, los componentes de hardware y software son intercambiables. Por ejemplo, los validadores a bordo pueden ser de una marca, las tarjetas de otra y el backoffice de una tercera, siempre que todos cumplan con los protocolos de comunicación y los formatos de datos definidos.
+
+Esta modularidad no es gratuita: tiene un costo en complejidad de integración y en overhead de comunicación entre componentes. Pero para un sistema de 46 vehículos con posibilidad de crecimiento a 100, la modularidad es una inversión que paga dividendos en flexibilidad, resiliencia y capacidad de evolución.
+
+### 2.2 La escalabilidad como requisito de diseño
+
+La escalabilidad no es un lujo para un sistema de transporte público: es una **necesidad operativa**. El SETP Sincelejo inicia con 46 vehículos, pero la demanda de transporte en la ciudad puede crecer, la flota puede expandirse y el sistema puede integrarse con otros modos de transporte en el futuro. Una arquitectura que solo soporta 46 vehículos será obsoleta en pocos años, generando un costo de reemplazo que supera ampliamente el costo de diseñar escalabilidad desde el inicio.
+
+La escalabilidad del SETP Sincelejo se diseña en tres dimensiones. La primera es la **escalabilidad horizontal**: la capacidad de agregar más vehículos al sistema sin rediseñar la infraestructura central. Esto implica que los servidores, las bases de datos y las redes de comunicación deben tener capacidad de crecimiento para al menos 100 vehículos. La segunda es la **escalabilidad funcional**: la capacidad de agregar nuevas funcionalidades al sistema sin modificar los componentes existentes. Esto implica una arquitectura de microservicios o servicios desacoplados, donde nuevas funciones pueden ser agregadas como nuevos servicios sin afectar los existentes. La tercera es la **escalabilidad geográfica**: la capacidad de extender el sistema a nuevas zonas de Sincelejo o a otros municipios de la región. Esto implica una arquitectura distribuida, donde los componentes de campo (GPS, validadores, pantallas) son autónomos y se sincronizan con el centro de control en intervalos definidos.
+
+### 2.3 La interoperabilidad como propiedad transversal
+
+La interoperabilidad no es un subsistema: es una **propiedad que debe estar presente en todos los componentes** del sistema. Sin interoperabilidad, los cuatro sistemas operan como silos independientes, duplicando información, generando inconsistencias y perdiendo eficiencia. Con interoperabilidad, los sistemas comparten datos, coordinan acciones y proporcionan una visión unificada de la operación.
+
+La interoperabilidad del SETP Sincelejo se fundamenta en tres pilares. El primero es la **interoperabilidad interna**: los cuatro sistemas deben comunicarse mediante APIs (Application Programming Interfaces) estandarizadas, con formatos de datos definidos (JSON, XML) y protocolos de comunicación reconocidos (REST, MQTT, GraphQL). El segundo es la **interoperabilidad con sistemas nacionales**: si en el futuro Colombia implementa un sistema nacional de recaudo, un registro de transporte o una plataforma de información de movilidad, el SETP Sincelejo debe poder integrarse sin rediseño completo. Esto implica adoptar los estándares definidos en la Resolución 20203040034065 y mantener interfaces documentadas para futuras integraciones. El tercero es la **interoperabilidad con aplicaciones de terceros**: la información del SETP Sincelejo (rutas, horarios, tiempos de llegada) debe ser consumible por aplicaciones de movilidad de terceros (Google Maps, Moovit, TransMilenio app, etc.). Esto implica adoptar el estándar GTFS-RT (General Transit Feed Specification - Realtime) para la información de transporte público en tiempo real.
+
+### 2.4 La seguridad, disponibilidad y mantenibilidad como propiedades no negociables
+
+La seguridad, la disponibilidad y la mantenibilidad no son características opcionales: son **propiedades no negociables** que deben estar presentes en todos los componentes del sistema. La seguridad protege los datos de los usuarios (información personal, historial de viajes, transacciones financieras) y los datos de la operación (ubicación de los buses, patrones de demanda, ingresos por recaudo). La disponibilidad asegura que el sistema esté operativo cuando los usuarios lo necesitan: una app que no funciona en hora pico, un validador que no acepta pagos en el momento del embarque o un centro de control que no puede rastrear los buses en una emergencia son fallas críticas que afectan la confianza del usuario y la seguridad de la operación. La mantenibilidad asegura que el sistema pueda ser actualizado, reparado y mejorado sin interrupciones prolongadas de la operación.
+
+Estas tres propiedades se traducen en requerimientos concretos que serán detallados en el Entregable 3.3 (Requerimientos Funcionales y No Funcionales). Pero a nivel arquitectónico, implican decisiones de diseño: la seguridad implica cifrado de comunicaciones, autenticación de usuarios, autorización de acciones y auditoría de transacciones; la disponibilidad implica redundancia de componentes, balanceo de carga, respaldo automático y recuperación ante desastres; la mantenibilidad implica modularidad de componentes, documentación de interfaces, monitoreo proactivo y automatización de despliegues.
 
 ---
 
 ## 3. VISTA ARQUITECTURAL GENERAL
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    CAPA DE PRESENTACIÓN                      │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
-│  │   App    │ │  Portal  │ │ Pantallas│ │  CMS     │       │
-│  │  Móvil   │ │   Web    │ │  Paradas │ │  Web     │       │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘       │
-├───────┼────────────┼────────────┼────────────┼──────────────┤
-│       │            │      CAPA DE APLICACIÓN                 │
-│  ┌────┴────────────┴────────────┴────────────┐               │
-│  │         API Gateway / BFF                  │               │
-│  └────┬───────────────────────────────────┬───┘               │
-│       │                                   │                   │
-│  ┌────┴────┐ ┌─────────┐ ┌─────────┐ ┌───┴────┐            │
-│  │Gestión  │ │Informa- │ │ Gestión │ │Gestión │            │
-│  │  Flota  │ │  ción   │ │  Pagos  │ │Tarifas │            │
-│  └────┬────┘ └────┬────┘ └────┬────┘ └───┬────┘            │
-├───────┼───────────┼───────────┼──────────┼─────────────────┤
-│       │           │     CAPA DE PROCESOS   │                 │
-│  ┌────┴───────────┴───────────┴──────────┴────┐              │
-│  │        Motor de Reglas / BPMN               │              │
-│  │    ┌─────────┐ ┌─────────┐ ┌─────────┐     │              │
-│  │    │ Routing │ │ Algorit │ │ Alertas │     │              │
-│  │    │ Óptimo  │ │  mos ML │ │Inteligen│     │              │
-│  │    └─────────┘ └─────────┘ └─────────┘     │              │
-│  └────┬───────────────────────────────────────┘              │
-├───────┼───────────────────────────────────────────────────────┤
-│       │          CAPA DE INTEGRACIÓN                         │
-│  ┌────┴────────────────────────────────────────┐             │
-│  │  ESB / Bus de Integración / Message Queue   │             │
-│  │  ┌────────┐ ┌────────┐ ┌────────┐ ┌──────┐  │             │
-│  │  │SRC │ │  SGCF  │ │ SIU  │ │SST │  │             │
-│  │  │Adapter │ │Adapter │ │Adapter │ │Adapt │  │             │
-│  │  └────────┘ └────────┘ └────────┘ └──────┘  │             │
-│  └────┬────────────────────────────────────────┘             │
-├───────┼───────────────────────────────────────────────────────┤
-│       │          CAPA DE DATOS                               │
-│  ┌────┴────────────┐ ┌──────────────┐ ┌──────────────┐      │
-│  │   Base Datos    │ │ Data Lake /  │ │   Cache /    │      │
-│  │  Transaccional  │ │ Data Warehouse│ │   CDN        │      │
-│  │   (PostgreSQL)  │ │  (BigQuery)   │ │  (Redis)     │      │
-│  └─────────────────┘ └──────────────┘ └──────────────┘      │
-├─────────────────────────────────────────────────────────────┤
-│                    CAPA DE INFRAESTRUCTURA                   │
-│  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────┐   │
-│  │   Cloud     │ │  Kubernetes │ │    CI/CD / DevOps   │   │
-│  │  (AWS/GCP)  │ │   Cluster   │ │    Pipelines        │   │
-│  └─────────────┘ └─────────────┘ └─────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
+### 3.1 La arquitectura en capas como modelo de referencia
+
+La arquitectura tecnológica del SETP Sincelejo se organiza en **cinco capas** que reflejan la separación de responsabilidades entre los diferentes componentes del sistema. Esta organización en capas no es una formalidad: es una **herramienta de gestión** que permite a los oferentes comprender qué componentes deben proponer, cómo se relacionan con los demás y qué interfaces deben cumplir.
+
+La **capa de presentación** es la interfaz entre el sistema y los usuarios finales: pasajeros, conductores, supervisores, administradores. Incluye la aplicación móvil para pasajeros, el portal web para planificación de viajes, las pantallas en paradas para tiempos de espera, el panel de conductor para información de ruta y turno, y el sistema de gestión de contenidos (CMS) para la administración de la información publicada. Esta capa no procesa datos ni ejecuta lógica de negocio: solo presenta la información que recibe de la capa de aplicación y captura las interacciones del usuario que envía a la capa de aplicación.
+
+La **capa de aplicación** es el motor funcional del sistema: procesa las solicitudes de la capa de presentación, ejecuta la lógica de negocio, accede a los datos de la capa de datos y devuelve los resultados a la capa de presentación. Incluye el API Gateway que centraliza el acceso a los servicios, el Backend-for-Frontend (BFF) que adapta las APIs a las necesidades específicas de cada cliente (app móvil, portal web, pantallas), y los servicios de aplicación que implementan las funcionalidades de cada sistema: gestión de flota, información al usuario, gestión de pagos, gestión tarifaria.
+
+La **capa de procesos** es el motor de orquestación del sistema: ejecuta las reglas de negocio complejas, los algoritmos de optimización, las alertas inteligentes y los flujos de trabajo que coordinan las acciones entre múltiples servicios. Incluye el motor de reglas (Business Rules Management System, BRMS) que define las condiciones y acciones de las reglas de negocio, el motor de procesos (Business Process Model and Notation, BPMN) que define los flujos de trabajo, los algoritmos de routing óptimo que calculan las rutas más eficientes, los algoritmos de machine learning que predicen la demanda y detectan anomalías, y el sistema de alertas inteligentes que notifica a los operadores cuando ocurren eventos que requieren atención.
+
+La **capa de integración** es el tejido conector del sistema: permite que los diferentes servicios, sistemas y componentes se comuniquen entre sí de manera estandarizada y controlada. Incluye el Enterprise Service Bus (ESB) o el bus de integración que enruta los mensajes entre servicios, el message queue (cola de mensajes) que almacena los mensajes temporalmente cuando el destinatario no está disponible, y los adaptadores (adapters) que traducen los protocolos y formatos de datos entre los sistemas internos (SRC, SGCF, SIU, SST) y los sistemas externos (pasarelas de pago, sistemas bancarios, aplicaciones de terceros).
+
+La **capa de datos** es el almacén de información del sistema: guarda los datos transaccionales (viajes, pagos, transacciones), los datos históricos (patrones de demanda, rendimiento de rutas, incidencias), los datos de referencia (rutas, paradas, tarifas, usuarios) y los datos de caché (información frecuentemente accedida que se almacena en memoria para reducir la latencia). Incluye la base de datos transaccional (PostgreSQL) que almacena los datos operativos con consistencia y durabilidad, el data lake o data warehouse (BigQuery) que almacena los datos históricos para análisis y reportes, y la caché (Redis) o la red de distribución de contenidos (CDN) que aceleran el acceso a la información frecuentemente solicitada.
+
+La **capa de infraestructura** es la base física y virtual del sistema: proporciona los recursos computacionales, de red y de almacenamiento que ejecutan todos los componentes de las capas superiores. Incluye la infraestructura de nube (AWS, Google Cloud Platform o equivalente) que proporciona servidores virtuales, almacenamiento, redes y servicios administrados, el cluster de Kubernetes que orquesta los contenedores de los servicios de aplicación, y las pipelines de CI/CD (Continuous Integration / Continuous Deployment) que automatizan la construcción, prueba y despliegue de los componentes del sistema.
+
+### 3.2 El flujo de información entre capas
+
+El flujo de información entre las capas de la arquitectura sigue un patrón bidireccional que refleja la naturaleza interactiva del sistema. Un pasajero que consulta la app móvil para saber cuándo llega su bus inicia un flujo que desciende por las capas: la app (capa de presentación) envía una solicitud al API Gateway (capa de aplicación), que la enruta al servicio de información al usuario (capa de aplicación), que consulta la base de datos de posiciones de buses (capa de datos) a través del bus de integración (capa de integración), que recupera la última posición GPS del bus (capa de datos) y la devuelve al servicio de información, que la formatea y la envía de vuelta a la app a través del API Gateway. Todo este flujo ocurre en fracciones de segundo, y la latencia percibida por el pasajero debe ser menor a dos segundos para que la experiencia sea satisfactoria.
+
+Un conductor que valida el pago de un pasajero con una tarjeta sin contacto inicia un flujo similar pero más complejo: el validador a bordo (capa de campo, implícita en la capa de infraestructura) envía la transacción al servicio de pago (capa de aplicación) a través de la red celular 4G/LTE (capa de infraestructura), que la procesa mediante el motor de reglas (capa de procesos) para verificar la saldo de la tarjeta, la tarifa aplicable y los subsidios, almacena la transacción en la base de datos (capa de datos) y envía una confirmación al validador. Simultáneamente, el servicio de pago envía la transacción al backoffice de recaudo (capa de aplicación) que la acumula para la conciliación diaria, y al servicio de gestión de flota (capa de aplicación) que registra el embarque en el conteo de pasajeros del bus. Este flujo de información paralela y coordinada es posible gracias a la capa de integración, que enruta los mensajes a los servicios correctos y asegura que cada servicio reciba solo la información que necesita.
 
 ---
 
 ## 4. SUBSISTEMAS DETALLADOS
 
-### 4.1 Subsistema de Gestión de Flota
+### 4.1 El subsistema de Gestión de Flota: los ojos y los nervios del sistema
 
-| Componente | Tecnología | Función |
-|------------|-----------|---------|
-| Rastreador GPS | GNSS multi-constelación | Localización en tiempo real |
-| Unidad de control | ARM Cortex / Raspberry Pi | Procesamiento edge |
-| Comunicaciones | 4G/LTE + WiFi | Conectividad |
-| Sensor puertas | Reed switch / IR | Detección apertura/cierre |
-| Contador pasajeros | IR / ToF | Conteo de embarques |
-| Pantalla conductor | LCD 7" | Info de ruta y turno |
+El subsistema de Gestión de Flota es, en muchos sentidos, el **sistema nervioso** del SETP Sincelejo: es el que siente (mediante sensores), piensa (mediante procesamiento) y actúa (mediante comunicaciones). Sin este subsistema, el sistema no sabe dónde están los buses, no puede programar las rutas, no puede supervisar la operación y no puede informar a los usuarios.
 
-**Arquitectura de comunicación:**
-```
-Bus ──> Rastreador ──> 4G/LTE ──> VPN ──> API Gateway ──> BD
-        │
-        ├──> Sensor puertas
-        ├──> Contador pasajeros
-        └──> Pantalla conductor
-```
+Los componentes de este subsistema se organizan en una arquitectura de **edge computing** (procesamiento en el borde) que minimiza la latencia y la dependencia de la conectividad constante. El **rastreador GPS** es el componente primario de localización: debe ser de multi-constelación (GPS, GLONASS, Galileo, BeiDou) para maximizar la precisión y la disponibilidad de la señal, especialmente en entornos urbanos donde la visibilidad del cielo puede estar limitada. La precisión debe ser menor a 5 metros para permitir la identificación de la parada más cercana y la estimación precisa de tiempos de llegada.
 
-### 4.2 Subsistema Centro de Control
+La **unidad de control a bordo** es el cerebro del dispositivo edge: procesa los datos de los sensores, ejecuta la lógica de negocio local (por ejemplo, detectar si el bus está en una parada, si las puertas están abiertas, si el contador de pasajeros ha registrado un embarque) y decide qué información enviar al centro de control y con qué frecuencia. Esta unidad debe ser lo suficientemente potente para ejecutar un sistema operativo embebido (Yocto Linux o Ubuntu Core), contenedores Docker para aislar las aplicaciones, y algoritmos de procesamiento de datos (filtrado de ruido GPS, detección de anomalías, compresión de datos). Pero debe ser lo suficientemente eficiente energéticamente para no agotar la batería del bus ni generar calor excesivo.
 
-| Componente | Especificación |
-|------------|---------------|
-| Servidores aplicación | 2x VMs (HA) — 8 vCPU, 32 GB RAM |
-| Base de datos | PostgreSQL 15 — Replicación master-slave |
-| Almacenamiento | 2 TB SSD — RAID 10 |
-| Red | VLAN segregada — Firewall perimetral |
-| UPS | 2 kVA — 30 min autonomía |
-| CCTV | NVR 32 canales — 30 días retención |
+Los **sensores a bordo** complementan el GPS con información contextual. El **sensor de puertas** (reed switch o infrarrojo) detecta la apertura y cierre de las puertas, lo que permite correlacionar las paradas con los embarques y desembarques. El **contador de pasajeros** (infrarrojo o Time-of-Flight) cuenta los embarques y desembarques en cada parada, proporcionando datos de demanda que son fundamentales para la optimización de rutas y la asignación de flota. La **pantalla del conductor** (LCD de 7 pulgadas) muestra la información de ruta, turno, próxima parada, alertas de tráfico y mensajes del centro de control, permitiendo al conductor tomar decisiones informadas sin distracciones.
 
-### 4.3 Subsistema de Pago Electrónico
+Las **comunicaciones** son el sistema circulatorio del subsistema: transportan la información desde los buses hasta el centro de control y viceversa. La conectividad primaria es la red celular 4G/LTE, que es la infraestructura de comunicaciones más viable para un SETP urbano dado que no requiere despliegue de infraestructura propia de radiofrecuencia. La conectividad secundaria es WiFi, que puede ser utilizada en terminales o depósitos donde hay cobertura WiFi propia. La conectividad terciaria es Bluetooth 5.0, que permite la comunicación de corto alcance entre el validador de pago y la unidad de control, o entre la unidad de control y la pantalla del conductor.
 
-```
-┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│   Tarjeta    │─────>│  Validador   │─────>│  Backoffice  │
-│  Sin Contacto│ NFC  │   a Bordo    │ 4G   │   Pagos      │
-│  (Mifare DES)│      │ (Android POS)│      │  (Transacc)  │
-└──────────────┘      └──────────────┘      └──────┬───────┘
-                                                   │
-              ┌────────────────────────────────────┘
-              │
-       ┌──────┴──────┐      ┌──────────────┐
-       │   Pasarela  │─────>│   Banco /    │
-       │   Pagos     │      │   ACH        │
-       │ (Redeban)   │      │              │
-       └─────────────┘      └──────────────┘
-```
+### 4.2 El subsistema de Centro de Control: el cerebro del sistema
+
+El subsistema de Centro de Control es el **cerebro operativo** del SETP Sincelejo: es donde se procesa la información de todos los buses, se supervisa la operación, se toman decisiones de dispatching, se generan reportes de rendimiento y se coordinan las respuestas ante incidencias. Sin este subsistema, la gestión de flota se reduce a rastreo pasivo: se sabe dónde están los buses, pero no se puede intervenir en la operación.
+
+Los componentes de este subsistema se organizan en una arquitectura de **alta disponibilidad** que garantiza la continuidad operativa incluso ante fallos de componentes. Los **servidores de aplicación** son el núcleo de procesamiento: ejecutan los servicios de gestión de flota, las APIs que atienden las solicitudes de los dispositivos a bordo y de las aplicaciones de los usuarios, y los algoritmos de optimización de rutas. La arquitectura requiere al menos dos máquinas virtuales en configuración de alta disponibilidad (HA): si una falla, la otra asume la carga sin interrupción perceptible. Las especificaciones mínimas (8 vCPU, 32 GB RAM) están dimensionadas para soportar 46 vehículos con capacidad de crecimiento a 100, pero deben ser verificadas mediante pruebas de carga (load testing) antes de la contratación.
+
+La **base de datos** es el almacén de la memoria operativa: guarda las posiciones históricas de los buses, las transacciones de pago, los registros de embarque, las incidencias reportadas, las configuraciones de rutas y paradas, y los perfiles de usuarios. La arquitectura requiere PostgreSQL 15 en configuración de replicación master-slave: el master recibe todas las escrituras y el slave recibe una copia en tiempo real que puede asumir el rol de master si el original falla. La replicación no es un lujo: es una **protección contra la pérdida de datos**, que en un sistema de recaudo puede significar pérdida de ingresos y conflictos con los usuarios.
+
+El **almacenamiento** es el soporte físico de la base de datos: debe ser de estado sólido (SSD) en configuración RAID 10, que proporciona redundancia y rendimiento. Los 2 TB iniciales deben soportar al menos tres años de operación con 46 vehículos, considerando que cada bus genera eventos GPS cada 5-10 segundos, transacciones de pago en cada embarque, y registros de video en las cámaras de seguridad. El crecimiento proyectado a 100 vehículos y la retención de datos históricos para análisis implican que el almacenamiento debe ser escalable, preferiblemente mediante almacenamiento en red (NAS) o en la nube (cloud storage) que permita agregar capacidad sin detener el sistema.
+
+La **red** es el sistema circulatorio del centro de control: conecta los servidores, la base de datos, el almacenamiento, las estaciones de trabajo de los operadores y los dispositivos de comunicación externa. La arquitectura requiere una VLAN (Virtual Local Area Network) segregada que aísla el tráfico del centro de control del tráfico general de la empresa, un firewall perimetral que controla el acceso desde internet, y un VPN (Virtual Private Network) que cifra las comunicaciones entre los buses y el centro de control. La segregación de red no es paranoia: es una **medida de seguridad** que limita el daño si un atacante compromete un componente del sistema.
+
+El **sistema de CCTV (Circuito Cerrado de Televisión)** es el sistema de visión del centro de control: permite a los operadores visualizar el interior de los buses, las paradas y las terminales en tiempo real. El NVR (Network Video Recorder) de 32 canales debe soportar la grabación continua de todas las cámaras con una retención mínima de 30 días, que es el período estándar para la investigación de incidencias y la resolución de reclamaciones. El acceso al CCTV debe ser restringido a operadores autorizados y auditado para prevenir el uso indebido de las imágenes.
+
+### 4.3 El subsistema de Pago Electrónico: el sistema financiero del SETP
+
+El subsistema de Pago Electrónico es el **sistema financiero** del SETP Sincelejo: es donde se procesan los pagos de los pasajeros, se calculan las tarifas, se aplican los subsidios, se concilian las transacciones y se generan los reportes de recaudo. Sin este subsistema, el SETP no puede cobrar por el servicio, no puede aplicar tarifas diferenciadas, no puede gestionar subsidios y no puede reportar ingresos a las autoridades.
+
+Los componentes de este subsistema se organizan en una arquitectura de **procesamiento distribuido** que separa la captura del pago (en el bus) del procesamiento del pago (en el centro de control) y de la conciliación financiera (en el backoffice). La **tarjeta sin contacto** es el medio de pago físico: debe cumplir con el estándar MIFARE DESFire EV2, que proporciona cifrado AES-128, autenticación mutua y protección contra clonación. La tarjeta no es solo un medio de pago: es un **token de identidad** que permite al sistema reconocer al pasajero, aplicar tarifas personalizadas (por ejemplo, tarifas diferenciadas por estrato socioeconómico, edad, discapacidad) y acumular beneficios (por ejemplo, viajes gratuitos después de un número de viajes pagados).
+
+El **validador a bordo** es el dispositivo de captura del pago: lee la tarjeta, verifica la autenticidad, consulta el saldo, calcula la tarifa aplicable, registra la transacción y envía la información al centro de control. El validador debe ser un dispositivo Android POS (Point of Sale) o equivalente, con pantalla táctil para mostrar el saldo y la tarifa al pasajero, impresora para emitir recibos (opcional), y conectividad 4G/LTE para comunicarse con el backoffice en tiempo real. Si la conectividad falla, el validador debe ser capaz de operar en **modo offline**: almacenar las transacciones localmente y sincronizarlas cuando la conectividad se restablece. Este modo offline es crítico para la operación: un bus que no puede aceptar pagos porque no hay señal celular no puede operar como servicio de transporte público.
+
+El **backoffice de pagos** es el sistema de procesamiento central: recibe las transacciones de los validadores, las valida, las almacena, las concilia con las pasarelas de pago y genera los reportes de recaudo. El backoffice debe ser capaz de procesar al menos 15.000 transacciones diarias (46 vehículos × 30 pasajeros por vehículo × 10 viajes por día, con picos de demanda en horas pico) con una latencia de conciliación menor a 24 horas. La conciliación es el proceso de verificar que las transacciones registradas en los validadores coinciden con las transacciones registradas en las pasarelas de pago y en los bancos: cualquier discrepancia debe ser investigada y resuelta en un plazo máximo de 48 horas.
+
+La **pasarela de pago** es el puente entre el SETP Sincelejo y el sistema financiero nacional: procesa las transacciones con las redes de tarjetas de crédito y débito (Redeban, Credibanco) y con el sistema ACH (Automated Clearing House) para transferencias bancarias. La pasarela debe cumplir con los estándares de seguridad PCI-DSS (Payment Card Industry Data Security Standard), que incluyen cifrado de datos de tarjeta, segmentación de red, monitoreo de accesos y auditoría de transacciones. El cumplimiento de PCI-DSS no es opcional: es un **requerimiento legal** para cualquier sistema que procese pagos con tarjeta en Colombia.
+
+### 4.4 El subsistema de Gestión Tarifaria: el motor de sostenibilidad financiera
+
+El subsistema de Gestión Tarifaria es el **motor de sostenibilidad financiera** del SETP Sincelejo: define cuánto pagan los pasajeros, quién paga qué, cómo se aplican los subsidios y cómo se reportan los ingresos. Sin este subsistema, el SETP no puede definir una política tarifaria, no puede aplicar subsidios diferenciados, no puede generar reportes financieros y no puede cumplir con los requisitos de transparencia del Ministerio de Transporte.
+
+Los componentes de este subsistema se organizan en una arquitectura de **reglas de negocio** que separan la definición de las tarifas (política) del cálculo de las tarifas (operación) y del reporte de las tarifas (transparencia). El **motor tarifario** es el componente de cálculo: aplica las reglas de tarifas definidas por Metro Sabanas S.A.S. a cada transacción de pago. Las reglas pueden incluir: tarifas por zona (diferentes tarifas para diferentes zonas de la ciudad), tarifas por horario (tarifas diferenciadas para horas pico y horas valle), tarifas por usuario (tarifas reducidas para estudiantes, adultos mayores, personas con discapacidad), tarifas por frecuencia (descuentos por uso frecuente), y tarifas por integración (tarifas reducidas para pasajeros que combinan el SETP con otros modos de transporte). El motor tarifario debe ser configurable: Metro Sabanas S.A.S. debe poder modificar las reglas de tarifas sin requerir cambios en el software, preferiblemente mediante una interfaz de administración web.
+
+La **integración con subsidios** es el componente de compensación: aplica los subsidios de transporte definidos por el gobierno nacional o municipal a las tarifas de los usuarios elegibles. En Colombia, el sistema de subsidios de transporte es complejo: involucra subsidios directos (el gobierno paga una parte de la tarifa al operador) y subsidios cruzados (los usuarios de estratos altos pagan más para compensar a los usuarios de estratos bajos). El subsistema de Gestión Tarifaria debe ser capaz de identificar a los usuarios elegibles, aplicar los subsidios correspondientes, reportar los subsidios aplicados a las autoridades y conciliar los subsidios recibidos con los subsidios aplicados.
+
+Los **reportes financieros** son el componente de transparencia: generan los informes de recaudo, subsidios, costos y rentabilidad que Metro Sabanas S.A.S. debe presentar a las autoridades y a los accionistas. Los reportes deben ser generados en formato estándar (Excel, PDF) y en intervalos definidos (diario, semanal, mensual, anual). Los reportes deben ser auditables: cada cifra debe poder ser rastreada hasta la transacción individual que la generó, para permitir la verificación por parte de auditores internos y externos.
 
 ---
 
-## 5. DIAGRAMA DE RED
+## 5. DIAGRAMA DE RED Y COMUNICACIONES
 
-```
-                    INTERNET
-                       │
-              ┌────────┴────────┐
-              │   Firewall /    │
-              │   WAF / DDoS    │
-              └────────┬────────┘
-                       │
-              ┌────────┴────────┐
-              │   Load Balancer │
-              │   (CloudFlare)  │
-              └────────┬────────┘
-                       │
-         ┌─────────────┼─────────────┐
-         │             │             │
-    ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
-    │   API   │  │  Portal │  │  App    │
-    │ Gateway │  │   Web   │  │ Mobile  │
-    └────┬────┘  └─────────┘  └─────────┘
-         │
-    ┌────┴────────────────────────────┐
-    │      PRIVATE SUBNET (VPN)       │
-    │  ┌────────┐  ┌────────┐        │
-    │  │  App   │  │   BD   │        │
-    │  │Server  │  │Postgre │        │
-    │  │  (K8s) │  │  SQL   │        │
-    │  └────────┘  └────────┘        │
-    │                                 │
-    │  ┌────────┐  ┌────────┐        │
-    │  │  NVR   │  │  VPN   │        │
-    │  │  CCTV  │  │ Server │        │
-    │  └────────┘  └────────┘        │
-    └─────────────────────────────────┘
-              │
-         ┌────┴────┐
-         │  4G/LTE │
-         │  VPN    │
-         └────┬────┘
-              │
-         ┌────┴────┐
-         │   BUS   │
-         │ (Onboard│
-         │  Unit)  │
-         └─────────┘
-```
+### 5.1 La red como sistema circulatorio del SETP
+
+La red de comunicaciones del SETP Sincelejo es el **sistema circulatorio** que transporta la información entre los componentes del sistema: desde los buses hasta el centro de control, desde el centro de control hasta las aplicaciones de los usuarios, desde las aplicaciones hasta las pasarelas de pago, y desde las pasarelas de pago hasta los bancos. Sin una red robusta, el sistema no puede operar; con una red mal diseñada, el sistema opera de manera ineficiente, insegura e inestable.
+
+La arquitectura de red se organiza en tres zonas de seguridad que reflejan la exposición de los componentes a internet. La **zona pública** es la más expuesta: incluye los servidores que atienden solicitudes desde internet (API Gateway, portal web, aplicación móvil). Esta zona está protegida por un firewall perimetral que filtra el tráfico no autorizado, un WAF (Web Application Firewall) que protege contra ataques a las aplicaciones web, y un servicio de mitigación de DDoS (Distributed Denial of Service) que protege contra ataques de saturación. La **zona privada** es la menos expuesta: incluye los servidores de aplicación, la base de datos, el NVR de CCTV y el servidor VPN. Esta zona está aislada de internet por el firewall y solo es accesible desde la zona pública a través del API Gateway y desde los buses a través del VPN. La **zona de campo** es la más dispersa: incluye los dispositivos a bordo de los buses (GPS, validadores, pantallas) que se comunican con el centro de control mediante la red celular 4G/LTE y un túnel VPN.
+
+El flujo de información entre las zonas está controlado por el **load balancer** (balanceador de carga) que distribuye las solicitudes entre los servidores de la zona pública, y por el **API Gateway** que enruta las solicitudes a los servicios correctos de la zona privada. El load balancer no es solo un distribuidor de carga: es un **punto de control** que puede rechazar solicitudes maliciosas, limitar la tasa de solicitudes (rate limiting) y cachear respuestas frecuentes para reducir la carga en los servidores backend. El API Gateway no es solo un enrutador: es un **punto de control** que puede autenticar a los clientes (verificar que son quienes dicen ser), autorizar las acciones (verificar que tienen permiso para hacer lo que solicitan) y auditar las transacciones (registrar quién hizo qué y cuándo).
+
+### 5.2 La conectividad de campo: el desafío del entorno móvil
+
+La conectividad de campo es el **desafío técnico más complejo** del SETP Sincelejo porque los buses son entornos móviles: se mueven por toda la ciudad, pasan por zonas con cobertura celular deficiente, atraviesan túneles o zonas de sombra de edificios, y operan en condiciones climáticas variables (lluvia, calor, humedad). La conectividad de campo debe ser robusta, redundante y resiliente.
+
+La conectividad primaria es la **red celular 4G/LTE**, que es la infraestructura de comunicaciones más viable para un SETP urbano. La elección de 4G/LTE sobre 3G o 5G se basa en tres factores: la cobertura (4G/LTE tiene mayor cobertura que 5G en ciudades de tamaño medio como Sincelejo), la latencia (4G/LTE tiene latencia suficiente para la mayoría de las aplicaciones del SETP, con tiempos de respuesta de menos de 100 ms), y el costo (4G/LTE tiene costos de datos más bajos que 5G y es compatible con la mayoría de los dispositivos IoT). Sin embargo, la arquitectura debe ser **5G ready**: los dispositivos a bordo deben ser compatibles con la evolución de la red celular, para que cuando 5G esté disponible en Sincelejo, el sistema pueda migrar sin reemplazo de hardware.
+
+La conectividad secundaria es el **WiFi**, que se utiliza en terminales, depósitos y estaciones donde hay cobertura WiFi propia. El WiFi no es redundancia de la red celular: es una **alternativa de costo** para zonas donde el tráfico de datos es alto y el costo de datos celulares sería prohibitivo. Por ejemplo, la sincronización de transacciones pendientes (modo offline) puede realizarse mediante WiFi cuando el bus está en el depósito, en lugar de consumir datos celulares.
+
+La conectividad terciaria es el **Bluetooth 5.0**, que permite la comunicación de corto alcance entre los dispositivos a bordo. El Bluetooth no es un reemplazo de la red celular: es un **complemento** para comunicaciones que no requieren latencia ni ancho de banda. Por ejemplo, la pantalla del conductor puede recibir información de la unidad de control mediante Bluetooth, en lugar de consumir ancho de banda de la red celular que está reservado para las transacciones de pago y las posiciones GPS.
 
 ---
 
 ## 6. ESPECIFICACIONES TÉCNICAS BASE
 
-### 6.1 Hardware Onboard
+### 6.1 El hardware onboard: el dispositivo edge del SETP
 
-| Componente | Especificación mínima |
-|------------|----------------------|
-| Procesador | ARM Cortex-A72, 4 núcleos @ 1.5 GHz |
-| RAM | 4 GB LPDDR4 |
-| Almacenamiento | 64 GB eMMC |
-| Conectividad | 4G Cat-4, WiFi 802.11ac, Bluetooth 5.0 |
-| GPS | U-Blox NEO-M9N, multi-GNSS |
-| Entradas | 4x GPIO, 2x RS-485, 1x CAN |
-| Alimentación | 9-36V DC, protección transitorios |
-| Temperatura | -20°C a +70°C |
-| Certificación | IP65, EMC automotriz |
+El hardware onboard es el **dispositivo edge** del SETP Sincelejo: es el computador que viaja en cada bus, procesa los datos de los sensores, ejecuta la lógica de negocio local y comunica con el centro de control. Este dispositivo no es un simple rastreador GPS: es un **sistema embebido** que integra procesamiento, almacenamiento, conectividad, sensores y actuadores en un solo equipo.
 
-### 6.2 Software Base
+Las especificaciones técnicas del hardware onboard deben equilibrar el rendimiento, la eficiencia energética, la robustidad y el costo. El **procesador** debe ser un ARM Cortex-A72 de 4 núcleos a 1.5 GHz, que proporciona suficiente potencia para ejecutar el sistema operativo, los contenedores y las aplicaciones, pero es suficientemente eficiente energéticamente para no agotar la batería del bus. La **RAM** debe ser de 4 GB LPDDR4, que proporciona suficiente memoria para ejecutar múltiples aplicaciones simultáneamente (GPS, validador de pago, pantalla del conductor, contador de pasajeros) sin intercambio de memoria (swapping) que degradaría el rendimiento. El **almacenamiento** debe ser de 64 GB eMMC, que proporciona suficiente espacio para el sistema operativo, las aplicaciones, los datos históricos y los logs de operación, con una vida útil de al menos 5 años bajo condiciones de escritura intensiva (logs, transacciones, posiciones GPS).
 
-| Capa | Tecnología |
-|------|-----------|
-| SO | Yocto Linux / Ubuntu Core |
-| Contenedores | Docker |
-| Orquestación | Kubernetes (edge) |
-| Base de datos | PostgreSQL 15 |
-| Cache | Redis |
-| Mensajería | MQTT / Apache Kafka |
-| API | REST + GraphQL |
-| Frontend | React / Flutter |
+La **conectividad** debe incluir 4G Cat-4 (suficiente para la mayoría de las aplicaciones del SETP, con velocidades de descarga de hasta 150 Mbps), WiFi 802.11ac (para comunicaciones en terminales y depósitos) y Bluetooth 5.0 (para comunicaciones de corto alcance entre dispositivos a bordo). El **GPS** debe ser un módulo U-Blox NEO-M9N de multi-GNSS (GPS, GLONASS, Galileo, BeiDou), que proporciona precisión de menos de 5 metros y tiempo de primera fijación (TTFF) de menos de 30 segundos. Las **entradas** deben incluir 4 GPIO (General Purpose Input/Output) para sensores digitales (puertas, luces, emergencia), 2 RS-485 para sensores analógicos (temperatura, presión, combustible) y 1 CAN (Controller Area Network) para integración con el bus de datos del vehículo (OBD-II).
 
----
+La **alimentación** debe ser de 9-36V DC, con protección contra transitorios de voltaje (picos de hasta 60V) que son comunes en el entorno automotriz. La **temperatura de operación** debe ser de -20°C a +70°C, que cubre las condiciones climáticas de Sincelejo (templado, con picos de calor en verano) y proporciona margen para condiciones extremas. La **certificación** debe incluir IP65 (protección contra polvo y agua) y EMC automotriz (compatibilidad electromagnética), que aseguran que el dispositivo no falla por exposición a los elementos ni interfiera con otros sistemas electrónicos del bus.
 
-## 7. PLAN DE CAPACIDAD
+### 6.2 El software base: la pila tecnológica del SETP
 
-| Métrica | Inicial | Año 1 | Año 3 |
-|---------|---------|-------|-------|
-| Vehículos monitoreados | 46 | 50 | 100 |
-| Usuarios activos/día | 10.000 | 15.000 | 30.000 |
-| Transacciones/día | 15.000 | 25.000 | 60.000 |
-| Eventos GPS/seg | 10 | 25 | 60 |
-| Almacenamiento/mes | 50 GB | 120 GB | 300 GB |
+El software base es la **pila tecnológica** que ejecuta los componentes del sistema: el sistema operativo, el middleware, las bases de datos, las APIs y las interfaces de usuario. La elección de la pila tecnológica no es una preferencia de moda: es una **decisión estratégica** que afecta la disponibilidad de talento técnico, el costo de licencias, la compatibilidad con proveedores y la capacidad de evolución del sistema.
+
+El **sistema operativo** debe ser Yocto Linux o Ubuntu Core, que son sistemas operativos embebidos optimizados para dispositivos IoT. Yocto Linux es más ligero y personalizable, pero requiere mayor expertise para configurar. Ubuntu Core es más estándar y tiene mayor soporte de la comunidad, pero es más pesado. La elección entre ambos depende de la capacidad técnica del proveedor y de los requisitos específicos de rendimiento del dispositivo.
+
+Los **contenedores** (Docker) y la **orquestación** (Kubernetes) son la infraestructura de despliegue del sistema: permiten empaquetar las aplicaciones en unidades estándar que pueden ser desplegadas, escaladas y actualizadas de manera automatizada. Kubernetes es una plataforma de orquestación de contenedores que permite gestionar cientos o miles de contenedores en un cluster de servidores. Para el SETP Sincelejo, Kubernetes puede ser utilizado en el centro de control (gestión de servidores) y en los dispositivos edge (Kubernetes edge, como K3s o MicroK8s) para gestionar las aplicaciones a bordo.
+
+La **base de datos** (PostgreSQL 15) es el almacén de datos transaccionales: almacena los datos con consistencia y durabilidad, soporta replicación para alta disponibilidad y tiene una licencia de código abierto que elimina costos de licenciamiento. La **caché** (Redis) es el almacén de datos en memoria: acelera el acceso a la información frecuentemente solicitada (posiciones de buses, horarios de rutas, tarifas) reduciendo la carga en la base de datos y mejorando la latencia percibida por los usuarios.
+
+La **mensajería** (MQTT o Apache Kafka) es el sistema de comunicación entre componentes: permite que los servicios se comuniquen de manera asíncrona, desacoplada y escalable. MQTT es un protocolo ligero diseñado para IoT, ideal para la comunicación entre los buses y el centro de control. Apache Kafka es una plataforma de streaming de eventos, ideal para el procesamiento de grandes volúmenes de datos en tiempo real (posiciones GPS, transacciones de pago, eventos de sensores).
+
+Las **APIs** (REST y GraphQL) son las interfaces de programación del sistema: permiten que las aplicaciones externas (app móvil, portal web, pantallas, aplicaciones de terceros) se comuniquen con los servicios del SETP. REST es el estándar más utilizado para APIs web, simple y ampliamente soportado. GraphQL es un estándar más flexible que permite a los clientes solicitar exactamente los datos que necesitan, reduciendo el overhead de transferencia. La elección entre REST y GraphQL depende de la complejidad de las consultas y de la capacidad técnica del equipo de desarrollo.
+
+Los **frontends** (React y Flutter) son las interfaces de usuario del sistema. React es una biblioteca de JavaScript para la construcción de interfaces web, ampliamente utilizada y con gran ecosistema de componentes. Flutter es un framework de Google para la construcción de aplicaciones móviles multiplataforma (iOS y Android) con una sola base de código, reduciendo el costo de desarrollo y mantenimiento. La elección entre React y Flutter depende de la estrategia de desarrollo del proveedor: si el proveedor tiene equipos separados para web y móvil, React para web y Flutter para móvil es una combinación viable. Si el proveedor busca maximizar la reutilización de código, Flutter para web y móvil es una opción a considerar.
 
 ---
 
-## 8. RECOMENDACIONES DE IMPLEMENTACIÓN
+## 7. PLAN DE CAPACIDAD Y CRECIMIENTO
 
-1. **Fase 1 (Meses 1-3):** Infraestructura base + gestión de flota
-2. **Fase 2 (Meses 4-6):** Pago electrónico + información al usuario
-3. **Fase 3 (Meses 7-9):** Integraciones externas + optimizaciones
-4. **Fase 4 (Meses 10-12):** Analytics avanzado + ML
+### 7.1 La planificación de capacidad como herramienta de sostenibilidad
+
+La planificación de capacidad no es una predicción exacta del futuro: es una **herramienta de sostenibilidad** que asegura que el sistema pueda crecer sin rediseño completo. El plan de capacidad define los puntos de crecimiento clave (vehículos, usuarios, transacciones, eventos GPS, almacenamiento) y los umbrales que activan la expansión de la infraestructura.
+
+La planificación de capacidad se estructura en tres horizontes temporales. El **horizonte inicial** corresponde al momento de la implementación: 46 vehículos, 10.000 usuarios activos por día, 15.000 transacciones por día, 10 eventos GPS por segundo, 50 GB de almacenamiento por mes. Estos números no son estimaciones optimistas: son los **mínimos operativos** que el sistema debe soportar desde el primer día de operación. El **horizonte de un año** corresponde al crecimiento esperado después de la inauguración: 50 vehículos, 15.000 usuarios activos por día, 25.000 transacciones por día, 25 eventos GPS por segundo, 120 GB de almacenamiento por mes. Este crecimiento asume una adopción moderada del sistema por parte de los usuarios de Sincelejo. El **horizonte de tres años** corresponde al crecimiento esperado con la expansión de la flota y la consolidación del sistema: 100 vehículos, 30.000 usuarios activos por día, 60.000 transacciones por día, 60 eventos GPS por segundo, 300 GB de almacenamiento por mes.
+
+Estos horizontes no son metas: son **puntos de referencia** para la contratación. El proveedor debe demostrar que su propuesta puede soportar el horizonte inicial con margen, y debe definir un plan de escalamiento que permita alcanzar el horizonte de tres años sin interrupciones de la operación. El plan de escalamiento debe incluir: (a) los componentes que se escalan (servidores, bases de datos, almacenamiento, ancho de banda); (b) los métodos de escalamiento (vertical: más potencia en los mismos servidores; horizontal: más servidores en el cluster); (c) los umbrales de escalamiento (por ejemplo: "escalar la base de datos cuando el uso de CPU supere el 70% durante más de 5 minutos"); y (d) los tiempos de escalamiento (por ejemplo: "escalamiento vertical en 15 minutos, escalamiento horizontal en 30 minutos").
 
 ---
 
-**Preparado por:** Innovadataco  
-**Fecha:** 15 de junio de 2026  
-**Aprobado por:** _________________________
+## 8. RECOMENDACIONES PARA LA CONTRATACIÓN
+
+La arquitectura tecnológica conceptual produce cuatro recomendaciones que deben guiar la estructuración del RFQ y la evaluación de las propuestas de los oferentes.
+
+**Primera:** El RFQ debe requerir que los oferentes presenten una **arquitectura de referencia** que se ajuste a las cinco capas definidas en este documento (presentación, aplicación, procesos, integración, datos, infraestructura). La arquitectura del oferente no debe ser idéntica a la de este documento, pero debe ser **equivalente funcional**: debe cubrir las mismas responsabilidades, debe usar las mismas interfaces y debe cumplir con los mismos principios arquitectónicos. El RFQ debe incluir una matriz de evaluación que puntúe la adecuación de la arquitectura del oferente a la arquitectura de referencia.
+
+**Segunda:** El RFQ debe requerir que los oferentes presenten un **plan de capacidad** que demuestre que su propuesta puede soportar los tres horizontes definidos (inicial, un año, tres años). El plan de capacidad debe incluir los componentes escalables, los métodos de escalamiento, los umbrales de activación y los tiempos de ejecución. El RFQ debe incluir una cláusula de penalización si el sistema no puede escalar según el plan presentado.
+
+**Tercera:** El RFQ debe requerir que los oferentes presenten un **plan de interoperabilidad** que demuestre que su propuesta puede integrarse con los sistemas definidos en este documento (SRC, SGCF, SIU, SST) y con los sistemas externos (pasarelas de pago, aplicaciones de terceros, sistemas nacionales). El plan de interoperabilidad debe incluir las APIs que el oferente expone, los protocolos que soporta, los formatos de datos que utiliza y los estándares que cumple. El RFQ debe incluir una prueba de interoperabilidad como parte de la evaluación técnica.
+
+**Cuarta:** El RFQ debe requerir que los oferentes presenten un **plan de seguridad** que demuestre que su propuesta cumple con los requisitos de seguridad definidos en el Entregable 3.3 (Requerimientos Funcionales y No Funcionales). El plan de seguridad debe incluir: el cifrado de comunicaciones (entre buses y centro de control, entre centro de control y aplicaciones, entre aplicaciones y pasarelas de pago), la autenticación de usuarios (pasajeros, conductores, operadores, administradores), la autorización de acciones (qué puede hacer cada tipo de usuario), la auditoría de transacciones (quién hizo qué y cuándo), y la protección contra ataques comunes (inyección SQL, cross-site scripting, cross-site request forgery, ataques de fuerza bruta, denegación de servicio). El RFQ debe incluir una prueba de penetración (penetration testing) como parte de la evaluación técnica.
+
+---
+
+**Documento elaborado por ZEUS — InnovaDataCo | 2026-06-15 | Versión 2.0**
