@@ -104,7 +104,7 @@ El valor del contrato será cancelado contra la entrega y aprobación de los sig
 
 ## Producto No. 1. Plan de Trabajo y Estrategia de Estructuración
 
-**Porcentaje de pago: 40%**
+**Porcentaje de pago: 35% — $31.500.000**
 
 Dentro de los primeros cinco (5) días de ejecución, se entregará un documento que contenga:
 
@@ -125,7 +125,7 @@ Dentro de los primeros cinco (5) días de ejecución, se entregará un documento
 
 ## Producto No. 2. Documento de Análisis y Estructuración Preliminar
 
-**Porcentaje de pago: 30%**
+**Porcentaje de pago: 25% — $22.500.000**
 
 | ID | Actividad | Semana |
 |----|-----------|--------|
@@ -156,7 +156,7 @@ Dentro de los primeros cinco (5) días de ejecución, se entregará un documento
 
 ## Producto No. 3. Documentos de Estructuración Precontractual
 
-**Porcentaje de pago: 30%**
+**Porcentaje de pago: 25% — $22.500.000**
 
 | ID | Actividad | Semana |
 |----|-----------|--------|
@@ -176,6 +176,14 @@ Dentro de los primeros cinco (5) días de ejecución, se entregará un documento
 **Incluye:** Estudios previos; estudios del sector; matrices de riesgos; análisis financieros requeridos; documentos soporte de la estrategia contractual; anexos técnicos; documentos de selección y minutas contractuales; requerimientos funcionales y no funcionales del sistema; RFI y RFQ tecnológica.
 
 **Pago:** Contra entrega y aprobación de los productos 3.3 y 3.4.
+
+## Producto No. 4. Acompañamiento a los Procesos de Selección y Cierre de la Consultoría
+
+**Porcentaje de pago: 15%**
+
+Comprende el acompañamiento especializado durante los procesos de selección derivados de la estructuración realizada, incluyendo la atención de observaciones, ajustes a los documentos elaborados, emisión de conceptos y recomendaciones y la presentación del informe final de ejecución.
+
+**Pago:** Contra entrega y aprobación del informe final y certificación de cumplimiento expedida por el supervisor del contrato.
 
 ---
 
@@ -223,8 +231,12 @@ Los documentos, análisis, diseños conceptuales y demás productos elaborados e
 
 | Concepto | Valor TOTAL (COP) |
 |----------|-------------------|
-| Estructuración integral técnica, jurídica, financiera y tecnológica del SETP Sincelejo — Incluyendo componente ITS, arquitectura tecnológica, especificaciones, RFI/RFQ y acompañamiento precontractual | **A definir** |
-| **Valor total (IVA + impuestos incluidos)** | **A definir** |
+| Estructuración técnica, jurídica, financiera y tecnológica del SETP Sincelejo (Productos 1-3) | $70.000.000 |
+| Acompañamiento a procesos de selección — 3 meses adicionales (Producto 4) | $20.000.000 |
+| **Valor total sin impuestos (IVA, estampillas territoriales por separado)** | **$90.000.000** |
+| *Si se solicita rebaja* | *$85.000.000* |
+
+**Nota:** Los impuestos (IVA, estampillas y demás tributos territoriales) se facturarán por separado según la normativa aplicable a Metro Sabanas S.A.S. en Sincelejo, Sucre.
 
 **Validez de la oferta:** 30 días calendario.
 
@@ -232,10 +244,13 @@ Los documentos, análisis, diseños conceptuales y demás productos elaborados e
 
 | Producto | Porcentaje | Valor (COP) | Condición |
 |----------|-----------|-------------|-----------|
-| Producto 1: Plan de Trabajo y Estrategia | 40% | A definir | Contra entrega y aprobación |
-| Producto 2: Análisis y Estructuración Preliminar | 30% | A definir | Contra entrega y aprobación |
-| Producto 3: Documentos de Estructuración Precontractual | 30% | A definir | Contra entrega y aprobación |
-| **TOTAL** | **100%** | **A definir** | |
+| Producto 1: Plan de Trabajo y Estrategia | 35% | $31.500.000 | Contra entrega y aprobación |
+| Producto 2: Análisis y Estructuración Preliminar | 25% | $22.500.000 | Contra entrega y aprobación |
+| Producto 3: Documentos de Estructuración Precontractual | 25% | $22.500.000 | Contra entrega y aprobación |
+| Producto 4: Acompañamiento a Procesos de Selección | 15% | $13.500.000 | Contra entrega del informe final y certificación |
+| **TOTAL** | **100%** | **$90.000.000** | |
+
+*Nota: Precios de referencia. Base estructuración $70M + acompañamiento adicional $20M. Precio negociable: $85.000.000 si se solicita descuento.*
 
 ---
 
