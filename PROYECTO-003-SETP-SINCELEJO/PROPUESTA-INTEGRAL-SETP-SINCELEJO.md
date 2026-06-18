@@ -235,8 +235,8 @@ Los documentos, análisis, diseños conceptuales y demás productos elaborados e
 
 | Concepto | Valor TOTAL (COP) |
 |----------|-------------------|
-| Estructuración integral técnica, jurídica, financiera y tecnológica del SETP Sincelejo — Incluyendo componente ITS, arquitectura tecnológica, especificaciones, RFI/RFQ y acompañamiento precontractual | **$39.000.000** |
-| **Valor total (IVA + impuestos incluidos)** | **$39.000.000** |
+| Estructuración integral técnica, jurídica, financiera y tecnológica del SETP Sincelejo — Incluyendo componente ITS, arquitectura tecnológica, especificaciones, RFI/RFQ y acompañamiento precontractual | **A definir** |
+| **Valor total (IVA + impuestos incluidos)** | **A definir** |
 
 **Validez de la oferta:** 30 días calendario.
 
@@ -244,10 +244,10 @@ Los documentos, análisis, diseños conceptuales y demás productos elaborados e
 
 | Producto | Porcentaje | Valor (COP) | Condición |
 |----------|-----------|-------------|-----------|
-| Producto 1: Plan de Trabajo y Estrategia | 40% | $15.600.000 | Contra entrega y aprobación |
-| Producto 2: Análisis y Estructuración Preliminar | 30% | $11.700.000 | Contra entrega y aprobación |
-| Producto 3: Documentos de Estructuración Precontractual | 30% | $11.700.000 | Contra entrega y aprobación |
-| **TOTAL** | **100%** | **$39.000.000** | |
+| Producto 1: Plan de Trabajo y Estrategia | 40% | A definir | Contra entrega y aprobación |
+| Producto 2: Análisis y Estructuración Preliminar | 30% | A definir | Contra entrega y aprobación |
+| Producto 3: Documentos de Estructuración Precontractual | 30% | A definir | Contra entrega y aprobación |
+| **TOTAL** | **100%** | **A definir** | |
 
 ---
 
