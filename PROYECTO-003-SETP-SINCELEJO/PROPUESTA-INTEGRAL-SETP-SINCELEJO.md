@@ -1,21 +1,18 @@
-# PROPUESTA TÉCNICA Y ECONÓMICA INTEGRAL
+# PROPUESTA TÉCNICA Y ECONÓMICA
 
 ## Estructuración Técnica, Jurídica, Financiera y Tecnológica del Sistema Estratégico de Transporte Público de Sincelejo (SETP)
 
+**Proponente:** D & A Asociados S.A.S.  
 **Cliente:** Metro Sabanas S.A.S.  
 **Ciudad:** Bogotá D.C., junio 2026
 
 ---
 
-# 1. PRESENTACIÓN DE LOS PROPONENTES
+# 1. PRESENTACIÓN DEL PROPONENTE
 
-## 1.1 D & A Asociados S.A.S. — Contratista Principal
+**D & A Asociados S.A.S.** es una empresa especializada en estructuración jurídica, financiera y contractual de proyectos de infraestructura, transporte y contratación pública. Cuenta con oficinas en Bogotá D.C. (Calle 93 No 11a-28, Edificio Capital Park 93, Oficina 603) y asociaciones estratégicas con firmas de abogados en Colombia.
 
-Empresa especializada en estructuración jurídica, financiera y contractual de proyectos de infraestructura, transporte y contratación pública. Cuenta con oficinas en Bogotá D.C. (Calle 93 No 11a-28, Edificio Capital Park 93) y asociaciones estratégicas con firmas de abogados en Colombia.
-
-## 1.2 InnovaDataCO S.A.S. — Subcontratista Tecnológico
-
-Empresa privada especializada en la estructuración, diseño, desarrollo e implementación de soluciones tecnológicas aplicadas a los sectores público y privado. Integra tecnología, optimización de procesos, analítica avanzada y visión estratégica para transformar la información en valor, fortalecer la toma de decisiones, optimizar procesos críticos y generar resultados medibles y sostenibles.
+La firma dispone de un equipo multidisciplinario que integra capacidades jurídicas, financieras, técnicas operativas y tecnológicas, lo que permite ofrecer acompañamiento integral en la estructuración de proyectos complejos de movilidad y transporte público.
 
 ---
 
@@ -42,7 +39,7 @@ Prestar servicios profesionales especializados para realizar la **estructuració
 
 # 4. ALCANCE DE LOS SERVICIOS
 
-## 4.1 Componente Jurídico-Contractual (D & A Asociados)
+## 4.1 Componente Jurídico-Contractual
 
 - Estructuración jurídica y contractual de los procesos de contratación;
 - Análisis de alternativas de estructuración contractual;
@@ -50,20 +47,20 @@ Prestar servicios profesionales especializados para realizar la **estructuració
 - Acompañamiento en etapas precontractuales;
 - Matrices de riesgos jurídicos.
 
-## 4.2 Componente Financiero (D & A Asociados)
+## 4.2 Componente Financiero
 
 - Análisis financieros requeridos para la estructuración;
 - Evaluación de alternativas y modelos de implementación;
 - Análisis de sostenibilidad económica del proyecto.
 
-## 4.3 Componente Técnico-Operativo (D & A Asociados)
+## 4.3 Componente Técnico-Operativo
 
 - Revisión de documentación técnica existente;
 - Identificación de actores institucionales, técnicos, financieros y de mercado;
 - Realización de mesas técnicas;
 - Levantamiento y análisis de información de mercado mediante consulta a potenciales proveedores.
 
-## 4.4 Componente Tecnológico ITS (InnovaDataCO)
+## 4.4 Componente Tecnológico ITS
 
 - Revisión y clasificación de Servicios ITS y subsistemas tecnológicos aplicables al SETP;
 - Definición de la arquitectura tecnológica conceptual del SETP (visión de componentes y subsistemas);
@@ -77,30 +74,25 @@ Prestar servicios profesionales especializados para realizar la **estructuració
 
 # 5. GOBERNANZA DEL PROYECTO
 
-## 5.1 Director del Proyecto (D & A Asociados)
+D & A Asociados S.A.S. designará un **Director del Proyecto** encargado de:
 
 - Gestionar, coordinar y participar en las reuniones requeridas por Metro Sabanas S.A.S.;
 - Brindar apoyo técnico y estratégico articulado y coordinado;
 - Actuar como interlocutor principal para la validación de entregables;
-- Garantizar la integración de los componentes jurídico, financiero, técnico y tecnológico.
-
-## 5.2 Líder Tecnológico ITS (InnovaDataCO)
-
-- Actuar como interlocutor técnico principal para la validación de entregables de documentos tecnológicos;
-- Articulación con actores institucionales, proveedores tecnológicos y grupos de interés;
-- Garantizar la alineación de la arquitectura tecnológica con los objetivos del SETP.
+- Garantizar la integración de los componentes jurídico, financiero, técnico y tecnológico;
+- Articular la validación de documentos tecnológicos con actores institucionales, proveedores tecnológicos y grupos de interés.
 
 ---
 
 # 6. EQUIPO DE TRABAJO
 
-| Cargo | Empresa | Perfil | Rol |
-|-------|---------|--------|-----|
-| Director Jurídico del Proyecto | D & A Asociados | Abogado especialista en derecho del transporte, con experiencia en estructuración jurídica y contractual de proyectos de infraestructura, transporte y contratación pública. | Liderar la estructuración jurídica y contractual del proyecto, coordinar la consultoría, participar en las mesas técnicas, elaborar y revisar los documentos jurídicos requeridos, formular recomendaciones sobre la arquitectura contractual y acompañar los procesos precontractuales y de selección. |
-| Profesional Técnico | D & A Asociados | Profesional con experiencia en planeación, estructuración, implementación y/o operación de sistemas de transporte público y sistemas tecnológicos asociados al transporte. | Apoyar el análisis de los componentes técnicos, operativos y tecnológicos del SETP, participar en las mesas técnicas y aportar insumos para la definición de requerimientos y condiciones técnicas de los futuros procesos de contratación. |
-| Profesional Financiero | D & A Asociados | Profesional con experiencia en estructuración financiera, evaluación económica y análisis de sostenibilidad de proyectos de transporte e infraestructura. | Apoyar la definición y validación de los componentes financieros requeridos para la estructuración de los procesos de contratación, así como el análisis de alternativas y modelos de implementación desde la perspectiva económica y financiera. |
-| **Líder Tecnológico ITS** | **InnovaDataCO** | **Profesional especializado en sistemas ITS, arquitectura tecnológica, ingeniería de sistemas y diseño de soluciones tecnológicas para transporte inteligente.** | **Liderar la definición, diseño conceptual y especificación de los componentes tecnológicos ITS del SETP; revisar y clasificar subsistemas ITS; definir arquitectura tecnológica conceptual; especificar requerimientos funcionales y no funcionales; elaborar RFI/RFQ tecnológica.** |
-| Apoyo Administrativo | D & A Asociados | Técnico, tecnólogo o profesional con experiencia en gestión administrativa y documental. | Apoyar la programación y logística de reuniones, la organización y consolidación de información, el control documental, la elaboración de actas, el seguimiento de actividades y demás labores operativas. |
+| Cargo | Perfil | Rol |
+|-------|--------|-----|
+| **Director Jurídico del Proyecto** | Abogado especialista en derecho del transporte, con experiencia en estructuración jurídica y contractual de proyectos de infraestructura, transporte y contratación pública. | Liderar la estructuración jurídica y contractual del proyecto, coordinar la consultoría, participar en las mesas técnicas, elaborar y revisar los documentos jurídicos requeridos, formular recomendaciones sobre la arquitectura contractual y acompañar los procesos precontractuales y de selección. |
+| **Profesional Técnico** | Profesional con experiencia en planeación, estructuración, implementación y/o operación de sistemas de transporte público y sistemas tecnológicos asociados al transporte. | Apoyar el análisis de los componentes técnicos, operativos y tecnológicos del SETP, participar en las mesas técnicas y aportar insumos para la definición de requerimientos y condiciones técnicas de los futuros procesos de contratación. |
+| **Profesional Financiero** | Profesional con experiencia en estructuración financiera, evaluación económica y análisis de sostenibilidad de proyectos de transporte e infraestructura. | Apoyar la definición y validación de los componentes financieros requeridos para la estructuración de los procesos de contratación, así como el análisis de alternativas y modelos de implementación desde la perspectiva económica y financiera. |
+| **Profesional Tecnológico ITS** | Profesional especializado en sistemas ITS, arquitectura tecnológica, ingeniería de sistemas y diseño de soluciones tecnológicas para transporte inteligente. | Liderar la definición, diseño conceptual y especificación de los componentes tecnológicos ITS del SETP; revisar y clasificar subsistemas ITS; definir arquitectura tecnológica conceptual; especificar requerimientos funcionales y no funcionales; elaborar RFI/RFQ tecnológica. |
+| **Apoyo Administrativo** | Técnico, tecnólogo o profesional con experiencia en gestión administrativa y documental. | Apoyar la programación y logística de reuniones, la organización y consolidación de información, el control documental, la elaboración de actas, el seguimiento de actividades y demás labores operativas. |
 
 ---
 
@@ -112,7 +104,7 @@ El valor del contrato será cancelado contra la entrega y aprobación de los sig
 
 ## Producto No. 1. Plan de Trabajo y Estrategia de Estructuración
 
-**Porcentaje de pago: 40% — $15.600.000 COP**
+**Porcentaje de pago: 40%**
 
 Dentro de los primeros cinco (5) días de ejecución, se entregará un documento que contenga:
 
@@ -133,9 +125,7 @@ Dentro de los primeros cinco (5) días de ejecución, se entregará un documento
 
 ## Producto No. 2. Documento de Análisis y Estructuración Preliminar
 
-**Porcentaje de pago: 30% — $11.700.000 COP**
-
-Documento que contenga:
+**Porcentaje de pago: 30%**
 
 | ID | Actividad | Semana |
 |----|-----------|--------|
@@ -166,9 +156,7 @@ Documento que contenga:
 
 ## Producto No. 3. Documentos de Estructuración Precontractual
 
-**Porcentaje de pago: 30% — $11.700.000 COP**
-
-Entrega de los documentos requeridos para la preparación de los procesos de contratación:
+**Porcentaje de pago: 30%**
 
 | ID | Actividad | Semana |
 |----|-----------|--------|
@@ -215,7 +203,7 @@ Una vez entregado cada producto, Metro Sabanas S.A.S. contará con un plazo máx
 
 ## 9.3 Ajustes a los Entregables
 
-Las observaciones presentadas por Metro Sabanas S.A.S. deberán corresponder al alcance definido en la presente propuesta. Los proponentes realizarán los ajustes que resulten procedentes y entregarán la versión ajustada para su validación final.
+Las observaciones presentadas por Metro Sabanas S.A.S. deberán corresponder al alcance definido en la presente propuesta. Los ajustes que resulten procedentes serán atendidos y la versión ajustada entregada para su validación final.
 
 ---
 
@@ -227,7 +215,7 @@ Metro Sabanas S.A.S. suministrará oportunamente la información técnica, opera
 
 # 11. PROPIEDAD INTELECTUAL
 
-Los documentos, análisis, diseños conceptuales y demás productos elaborados en ejecución de la presente propuesta serán entregados a Metro Sabanas S.A.S. para su utilización dentro del proyecto SETP Sincelejo. Los proponentes conservarán la titularidad sobre sus metodologías, modelos, herramientas, plantillas y conocimiento especializado utilizados para la elaboración de los productos.
+Los documentos, análisis, diseños conceptuales y demás productos elaborados en ejecución de la presente propuesta serán entregados a Metro Sabanas S.A.S. para su utilización dentro del proyecto SETP Sincelejo. D & A Asociados S.A.S. conservará la titularidad sobre sus metodologías, modelos, herramientas, plantillas y conocimiento especializado utilizados para la elaboración de los productos.
 
 ---
 
@@ -266,11 +254,11 @@ No hacen parte de la presente consultoría:
 
 # 14. DECLARACIONES
 
-Los proponentes manifiestan expresamente no estar incursos en ninguna de las causales de inhabilidad e incompatibilidad establecidas en la Ley 1881 de 2016, incluida la derivada de la Ley 1918 de 2018.
+El proponente manifiesta expresamente no estar incurso en ninguna de las causales de inhabilidad e incompatibilidad establecidas en la Ley 1881 de 2016, incluida la derivada de la Ley 1918 de 2018.
 
 ---
 
-# 15. REPRESENTANTES LEGALES
+# 15. REPRESENTANTE LEGAL
 
 ---
 
@@ -279,13 +267,6 @@ Los proponentes manifiestan expresamente no estar incursos en ninguna de las cau
 **Dirección:** Bogotá, D.C. Calle 93 No 11a-28 oficina 603, Edificio Capital Park 93  
 **Teléfonos:** +57 (1) 7560757 — Móvil: +57 3004625724  
 **Email:** info@duranyalvarez.com
-
----
-
-**InnovaDataCO S.A.S.**  
-**Representante Legal:** Diana Marcela Cáceres Valderrama  
-**Contacto:** gerencia@innovadataco.com  
-**InnovaDataCO** — *Ideas que conectan, resultados que transforman*
 
 ---
 
