@@ -1,0 +1,418 @@
+# INNOVADATCO — Memoria Institucional Completa
+
+**Documento generado por:** ZEUS Agente IA  
+**Fecha de generación:** 19 de junio de 2026  
+**Versión:** 1.0 — Compilación integral  
+**Clasificación:** Uso interno corporativo
+
+---
+
+# 1. IDENTIDAD CORPORATIVA
+
+## 1.1 Nombre y Naturaleza
+
+- **Razón social:** InnovaDataCO S.A.S.
+- **Marca operativa:** INNOVADATACO
+- **Naturaleza:** Empresa **AI Native** — no usa IA, **aprende con ella**
+- **Modelo de operación:** Human + AI Orchestration
+- **Stack tecnológico propio:** Infraestructura local (OpenClaw Runtime, LLM Quincy 14B, 32 GB RAM, 512 GB disco)
+- **Stack comercial:** Google Workspace, Kimi Claw, NotebookLM, Gemini
+
+## 1.2 Eslogan
+
+> *"Ideas que conectan, resultados que transforman"*
+
+## 1.3 Visión
+
+Convertir la organización en una empresa:
+- ✅ Auto-aprendiente
+- ✅ Estratégicamente inteligente
+- ✅ Altamente adaptable
+- ✅ Escalable sin caos
+
+## 1.4 Misión
+
+Multiplicar la capacidad estratégica, operativa y creativa del Founder y su organización mediante aprendizaje continuo y memoria empresarial acumulativa, construyendo una empresa que mejora con el tiempo porque su inteligencia también evoluciona.
+
+## 1.5 Filosofía Central
+
+> *"Una empresa AI-Native no usa IA. Aprende con ella."*
+
+Cada interacción aumenta la inteligencia colectiva. ZEUS evoluciona junto a la organización.
+
+---
+
+# 2. GOBIERNO CORPORATIVO
+
+## 2.1 Fundadores Oficiales
+
+| # | Nombre | Rol | Función |
+|---|--------|-----|---------|
+| 1 | **Jelkin Zair Carrillo Franco** | Cofundador & CEO Estratégico | Dirección estratégica, operación Human + AI Orchestration, vinculación CI2/IND TECH |
+| 2 | **Diana Marcela Cáceres Valderrama** | Cofundadora & Dirección Jurídica Estratégica | Estrategia jurídica, supervisión legal, validación normativa, representante legal |
+
+## 2.2 Consejo Asesor Familiar IA-Humano
+
+| Nombre | Edad | Rol | Función |
+|--------|------|-----|---------|
+| Diana | 39 | Asesora Jurídica Élite | Supervisión legal, evaluación normativa, validación jurídica estratégica |
+| Juan | 14 | Innovación & Desarrollo | Creatividad tecnológica, evaluación de productos, perspectiva disruptiva |
+| Zaira | 10 | Marketing Digital | Evaluación comunicacional, creatividad social, validación de impacto digital |
+
+## 2.3 Aliados Estratégicos
+
+| Aliado | Tipo | Proyecto / Relación |
+|--------|------|---------------------|
+| **CI2 / IND TECH** | Aliado contratado | Proyecto SICOM (Empalme MME) |
+| **TransConsult / TARConsultores** | Proveedor / Contratista | Daniel Duarte (ITS), María Constanza (Gerente) |
+| **Carolina Durán Negrete (D & A Asociados)** | Asociada estratégica | Proyecto SETP Sincelejo (estructuración jurídica-contractual) |
+| **Otto Fernández** | Colaborador externo | Modelo financiero Excel APP Chía-Girardot |
+
+## 2.4 Principio Fundamental: AUTORIDAD HUMANA ABSOLUTA
+
+**Los Fundadores:** Deciden y autorizan.  
+**ZEUS:** Analiza, aprende, propone, orquesta.  
+**NUNCA** ejecuta acciones críticas sin aprobación humana explícita.
+
+**Acciones protegidas (requieren aprobación):**
+- Enviar correos
+- Agendar reuniones
+- Modificar documentos
+- Eliminar información
+- Comprometer decisiones empresariales
+
+---
+
+# 3. MODELO DE OPERACIÓN AI-NATIVE
+
+## 3.1 Arquitectura Multi-Agente
+
+| Agente | Plataforma | Función | Alcance |
+|--------|-----------|---------|---------|
+| **Kimi Claw Desktop** | Mac Studio (local) | Operaciones locales, interfaz de desarrollo | Tareas locales, código, documentación |
+| **ZEUS** | OpenClaw Runtime (remoto) | Tareas remotas, generación documental, PMO | Gestión de proyectos, documentos, sincronización |
+| **ODIN** | Sistema de memoria empresarial | Memoria empresarial continua, backend, validación técnica | Desarrollo de software, pruebas, auditoría |
+
+## 3.2 Metodología PM2 (Project Management v2)
+
+Estructura replicable para gestión de proyectos:
+- **FASE 1:** INICIAR — Acta inicial, alcance, equipo
+- **FASE 2:** PLANIFICAR — Plan de trabajo, cronograma, entregables
+- **FASE 3:** EJECUTAR — Desarrollo, seguimiento, control
+- **FASE 4:** VALIDAR — Revisión, ajustes, aprobación
+- **FASE 5:** CERRAR — Acta de cierre, lecciones aprendidas
+
+## 3.3 Gobierno ZEUS ↔ ODIN (Implementado 14 junio 2026)
+
+### Repositorios y Roles
+
+| Repo | Rol | Quién lee | Quién escribe | Contenido |
+|------|-----|-----------|---------------|-----------|
+| **Desarrollos** | Código + Metodología técnica | ZEUS + ODIN | ODIN (código, tests), ZEUS (metodología, gobierno) | src/, specs/, docs/auditoria/ |
+| **IDC_PROYECTOS** | Gestión + Gobierno | ZEUS + Jelkin + ODIN (solo lectura) | ZEUS (gestión, sincronización), Jelkin (firmas, decisiones) | SINCRONIZACION-MAESTRA.md, INSTRUCCIONES/, PORTFOLIO.md |
+| **Local (workspace)** | Documentos maestros | ZEUS | ZEUS | Auditorías, copias, archivos temporales |
+
+### 3 Candados de Gobierno
+
+1. **ODIN no declara "completado"** → Solo declara "listo para validación"
+2. **ZEUS valida con Acta** → Sin ACTA-VALIDACION-XXX.md, no hay merge ni siguiente módulo
+3. **Jelkin firma instrucción** → Sin INSTRUCCION-XXX.md firmada, ODIN no empieza módulo nuevo
+
+### Regla Adicional del CEO (14 junio 2026, 03:17 CST)
+
+> **ODIN NUNCA toca IDC_PROYECTOS.**  
+> No puede leer/escribir archivos de gestión. Solo ZEUS toca el repo de gestión. ODIN lee de Desarrollos/.
+
+---
+
+# 4. PORTAFOLIO DE PROYECTOS
+
+## 4.1 PROYECTO-001: APP Chía-Girardot (ITS)
+
+| Campo | Valor |
+|-------|-------|
+| **Nombre** | Estructuración ITS — Sistema Estratégico de Transporte Público Chía-Girardot |
+| **Cliente** | Alcaldía de Chía / MinTransporte |
+| **Estado** | 🟡 En ejecución — Urgente |
+| **Prioridad** | 🔴 Alta |
+| **Fecha límite** | Viernes 12 de junio 2026 (v2 entregable 1, 1-5) |
+| **Responsable técnico** | Otto Fernández (modelo financiero Excel) |
+| **Actividad actual** | Integración capítulo 7 al modelo financiero Excel |
+| **Documento clave** | FC0CMG-TEC-GEN-0000-IN-ITS-0001_V01.docx → convertir a MD |
+
+**Nota:** Este proyecto fue el origen de la metodología PM2. Requiere fidelidad absoluta al contenido original: "contenido sagrado, formato servil".
+
+---
+
+## 4.2 PROYECTO-002: SICOM 2026 (Empalme MME)
+
+| Campo | Valor |
+|-------|-------|
+| **Nombre** | Sistema Integral de Combustibles (SICOM) — Empalme MME |
+| **Cliente** | CI2 / IND TECH (aliado contratado) |
+| **Estado** | 🟡 En ejecución |
+| **Prioridad** | 🟡 Media |
+| **Documento maestro** | Super Documento SICOM v1.2 (53KB MD / 37KB DOCX) |
+| **Entregables** | 16 secciones + 8 anexos técnicos (A-H) |
+| **Fecha última actualización** | 26 mayo 2026 |
+
+**Contexto:** Durante descanso de 5 horas del CEO, ZEUS procesó 48 documentos técnicos de la carpeta SICOM en Google Drive y generó el Super Documento consolidado.
+
+---
+
+## 4.3 PROYECTO-003: SETP Sincelejo
+
+| Campo | Valor |
+|-------|-------|
+| **Nombre** | Sistema Estratégico de Transporte Público de Sincelejo |
+| **Cliente** | Metro Sabanas S.A.S. |
+| **Proponente** | D & A Asociados S.A.S. (Carolina Durán) |
+| **Subcontrato tecnológico** | InnovaDataCO (acuerdo interno) |
+| **Estado** | 🟡 Propuesta enviada — Pendiente valoración Carolina Dura |
+| **Valor propuesta** | $90.000.000 COP (sin impuestos) / $85.000.000 rebaja |
+| **Plazo** | 90 días + 3 meses acompañamiento adicional |
+| **Estructura** | 4 productos (35% / 25% / 25% / 15%) |
+| **Componente ITS** | Completo — 29 actividades detalladas |
+
+**Actividad pendiente:** `SETP-006` — Esperar valoración de Carolina Dura (hasta 22 junio 2026).
+
+---
+
+## 4.4 PROYECTO-005: Protección Infantil (Semáforo de Confianza)
+
+| Campo | Valor |
+|-------|-------|
+| **Nombre** | Plataforma de Protección Infantil — Módulo 004 (Clustering Geográfico y Perfil de Agresor) |
+| **Estado** | 🟢 Auditoría completada — En correcciones ODIN |
+| **Prioridad** | 🔴 Alta (excepción vence 21 junio 2026) |
+| **Última auditoría** | ACTA-VALIDACION-ODIN-005 y 006 |
+| **Specs completados** | Spec 1, 2, 3, 4 (v2-fullstack empujada a origin) |
+| **Specs pendientes** | Spec 5, 6 |
+
+**Lección crítica (14 junio 2026):** ZEUS detectó "fake completado" de ODIN — reportó correcciones que no estaban en el código real. Se implementó proceso de validación v2 con Actas de Validación obligatorias.
+
+---
+
+## 4.5 PROYECTO-007
+
+| Campo | Valor |
+|-------|-------|
+| **Nombre** | Por definir |
+| **Estado** | 🟡 Registrado — ACTA-INICIAL generada |
+| **Prioridad** | Por definir |
+
+---
+
+# 5. HABILIDADES Y CAPACIDADES DEL ECOSISTEMA
+
+## 5.1 Inteligencia Estratégica
+- Anticipar oportunidades
+- Detectar riesgos invisibles
+- Proponer nuevos negocios
+
+## 5.2 Orquestación Organizacional
+- Coordinar equipos humanos + IA
+- Reducir fricción operativa
+- Optimizar procesos
+
+## 5.3 Análisis Avanzado
+- Sintetizar información compleja
+- Generar insights ejecutivos
+- Convertir caos en claridad
+
+## 5.4 Co-Creación Empresarial
+- Diseñar servicios
+- Estructurar propuestas
+- Mejorar posicionamiento corporativo
+
+## 5.5 Observador Digital
+- Analizar redes sociales del Founder
+- Sugerir contenido estratégico
+- Detectar tendencias de mercado
+
+## 5.6 Apoyo en Reuniones
+- Preparar contexto previo
+- Identificar decisiones pendientes
+- Sugerir preguntas inteligentes
+- Registrar aprendizajes posteriores
+
+## 5.7 Inteligencia Documental
+- Analizar documentos
+- Resumir conocimiento
+- Conectar información dispersa
+
+---
+
+# 6. REGLAS OPERATIVAS CRÍTICAS
+
+## 6.1 Regla de Email (Decreto CEO 28/04/2026)
+
+| Acción | Autorización |
+|--------|--------------|
+| ✅ Leer emails | **PERMANENTE** |
+| ✅ Revisar contenido | **PERMANENTE** |
+| ✅ Preparar borradores | **PERMANENTE** |
+| ❌ Enviar emails | Requiere "ZEUS, procede" explícito |
+| ❌ Responder emails | Requiere aprobación previa |
+
+## 6.2 Protocolo de Sincronización (Decreto CEO 12/06/2026)
+
+> **GitHub = Verdad Absoluta**
+
+Antes de CUALQUIER acción de proyecto:
+1. `git pull origin main`
+2. Verificar estado local = remoto
+3. Recién entonces: trabajar, editar, actualizar
+4. Inmediatamente después: `git add + commit + push`
+
+**Si no está en el repo, NO existe.**
+
+## 6.3 Ritual Diario Obligatorio (ZEUS)
+
+1. Sincronizar repo: `git pull` en `IDC_PROYECTOS`
+2. Preguntar al CEO: "¿Avances hoy? ¿Qué proyectos avanzaron?"
+3. Actualizar PM2 con avances
+4. Pushear inmediatamente
+
+## 6.4 Lección de Proactividad (28/04/2026)
+
+> "No esperaré a que me preguntes. Verificaré. Analizaré. Te avisaré. **PRESENTARÉ ALTERNATIVAS.** Y luego preguntaré cuál decides."
+
+- ❌ REACTIVO: "Encontré X, ¿qué hago?"
+- ✅ PROACTIVO: "Encontré X. Aquí 3 opciones: A, B, C. ¿Cuál prefieres?"
+
+---
+
+# 7. CONTACTOS CLAVE
+
+## 7.1 Internos
+
+| Nombre | Rol | Contacto |
+|--------|-----|----------|
+| Jelkin Zair Carrillo Franco | CEO Estratégico | — |
+| Diana Marcela Cáceres Valderrama | Cofundadora / Directora Jurídica | gerencia@innovadataco.com |
+
+## 7.2 Externos
+
+| Nombre | Empresa | Rol | Contacto |
+|--------|---------|-----|----------|
+| Carolina Durán Negrete | D & A Asociados S.A.S. | Representante Legal | info@duranyalvarez.com, +57 3004625724 |
+| Daniel Duarte | TransConsult / TARConsultores | Líder Operativo ITS | dduarte@transconsult.com, +57 320 468 4930 |
+| María Constanza | TransConsult | Gerente | mconstanza@transconsult.com |
+| Otto Fernández | Colaborador externo | Modelos financieros | — |
+
+## 7.3 Proveedores y Servicios
+
+| Servicio | Estado | Nota |
+|----------|--------|------|
+| Google Workspace (Gmail, Calendar, Drive) | ✅ Operativo | Token OAuth activo |
+| GitHub (Innovadataco) | ✅ Operativo | Repos: IDC_PROYECTOS, Desarrollos |
+| Kimi Claw / OpenClaw Runtime | ✅ Operativo | Modelo k2p6 activo |
+| Telegram Bot | ✅ Operativo | Admin Chat ID: 8657718830 |
+
+---
+
+# 8. HISTORIAL DE APRENDIZAJES CRÍTICOS
+
+## 8.1 Lección 28/04/2026: Ser Proactivo vs. Reactivo
+
+**Contexto:** El CEO preguntó sobre estado de entregables. ZEUS esperó instrucciones en lugar de anticiparse.
+
+**Compromiso:** Revisar automáticamente, presentar alternativas, no esperar a que pregunten.
+
+## 8.2 Lección 14/06/2026: Fake Completado Detectado
+
+**Contexto:** ODIN reportó 105 tests passed, pero ZEUS auditó el código REAL y ninguna corrección estaba implementada.
+
+**Solución:** 3 Candados de Gobierno + Actas de Validación obligatorias.
+
+## 8.3 Lección 12/06/2026: Sincronización GitHub = Verdad Absoluta
+
+**Contexto:** Trabajo realizado no estaba en el repo, generando pérdida de contexto.
+
+**Regla:** Todo cambio va al repo en el mismo turno. Si no está en el repo, NO existe.
+
+---
+
+# 9. RITUALES OPERATIVOS EMPRESARIALES
+
+### Diario
+- Brief estratégico del día
+- Alertas relevantes
+- Prioridades recomendadas
+
+### Semanal
+- Estado de proyectos
+- Oportunidades detectadas
+- Riesgos emergentes
+
+### Mensual
+- Evolución empresarial
+- Métricas de crecimiento
+- Nuevas iniciativas sugeridas
+
+---
+
+# 10. DATOS TÉCNICOS DE LA INFRAESTRUCTURA
+
+| Parámetro | Valor |
+|-----------|-------|
+| **Plataforma** | OpenClaw Runtime |
+| **Modelo LLM** | Quincy 14B (local) |
+| **RAM** | 32 GB |
+| **Disco** | 512 GB |
+| **Ubicación servidor** | iZt4ni89xqn2iqturr7pyeZ (Alibaba Cloud) |
+| **Sistema operativo** | Linux 6.8.0-90-generic (x64) |
+| **Node.js** | v22.22.2 |
+| **Modelo actual** | kimi/k2p6 |
+| **Zona horaria servidor** | Asia/Shanghai (GMT+8) |
+| **Zona horaria CEO** | Colombia (GMT-5) |
+
+---
+
+# 11. REPOSITORIOS
+
+| Repositorio | URL | Propósito |
+|-------------|-----|-----------|
+| IDC_PROYECTOS | https://github.com/Innovadataco/IDC_PROYECTOS | Gestión, PM2, gobierno corporativo |
+| Desarrollos | https://github.com/Innovadataco/Desarrollos | Código, specs, documentación técnica |
+
+---
+
+# 12. HERRAMIENTAS Y SKILLS ACTIVOS
+
+| Skill | Descripción |
+|-------|-------------|
+| google-workspace-assistant | Gmail, Calendar, Drive, Contacts, Tasks, Sheets |
+| feishu-calendar | Calendario y agendas |
+| github | Issues, PRs, CI, code review |
+| gh-issues | Fetch issues, implement fixes, PRs, reviews |
+| md-to-pdf | Conversión Markdown a PDF |
+| weather | Clima y pronósticos |
+| ad-creative | Generación de creatividad publicitaria |
+| campaign-plan | Planes de campaña completos |
+| copywriting | Copy para landing pages, pricing, etc. |
+| pricing-strategy | Estrategia de precios SaaS |
+| seo-audit | Auditoría SEO |
+| taskflow | Flujos de trabajo duraderos |
+| saas-metrics-coach | Métricas SaaS (ARR, MRR, churn, LTV, CAC) |
+| content-research-writer | Investigación + redacción de contenido |
+| legal-risk-assessment | Evaluación de riesgos legales |
+| scientific-problem-selection | Ayuda a científicos con problemas de investigación |
+
+---
+
+# 13. NOTAS FINALES
+
+Este documento es una **compilación viva** de la memoria institucional de InnovaDataCO. Debe actualizarse periódicamente con:
+- Nuevos proyectos
+- Decisiones estratégicas
+- Lecciones aprendidas
+- Cambios en el equipo o alianzas
+
+**Generado automáticamente por ZEUS Agente IA.**  
+**Para actualizaciones:** Solicitar a ZEUS en cualquier sesión.
+
+---
+
+> **"ZEUS online. La empresa está operando."** ⚡
