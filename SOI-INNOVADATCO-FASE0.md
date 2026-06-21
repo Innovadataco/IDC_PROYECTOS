@@ -18,7 +18,7 @@
 - **Naturaleza:** Empresa **AI Native** — no usa IA, **aprende con ella**
 - **Modelo de operación:** Human + AI Orchestration
 - **Stack tecnológico propio:** Infraestructura local (OpenClaw Runtime, LLM Quincy 14B, 32 GB RAM, 512 GB disco)
-- **Stack comercial:** Google Workspace, Kimi Claw, NotebookLM, Gemini
+- **Stack comercial:** Google Workspace, NotebookLM, Gemini
 
 ## 1.2 Eslogan
 
@@ -91,9 +91,8 @@ Cada interacción aumenta la inteligencia colectiva. ZEUS evoluciona junto a la 
 
 | Agente | Plataforma | Función | Alcance |
 |--------|-----------|---------|---------|
-| **Kimi Claw Desktop** | Mac Studio (local) | Operaciones locales, interfaz de desarrollo | Tareas locales, código, documentación |
-| **ZEUS** | OpenClaw Runtime (remoto) | Tareas remotas, generación documental, PMO | Gestión de proyectos, documentos, sincronización |
-| **ODIN** | Sistema de memoria empresarial | Memoria empresarial continua, backend, validación técnica | Desarrollo de software, pruebas, auditoría |
+| **ZEUS** | OpenClaw Runtime (remoto) | **Líder de la Fábrica de Software IA** | Arquitectura de software, orquestación de desarrollo, gobierno de código, validación técnica, memoria institucional |
+| **ODIN** | Sistema de memoria empresarial | **PMO IA de la empresa** | Gestión de proyectos, seguimiento de entregables, control de estados, documentación de avances, auditoría de procesos |
 
 ## 3.2 Metodología PM2 (Project Management v2)
 
@@ -116,14 +115,14 @@ Estructura replicable para gestión de proyectos:
 
 ### 3 Candados de Gobierno
 
-1. **ODIN no declara "completado"** → Solo declara "listo para validación"
-2. **ZEUS valida con Acta** → Sin ACTA-VALIDACION-XXX.md, no hay merge ni siguiente módulo
-3. **Jelkin firma instrucción** → Sin INSTRUCCION-XXX.md firmada, ODIN no empieza módulo nuevo
+1. **ZEUS no declara "completado"** → Solo declara "listo para validación"
+2. **ODIN valida con Acta** → Sin ACTA-VALIDACION-XXX.md, no hay merge ni siguiente módulo
+3. **Jelkin firma instrucción** → Sin INSTRUCCION-XXX.md firmada, ZEUS no empieza módulo nuevo
 
 ### Regla Adicional del CEO (14 junio 2026, 03:17 CST)
 
-> **ODIN NUNCA toca IDC_PROYECTOS.**
-> No puede leer/escribir archivos de gestión. Solo ZEUS toca el repo de gestión. ODIN lee de Desarrollos/.
+> **ZEUS NUNCA toca IDC_PROYECTOS.**
+> No puede leer/escribir archivos de gestión. Solo ODIN toca el repo de gestión. ZEUS lee de Desarrollos/.
 
 ---
 
@@ -301,7 +300,7 @@ Antes de CUALQUIER acción de proyecto:
 |----------|--------|------|
 | Google Workspace (Gmail, Drive, Calendar) | ✅ Operativo | Token OAuth activo |
 | GitHub (Innovadataco) | ✅ Operativo | Repos: IDC_PROYECTOS, Desarrollos |
-| Kimi Claw / OpenClaw Runtime | ✅ Operativo | Modelo k2p6 activo |
+| OpenClaw Runtime | ✅ Operativo | Modelo k2p6 activo |
 | Telegram Bot | ✅ Operativo | Admin Chat ID: 8657718830 |
 
 ---
@@ -417,9 +416,8 @@ InnovaDataCO es una empresa **AI-Native** de consultoría estratégica y desarro
 |---|-------|-----|
 | 1 | **Jelkin Zair Carrillo Franco** | CEO Estratégico — visión, negociación, relaciones, dirección de proyectos |
 | 2 | **Diana Marcela Cáceres Valderrama** | Cofundadora — dirección jurídica, estrategia legal, representación legal |
-| — | **ZEUS (IA)** | PMO, documental, orquestación, memoria institucional |
-| — | **ODIN (IA)** | Desarrollo de software, validación técnica |
-| — | **Kimi Claw (IA local)** | Operaciones locales, desarrollo en Mac Studio |
+| — | **ZEUS (IA)** | **Líder de la Fábrica de Software IA** — arquitectura, desarrollo, gobierno de código, validación técnica |
+| — | **ODIN (IA)** | **PMO IA de la empresa** — gestión de proyectos, seguimiento de entregables, auditoría de procesos, control de estados |
 
 **Contratistas / Aliados externos:**
 - Otto Fernández — modelos financieros (Excel)
@@ -457,7 +455,7 @@ InnovaDataCO es una empresa **AI-Native** de consultoría estratégica y desarro
 | Google Workspace (Gmail, Drive, Calendar, Meet) | ✅ Sí | Core operativo |
 | GitHub | ✅ Sí | 2 repos: IDC_PROYECTOS (gestión), Desarrollos (código) |
 | Telegram | ✅ Sí | Comunicación con ZEUS |
-| Kimi Claw / OpenClaw | ✅ Sí | Infraestructura IA local y remota |
+| OpenClaw Runtime | ✅ Sí | Infraestructura IA remota |
 | NotebookLM | ✅ Sí | Análisis documental |
 | Gemini | ✅ Sí | Redacción asistida |
 | WhatsApp | ✅ Sí | Comunicación general |
